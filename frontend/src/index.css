@@ -1,0 +1,116 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0D3B2E;
+  --color-accent: #16A34A;
+  --color-secondary: #DC2626;
+  --color-emphasis: #EAB308;
+  --color-light-mint: #F0FDF4;
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-heading: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+:root {
+  --primary: #0D3B2E;
+  --accent: #16A34A;
+  --secondary: #DC2626;
+  --emphasis: #EAB308;
+  --light-mint: #F0FDF4;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #FFFFFF;
+  color: #1f2937;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Custom Keyframe Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(22, 163, 74, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(22, 163, 74, 0.45);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Custom Utilities */
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s infinite;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-3d {
+  transform-style: preserve-3d;
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+.bg-accent {
+  background-color: var(--accent);
+}
+.bg-secondary {
+  background-color: var(--secondary);
+}
+.bg-emphasis {
+  background-color: var(--emphasis);
+}
+.bg-light-mint {
+  background-color: var(--light-mint);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+.text-accent {
+  color: var(--accent);
+}
+.text-secondary {
+  color: var(--secondary);
+}
+.text-emphasis {
+  color: var(--emphasis);
+}
+.text-light-mint {
+  color: var(--light-mint);
+}
+
+.border-primary {
+  border-color: var(--primary);
+}
+.border-accent {
+  border-color: var(--accent);
+}
+

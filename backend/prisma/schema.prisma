@@ -1,0 +1,144 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  STUDENT
+  COUNSELOR
+  ADMIN
+}
+
+model User {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  phone     String?
+  password  String
+  role      Role     @default(STUDENT)
+  status    String   @default("ACTIVE")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  studentProfile StudentProfile?
+  eventRegistrations EventRegistration[]
+  appointments     Appointment[]
+}
+
+model StudentProfile {
+  id               String   @id @default(uuid())
+  userId           String   @unique
+  user             User     @relation(fields: [userId], references: [id])
+  studyLevel       String
+  academicScore    Float
+  englishTestType  String?
+  englishScore     String?
+  budget           String?
+  preferredCountry String?
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  eligibilityResults EligibilityResult[]
+}
+
+model Country {
+  id        String   @id @default(uuid())
+  name      String
+  code      String   @unique
+  region    String
+  status    String   @default("ACTIVE")
+
+  universities University[]
+}
+
+model University {
+  id        String   @id @default(uuid())
+  countryId String
+  country   Country  @relation(fields: [countryId], references: [id])
+  name      String
+  status    String   @default("ACTIVE")
+
+  courses Course[]
+}
+
+model Course {
+  id           String     @id @default(uuid())
+  universityId String
+  university   University @relation(fields: [universityId], references: [id])
+  name         String
+  status       String     @default("ACTIVE")
+}
+
+model Event {
+  id          String   @id @default(uuid())
+  title       String
+  description String
+  date        DateTime?
+  location    String?
+  status      String   @default("UPCOMING")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  registrations EventRegistration[]
+}
+
+model EventRegistration {
+  id                String   @id @default(uuid())
+  eventId           String
+  event             Event    @relation(fields: [eventId], references: [id])
+  userId            String?  // Optional, can be anonymous lead
+  user              User?    @relation(fields: [userId], references: [id])
+  name              String
+  email             String
+  phone             String
+  countryOfInterest String?
+  createdAt         DateTime @default(now())
+}
+
+model Counselor {
+  id               String   @id @default(uuid())
+  name             String
+  specializations  String[] // E.g. ['Hungary', 'UK']
+  status           String   @default("ACTIVE")
+
+  appointments Appointment[]
+}
+
+model Appointment {
+  id          String    @id @default(uuid())
+  userId      String
+  user        User      @relation(fields: [userId], references: [id])
+  counselorId String
+  counselor   Counselor @relation(fields: [counselorId], references: [id])
+  date        DateTime
+  status      String    @default("SCHEDULED")
+}
+
+model Lead {
+  id                 String   @id @default(uuid())
+  userId             String?  // Link if registered
+  source             String   @default("WEBSITE")
+  preferredCountry   String?
+  recommendedCountry String?
+  university         String?
+  alternativePathway String?
+  eligibilityStatus  String?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+}
+
+model EligibilityResult {
+  id                 String         @id @default(uuid())
+  studentProfileId   String
+  studentProfile     StudentProfile @relation(fields: [studentProfileId], references: [id])
+  resultStatus       String
+  matchedCountry     String?
+  matchedUniversity  String?
+  alternativePathway String?
+  ruleVersion        String
+  createdAt          DateTime       @default(now())
+}

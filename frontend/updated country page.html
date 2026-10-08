@@ -1,0 +1,2231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Country Destinations & Degree Pathways | Study First Info Ltd.</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            heading: ['"Outfit"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              green: '#006837',
+              darkGreen: '#042f1a',
+              deepBg: '#071f16',
+              emerald: '#059669',
+              lightGreen: '#d1fae5',
+              crimson: '#dc2626',
+              crimsonDark: '#b91c1c',
+              gold: '#f59e0b'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #f8faf9;
+      color: #0f172a;
+      overflow-x: hidden;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    .hero-banner-overlay {
+      background: linear-gradient(180deg, rgba(7, 31, 22, 0.45) 0%, rgba(4, 47, 26, 0.85) 60%, rgba(2, 23, 14, 0.98) 100%);
+    }
+    .faq-answer {
+      transition: max-height 0.35s ease-out, opacity 0.3s ease-out;
+    }
+    .faq-answer.collapsed {
+      max-height: 0px;
+      opacity: 0;
+      overflow: hidden;
+    }
+    .faq-answer.expanded {
+      max-height: 800px;
+      opacity: 1;
+    }
+    /* Hero Banner Grid & Orbital Animation */
+    .hero-tech-grid {
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+      background-size: 36px 36px;
+    }
+    @keyframes orbit-pulse {
+      0%, 100% { transform: scale(1); opacity: 0.85; }
+      50% { transform: scale(1.08); opacity: 1; }
+    }
+    .pulse-glow {
+      animation: orbit-pulse 4s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="bg-[#f8faf9] text-slate-900 antialiased selection:bg-emerald-200 selection:text-emerald-950">
+
+  <!-- ============================================================== -->
+  <!-- MAIN MULTI-TIER WRAPPER (EMBEDDABLE - NO HEADER/FOOTER)       -->
+  <!-- ============================================================== -->
+  <main class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-10">
+
+    <!-- ============================================================ -->
+    <!-- LEVEL 1: ALL COUNTRIES GRID VIEW (MATCHES SCREENSHOT)        -->
+    <!-- ============================================================ -->
+    <div id="view-countries" class="space-y-8 sm:space-y-12 transition-all duration-300">
+      
+      <!-- ============================================================ -->
+      <!-- TOP HERO BANNER SECTION (INSPIRED BY REFERENCE IMAGE)       -->
+      <!-- ============================================================ -->
+      <section class="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#070e1b] via-[#091426] to-[#040b16] text-white p-6 sm:p-10 lg:p-14 border border-slate-800 shadow-2xl">
+        <!-- Subtle Tech Grid Overlay & Ambient Glowing Orbs -->
+        <div class="absolute inset-0 hero-tech-grid opacity-35 pointer-events-none"></div>
+        <div class="absolute -left-20 -top-20 w-80 h-80 bg-rose-500/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+          
+          <!-- Left Column (7 cols): Main Headline, Paragraph, Actions & Metrics -->
+          <div class="lg:col-span-7 space-y-6 text-left">
+            
+            <!-- Top Tag Pill -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-slate-200 text-[11px] sm:text-xs font-bold tracking-wider uppercase border border-white/15 backdrop-blur-md">
+              <span class="w-2 h-2 rounded-full bg-[#ff5e57] animate-ping"></span>
+              INTERNATIONAL STUDY DESTINATIONS
+            </div>
+
+            <!-- Main Heading with Red-Coral Highlight -->
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-white tracking-tight leading-[1.15]">
+              Find the Right Country for Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#ff5e57] via-[#ff7675] to-[#f39c12] underline decoration-[#ff5e57] decoration-2 underline-offset-8">Study Abroad</span> Journey
+            </h1>
+
+            <!-- Subtitle Description -->
+            <p class="text-sm sm:text-base text-slate-300/90 leading-relaxed font-normal max-w-2xl">
+              Explore international study destinations for Bangladeshi students and compare admission requirements, tuition fees, scholarships, student visa information, and future career opportunities before making your decision.
+            </p>
+
+            <!-- Dual CTA Action Buttons -->
+            <div class="flex flex-wrap items-center gap-3.5 pt-2">
+              <a href="#country-cards-container" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#ff5e57] to-[#e84118] hover:from-[#e84118] hover:to-[#c23616] text-white font-extrabold text-xs sm:text-sm tracking-wide shadow-lg shadow-rose-900/30 transition-all flex items-center gap-2 transform hover:-translate-y-0.5">
+                <span>Explore Countries</span>
+                <span class="text-base">↓</span>
+              </a>
+              <button onclick="scrollToHeroLeadForm()" class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 text-white font-bold text-xs sm:text-sm tracking-wide backdrop-blur-md transition-all flex items-center gap-2">
+                <span>Free Consultation</span>
+                <span>→</span>
+              </button>
+            </div>
+
+            <!-- Fast Metrics Bar at Bottom of Hero -->
+            <div class="grid grid-cols-3 gap-4 pt-6 border-t border-white/10 text-left">
+              <div>
+                <span class="text-2xl sm:text-3xl font-extrabold text-white font-heading block">24+</span>
+                <span class="text-[11px] sm:text-xs text-slate-400 font-medium block mt-0.5">Study Destinations</span>
+              </div>
+              <div>
+                <span class="text-sm sm:text-base font-bold text-emerald-400 font-heading block">Admission</span>
+                <span class="text-[11px] sm:text-xs text-slate-400 font-medium block mt-0.5">Entry & Document Guidance</span>
+              </div>
+              <div>
+                <span class="text-sm sm:text-base font-bold text-amber-400 font-heading block">Visa</span>
+                <span class="text-[11px] sm:text-xs text-slate-400 font-medium block mt-0.5">Country-Specific Information</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column (5 cols): Visual Radar with Interactive Country Badges -->
+          <div class="lg:col-span-5 relative flex flex-col items-center justify-center">
+            
+            <!-- Planetary Radar Circle Wrapper -->
+            <div class="relative w-72 h-72 sm:w-84 sm:h-84 flex items-center justify-center">
+              
+              <!-- Outer Orbit Ring -->
+              <div class="absolute inset-0 rounded-full border border-dashed border-slate-700/60 animate-spin" style="animation-duration: 40s;"></div>
+              
+              <!-- Middle Orbit Ring -->
+              <div class="absolute inset-6 rounded-full border border-slate-700/40"></div>
+              
+              <!-- Center Glowing Red/Coral Core -->
+              <div class="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-gradient-to-tr from-[#ff3838] to-[#ff6b6b] flex flex-col items-center justify-center text-center shadow-[0_0_50px_rgba(255,56,56,0.5)] pulse-glow z-10">
+                <span class="text-xs font-black uppercase tracking-widest text-white/90">SFI</span>
+                <span class="text-[11px] font-extrabold text-white leading-tight uppercase px-2">Study Abroad</span>
+              </div>
+
+              <!-- Floating Orbital Badge 1: Compare Destinations -->
+              <div class="absolute -top-2 left-2 bg-[#121c2d]/90 border border-slate-700/80 rounded-xl px-3 py-1.5 shadow-xl backdrop-blur-md flex items-center gap-2 text-xs">
+                <span class="w-4 h-4 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-[10px] font-bold">✓</span>
+                <span class="font-bold text-slate-200">Compare Destinations</span>
+              </div>
+
+              <!-- Floating Orbital Badge 2: Plan Your Journey -->
+              <div class="absolute -bottom-2 right-2 bg-[#121c2d]/90 border border-slate-700/80 rounded-xl px-3 py-1.5 shadow-xl backdrop-blur-md flex items-center gap-2 text-xs">
+                <span class="text-amber-400 text-xs">✦</span>
+                <span class="font-bold text-slate-200">Plan Your Journey</span>
+              </div>
+
+              <!-- Floating Orbital Badge 3: 100% Scholarships -->
+              <div class="absolute top-1/2 -left-8 -translate-y-1/2 bg-[#121c2d]/90 border border-slate-700/80 rounded-xl px-2.5 py-1 shadow-xl backdrop-blur-md flex items-center gap-1.5 text-[11px] hidden sm:flex">
+                <span class="text-xs">⭐</span>
+                <span class="font-bold text-amber-300">100% Scholarships</span>
+              </div>
+
+            </div>
+
+            <!-- All Destination Countries Clickable Tags Cloud -->
+            <div class="mt-5 w-full bg-white/5 border border-white/10 rounded-2xl p-3.5 backdrop-blur-md">
+              <span class="text-[10px] uppercase font-bold text-slate-400 tracking-wider block mb-2 text-center">
+                Click Any Country to Explore Pathways Directly:
+              </span>
+              <div class="flex flex-wrap items-center justify-center gap-1.5" id="hero-countries-cloud">
+                <button type="button" onclick="openCountryLanding('hungary')" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10">
+                  🇭🇺 Hungary
+                </button>
+                <button type="button" onclick="openCountryLanding('united-kingdom')" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10">
+                  🇬🇧 United Kingdom
+                </button>
+                <button type="button" onclick="openCountryLanding('new-zealand')" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10">
+                  🇳🇿 New Zealand
+                </button>
+                <button type="button" onclick="openCountryLanding('malaysia')" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10">
+                  🇲🇾 Malaysia
+                </button>
+                <button type="button" onclick="openCountryLanding('germany')" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10">
+                  🇩🇪 Germany
+                </button>
+                <button type="button" onclick="openCountryLanding('cyprus')" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10">
+                  🇨🇾 Cyprus
+                </button>
+                <button type="button" onclick="openCountryLanding('greece')" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10">
+                  🇬🇷 Greece
+                </button>
+                <button type="button" onclick="openCountryLanding('lithuania')" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10">
+                  🇱🇹 Lithuania
+                </button>
+                <button type="button" onclick="openCountryLanding('hungary')" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10">
+                  🇨🇿 Czech Republic
+                </button>
+                <button type="button" onclick="openCountryLanding('germany')" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10">
+                  🇫🇮 Finland
+                </button>
+                <button type="button" onclick="openCountryLanding('malaysia')" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10">
+                  🇰🇷 South Korea
+                </button>
+                <button type="button" onclick="openCountryLanding('greece')" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10">
+                  🇷🇺 Russia
+                </button>
+                <button type="button" onclick="openCountryLanding('malaysia')" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10">
+                  🇨🇳 China
+                </button>
+                <button type="button" onclick="openCountryLanding('germany')" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10">
+                  🇩🇰 Denmark
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Top Title & Filter Bar -->
+      <div class="text-center max-w-4xl mx-auto space-y-4 pt-4">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-extrabold uppercase tracking-wider border border-emerald-200 shadow-sm">
+          <span class="w-2.5 h-2.5 rounded-full bg-[#006837] animate-ping"></span>
+          Study First Info Verified Global Network
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-extrabold font-heading text-slate-900 tracking-tight">
+          Select Your Study Destination
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto">
+          Explore curated study abroad pathways where Bangladeshi students secure 100% scholarships, tuition waivers, and high visa approval rates.
+        </p>
+
+        <!-- Quick Region Filter Buttons -->
+        <div class="flex flex-wrap items-center justify-center gap-2 pt-2" id="region-filter-buttons">
+          <button onclick="filterRegionCards('all')" class="region-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all bg-[#006837] text-white shadow-sm">
+            All Countries (8)
+          </button>
+          <button onclick="filterRegionCards('europe')" class="region-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all bg-white text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 border border-slate-200">
+            🇪🇺 Schengen Europe
+          </button>
+          <button onclick="filterRegionCards('uk')" class="region-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all bg-white text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 border border-slate-200">
+            🇬🇧 United Kingdom
+          </button>
+          <button onclick="filterRegionCards('oceania')" class="region-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all bg-white text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 border border-slate-200">
+            🇳🇿 New Zealand
+          </button>
+          <button onclick="filterRegionCards('asia')" class="region-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all bg-white text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 border border-slate-200">
+            🇲🇾 Malaysia & Asia
+          </button>
+        </div>
+      </div>
+
+      <!-- Country Cards Grid (Matching User Screenshot Layout) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" id="country-cards-container">
+        <!-- Dynamically Populated by JavaScript -->
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- LEVEL 2: DYNAMIC COUNTRY LANDING PAGE (ABROAD INQUIRY STYLE) -->
+    <!-- ============================================================ -->
+    <div id="view-country-landing" class="hidden space-y-8 sm:space-y-12 transition-all duration-300">
+      
+      <!-- Top Breadcrumb & Switcher Navigation Bar -->
+      <nav class="bg-white rounded-3xl p-3 sm:p-4 border border-slate-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-3">
+        <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-600">
+          <button onclick="navigateToLevel1()" class="font-bold text-emerald-800 hover:text-emerald-950 flex items-center gap-1.5 bg-emerald-50 px-3 py-1.5 rounded-xl border border-emerald-200 transition-all">
+            <span>← All Destinations</span>
+          </button>
+          <span class="text-slate-400">/</span>
+          <span class="font-bold text-slate-900" id="landing-breadcrumb-name">Country Study Guide</span>
+        </div>
+
+        <!-- Quick Switcher Tabs between countries -->
+        <div class="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2" id="landing-country-switcher">
+          <!-- Dynamically populated buttons -->
+        </div>
+      </nav>
+
+      <!-- Dynamic Country Hero Banner -->
+      <section class="relative rounded-3xl overflow-hidden shadow-2xl border border-emerald-900/60 min-h-[460px] sm:min-h-[500px] flex flex-col justify-end text-white">
+        <img id="landing-hero-img" src="" alt="Destination Banner" class="absolute inset-0 w-full h-full object-cover object-center transition-all duration-700 filter brightness-90">
+        <div class="absolute inset-0 hero-banner-overlay"></div>
+
+        <div class="relative z-10 p-6 sm:p-10 lg:p-12 space-y-6 text-left">
+          <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+            <span id="landing-pill-badge" class="px-3.5 py-1 rounded-full bg-amber-400 text-slate-950 text-xs font-black uppercase tracking-wider shadow-md"></span>
+            <span id="landing-sub-badge" class="px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-emerald-200 text-xs font-semibold border border-white/20"></span>
+            <span class="text-xs text-slate-300 font-medium hidden sm:inline-block">Study First Info Certified Desk</span>
+          </div>
+
+          <div class="max-w-4xl space-y-3">
+            <h2 id="landing-hero-heading" class="text-3xl sm:text-5xl lg:text-6xl font-extrabold font-heading text-white tracking-tight leading-tight"></h2>
+            <p id="landing-hero-desc" class="text-sm sm:text-base text-emerald-100/90 leading-relaxed font-medium max-w-3xl"></p>
+          </div>
+
+          <!-- Fast Metric Cards Row -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-4 border-t border-white/15 text-xs sm:text-sm">
+            <div class="bg-black/35 backdrop-blur-md p-3.5 sm:p-4 rounded-2xl border border-white/15">
+              <span class="text-[10px] sm:text-xs text-emerald-300 font-bold uppercase tracking-wider block">Tuition Fees</span>
+              <span id="landing-metric-tuition" class="text-base sm:text-lg font-black text-white block mt-0.5"></span>
+              <span id="landing-metric-tuition-sub" class="text-[10px] text-slate-300 block"></span>
+            </div>
+            <div class="bg-black/35 backdrop-blur-md p-3.5 sm:p-4 rounded-2xl border border-white/15">
+              <span class="text-[10px] sm:text-xs text-emerald-300 font-bold uppercase tracking-wider block">Monthly Living Cost</span>
+              <span id="landing-metric-living" class="text-base sm:text-lg font-black text-white block mt-0.5"></span>
+              <span id="landing-metric-living-sub" class="text-[10px] text-slate-300 block"></span>
+            </div>
+            <div class="bg-black/35 backdrop-blur-md p-3.5 sm:p-4 rounded-2xl border border-white/15">
+              <span class="text-[10px] sm:text-xs text-emerald-300 font-bold uppercase tracking-wider block">Part-Time Work</span>
+              <span id="landing-metric-work" class="text-base sm:text-lg font-black text-emerald-400 block mt-0.5"></span>
+              <span id="landing-metric-work-sub" class="text-[10px] text-slate-300 block"></span>
+            </div>
+            <div class="bg-black/35 backdrop-blur-md p-3.5 sm:p-4 rounded-2xl border border-white/15">
+              <span class="text-[10px] sm:text-xs text-emerald-300 font-bold uppercase tracking-wider block">Post-Study Work</span>
+              <span id="landing-metric-psw" class="text-base sm:text-lg font-black text-amber-300 block mt-0.5"></span>
+              <span id="landing-metric-psw-sub" class="text-[10px] text-slate-300 block"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Two-Column Country Content Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left 8 Columns: Why Study, Universities & Programs, Solvency, Roadmap, FAQs -->
+        <div class="lg:col-span-8 space-y-10 text-left">
+          
+          <!-- Section 1: Why Study In This Country -->
+          <section class="bg-white rounded-3xl p-6 sm:p-9 border border-slate-200 shadow-sm space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-200 pb-4">
+              <span class="w-10 h-10 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-xl font-bold">
+                🌟
+              </span>
+              <div>
+                <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 font-heading" id="landing-why-title">
+                  Why Study Here?
+                </h3>
+                <p class="text-xs text-slate-500">Key strategic benefits for Bangladeshi students.</p>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="landing-why-grid">
+              <!-- Populated dynamically -->
+            </div>
+          </section>
+
+          <!-- Section 2: Top Universities & Popular Programs (Gateway to Level 3) -->
+          <section class="bg-white rounded-3xl p-6 sm:p-9 border border-slate-200 shadow-sm space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 pb-4">
+              <div class="flex items-center gap-3">
+                <span class="w-10 h-10 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-xl font-bold">
+                  🏛️
+                </span>
+                <div>
+                  <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 font-heading">
+                    Top Universities & Program Directory
+                  </h3>
+                  <p class="text-xs text-slate-500">Click on any university or program to view its complete 9-module detailed guide.</p>
+                </div>
+              </div>
+              <span class="text-xs font-bold text-emerald-800 bg-emerald-50 px-3 py-1.5 rounded-xl border border-emerald-200 w-fit">
+                Official Agency Direct Partner
+              </span>
+            </div>
+            <div class="space-y-6" id="landing-universities-container">
+              <!-- Populated dynamically with universities & degree buttons -->
+            </div>
+          </section>
+
+          <!-- Section 3: Cost of Living & Bank Solvency Guidelines -->
+          <section class="bg-white rounded-3xl p-6 sm:p-9 border border-slate-200 shadow-sm space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-200 pb-4">
+              <span class="w-10 h-10 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-xl font-bold">
+                💶
+              </span>
+              <div>
+                <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 font-heading">
+                  Living Cost & Embassy Bank Solvency Guidelines
+                </h3>
+                <p class="text-xs text-slate-500">Transparent financial prerequisites to avoid embassy refusals.</p>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm" id="landing-solvency-grid">
+              <!-- Populated dynamically -->
+            </div>
+          </section>
+
+          <!-- Section 4: Step-by-Step Departure Roadmap -->
+          <section class="bg-white rounded-3xl p-6 sm:p-9 border border-slate-200 shadow-sm space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-200 pb-4">
+              <span class="w-10 h-10 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-xl font-bold">
+                🚀
+              </span>
+              <div>
+                <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 font-heading">
+                  Step-by-Step Roadmap to Departure
+                </h3>
+                <p class="text-xs text-slate-500">Our calculated workflow from academic screening to European arrival.</p>
+              </div>
+            </div>
+            <div class="space-y-3" id="landing-roadmap-container">
+              <!-- Populated dynamically -->
+            </div>
+          </section>
+
+          <!-- Section 5: Country FAQs -->
+          <section class="bg-white rounded-3xl p-6 sm:p-9 border border-slate-200 shadow-sm space-y-6">
+            <div class="flex items-center gap-3 border-b border-slate-200 pb-4">
+              <span class="w-10 h-10 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-xl font-bold">
+                ❓
+              </span>
+              <div>
+                <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 font-heading">
+                  Frequently Asked Questions (FAQ)
+                </h3>
+                <p class="text-xs text-slate-500">Verified answers directly from Senior Admissions Counselors.</p>
+              </div>
+            </div>
+            <div class="space-y-3" id="landing-faq-container">
+              <!-- Populated dynamically -->
+            </div>
+          </section>
+        </div>
+
+        <!-- Right 4 Columns: Sticky Quick Evaluation Form -->
+        <div class="lg:col-span-4 sticky top-6">
+          <div class="bg-white border-2 border-emerald-600/30 rounded-3xl p-6 sm:p-7 shadow-2xl space-y-5 text-left">
+            <div>
+              <span class="bg-emerald-100 text-emerald-800 text-[10px] font-extrabold px-2.5 py-1 rounded-md uppercase tracking-wider">
+                Direct Counselor Desk
+              </span>
+              <h3 class="text-xl font-extrabold text-slate-900 font-heading mt-2">
+                Evaluate Your Profile
+              </h3>
+              <p class="text-xs text-slate-500 mt-1">
+                Targeting: <strong id="landing-form-country-name" class="text-emerald-700"></strong>
+              </p>
+            </div>
+
+            <form id="landing-lead-form" onsubmit="handleLeadSubmit(event, 'landing')" class="space-y-3.5 text-xs">
+              <div>
+                <label class="block font-bold text-slate-700 mb-1">Target University / Subject</label>
+                <input type="text" id="landing-lead-prog" readonly value="Select any university below" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-emerald-300 bg-emerald-50/50 font-semibold text-emerald-950">
+              </div>
+
+              <div>
+                <label class="block font-bold text-slate-700 mb-1">Full Name *</label>
+                <input type="text" id="landing-lead-name" required placeholder="e.g. Mahfuzur Rahman" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-slate-50/50">
+              </div>
+
+              <div>
+                <label class="block font-bold text-slate-700 mb-1">WhatsApp / Phone Number *</label>
+                <input type="tel" id="landing-lead-phone" required placeholder="017xxxxxxxx" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-slate-50/50">
+              </div>
+
+              <div>
+                <label class="block font-bold text-slate-700 mb-1">Applying Degree Level *</label>
+                <select id="landing-lead-level" class="w-full text-xs px-3 py-2 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white">
+                  <option value="Bachelor">Bachelor's Degree (Undergraduate)</option>
+                  <option value="Master">Master's Degree (Postgraduate)</option>
+                  <option value="PhD">Doctor of Philosophy (PhD)</option>
+                  <option value="Diploma">Diploma / Foundation Pathway</option>
+                </select>
+              </div>
+
+              <div>
+                <div class="flex items-center justify-between mb-1">
+                  <label class="font-bold text-slate-700">Academic Score (GPA/CGPA) *</label>
+                  <div class="flex items-center gap-1 bg-slate-100 p-0.5 rounded-lg text-[9px] font-bold">
+                    <button type="button" onclick="setGpaScale('landing', 5)" id="landing-scale-5" class="px-2 py-0.5 rounded bg-emerald-600 text-white transition-all">Scale 5.0 (HSC)</button>
+                    <button type="button" onclick="setGpaScale('landing', 4)" id="landing-scale-4" class="px-2 py-0.5 rounded text-slate-600 hover:text-slate-900 transition-all">Scale 4.0 (Bachelor)</button>
+                  </div>
+                </div>
+                <input type="number" step="0.01" id="landing-lead-gpa" required placeholder="e.g. 4.75" min="1.0" max="5.0" class="w-full text-xs px-3.5 py-2 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-slate-50/50">
+              </div>
+
+              <div>
+                <label class="block font-bold text-slate-700 mb-1">English Proficiency / MOI Status *</label>
+                <select id="landing-lead-english" class="w-full text-xs px-3 py-2 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white">
+                  <option value="MOI Eligible">Medium of Instruction (MOI Waiver Eligible)</option>
+                  <option value="IELTS 6.0+">IELTS 6.0 or above (or PTE 52+)</option>
+                  <option value="IELTS 5.5">IELTS 5.5 (Europe & Malaysia eligible)</option>
+                  <option value="IELTS 5.0">IELTS 5.0 (Low-IELTS / Nursing)</option>
+                  <option value="Planning Exam">Preparing to sit for exam soon</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block font-bold text-slate-700 mb-1">Select Consultation Desk *</label>
+                <select id="landing-lead-branch" class="w-full text-xs px-3 py-2 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white">
+                  <option value="Banani Head Office">Banani Head Office (Rosa Bella, Road 17)</option>
+                  <option value="Farmgate Branch">Farmgate Branch (BTI Central Plaza)</option>
+                  <option value="Sylhet Branch">Sylhet Branch (Millennium Centre, Zindabazar)</option>
+                  <option value="Online Video Meeting">Online Video Consultation</option>
+                </select>
+              </div>
+
+              <button type="submit" class="w-full py-3.5 rounded-xl bg-[#dc2626] hover:bg-[#b91c1c] text-white font-bold text-xs tracking-wide shadow-lg hover:shadow-red-600/30 transition-all flex items-center justify-center gap-2">
+                <span>Submit Profile for Free Assessment</span>
+                <span>→</span>
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- LEVEL 3: SUBJECT & UNIVERSITY DEEP DIVE (THE 9 MODULES)      -->
+    <!-- ============================================================ -->
+    <div id="view-program-detail" class="hidden space-y-8 sm:space-y-12 transition-all duration-300">
+      
+      <!-- Top Action Navigation -->
+      <nav class="bg-white rounded-3xl p-3 sm:p-4 border border-slate-200 shadow-sm flex items-center justify-between gap-4">
+        <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-600">
+          <button onclick="navigateToLevel1()" class="font-semibold text-slate-500 hover:text-emerald-700">All Countries</button>
+          <span class="text-slate-400">/</span>
+          <button onclick="backToCountryLanding()" class="font-bold text-emerald-800 hover:text-emerald-950 flex items-center gap-1">
+            <span id="prog-breadcrumb-country">Country</span>
+          </button>
+          <span class="text-slate-400">/</span>
+          <span class="font-bold text-slate-900" id="prog-breadcrumb-uni">University Details</span>
+        </div>
+
+        <button onclick="backToCountryLanding()" class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs transition-all flex items-center gap-1.5">
+          <span>← Back to Country Guide</span>
+        </button>
+      </nav>
+
+      <!-- University Master Banner Header -->
+      <section class="bg-gradient-to-br from-[#06301d] via-[#042517] to-[#02170e] text-white p-6 sm:p-10 rounded-3xl shadow-2xl relative overflow-hidden border border-emerald-800/60">
+        <div class="max-w-4xl space-y-4 text-left">
+          <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+            <span class="text-2xl" id="prog-header-flag"></span>
+            <span class="text-xs font-bold uppercase tracking-wider text-amber-300 bg-amber-500/20 px-3 py-1 rounded-full border border-amber-400/30" id="prog-header-badge"></span>
+            <span class="text-xs font-bold text-emerald-300 bg-emerald-500/20 px-3 py-1 rounded-full border border-emerald-400/30" id="prog-header-type"></span>
+          </div>
+
+          <h2 class="text-3xl sm:text-5xl font-extrabold font-heading text-white tracking-tight" id="prog-header-title"></h2>
+          <p class="text-sm sm:text-base text-emerald-100/90 leading-relaxed font-medium" id="prog-header-tagline"></p>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-3 border-t border-white/10 text-xs">
+            <div>
+              <span class="text-emerald-300 font-medium block">Upcoming Intakes:</span>
+              <span class="font-bold text-white block mt-0.5" id="prog-header-intakes"></span>
+            </div>
+            <div>
+              <span class="text-emerald-300 font-medium block">Tuition Range:</span>
+              <span class="font-bold text-white block mt-0.5" id="prog-header-tuition"></span>
+            </div>
+            <div>
+              <span class="text-emerald-300 font-medium block">Scholarship Scope:</span>
+              <span class="font-bold text-amber-300 block mt-0.5" id="prog-header-scholarship"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- The 9 Comprehensive Modules Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left 8 Columns: 9 Modules -->
+        <div class="lg:col-span-8 space-y-8 text-left">
+
+          <!-- Module 1: Program Name & Degree Levels -->
+          <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-4">
+            <div class="flex items-center gap-3 border-b border-slate-100 pb-3">
+              <div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-sm">1</div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 font-heading">Program Name & Degree Levels</h3>
+                <p class="text-xs text-slate-500">Pick any program below to evaluate your eligibility.</p>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="mod1-programs-container"></div>
+          </div>
+
+          <!-- Module 2: Why Study There & Highlights -->
+          <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-4">
+            <div class="flex items-center gap-3 border-b border-slate-100 pb-3">
+              <div class="w-9 h-9 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-sm">2</div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 font-heading">Why Study There & Key Highlights</h3>
+                <p class="text-xs text-slate-500">Key institutional advantages and regional reputation.</p>
+              </div>
+            </div>
+            <div class="space-y-2.5" id="mod2-why-container"></div>
+          </div>
+
+          <!-- Module 3: Entry Requirements (Academic & English) -->
+          <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-4">
+            <div class="flex items-center gap-3 border-b border-slate-100 pb-3">
+              <div class="w-9 h-9 rounded-xl bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-sm">3</div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 font-heading">Entry Requirements (Academic & English)</h3>
+                <p class="text-xs text-slate-500">Academic criteria, minimum GPA, and test waiver rules.</p>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs" id="mod3-requirements-container"></div>
+          </div>
+
+          <!-- Module 4: Tuition Fees Structure -->
+          <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-4">
+            <div class="flex items-center gap-3 border-b border-slate-100 pb-3">
+              <div class="w-9 h-9 rounded-xl bg-blue-100 text-blue-800 flex items-center justify-center font-bold text-sm">4</div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 font-heading">Tuition Fees Structure</h3>
+                <p class="text-xs text-slate-500">Official annual and program fee estimates.</p>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs" id="mod4-tuition-container"></div>
+          </div>
+
+          <!-- Module 5: Cost of Living & Bank Fund Requirements -->
+          <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-4">
+            <div class="flex items-center gap-3 border-b border-slate-100 pb-3">
+              <div class="w-9 h-9 rounded-xl bg-sky-100 text-sky-800 flex items-center justify-center font-bold text-sm">5</div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 font-heading">Cost of Living & Bank Fund Solvency</h3>
+                <p class="text-xs text-slate-500">Accommodation, meals, and embassy statement maturity.</p>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs" id="mod5-solvency-container"></div>
+          </div>
+
+          <!-- Module 6: Available Scholarship Opportunity -->
+          <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-4">
+            <div class="flex items-center gap-3 border-b border-slate-100 pb-3">
+              <div class="w-9 h-9 rounded-xl bg-rose-100 text-rose-800 flex items-center justify-center font-bold text-sm">6</div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 font-heading">Available Scholarship Opportunities</h3>
+                <p class="text-xs text-slate-500">Full-ride waivers, state quotas, and institutional grants.</p>
+              </div>
+            </div>
+            <div class="p-4 rounded-2xl bg-gradient-to-r from-rose-50 to-amber-50 border border-rose-100 text-xs" id="mod6-scholarship-container"></div>
+          </div>
+
+          <!-- Module 7: Jobs & Career Opportunity (PSW & Settlement) -->
+          <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-4">
+            <div class="flex items-center gap-3 border-b border-slate-100 pb-3">
+              <div class="w-9 h-9 rounded-xl bg-indigo-100 text-indigo-800 flex items-center justify-center font-bold text-sm">7</div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 font-heading">Jobs & Career Opportunities (PSW & PR)</h3>
+                <p class="text-xs text-slate-500">Post-Study Work Permit duration and market demand.</p>
+              </div>
+            </div>
+            <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-xs text-slate-700 leading-relaxed" id="mod7-career-container"></div>
+          </div>
+
+          <!-- Module 8: Part-Time Job Opportunity -->
+          <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-4">
+            <div class="flex items-center gap-3 border-b border-slate-100 pb-3">
+              <div class="w-9 h-9 rounded-xl bg-teal-100 text-teal-800 flex items-center justify-center font-bold text-sm">8</div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 font-heading">Part-Time Job Opportunities</h3>
+                <p class="text-xs text-slate-500">Legal weekly work hours during study and vacation periods.</p>
+              </div>
+            </div>
+            <div class="p-4 rounded-2xl bg-teal-50 border border-teal-200 text-xs text-teal-950 flex items-center gap-3" id="mod8-parttime-container"></div>
+          </div>
+
+          <!-- Module 9: Application Process & Deadlines -->
+          <div class="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-sm space-y-4">
+            <div class="flex items-center gap-3 border-b border-slate-100 pb-3">
+              <div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-sm">9</div>
+              <div>
+                <h3 class="text-lg font-bold text-slate-900 font-heading">Application Process & Deadlines</h3>
+                <p class="text-xs text-slate-500">Step-by-step roadmap from profile screening to visa stamp.</p>
+              </div>
+            </div>
+            <div class="space-y-2.5" id="mod9-steps-container"></div>
+          </div>
+
+        </div>
+
+        <!-- Right 4 Columns: Sticky University Evaluation Form -->
+        <div class="lg:col-span-4 sticky top-6">
+          <div class="bg-white border-2 border-emerald-600/30 rounded-3xl p-6 sm:p-7 shadow-2xl space-y-5 text-left">
+            <div>
+              <span class="bg-emerald-100 text-emerald-800 text-[10px] font-extrabold px-2.5 py-1 rounded-md uppercase tracking-wider">
+                Direct Evaluation Desk
+              </span>
+              <h3 class="text-xl font-extrabold text-slate-900 font-heading mt-2">
+                Evaluate Your Eligibility
+              </h3>
+              <p class="text-xs text-slate-500 mt-1">
+                Applying for: <strong id="prog-form-uni-title" class="text-emerald-700"></strong>
+              </p>
+            </div>
+
+            <form id="prog-lead-form" onsubmit="handleLeadSubmit(event, 'program')" class="space-y-3.5 text-xs">
+              <div>
+                <label class="block font-bold text-slate-700 mb-1">Selected Degree / Program *</label>
+                <input type="text" id="prog-lead-target" readonly class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-emerald-300 bg-emerald-50/50 font-semibold text-emerald-950">
+              </div>
+
+              <div>
+                <label class="block font-bold text-slate-700 mb-1">Full Name *</label>
+                <input type="text" id="prog-lead-name" required placeholder="e.g. Mahfuzur Rahman" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-slate-50/50">
+              </div>
+
+              <div>
+                <label class="block font-bold text-slate-700 mb-1">WhatsApp / Phone Number *</label>
+                <input type="tel" id="prog-lead-phone" required placeholder="017xxxxxxxx" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-slate-50/50">
+              </div>
+
+              <div>
+                <label class="block font-bold text-slate-700 mb-1">Email Address *</label>
+                <input type="email" id="prog-lead-email" required placeholder="name@email.com" class="w-full text-xs px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-slate-50/50">
+              </div>
+
+              <div>
+                <div class="flex items-center justify-between mb-1">
+                  <label class="font-bold text-slate-700">Academic Score (GPA / CGPA) *</label>
+                  <div class="flex items-center gap-1 bg-slate-100 p-0.5 rounded-lg text-[9px] font-bold">
+                    <button type="button" onclick="setGpaScale('prog', 5)" id="prog-scale-5" class="px-2 py-0.5 rounded bg-emerald-600 text-white transition-all">Scale 5.0 (HSC)</button>
+                    <button type="button" onclick="setGpaScale('prog', 4)" id="prog-scale-4" class="px-2 py-0.5 rounded text-slate-600 hover:text-slate-900 transition-all">Scale 4.0 (Bachelor)</button>
+                  </div>
+                </div>
+                <input type="number" step="0.01" id="prog-lead-gpa" required placeholder="e.g. 4.75" min="1.0" max="5.0" class="w-full text-xs px-3.5 py-2 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-slate-50/50">
+              </div>
+
+              <div>
+                <label class="block font-bold text-slate-700 mb-1">English Test / MOI Status *</label>
+                <select id="prog-lead-english" class="w-full text-xs px-3 py-2 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white">
+                  <option value="MOI Eligible">Medium of Instruction (MOI Waiver Eligible)</option>
+                  <option value="IELTS 6.0+">IELTS 6.0 or above (or PTE 52+)</option>
+                  <option value="IELTS 5.5">IELTS 5.5</option>
+                  <option value="IELTS 5.0">IELTS 5.0</option>
+                  <option value="Planning Exam">Preparing to sit for exam soon</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block font-bold text-slate-700 mb-1">Select Consultation Desk *</label>
+                <select id="prog-lead-branch" class="w-full text-xs px-3 py-2 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white">
+                  <option value="Banani Head Office">Banani Head Office (Rosa Bella, Road 17)</option>
+                  <option value="Farmgate Branch">Farmgate Branch (BTI Central Plaza)</option>
+                  <option value="Sylhet Branch">Sylhet Branch (Millennium Centre, Zindabazar)</option>
+                  <option value="Online Video Meeting">Online Video Consultation</option>
+                </select>
+              </div>
+
+              <button type="submit" class="w-full py-3.5 rounded-xl bg-[#dc2626] hover:bg-[#b91c1c] text-white font-bold text-xs tracking-wide shadow-lg hover:shadow-red-600/30 transition-all flex items-center justify-center gap-2">
+                <span>Submit Profile for Evaluation</span>
+                <span>→</span>
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FLOATING NOTIFICATION TOAST (NO BROWSER ALERT) -->
+  <div id="toast-box" class="fixed bottom-6 right-6 max-w-sm bg-slate-900 text-white px-5 py-4 rounded-2xl shadow-2xl border border-emerald-500/40 hidden z-50 transform transition-all duration-300 flex items-start gap-3">
+    <div class="text-xl">✨</div>
+    <div>
+      <h5 class="text-xs font-bold text-emerald-400 uppercase tracking-wider" id="toast-title">Study First Info</h5>
+      <p class="text-xs text-slate-200 mt-0.5 leading-snug" id="toast-desc"></p>
+    </div>
+  </div>
+
+  <script>
+    // Master Countries & Universities Database (Study First Info Records)
+    const COUNTRIES_DB = {
+      "new-zealand": {
+        id: "new-zealand",
+        code: "NZ",
+        name: "New Zealand",
+        regionCode: "oceania",
+        regionBadge: "OCEANIA",
+        tagline: "World-Class English Education & Family Pathway",
+        usp: "Spouse Flies Together with Full Work Rights | 3-Year Post-Study Work Permit | High PR Index",
+        highlights: [
+          "Up to 3-Year Post-Study Work Visa (PSW)",
+          "Spouse allowed with open work rights (UG & PG)",
+          "Pay tuition fee after Approval in Principle (AIP)"
+        ],
+        livingCost: "NZ$ 1,200 – NZ$ 1,800 / month",
+        institutionsCount: "8+ Listed",
+        heroImg: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1920&q=80",
+        pillBadge: "🇳🇿 Family-Friendly Study Hub",
+        subBadge: "Pay Tuition After Visa AIP • Spouse Full-Time Work Rights",
+        heroHeading: "Study in New Zealand: <span class='text-emerald-400 underline decoration-amber-400 decoration-wavy decoration-2'>Pay Fees After Visa</span> & Spouse Rights",
+        heroDesc: "Zero upfront tuition risk: pay university fees only after receiving official Approval in Principle (AIP) from Immigration New Zealand. Accompanying spouses receive full-time open work permits, and dependent children study in New Zealand domestic public schools completely free.",
+        tuition: "NZ$ 24,000 – NZ$ 45,000/yr",
+        tuitionSub: "Payable strictly after AIP",
+        living: "NZ$ 1,200 – NZ$ 1,800/mo",
+        livingSub: "High quality of life",
+        work: "25 Hours / Week",
+        workSub: "Full-time during vacations",
+        psw: "Up to 3-Year Open PSW",
+        pswSub: "Direct Skilled Migrant PR routes",
+        whyStudy: [
+          { icon: "🛡️", title: "Pay Tuition After Visa (AIP)", desc: "You do not transfer tuition fees until Immigration New Zealand issues official Approval in Principle confirming visa approval." },
+          { icon: "👨‍👩‍👧", title: "Spouse Full-Time Work Rights", desc: "Spouses receive open work permits with no hourly restrictions, and children receive free domestic schooling." },
+          { icon: "📈", title: "Up to 3-Year Open PSW", desc: "Graduates qualify for up to 3 years of post-study work rights with clear permanent residency points under the Green List." },
+          { icon: "💰", title: "Savings & FDR Accepted", desc: "Both Savings and Fixed Deposit (FDR) accounts are accepted with 4 to 6 months of maturity." }
+        ],
+        solvency: [
+          { title: "Bank Solvency Requirement", detail: "Bachelor: ~70 Lac to 1 Crore BDT | Master: ~60 to 80 Lac BDT | Spouse/Child: >20 Lac BDT." },
+          { title: "Account Maturity Duration", detail: "4 to 6 months maturity required (both Savings and Fixed Deposit FDR accepted)." },
+          { title: "Tuition Payment Timing", detail: "Payable strictly AFTER Approval in Principle (AIP) is issued by Immigration NZ." },
+          { title: "Family Privileges", detail: "Accompanying spouse receives open work visa; children attend domestic public schools tuition-free." }
+        ],
+        roadmap: [
+          "Step 01: Profile audit and Green List course selection with senior counselors.",
+          "Step 02: University issues unconditional Offer of Place (OOP).",
+          "Step 03: Prepare 4-6 months maturity bank statement / FDR proof.",
+          "Step 04: Lodge online student visa file with Immigration New Zealand (INZ).",
+          "Step 05: Complete medical and police clearance certificates.",
+          "Step 06: INZ issues official Approval in Principle (AIP) -> Pay university tuition fee.",
+          "Step 07: Final e-Visa stamped and flight to Auckland/Hamilton."
+        ],
+        faqs: [
+          { q: "What does 'Pay Tuition After Visa (AIP)' mean?", a: "It means you do not pay your university tuition fee until Immigration New Zealand (INZ) has verified your profile and issued an 'Approval in Principle' (AIP) letter confirming your visa is approved upon fee payment." },
+          { q: "Can my spouse work full-time in New Zealand?", a: "Yes! If you are enrolled in an eligible Master's degree (Level 9) or a qualification on the New Zealand Green List, your spouse receives an open work visa with no hourly restrictions." }
+        ],
+        universities: [
+          {
+            id: "auckland",
+            name: "University of Auckland",
+            badge: "Ranked #1 in NZ (QS Top 70)",
+            type: "Public Research University",
+            tagline: "New Zealand's flagship research university located in central Auckland.",
+            intakes: "February 2027, July 2027",
+            deadlines: "Nov 30 for Feb Intake | April 30 for July Intake",
+            tuitionUG: "NZ$ 35,000 – NZ$ 55,000 / year",
+            tuitionPG: "NZ$ 40,000 – NZ$ 70,000+ / year",
+            scholarship: "NZ$ 5,000 – NZ$ 20,000 International Student Excellence Scholarship",
+            workRights: "25 hrs/week during study; full-time during holidays",
+            entryUG: "HSC GPA 4.00/5.00 | IELTS 6.0 (no band < 5.5) / PTE 52",
+            entryPG: "Bachelor CGPA 2.75/4.00 | IELTS 6.5 (no band < 6.0) / PTE 59",
+            whyStudy: [
+              "World Top 70 university with world-renowned faculties in engineering, AI, and management.",
+              "Spouse can fly together with full-time open work rights; children receive free public schooling.",
+              "Pay tuition fees ONLY after visa Approval in Principle (AIP) from Immigration New Zealand (INZ).",
+              "Up to 3-year Post-Study Work Visa (PSW) with direct pathways to skilled migrant Permanent Residency."
+            ],
+            costAndBank: {
+              monthlyCost: "NZ$ 1,300 – NZ$ 1,900 / month",
+              bankFundSingle: "UG: ~৳70 Lac – 1 Crore BDT | PG: ~৳60 – 80 Lac BDT",
+              bankMaturity: "4 to 6 months maturity required (both Savings & FDR accepted)",
+              familyFund: "Spouse & Child: >20 Lac BDT additional statement"
+            },
+            careerAndPsw: "Up to 3 Years Post-Study Work Permit. Strong demand in Auckland tech corridor, healthcare, and engineering firms with high PR points index.",
+            partTimeJobs: "Legal permission to work up to 25 hours per week during academic semesters, and full-time during vacations.",
+            applicationSteps: [
+              "Profile assessment & program shortlisting with Study First Info",
+              "Application to institution & conditional offer letter release",
+              "Receive unconditional Offer of Place (OOP)",
+              "Prepare financial evidence (4-6 month maturity statement/FDR)",
+              "Submit online visa file to Immigration New Zealand (INZ)",
+              "INZ AIP (Approval in Principle) issued → Pay official tuition fees",
+              "Final e-Visa stamp and pre-departure briefing"
+            ],
+            programs: [
+              { name: "Bachelor of Science in Computer Science & AI", level: "Undergraduate (3 Years)", fee: "NZ$ 42,000/yr" },
+              { name: "Master of Data Science & Big Data Analytics", level: "Postgraduate (1.5-2 Years)", fee: "NZ$ 46,500/yr" },
+              { name: "Bachelor of Commerce (Finance & Management)", level: "Undergraduate (3 Years)", fee: "NZ$ 39,500/yr" },
+              { name: "Master of Business Administration (MBA)", level: "Postgraduate (1.5 Years)", fee: "NZ$ 58,000/yr" },
+              { name: "Master of Health Sciences / Nursing", level: "Postgraduate (2 Years)", fee: "NZ$ 44,000/yr" }
+            ]
+          },
+          {
+            id: "wintec",
+            name: "Waikato Institute of Technology (Wintec)",
+            badge: "Applied Learning & Budget Friendly",
+            type: "Government Institute of Technology",
+            tagline: "Hands-on vocational qualifications directly mapped to New Zealand Green List occupations.",
+            intakes: "February 2027, July 2027",
+            deadlines: "Dec 10 for Feb Intake | May 25 for July Intake",
+            tuitionUG: "Diploma: NZ$ 18,000 – NZ$ 25,000 / yr | Degree: NZ$ 24,000 – NZ$ 35,000 / yr",
+            tuitionPG: "PGD: NZ$ 25,000 – NZ$ 32,000 / yr",
+            scholarship: "NZ$ 2,500 – NZ$ 5,000 Regional Grants",
+            workRights: "25 hrs/week part-time",
+            entryUG: "Diploma: HSC pass, IELTS 5.5 | Degree: HSC GPA 4.0, IELTS 6.0",
+            entryPG: "Bachelor pass | IELTS 6.0–6.5",
+            whyStudy: [
+              "Lower entry barriers for students with academic gaps or moderate language scores.",
+              "Vocational diplomas directly matched to NZ Green List shortage occupations (Nursing, IT, Civil).",
+              "Lower living costs in Hamilton compared to major metros.",
+              "Pay tuition fee strictly after INZ Approval in Principle (AIP)."
+            ],
+            costAndBank: {
+              monthlyCost: "NZ$ 1,000 – NZ$ 1,400 / month",
+              bankFundSingle: "Diploma/UG: ~৳65 – 70 Lac BDT",
+              bankMaturity: "4 to 6 months maturity required",
+              familyFund: "Spouse & child sponsorship support supported"
+            },
+            careerAndPsw: "Post-Study Work Permit for eligible degree and Green List vocational qualifications; fast-track pathway to residency.",
+            partTimeJobs: "25 hours per week during semester; full-time during vacations.",
+            applicationSteps: [
+              "Profile assessment & pathway selection",
+              "Application to Wintec → Offer of Place",
+              "Financial documentation prep",
+              "Visa lodgement & AIP clearance",
+              "Pay fees & receive student visa"
+            ],
+            programs: [
+              { name: "Diploma in Information Technology Support", level: "Diploma (2 Years)", fee: "NZ$ 19,500/yr" },
+              { name: "Bachelor of Nursing (Green List)", level: "Undergraduate (3 Years)", fee: "NZ$ 26,000/yr" },
+              { name: "Graduate Diploma in Applied Management", level: "Grad Diploma (1 Year)", fee: "NZ$ 24,500/yr" }
+            ]
+          }
+        ]
+      },
+
+      "hungary": {
+        id: "hungary",
+        code: "HU",
+        name: "Hungary",
+        regionCode: "europe",
+        regionBadge: "EUROPE (SCHENGEN)",
+        tagline: "Heart of Central Europe & High Visa Success",
+        usp: "Submit Visa in Dhaka (No India visit) | Stipendium Hungaricum 100% Scholarship | MOI Accepted",
+        highlights: [
+          "Visa file processed directly in Dhaka without visiting New Delhi",
+          "Stipendium Hungaricum: 100% tuition, dorm, medical & monthly stipend",
+          "IELTS waiver possible with English Medium Instruction (MOI)"
+        ],
+        livingCost: "€400 – €700 / month",
+        institutionsCount: "10+ Listed",
+        heroImg: "https://images.unsplash.com/photo-1549877452-9c387954fbc2?auto=format&fit=crop&w=1920&q=80",
+        pillBadge: "🇭🇺 Central European Schengen Hub",
+        subBadge: "Direct Dhaka Embassy File Submission (No India Trip)",
+        heroHeading: "Study in Hungary: <span class='text-emerald-400 underline decoration-amber-400 decoration-wavy decoration-2'>100% Scholarships</span> & Direct Dhaka Visa",
+        heroDesc: "Over 500+ successful Hungary student visas handled by Study First Info Ltd. Enjoy 100% tuition coverage with Stipendium Hungaricum, free borderless mobility across 29 Schengen countries, and direct Dhaka embassy interviews without traveling to India.",
+        tuition: "€0 to €7,800/yr",
+        tuitionSub: "100% Full-Ride Eligible",
+        living: "€400 – €650/mo",
+        livingSub: "Dormitories from €150/mo",
+        work: "24 Hours / Week",
+        workSub: "Legal student work rights",
+        psw: "1.5 – 2 Years PSW",
+        pswSub: "Schengen Job Seeker TRP",
+        whyStudy: [
+          { icon: "🏛️", title: "Direct Dhaka Embassy", desc: "Submit your student visa file directly at the Embassy of Hungary in Dhaka. Zero third-country travel to New Delhi required!" },
+          { icon: "🎓", title: "100% Full-Ride Scholarship", desc: "Stipendium Hungaricum covers 100% tuition fees, free dormitory accommodation, monthly stipends, and medical insurance." },
+          { icon: "📜", title: "MOI English Waiver", desc: "Accepts Medium of Instruction (MOI) certificates from accredited Bangladeshi universities without requiring IELTS for eligible degrees." },
+          { icon: "🌍", title: "29-Country Schengen Travel", desc: "Your Hungarian student residence permit gives you complete borderless mobility and legal part-time work rights across the Schengen zone." }
+        ],
+        solvency: [
+          { title: "Embassy Living Solvency Amount", detail: "~€10,000 to €12,000 proof in student or legal sponsor account." },
+          { title: "Bank Statement Maturity", detail: "3 to 6 months of steady transaction history proving source of income." },
+          { title: "Sponsor Relationship Proof", detail: "Father/Mother or close relative with affidavit of financial support." },
+          { title: "Tuition Deposit Policy", detail: "Paid directly to university escrow account following conditional offer issuance." }
+        ],
+        roadmap: [
+          "Step 01: Free Academic Transcript & GPA Evaluation at Study First Info desks.",
+          "Step 02: University Application Submission with MOI or IELTS score.",
+          "Step 03: Pass online university oral motivation interview / math test (if applicable).",
+          "Step 04: Receive official Letter of Acceptance and Tuition Fee Invoice.",
+          "Step 05: 1-to-1 Intensive Mock Interview Coaching at our Banani or Sylhet office.",
+          "Step 06: Submit visa file at the Embassy of Hungary in Dhaka.",
+          "Step 07: Collect National D Visa & Airport greeting by CEO Md Jubed Miah in Europe."
+        ],
+        faqs: [
+          { q: "Is an IELTS score mandatory for Hungary universities?", a: "Not for all universities! Institutions like Budapest Metropolitan University (METU), John von Neumann, and University of Győr accept Medium of Instruction (MOI) certificates from recognized Bangladeshi universities." },
+          { q: "Do I have to travel to India for the Hungary visa interview?", a: "No! All Bangladeshi students submit their visa files and complete biometrics/interviews directly at the Embassy of Hungary in Dhaka (Baridhara)." }
+        ],
+        universities: [
+          {
+            id: "metu",
+            name: "Budapest Metropolitan University (METU)",
+            badge: "Diamond Partner • Central Budapest",
+            type: "Private University of Applied Sciences",
+            tagline: "Highest visa approval record with Study First Info; modern business & media campus in Budapest.",
+            intakes: "February 2027, September 2026",
+            deadlines: "Application Start: 1 Aug | Deadline: 20 Nov for Feb Intake",
+            tuitionUG: "€7,000 – €7,800 / year",
+            tuitionPG: "€7,200 – €8,200 / year",
+            scholarship: "Stipendium Hungaricum (100% funded) + University Fee Waivers",
+            workRights: "24 hrs/week legal employment",
+            entryUG: "GPA 50-60%: Foundation program | GPA 60-69%: Math test mandatory for Business | GPA 70%+: Direct entry without Math test. MOI or IELTS 5.5 accepted.",
+            entryPG: "Bachelor CGPA 2.5+/4.0, MOI or IELTS 6.0",
+            whyStudy: [
+              "Study in central Budapest with ultra-modern campus facilities and creative studio labs.",
+              "100% possible without IELTS: Medium of Instruction (MOI) fully recognized from Bangladesh.",
+              "Visa application submitted and processed directly in Dhaka without travelling to New Delhi.",
+              "High visa approval track record with dedicated university career counseling support.",
+              "Study gap accepted with proper professional documentation."
+            ],
+            costAndBank: {
+              monthlyCost: "€400 – €700 / month (Dorms €150–€250/mo)",
+              bankFundSingle: "~€10,000 – €12,000 in student or sponsor's account",
+              bankMaturity: "3 months bank statement recommended",
+              familyFund: "Sponsor statement with proof of source of income"
+            },
+            careerAndPsw: "Post-Study Work Permit in Europe; full 29-country Schengen residence and mobility; Budapest is a burgeoning international corporate services hub.",
+            partTimeJobs: "International students have full legal rights to work 24 hours per week during class semesters.",
+            applicationSteps: [
+              "Application start: 1 Aug | Application deadline: 20 Nov",
+              "Submit academic certificates & MOI or IELTS test report",
+              "Math test required only for students with GPA 60–69% (GPA 70%+ exempt)",
+              "Receive official Acceptance Letter and Tuition Invoice",
+              "Embassy visa file submission directly in Dhaka",
+              "Interview at the Hungarian Embassy in Dhaka & receive National D Visa"
+            ],
+            programs: [
+              { name: "BSc Business Administration and Management", level: "Bachelor (3.5 Yrs)", fee: "€7,000/yr" },
+              { name: "BSc Commerce and Marketing", level: "Bachelor (3.5 Yrs)", fee: "€7,000/yr" },
+              { name: "BA Communication and Media Studies", level: "Bachelor (3 Yrs)", fee: "€7,800/yr" },
+              { name: "Master of Business Administration (MBA)", level: "Master (2 Yrs)", fee: "€8,200/yr" },
+              { name: "MSc Marketing & Business Development", level: "Master (2 Yrs)", fee: "€7,200/yr" }
+            ]
+          },
+          {
+            id: "debrecen",
+            name: "University of Debrecen",
+            badge: "Historic 500-Year Heritage (Est. 1538)",
+            type: "Comprehensive Public Research University",
+            tagline: "Over 500 years of academic heritage. World-renowned faculties in Medicine, Computer Science, and Engineering.",
+            intakes: "September 2026, February 2027",
+            deadlines: "June 15 for September | Nov 15 for February",
+            tuitionUG: "€6,000 – €8,500 / year (Medicine up to €14,000)",
+            tuitionPG: "€6,500 – €9,000 / year",
+            scholarship: "Full Stipendium Hungaricum (100% Free Tuition, Dorm, Insurance, Monthly Stipend)",
+            workRights: "24 hrs/week legal work",
+            entryUG: "HSC pass | IELTS 5.5–6.0 or MOI | Entrance test for Medicine & Engineering",
+            entryPG: "Bachelor degree in relevant stream | IELTS 6.0 or MOI",
+            whyStudy: [
+              "Over 500 years of continuous academic heritage with Nobel laureate connections.",
+              "100% full-ride funding through Stipendium Hungaricum with free accommodation and monthly stipend.",
+              "Directly accredited medical and engineering degrees recognized across the EU, UK, and USA.",
+              "Affordable campus life in Hungary's second-largest city."
+            ],
+            costAndBank: {
+              monthlyCost: "€350 – €550 / month (University dorms available)",
+              bankFundSingle: "~€9,000 – €11,000 living expense proof",
+              bankMaturity: "3 months bank statement",
+              familyFund: "Student or parents account"
+            },
+            careerAndPsw: "EU-wide medical license eligibility; international IT corporations in Debrecen (Continental, BMW plant, NI); Schengen job seeker permit.",
+            partTimeJobs: "24 hours per week legal part-time employment during the academic term.",
+            applicationSteps: [
+              "Online application submission through university portal",
+              "Entrance exam or skype interview for STEM/Medical",
+              "Receipt of official Acceptance Letter",
+              "Visa submission at Dhaka Hungarian Embassy",
+              "National D Visa grant"
+            ],
+            programs: [
+              { name: "BSc in Computer Science & Artificial Intelligence", level: "Bachelor (3 Yrs)", fee: "€6,500/yr" },
+              { name: "BSc in Mechatronics & Mechanical Engineering", level: "Bachelor (3.5 Yrs)", fee: "€7,000/yr" },
+              { name: "Doctor of General Medicine (6 Years)", level: "Integrated Master (6 Yrs)", fee: "€14,000/yr" }
+            ]
+          }
+        ]
+      },
+
+      "united-kingdom": {
+        id: "united-kingdom",
+        code: "GB",
+        name: "United Kingdom",
+        regionCode: "uk",
+        regionBadge: "UNITED KINGDOM",
+        tagline: "World-Renowned Heritage & 2-Year Graduate Visa",
+        usp: "1-Year Master's Degree | 2-Year Graduate PSW | MOI Accepted from Reputed Bangladeshi Universities",
+        highlights: [
+          "2-Year Graduate Route Post-Study Work Permit",
+          "Fast 1-Year Master's saving 50% tuition and living costs",
+          "£3,000 to £10,000 Guaranteed & Merit Scholarships"
+        ],
+        livingCost: "£800 – £1,200 / month outside London",
+        institutionsCount: "8+ Listed",
+        heroImg: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1920&q=80",
+        pillBadge: "🇬🇧 1-Year Fast-Track Masters",
+        subBadge: "Up to £10,000 Scholarships • 2-Year Graduate Route PSW",
+        heroHeading: "Study in the UK: <span class='text-emerald-400 underline decoration-amber-400 decoration-wavy decoration-2'>1-Year Masters</span> & £10k Grants",
+        heroDesc: "A 1-Year Master's degree in the UK saves a full year of living and tuition expenses while unlocking the 2-Year Graduate Route Post-Study Work Permit. Enjoy £3,000 to £10,000 merit scholarships and MOI waivers from 28+ Bangladeshi universities.",
+        tuition: "£14,500 – £22,000/yr",
+        tuitionSub: "Up to £10,000 Grants Available",
+        living: "£850 – £1,200/mo",
+        livingSub: "Lower outside London",
+        work: "20 Hours / Week",
+        workSub: "Full-time during holidays",
+        psw: "2-Year Graduate Route",
+        pswSub: "Post-Study Work Permit (PSW)",
+        whyStudy: [
+          { icon: "⏱️", title: "1-Year Fast Master's Degree", desc: "Graduate in just 12 months, saving a full year of tuition and living expenses compared to 2-year programs elsewhere." },
+          { icon: "📜", title: "MOI Waiver from 28 Unis", desc: "Graduates from 28+ leading private and public Bangladeshi universities can waive IELTS with an official MOI certificate." },
+          { icon: "💼", title: "2-Year Post-Study Work", desc: "Qualify for the 2-Year Graduate Route PSW allowing you to work full-time in any corporate sector across the UK." }
+        ],
+        solvency: [
+          { title: "UKVI 28-Day Bank Rule", detail: "Tuition balance + living expenses held for 28 consecutive days." },
+          { title: "Estimated Statement Amount", detail: "Approximately ~38 to 42 Lakh BDT in an approved commercial bank." }
+        ],
+        roadmap: [
+          "Step 01: Profile evaluation & check MOI waiver eligibility.",
+          "Step 02: University conditional offer letter issued within 1-2 weeks.",
+          "Step 03: Prepare 28-day bank statement (~40 Lakh BDT).",
+          "Step 04: Clear Pre-CAS interview & pay university CAS deposit.",
+          "Step 05: Official CAS (Confirmation of Acceptance for Studies) letter issued.",
+          "Step 06: Submit UKVI student visa application in Dhaka/Sylhet."
+        ],
+        faqs: [
+          { q: "Can I apply to UK universities without IELTS?", a: "Yes! Many partner universities accept an official Medium of Instruction (MOI) certificate from 28+ recognized Bangladeshi universities." }
+        ],
+        universities: [
+          {
+            id: "hertfordshire",
+            name: "University of Hertfordshire",
+            badge: "25 Mins to Central London • Top 50 UK",
+            type: "Public University",
+            tagline: "Hatfield campus just 25 mins by train to Kings Cross London. Accepts CGPA down to 2.50 and genuine study gaps.",
+            intakes: "January 2027, September 2026",
+            deadlines: "Available Intake: January 2027 | App Deadline: Nov 2026",
+            tuitionUG: "LLB (Hons): £17,450 / year (First year net: ~£14,200 after scholarship)",
+            tuitionPG: "£18,600 – £20,460 / year (1-Year Fast Master's)",
+            scholarship: "Up to £3,000 Guaranteed Scholarship for Self-Funded Students",
+            workRights: "20 hrs/week during term time",
+            entryUG: "HSC GPA 4.0/5.0 (65%) | IELTS 6.0 / PTE 59 / MOI accepted",
+            entryPG: "Bachelor CGPA 2.50/4.0 (UK 2:2 equivalent) | IELTS 6.0–6.5 / PTE 59 / MOI accepted",
+            whyStudy: [
+              "Only 25 minutes by direct train from Hatfield Campus to Central London (Kings Cross).",
+              "Top 50 UK University (Guardian Guide 2026); sprawling 125-acre modern campus.",
+              "Medium of Instruction (MOI) accepted for eligible graduates from reputed Bangladeshi universities.",
+              "Low CGPA accepted (down to 2.50/4.00 for business and computing degrees)."
+            ],
+            costAndBank: {
+              monthlyCost: "£850 – £1,100 / month",
+              bankFundSingle: "~৳40 Lakh BDT held for 28 consecutive days in approved bank",
+              bankMaturity: "28 consecutive days maturity prior to visa application",
+              familyFund: "Student or parents bank account with relationship affidavit"
+            },
+            careerAndPsw: "2-Year Graduate Route Post-Study Work Permit (PSW). Direct access to London financial district, tech hub, and healthcare sectors.",
+            partTimeJobs: "20 hours per week during term; full-time during holidays.",
+            applicationSteps: [
+              "Profile assessment with Study First Info senior counselors",
+              "Direct university application submission",
+              "Receive Conditional Offer Letter",
+              "Attend Pre-CAS Credibility Interview",
+              "Pay CAS Deposit & receive official CAS letter",
+              "Submit UKVI student visa file"
+            ],
+            programs: [
+              { name: "Bachelor of Laws LLB (Hons)", level: "Bachelor (3 Yrs)", fee: "£17,450/yr (£14,200 net)" },
+              { name: "MSc Computer Science & Software Engineering", level: "Master (1 Yr)", fee: "£18,600/yr" },
+              { name: "MSc Artificial Intelligence & Robotics", level: "Master (1 Yr)", fee: "£19,500/yr" },
+              { name: "Master of Business Administration (MBA)", level: "Master (1 Yr)", fee: "£20,460/yr" }
+            ]
+          },
+          {
+            id: "cardiff",
+            name: "Cardiff University (Russell Group)",
+            badge: "Russell Group Member • QS Top 180",
+            type: "World Elite Research University",
+            tagline: "World top-180 research university. Cardiff is consistently ranked the UK's most affordable capital city.",
+            intakes: "January 2027, September 2026",
+            deadlines: "Sept to Oct application window | Payment Deadline: Nov/Dec",
+            tuitionUG: "£21,000 – £28,000 / year",
+            tuitionPG: "£24,000 – £33,000 / year (1-Year Master's)",
+            scholarship: "Up to £8,000 – £10,000 Postgraduate Scholarship Awards",
+            workRights: "20 hrs/week during term time",
+            entryUG: "HSC top grades / Foundation | IELTS 6.5",
+            entryPG: "4-Year Bachelor with CGPA 3.0/4.0+ | IELTS 6.5",
+            whyStudy: [
+              "World Top 180 elite Russell Group research university.",
+              "Generous postgraduate scholarships up to £8,000 – £10,000 for January and September intakes.",
+              "Cardiff is consistently ranked as the UK's most cost-effective capital city for student living."
+            ],
+            costAndBank: {
+              monthlyCost: "£750 – £1,000 / month",
+              bankFundSingle: "~৳40 Lakh BDT held for 28 consecutive days",
+              bankMaturity: "28 consecutive days maturity",
+              familyFund: "Student or parents bank account"
+            },
+            careerAndPsw: "2-Year Graduate Route Post-Study Work Permit. Elite brand recognition with top-tier corporate recruiters globally.",
+            partTimeJobs: "20 hours per week during term time.",
+            applicationSteps: [
+              "Application submission for January or September intake",
+              "Receive Conditional Offer Letter",
+              "Pre-CAS interview & deposit payment",
+              "CAS issuance & UKVI Visa lodgement"
+            ],
+            programs: [
+              { name: "MSc Strategic Marketing & Analytics", level: "Master (1 Yr)", fee: "£25,500/yr" },
+              { name: "MSc Data Science and Analytics", level: "Master (1 Yr)", fee: "£28,500/yr" },
+              { name: "MSc Healthcare & Public Health", level: "Master (1 Yr)", fee: "£24,500/yr" }
+            ]
+          }
+        ]
+      },
+
+      "malaysia": {
+        id: "malaysia",
+        code: "MY",
+        name: "Malaysia",
+        regionCode: "asia",
+        regionBadge: "SOUTHEAST ASIA",
+        tagline: "Top Asian Education Hub & Save 70% Budget",
+        usp: "Official Partner of UniSZA | 1st Year Cost Only ৳5.5 Lakh | UK & US Credit Transfers",
+        highlights: [
+          "Top 10 Public University (UniSZA): 1st year official cost only ৳5.5 Lakh BDT",
+          "MILA University: Guaranteed 50% Flat Scholarship on entire degree",
+          "Save 60%–80% compared with UK, USA, or Australia"
+        ],
+        livingCost: "RM 1,200 – RM 2,000 / month",
+        institutionsCount: "6+ Listed",
+        heroImg: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1920&q=80",
+        pillBadge: "🇲🇾 Top ASEAN Higher Education Hub",
+        subBadge: "100% Medical Waivers • MILA 50% Flat • UniSZA ~৳5.5 Lakh",
+        heroHeading: "Study in Malaysia: <span class='text-emerald-400 underline decoration-amber-400 decoration-wavy decoration-2'>100% Scholarships</span> & Fast EMGS",
+        heroDesc: "Earn accredited UK and Australian dual degrees at 70% lower budgets. Benefit from fast 3 to 4 week EMGS visa clearance, 100% tuition-free healthcare scholarships, and public university fees starting from only ~৳5.5 Lakh BDT for the first year.",
+        tuition: "RM 10,500 – RM 18,000/yr",
+        tuitionSub: "~৳3.12 Lakh BDT/yr (UniSZA Public)",
+        living: "RM 1,200 – RM 1,800/mo",
+        livingSub: "~৳30k – ৳45k BDT/mo",
+        work: "Permitted on Vacations",
+        workSub: "Semester break work allowed",
+        psw: "Fast eVAL Clearance",
+        pswSub: "3 to 4 week processing",
+        whyStudy: [
+          { icon: "🏥", title: "100% Medical & Healthcare Quota", desc: "Zero tuition fees for Bachelor, Master & PhD in Nursing, Physiotherapy, Pharmacy, and MBA Healthcare Management." },
+          { icon: "🏛️", title: "UniSZA Public University Partner", desc: "Top 10 public university in Malaysia with total first-year official expenses of only ~৳5.5 Lakh BDT." },
+          { icon: "🎓", title: "MILA 50% Flat Scholarship", desc: "Guaranteed 50% flat discount on entire course fees across all undergraduate and postgraduate degrees." }
+        ],
+        solvency: [
+          { title: "Bank Statement Requirement", detail: "Very flexible: ~৳5 to ৳7 Lakh BDT proof of funds in student or parent account." },
+          { title: "EMGS Visa Processing Fee", detail: "Approximately ~RM 3,000 to RM 6,000 payable directly after offer letter." }
+        ],
+        roadmap: [
+          "Step 01: Profile assessment and university shortlisting.",
+          "Step 02: University Offer Letter released within 3-5 working days.",
+          "Step 03: EMGS visa file submission in Malaysia.",
+          "Step 04: eVAL (Electronic Visa Approval Letter) issued within ~3-4 weeks.",
+          "Step 05: Single Entry Visa (SEV) stamped at Malaysian High Commission Dhaka."
+        ],
+        faqs: [
+          { q: "What is the total first-year budget for UniSZA?", a: "The total official first-year cost at UniSZA is approximately ~৳5.5 Lakh BDT." }
+        ],
+        universities: [
+          {
+            id: "unisza",
+            name: "Universiti Sultan Zainal Abidin (UniSZA)",
+            badge: "Official Direct Partner • Top 10 Public",
+            type: "Prestigious Government Public University",
+            tagline: "Subsidized government public university. 1st year total official expenses only ~৳5.5 Lakh BDT.",
+            intakes: "September 2026, February 2027",
+            deadlines: "Rolling admissions: ~2 months prior to intake start",
+            tuitionUG: "RM 10,500 / year (~৳3.12 Lakh BDT/yr)",
+            tuitionPG: "Master: RM 25,000 total | PhD: RM 27,000–RM 43,000 total",
+            scholarship: "Subsidized Public University Fees & 100% EMGS Packages",
+            workRights: "Permitted during semester breaks & vacations",
+            entryUG: "HSC GPA 3.0+ | IELTS 5.5",
+            entryPG: "Bachelor CGPA 2.50+ | IELTS 5.5 or MOI Accepted for Research Master's & PhD",
+            whyStudy: [
+              "Ranked among the Top 10 Public Universities in Malaysia (THE World University Rankings 2026).",
+              "Official Direct Recruitment Partner: Study First Info Ltd. provides seamless end-to-end processing.",
+              "1st year total official expenses only ৳5.5 Lakh BDT (includes Tuition, EMGS, Admin, Registration).",
+              "Medium of Instruction (MOI) fully accepted for Research Master's and PhD programs."
+            ],
+            costAndBank: {
+              monthlyCost: "RM 1,000 – RM 1,500 / month (~৳25,000 – ৳38,000 BDT)",
+              bankFundSingle: "Very flexible: ~৳5 Lakh to ৳7 Lakh BDT proof of funds",
+              bankMaturity: "Recent 3 months bank statement",
+              familyFund: "Student or parental sponsorship accepted"
+            },
+            careerAndPsw: "High employability in ASEAN multinational hubs, corporate Islamic finance, and smooth credit progression to Western institutions.",
+            partTimeJobs: "Allowed during semester breaks and academic vacations.",
+            applicationSteps: [
+              "Profile assessment with Study First Info (official UniSZA partner)",
+              "Issue official University Offer Letter within 5-7 working days",
+              "EMGS visa processing submission in Malaysia (~4-6 weeks)",
+              "Issuance of eVAL (Electronic Visa Approval Letter)",
+              "Single Entry Visa (SEV) endorsement at Malaysian Embassy in Dhaka"
+            ],
+            programs: [
+              { name: "Bachelor of Business Administration (Risk & Takaful) Hons", level: "Bachelor (3.5 Yrs)", fee: "RM 10,500/yr" },
+              { name: "Bachelor of Information Technology (Informatics) Hons", level: "Bachelor (3.5 Yrs)", fee: "RM 10,500/yr" },
+              { name: "Master of Business Administration (MBA)", level: "Master (2 Yrs)", fee: "RM 25,000 total" }
+            ]
+          },
+          {
+            id: "mila",
+            name: "MILA University",
+            badge: "50% FLAT Guaranteed Scholarship",
+            type: "Private University",
+            tagline: "Spacious green campus in Nilai. Complete 3 to 3.5 year fast-track bachelor degrees at 50% flat discount.",
+            intakes: "October 2026, January 2027",
+            deadlines: "6 weeks prior to intake launch",
+            tuitionUG: "RM 12,000 – RM 18,000 / year (Net)",
+            tuitionPG: "RM 14,000 – RM 20,000 / year",
+            scholarship: "50% Flat Scholarship on Entire Degree (100% waiver for GPA 75%+)",
+            workRights: "Permitted during vacations",
+            entryUG: "HSC pass | IELTS 5.0–5.5 or MOI accepted",
+            entryPG: "Bachelor degree | MOI or IELTS 5.5",
+            whyStudy: [
+              "Guaranteed 50% FLAT scholarship across the entire program duration for UG & PG.",
+              "100% Scholarship (Zero Tuition Fee) available for strong academic profiles (75%+ & IELTS 5.5).",
+              "Fast graduation: complete a 3 to 3.5 year bachelor's degree."
+            ],
+            costAndBank: {
+              monthlyCost: "RM 1,200 – RM 1,800 / month",
+              bankFundSingle: "~৳5 Lakh to ৳6 Lakh BDT",
+              bankMaturity: "Recent bank statement",
+              familyFund: "Student or parents account"
+            },
+            careerAndPsw: "High regional placement rate; seamless credit transfer pathways to the UK, USA, and Australia.",
+            partTimeJobs: "Permitted during semester vacations.",
+            applicationSteps: [
+              "Profile evaluation & scholarship confirmation",
+              "Offer letter issuance within 3 days",
+              "EMGS fee submission & visa approval",
+              "eVAL issuance & flight to Malaysia"
+            ],
+            programs: [
+              { name: "BSc (Hons) in Computer Science & Artificial Intelligence", level: "Bachelor (3 Yrs)", fee: "RM 15,000/yr" },
+              { name: "Bachelor of Business Management", level: "Bachelor (3 Yrs)", fee: "RM 13,500/yr" },
+              { name: "Fast-Track MBA (Master of Business Administration)", level: "Master (1 Yr)", fee: "RM 16,000 total" }
+            ]
+          }
+        ]
+      },
+
+      "lithuania": {
+        id: "lithuania",
+        code: "LT",
+        name: "Lithuania",
+        regionCode: "europe",
+        regionBadge: "EUROPE (SCHENGEN)",
+        tagline: "EU Schengen Degree & Ultra Low Tuition Fees",
+        usp: "Starting Tuition €3,500/Year | European TRP Card | English-Taught Degrees",
+        highlights: [
+          "Affordable European Union degrees starting from only €3,500/year",
+          "Temporary Residence Permit (TRP) with full European mobility",
+          "Part-time legal work rights: 20 hours/week"
+        ],
+        livingCost: "€400 – €700 / month",
+        institutionsCount: "7+ Listed",
+        heroImg: "https://images.unsplash.com/photo-1549877452-9c387954fbc2?auto=format&fit=crop&w=1920&q=80",
+        pillBadge: "🇱🇹 Affordable Schengen Destination",
+        subBadge: "Tuition from €3,500/Yr • European TRP Residence Permit",
+        heroHeading: "Study in Lithuania: <span class='text-emerald-400 underline decoration-amber-400 decoration-wavy decoration-2'>Affordable Tuition</span> & Full Schengen Rights",
+        heroDesc: "Study in the vibrant Baltic tech and FinTech hub of Vilnius and Kaunas. Complete European Union accredited degrees starting from only €3,500 per year with legal 20 hours/week work rights and 29-country Schengen mobility.",
+        tuition: "€3,500 – €4,500/yr",
+        tuitionSub: "Affordable EU Degree",
+        living: "€400 – €700/mo",
+        livingSub: "Dormitories from €150/mo",
+        work: "20 Hours / Week",
+        workSub: "Legal work rights",
+        psw: "1-Year Job Seeker TRP",
+        pswSub: "EU residence extension",
+        whyStudy: [
+          { icon: "💶", title: "Low Tuition Rates", desc: "European Union recognized bachelor degrees starting from only €3,500 to €4,500 per year." },
+          { icon: "🌍", title: "Schengen TRP Card", desc: "Temporary Residence Permit granting complete borderless mobility across 29 Schengen countries." }
+        ],
+        solvency: [
+          { title: "Bank Solvency Proof", detail: "Proof of ~€7,000 to €9,000 in student or sponsor account." }
+        ],
+        roadmap: [
+          "Step 01: Profile review & SKVC credential recognition check.",
+          "Step 02: University application & motivation interview.",
+          "Step 03: Acceptance letter and National D Visa file submission."
+        ],
+        faqs: [
+          { q: "Is IELTS mandatory for Lithuania?", a: "SMK and VBC accept IELTS 5.5, PTE 59, or Medium of Instruction (MOI) certificates." }
+        ],
+        universities: [
+          {
+            id: "smk",
+            name: "SMK College of Applied Sciences",
+            badge: "Largest Private Applied College",
+            type: "College of Applied Sciences",
+            tagline: "Campuses in Vilnius, Kaunas, and Klaipeda; project-based education with direct company internships.",
+            intakes: "February 2027 (Spring), September 2026",
+            deadlines: "Spring Intake Deadline: 1 December",
+            tuitionUG: "€3,500 – €4,500 / year (3 Years)",
+            tuitionPG: "N/A (Bachelor Specialist)",
+            scholarship: "Institutional merit discounts & performance grants",
+            workRights: "20 hrs/week legal work",
+            entryUG: "Higher Secondary (12 years) GPA 4.5/5.0 or 3.5/4.0 | IELTS 5.5, PTE 59, or MOI",
+            entryPG: "N/A",
+            whyStudy: [
+              "Lithuania's largest private college of applied sciences with modern campuses in Vilnius, Kaunas, and Klaipeda.",
+              "Highly practical syllabus directly oriented toward European tech, game design, and business jobs.",
+              "Affordable tuition starting from only €3,500 per year."
+            ],
+            costAndBank: {
+              monthlyCost: "€400 – €700 / month (Dorms from €150/mo)",
+              bankFundSingle: "~€7,000 – €9,000 in student or sponsor account",
+              bankMaturity: "3 months bank statement",
+              familyFund: "Student or parents bank statement"
+            },
+            careerAndPsw: "Lithuanian Temporary Residence Permit (TRP) allowing Schengen mobility and European job seeker extension.",
+            partTimeJobs: "20 hours per week legal part-time employment during study.",
+            applicationSteps: [
+              "Submit HSC marksheet and IELTS / PTE score",
+              "Pass online motivation interview with college faculty",
+              "SKVC educational credential recognition in Lithuania",
+              "National D Visa lodgement and TRP issuance"
+            ],
+            programs: [
+              { name: "Information and Cyber Security", level: "Bachelor (3 Yrs)", fee: "€4,400/yr" },
+              { name: "Programming and Multimedia", level: "Bachelor (3 Yrs)", fee: "€4,400/yr" },
+              { name: "International Business", level: "Bachelor (3 Yrs)", fee: "€3,500/yr" }
+            ]
+          }
+        ]
+      },
+
+      "cyprus": {
+        id: "cyprus",
+        code: "CY",
+        name: "Cyprus",
+        regionCode: "europe",
+        regionBadge: "MEDITERRANEAN EUROPE",
+        tagline: "Affordable Mediterranean Degree & 43% Flat Discount",
+        usp: "Deposit Only €3,400 (~৳4.5 Lakh BDT) | 43% Flat Tuition Discount | MOI Accepted",
+        highlights: [
+          "Initial deposit only €3,400 (~4.5 Lakh BDT)",
+          "Guaranteed 43% to 45% tuition discount for international applicants",
+          "IELTS waiver possible with Medium of Instruction (MOI)"
+        ],
+        livingCost: "€350 – €550 / month",
+        institutionsCount: "4+ Listed",
+        heroImg: "https://images.unsplash.com/photo-1584646098378-0874589d76b1?auto=format&fit=crop&w=1920&q=80",
+        pillBadge: "🇨🇾 Mediterranean Low Budget Hub",
+        subBadge: "Deposit Only €3,400 (~৳4.5 Lakh BDT) • 43% Flat Waiver",
+        heroHeading: "Study in Cyprus: <span class='text-emerald-400 underline decoration-amber-400 decoration-wavy decoration-2'>43% Flat Waiver</span> & Low Deposit",
+        heroDesc: "Study First Info holds a direct institutional contract with Cyprus International University (CIU). Fly to Europe with an initial deposit of only €3,400 (~4.5 Lakh BDT), guaranteed 43% flat tuition discounts, and IELTS 5.0 or MOI waivers.",
+        tuition: "€3,000 – €4,200/yr",
+        tuitionSub: "After 43% Flat Discount",
+        living: "€350 – €500/mo",
+        livingSub: "Affordable Mediterranean living",
+        work: "20 Hours / Week",
+        workSub: "In designated commercial sectors",
+        psw: "Credit Mobility",
+        pswSub: "Direct transfer to UK & Europe",
+        whyStudy: [
+          { icon: "💰", title: "43% Flat Tuition Scholarship", desc: "Exclusive direct contract with Cyprus International University saving nearly ~€4,300 across your entire degree." },
+          { icon: "✈️", title: "Lowest Initial Deposit", desc: "Start your file and fly with an initial deposit of only €3,400 (~4.5 Lakh BDT). Pay remaining fees in easy installments." }
+        ],
+        solvency: [
+          { title: "Initial Payable Deposit", detail: "Only €3,400 to obtain official university acceptance and immigration clearance." }
+        ],
+        roadmap: [
+          "Step 01: Submit academic transcripts & passport copy to Study First Info.",
+          "Step 02: University issues conditional offer letter with 43% flat scholarship in 3-5 days.",
+          "Step 03: Pay initial deposit of €3,400 into official university escrow.",
+          "Step 04: Immigration clearance and visa approval letter issued."
+        ],
+        faqs: [
+          { q: "What is the initial deposit required for Cyprus?", a: "The initial deposit to obtain university acceptance and visa clearance is only €3,400 (approximately ~৳4.5 Lakh BDT)." }
+        ],
+        universities: [
+          {
+            id: "ciu",
+            name: "Cyprus International University (CIU)",
+            badge: "Direct Contract Partner • 43% Flat Discount",
+            type: "International University",
+            tagline: "Ultra-modern 300-acre Mediterranean campus. High visa issuance rate with minimal financial friction.",
+            intakes: "September 2026, February 2027",
+            deadlines: "Rolling monthly admissions",
+            tuitionUG: "€3,000 – €4,200 / year (Net fee)",
+            tuitionPG: "€3,500 – €5,000 / year",
+            scholarship: "Guaranteed 43% Flat Scholarship (~€4,300 total value)",
+            workRights: "20 hrs/week in designated sectors",
+            entryUG: "HSC pass | IELTS 4.5–5.0 or MOI accepted",
+            entryPG: "Bachelor pass | MOI or IELTS 5.0",
+            whyStudy: [
+              "Guaranteed 43% flat tuition scholarship on all undergraduate degrees.",
+              "Lowest initial deposit in Europe: only €3,400 (~৳4.5 Lakh BDT) to process visa.",
+              "Credit transfer options available to UK and European partner institutions."
+            ],
+            costAndBank: {
+              monthlyCost: "€350 – €550 / month",
+              bankFundSingle: "Very flexible: ~৳3.5 Lakh to ৳5 Lakh BDT",
+              bankMaturity: "Recent 3 months bank statement",
+              familyFund: "Student or parents account"
+            },
+            careerAndPsw: "Direct stepping stone to European hospitality, tourism, IT, and transfer to UK degrees.",
+            partTimeJobs: "20 hours per week permitted in designated campus and hospitality services.",
+            applicationSteps: [
+              "Quick documentation check (MOI or basic IELTS)",
+              "Offer letter issuance",
+              "Pay initial deposit of €3,400",
+              "Visa clearance confirmation"
+            ],
+            programs: [
+              { name: "BSc in Computer Engineering & Software", level: "Bachelor (4 Yrs)", fee: "€3,500/yr" },
+              { name: "BA in Business Administration", level: "Bachelor (4 Yrs)", fee: "€3,200/yr" },
+              { name: "Master of Business Administration (MBA)", level: "Master (1.5 Yrs)", fee: "€3,800/yr" }
+            ]
+          }
+        ]
+      },
+
+      "greece": {
+        id: "greece",
+        code: "GR",
+        name: "Greece",
+        regionCode: "europe",
+        regionBadge: "EUROPE (SCHENGEN)",
+        tagline: "Cradle of Civilization & Pay Tuition After Visa",
+        usp: "Pay Tuition Fee After Visa Approval | ~90% Visa Ratio | Full Schengen Travel",
+        highlights: [
+          "Pay university tuition fee after visa is approved",
+          "High visa success ratio (~90%)",
+          "Full Schengen mobility across Europe"
+        ],
+        livingCost: "€450 – €700 / month",
+        institutionsCount: "3+ Listed",
+        heroImg: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1920&q=80",
+        pillBadge: "🇬🇷 Pay Tuition After Visa Hub",
+        subBadge: "90% Visa Ratio • Pay Fees After Visa Confirmation",
+        heroHeading: "Study in Greece: <span class='text-emerald-400 underline decoration-amber-400 decoration-wavy decoration-2'>Pay Fees After Visa</span> & Schengen Rights",
+        heroDesc: "Study in Greece with minimal financial risk: pay university tuition fees strictly after your Schengen visa is confirmed. Enjoy an exceptional 90% visa approval track record and complete borderless travel throughout 29 Schengen states.",
+        tuition: "€3,500 – €6,500/yr",
+        tuitionSub: "Pay strictly after visa",
+        living: "€450 – €700/mo",
+        livingSub: "Affordable Mediterranean cost",
+        work: "20 Hours / Week",
+        workSub: "Legal work rights",
+        psw: "Schengen Mobility",
+        pswSub: "Full European job access",
+        whyStudy: [
+          { icon: "🛡️", title: "Pay Tuition After Visa", desc: "Zero financial loss risk: pay tuition fees only after your official European visa approval." },
+          { icon: "📈", title: "~90% Visa Approval", desc: "One of the highest visa success records for Bangladeshi students in the European Schengen area." }
+        ],
+        solvency: [
+          { title: "Bank Solvency Amount", detail: "~€7,000 to €9,000 living expense proof in student or parent account." }
+        ],
+        roadmap: [
+          "Step 01: Submit academic certificates for conditional offer.",
+          "Step 02: Document apostille and legal verification.",
+          "Step 03: Visa submission at VFS.",
+          "Step 04: Pay tuition fees after visa approval and fly."
+        ],
+        faqs: [
+          { q: "Do I pay tuition before the visa?", a: "No! At our partner institutions in Greece, you pay tuition fees only after your visa is approved." }
+        ],
+        universities: [
+          {
+            id: "greece-partners",
+            name: "Athens International Partner Colleges",
+            badge: "Pay Tuition After Visa",
+            type: "Accredited Higher Education Partner",
+            tagline: "Pay tuition only after your visa is issued; prime gateway to EU shipping and tourism hospitality jobs.",
+            intakes: "October 2026, February 2027",
+            deadlines: "6 weeks prior to intake",
+            tuitionUG: "€3,500 – €6,500 / year",
+            tuitionPG: "€4,000 – €7,000 / year",
+            scholarship: "University tuition discounts based on merit",
+            workRights: "20 hrs/week legal employment",
+            entryUG: "HSC / A-Level pass | IELTS 5.0–5.5 or MOI",
+            entryPG: "Bachelor degree pass | MOI or IELTS 5.5",
+            whyStudy: [
+              "Pay tuition fees ONLY after your European visa is approved.",
+              "High visa success rate (approx 90%) for Bangladeshi students.",
+              "Full Schengen visa granting free movement across 29 European countries."
+            ],
+            costAndBank: {
+              monthlyCost: "€450 – €700 / month",
+              bankFundSingle: "~€7,000 – €9,000 living expense proof",
+              bankMaturity: "3 months bank statement",
+              familyFund: "Student or parents account"
+            },
+            careerAndPsw: "European residency; careers in Greek shipping lines, logistics, and tourism conglomerates.",
+            partTimeJobs: "20 hours per week legal employment.",
+            applicationSteps: [
+              "Submit academic certificates for conditional offer",
+              "Document apostille and legal verification",
+              "Visa submission at VFS",
+              "Pay tuition fees after visa approval"
+            ],
+            programs: [
+              { name: "BSc in Maritime Management & Shipping Logistics", level: "Bachelor (3 Yrs)", fee: "€4,500/yr" },
+              { name: "BA in International Tourism & Hospitality", level: "Bachelor (3 Yrs)", fee: "€3,800/yr" },
+              { name: "BSc in Business & Information Systems", level: "Bachelor (3 Yrs)", fee: "€3,900/yr" }
+            ]
+          }
+        ]
+      },
+
+      "germany": {
+        id: "germany",
+        code: "DE",
+        name: "Germany",
+        regionCode: "europe",
+        regionBadge: "EUROPE (SCHENGEN)",
+        tagline: "Zero Tuition Public Universities & High Tech",
+        usp: "100% Tuition-Free Public Seats | 18-Month Job Seeker Visa | Top Global Economy",
+        highlights: [
+          "100% Tuition-Free public university seats across Germany",
+          "18-Month Post-Study Work Permit across 29 EU nations",
+          "Official Blocked Account (€11,208 to €11,904) setup support"
+        ],
+        livingCost: "€850 – €1,000 / month",
+        institutionsCount: "5+ Listed",
+        heroImg: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1920&q=80",
+        pillBadge: "🇩🇪 100% Tuition-Free Public Universities",
+        subBadge: "No Tuition Fees Across All 16 German Federal States",
+        heroHeading: "Study in Germany: <span class='text-emerald-400 underline decoration-amber-400 decoration-wavy decoration-2'>Zero Tuition Fees</span> & High-Tech Careers",
+        heroDesc: "Germany offers world-leading engineering, computing, and business degrees at 100% tuition-free public universities. Benefit from 20 hours/week part-time employment, an 18-month job seeker visa, and direct pathways to EU permanent residency.",
+        tuition: "0€ (Tuition-Free)",
+        tuitionSub: "Only minor semester contribution",
+        living: "€850 – €1,000/mo",
+        livingSub: "Covered by Blocked Account",
+        work: "20 Hours / Week",
+        workSub: "120 full days / 240 half days",
+        psw: "18-Month Post Study Work",
+        pswSub: "Direct EU Blue Card pathway",
+        whyStudy: [
+          { icon: "💸", title: "100% Tuition-Free Education", desc: "Public universities in Germany charge zero tuition fees for both domestic and international students." },
+          { icon: "🏭", title: "Economic Powerhouse of Europe", desc: "Home to global industrial giants (Siemens, BMW, Bosch, SAP) offering extensive internships." }
+        ],
+        solvency: [
+          { title: "German Blocked Account (Sperrkonto)", detail: "Statutory amount of €11,208 to €11,904 deposited in verified escrow." }
+        ],
+        roadmap: [
+          "Step 01: Profile review & 13-year education equivalency check.",
+          "Step 02: Uni-Assist document submission & VPD certificate clearance.",
+          "Step 03: Official University Zulassung (Letter of Admission) received.",
+          "Step 04: Blocked Account setup & Dhaka German Embassy visa interview."
+        ],
+        faqs: [
+          { q: "Can I study in Germany tuition-free?", a: "Yes! All public universities in Germany charge 0 Euro tuition fees." }
+        ],
+        universities: [
+          {
+            id: "tum-partners",
+            name: "Technical University of Munich (TUM) & Public Partners",
+            badge: "Top 50 QS World Ranked • Public University",
+            type: "Public University",
+            tagline: "Germany's top engineering university. Zero tuition fees with world-class artificial intelligence and robotics labs.",
+            intakes: "Winter (October), Summer (April)",
+            deadlines: "July 15 for Winter | Jan 15 for Summer",
+            tuitionUG: "€0 Tuition Fee (~€150/sem contribution)",
+            tuitionPG: "€0 Tuition Fee (~€150/sem contribution)",
+            scholarship: "DAAD Merit Scholarships & Industrial Research Grants",
+            workRights: "20 Hours / Week",
+            entryUG: "13 years education (or Studienkolleg) | IELTS 6.5 or German B2",
+            entryPG: "Bachelor CGPA 3.0+/4.0 | IELTS 6.5 or German B2/C1",
+            whyStudy: [
+              "100% tuition-free higher education at a global top 50 institution.",
+              "World capital of automotive and mechanical engineering.",
+              "Direct access to paid working-student (Werkstudent) jobs paying €14–€20/hr."
+            ],
+            costAndBank: {
+              monthlyCost: "€850 – €1,050 / month",
+              bankFundSingle: "€11,208 Blocked Account (Sperrkonto)",
+              bankMaturity: "Deposited prior to visa interview",
+              familyFund: "Sponsor or self-funded blocked account"
+            },
+            careerAndPsw: "18-month job seeker visa (Aufenthaltserlaubnis zur Arbeitsplatzsuche) leading to an EU Blue Card.",
+            partTimeJobs: "120 full days or 240 half days per calendar year.",
+            applicationSteps: [
+              "VPD clearance through Uni-Assist",
+              "University direct application",
+              "Admission letter (Zulassung) issued",
+              "Blocked account activation & embassy appointment"
+            ],
+            programs: [
+              { name: "BSc in Informatics / Computer Science", level: "Bachelor (3 Yrs)", fee: "€0 Tuition" },
+              { name: "MSc in Robotics, Cognition & Intelligence", level: "Master (2 Yrs)", fee: "€0 Tuition" },
+              { name: "MSc in Mechanical & Automotive Engineering", level: "Master (2 Yrs)", fee: "€0 Tuition" }
+            ]
+          }
+        ]
+      }
+    };
+
+    let activeCountryKey = 'hungary';
+    let activeUniKey = 'metu';
+
+    // Render Level 1: Country Cards Showcase (Exact Screenshot Design)
+    function renderLevel1Cards() {
+      const container = document.getElementById('country-cards-container');
+      container.innerHTML = '';
+
+      Object.values(COUNTRIES_DB).forEach(country => {
+        const card = document.createElement('div');
+        card.className = "country-item-card bg-white rounded-3xl border border-slate-200 p-6 sm:p-7 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between hover:-translate-y-1.5 text-left";
+        card.dataset.region = country.regionCode;
+
+        let bulletsHtml = '';
+        country.highlights.forEach(h => {
+          bulletsHtml += `
+            <li class="flex items-start gap-2.5 text-xs text-slate-600 font-medium">
+              <span class="text-emerald-600 font-bold text-sm leading-none mt-0.5">✓</span>
+              <span>${h}</span>
+            </li>
+          `;
+        });
+
+        card.innerHTML = `
+          <div>
+            <!-- Top Header: Big Country Code + Region Pill Badge -->
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="text-3xl font-extrabold text-slate-900 font-heading tracking-tight">
+                ${country.code}
+              </span>
+              <span class="px-3 py-1 rounded-full text-[10px] font-extrabold tracking-wider uppercase bg-blue-50 text-blue-700 border border-blue-200">
+                ${country.regionBadge}
+              </span>
+            </div>
+
+            <!-- Country Name -->
+            <h3 class="text-2xl font-extrabold text-slate-900 font-heading mb-1 hover:text-[#006837] transition-colors cursor-pointer" onclick="openCountryLanding('${country.id}')">
+              ${country.name}
+            </h3>
+
+            <!-- Tagline -->
+            <p class="text-xs text-slate-500 font-medium mb-4">
+              ${country.tagline}
+            </p>
+
+            <!-- Star Highlight Banner (Matching Yellow/Amber box in screenshot) -->
+            <div class="p-3.5 rounded-2xl bg-[#fffbeb] border border-amber-200/80 mb-5 flex items-start gap-2.5">
+              <span class="text-amber-500 text-sm mt-0.5 flex-shrink-0">⭐</span>
+              <p class="text-xs font-bold text-amber-950 leading-snug">
+                ${country.usp}
+              </p>
+            </div>
+
+            <!-- Checkmark Bullets -->
+            <ul class="space-y-2.5 mb-6">
+              ${bulletsHtml}
+            </ul>
+          </div>
+
+          <!-- Bottom Metrics & Dark Action Button -->
+          <div class="pt-4 border-t border-slate-100 space-y-4">
+            <div class="flex items-center justify-between text-xs">
+              <div>
+                <span class="block text-[10px] uppercase font-bold text-slate-400 tracking-wider">Living Cost</span>
+                <span class="font-extrabold text-slate-800 text-xs sm:text-sm">${country.livingCost}</span>
+              </div>
+              <div class="text-right">
+                <span class="block text-[10px] uppercase font-bold text-slate-400 tracking-wider">Institutions</span>
+                <span class="font-extrabold text-[#006837] text-xs sm:text-sm">${country.institutionsCount}</span>
+              </div>
+            </div>
+
+            <button type="button" onclick="openCountryLanding('${country.id}')" class="w-full py-3.5 px-4 rounded-2xl bg-[#0f172a] hover:bg-[#006837] text-white text-xs sm:text-sm font-bold flex items-center justify-center gap-2 transition-all shadow-md group">
+              <span>Explore ${country.name} Universities</span>
+              <span class="group-hover:translate-x-1 transition-transform">›</span>
+            </button>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // Filter Level 1 Region Cards
+    function filterRegionCards(region) {
+      const cards = document.querySelectorAll('.country-item-card');
+      const buttons = document.querySelectorAll('.region-btn');
+
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-[#006837]', 'text-white', 'shadow-sm');
+        btn.classList.add('bg-white', 'text-slate-700', 'border', 'border-slate-200');
+      });
+
+      if (window.event && window.event.target) {
+        window.event.target.classList.add('bg-[#006837]', 'text-white', 'shadow-sm');
+        window.event.target.classList.remove('bg-white', 'text-slate-700', 'border');
+      }
+
+      cards.forEach(card => {
+        if (region === 'all' || card.dataset.region === region) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Open Level 2: Country Landing Page
+    function openCountryLanding(countryKey) {
+      activeCountryKey = countryKey;
+      const data = COUNTRIES_DB[countryKey];
+      if (!data) return;
+
+      // Populate Breadcrumb
+      document.getElementById('landing-breadcrumb-name').innerText = `${data.name} Study Abroad Hub`;
+
+      // Populate Quick Switcher
+      const switcherContainer = document.getElementById('landing-country-switcher');
+      switcherContainer.innerHTML = '';
+      Object.keys(COUNTRIES_DB).forEach(k => {
+        const c = COUNTRIES_DB[k];
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.onclick = () => openCountryLanding(k);
+        const isActive = (k === countryKey);
+        btn.className = `px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
+          isActive 
+            ? 'bg-[#006837] text-white shadow-sm' 
+            : 'bg-slate-100 text-slate-700 hover:bg-emerald-50 hover:text-emerald-800'
+        }`;
+        btn.innerText = `${c.name}`;
+        switcherContainer.appendChild(btn);
+      });
+
+      // Populate Hero Banner
+      document.getElementById('landing-hero-img').src = data.heroImg;
+      document.getElementById('landing-pill-badge').innerText = data.pillBadge;
+      document.getElementById('landing-sub-badge').innerText = data.subBadge;
+      document.getElementById('landing-hero-heading').innerHTML = data.heroHeading;
+      document.getElementById('landing-hero-desc').innerText = data.heroDesc;
+
+      // Populate Fast Metrics
+      document.getElementById('landing-metric-tuition').innerText = data.tuition;
+      document.getElementById('landing-metric-tuition-sub').innerText = data.tuitionSub;
+      document.getElementById('landing-metric-living').innerText = data.living;
+      document.getElementById('landing-metric-living-sub').innerText = data.livingSub;
+      document.getElementById('landing-metric-work').innerText = data.work;
+      document.getElementById('landing-metric-work-sub').innerText = data.workSub;
+      document.getElementById('landing-metric-psw').innerText = data.psw;
+      document.getElementById('landing-metric-psw-sub').innerText = data.pswSub;
+
+      // Populate Why Study
+      document.getElementById('landing-why-title').innerText = `Why Study in ${data.name}?`;
+      const whyGrid = document.getElementById('landing-why-grid');
+      whyGrid.innerHTML = '';
+      data.whyStudy.forEach(item => {
+        const div = document.createElement('div');
+        div.className = "p-5 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-emerald-500 hover:bg-emerald-50/30 transition-all";
+        div.innerHTML = `
+          <div class="text-2xl mb-2">${item.icon}</div>
+          <h4 class="font-bold text-slate-900 text-sm mb-1">${item.title}</h4>
+          <p class="text-xs text-slate-600 leading-relaxed">${item.desc}</p>
+        `;
+        whyGrid.appendChild(div);
+      });
+
+      // Populate Universities & Program Selectors
+      const uniContainer = document.getElementById('landing-universities-container');
+      uniContainer.innerHTML = '';
+      data.universities.forEach(uni => {
+        const card = document.createElement('div');
+        card.className = "border border-slate-200 rounded-3xl p-5 sm:p-7 bg-slate-50/50 hover:bg-white hover:border-emerald-500 transition-all shadow-sm space-y-4";
+        
+        let progHtml = '';
+        uni.programs.forEach(p => {
+          progHtml += `
+            <div class="p-3 bg-white rounded-xl border border-slate-200 hover:border-emerald-400 transition-all flex items-center justify-between gap-3 text-xs">
+              <div>
+                <span class="font-bold text-slate-900 block">${p.name}</span>
+                <span class="text-[11px] text-slate-500">${p.level}</span>
+              </div>
+              <div class="text-right flex items-center gap-2 flex-shrink-0">
+                <span class="font-extrabold text-emerald-800">${p.fee}</span>
+                <button type="button" onclick="openProgramDetails('${countryKey}', '${uni.id}', '${p.name}')" class="px-3 py-1.5 rounded-lg bg-emerald-100 hover:bg-emerald-200 text-emerald-900 font-bold text-[10px] transition-colors">
+                  View Details & Apply →
+                </button>
+              </div>
+            </div>
+          `;
+        });
+
+        card.innerHTML = `
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 pb-3">
+            <div>
+              <span class="text-[10px] font-extrabold uppercase tracking-wider text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded-full inline-block mb-1">
+                ${uni.badge}
+              </span>
+              <h4 class="text-lg sm:text-xl font-extrabold text-slate-900 font-heading">
+                ${uni.name}
+              </h4>
+            </div>
+            <div class="text-right">
+              <span class="text-xs font-bold text-slate-700 block">${uni.tuitionUG || uni.tuition}</span>
+              <span class="text-[10px] text-emerald-700 font-medium">${uni.scholarship}</span>
+            </div>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed">${uni.tagline}</p>
+          <div class="space-y-2 pt-1">
+            <span class="text-[11px] font-bold text-slate-700 uppercase tracking-wider block">Featured Degree Programs:</span>
+            <div class="grid grid-cols-1 gap-2">${progHtml}</div>
+          </div>
+          <div class="pt-2 text-right">
+            <button type="button" onclick="openProgramDetails('${countryKey}', '${uni.id}')" class="px-4 py-2 rounded-xl bg-[#006837] hover:bg-emerald-700 text-white font-bold text-xs transition-colors">
+              Explore All ${uni.name} Modules →
+            </button>
+          </div>
+        `;
+        uniContainer.appendChild(card);
+      });
+
+      // Populate Solvency
+      const solGrid = document.getElementById('landing-solvency-grid');
+      solGrid.innerHTML = '';
+      data.solvency.forEach(item => {
+        const div = document.createElement('div');
+        div.className = "p-4 rounded-2xl bg-slate-50 border border-slate-200/80";
+        div.innerHTML = `
+          <h4 class="font-bold text-emerald-900 mb-1 text-xs sm:text-sm">📌 ${item.title}</h4>
+          <p class="text-slate-600 text-xs leading-relaxed">${item.detail}</p>
+        `;
+        solGrid.appendChild(div);
+      });
+
+      // Populate Roadmap
+      const roadmapContainer = document.getElementById('landing-roadmap-container');
+      roadmapContainer.innerHTML = '';
+      data.roadmap.forEach((step, idx) => {
+        const div = document.createElement('div');
+        div.className = "flex items-start gap-3 p-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-xs";
+        div.innerHTML = `
+          <span class="w-6 h-6 rounded-full bg-[#006837] text-white font-bold flex items-center justify-center flex-shrink-0 text-[11px]">
+            ${idx + 1}
+          </span>
+          <span class="text-slate-800 font-medium mt-0.5 leading-relaxed">${step}</span>
+        `;
+        roadmapContainer.appendChild(div);
+      });
+
+      // Populate FAQs
+      const faqContainer = document.getElementById('landing-faq-container');
+      faqContainer.innerHTML = '';
+      data.faqs.forEach((faq, fIdx) => {
+        const div = document.createElement('div');
+        div.className = "border border-slate-200 rounded-2xl overflow-hidden bg-slate-50/50";
+        div.innerHTML = `
+          <button type="button" onclick="toggleAccordionFaq('lfaq', ${fIdx})" class="w-full p-4 text-left font-bold text-slate-900 text-xs sm:text-sm flex items-center justify-between gap-3 hover:text-emerald-800 transition-colors">
+            <span>${faq.q}</span>
+            <span id="lfaq-icon-${fIdx}" class="text-base font-mono text-emerald-700 font-bold">+</span>
+          </button>
+          <div id="lfaq-ans-${fIdx}" class="faq-answer collapsed px-4 pb-4 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 bg-white">
+            <div class="pt-3">${faq.a}</div>
+          </div>
+        `;
+        faqContainer.appendChild(div);
+      });
+
+      // Update Form Context
+      document.getElementById('landing-form-country-name').innerText = data.name;
+      if (data.universities.length > 0) {
+        document.getElementById('landing-lead-prog').value = `${data.universities[0].name} (${data.name})`;
+      }
+
+      // Transition View
+      document.getElementById('view-countries').classList.add('hidden');
+      document.getElementById('view-program-detail').classList.add('hidden');
+      document.getElementById('view-country-landing').classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Open Level 3: Subject & University Details View (The 9 Modules)
+    function openProgramDetails(countryKey, uniId, selectedProgramName = null) {
+      activeCountryKey = countryKey;
+      activeUniKey = uniId;
+
+      const country = COUNTRIES_DB[countryKey];
+      if (!country) return;
+      const uni = country.universities.find(u => u.id === uniId) || country.universities[0];
+      if (!uni) return;
+
+      // Update Breadcrumb & Header
+      document.getElementById('prog-breadcrumb-country').innerText = country.name;
+      document.getElementById('prog-breadcrumb-uni').innerText = uni.name;
+      document.getElementById('prog-header-flag').innerText = country.flag || "🎓";
+      document.getElementById('prog-header-badge').innerText = uni.badge;
+      document.getElementById('prog-header-type').innerText = uni.type;
+      document.getElementById('prog-header-title').innerText = uni.name;
+      document.getElementById('prog-header-tagline').innerText = uni.tagline || uni.highlights;
+      document.getElementById('prog-header-intakes').innerText = uni.intakes;
+      document.getElementById('prog-header-tuition').innerText = uni.tuitionUG || uni.tuition;
+      document.getElementById('prog-header-scholarship').innerText = uni.scholarship;
+
+      // Module 1: Programs
+      const mod1Container = document.getElementById('mod1-programs-container');
+      mod1Container.innerHTML = '';
+      uni.programs.forEach(prog => {
+        const item = document.createElement('div');
+        const isSelected = selectedProgramName && selectedProgramName === prog.name;
+        item.className = `p-3.5 rounded-2xl border transition-all flex items-center justify-between gap-3 text-xs ${
+          isSelected 
+            ? 'bg-emerald-50 border-emerald-500 shadow-sm' 
+            : 'bg-slate-50 border-slate-200 hover:border-emerald-400'
+        }`;
+        item.innerHTML = `
+          <div>
+            <span class="font-bold text-slate-900 block">${prog.name}</span>
+            <span class="text-[11px] text-slate-500">${prog.level}</span>
+          </div>
+          <div class="text-right flex items-center gap-2 flex-shrink-0">
+            <span class="font-extrabold text-emerald-800">${prog.fee}</span>
+            <button type="button" onclick="selectSpecificProgram('${uni.name}', '${prog.name}')" class="px-2.5 py-1 rounded-lg bg-emerald-100 hover:bg-emerald-200 text-emerald-900 font-bold text-[10px] transition-colors">
+              Select →
+            </button>
+          </div>
+        `;
+        mod1Container.appendChild(item);
+      });
+
+      // Module 2: Why Study
+      const mod2Container = document.getElementById('mod2-why-container');
+      mod2Container.innerHTML = '';
+      (uni.whyStudy || country.whyStudy.map(w => w.desc)).forEach(text => {
+        const div = document.createElement('div');
+        div.className = "flex items-start gap-2.5 p-3 rounded-2xl bg-amber-50/70 border border-amber-200/80 text-xs";
+        div.innerHTML = `<span class="text-amber-600 mt-0.5 font-bold">✓</span><span class="text-slate-800">${text}</span>`;
+        mod2Container.appendChild(div);
+      });
+
+      // Module 3: Entry Requirements
+      const mod3Container = document.getElementById('mod3-requirements-container');
+      mod3Container.innerHTML = `
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
+          <span class="font-bold text-slate-800 uppercase text-[10px] block mb-1">Undergraduate / Bachelor:</span>
+          <p class="text-slate-600 leading-relaxed">${uni.entryUG}</p>
+        </div>
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
+          <span class="font-bold text-slate-800 uppercase text-[10px] block mb-1">Postgraduate / Master's:</span>
+          <p class="text-slate-600 leading-relaxed">${uni.entryPG}</p>
+        </div>
+      `;
+
+      // Module 4: Tuition Fees
+      const mod4Container = document.getElementById('mod4-tuition-container');
+      mod4Container.innerHTML = `
+        <div class="p-4 rounded-2xl bg-emerald-50/60 border border-emerald-200">
+          <span class="font-bold text-emerald-900 uppercase text-[10px] block mb-1">Undergraduate Yearly Tuition:</span>
+          <span class="text-base font-extrabold text-slate-900">${uni.tuitionUG || uni.tuition}</span>
+        </div>
+        <div class="p-4 rounded-2xl bg-emerald-50/60 border border-emerald-200">
+          <span class="font-bold text-emerald-900 uppercase text-[10px] block mb-1">Postgraduate Yearly Tuition:</span>
+          <span class="text-base font-extrabold text-slate-900">${uni.tuitionPG || uni.tuition}</span>
+        </div>
+      `;
+
+      // Module 5: Solvency
+      const mod5Container = document.getElementById('mod5-solvency-container');
+      const costBank = uni.costAndBank || {
+        monthlyCost: country.livingCost,
+        bankFundSingle: "Embassy compliance standard",
+        bankMaturity: "3 to 6 months maturity",
+        familyFund: "Sponsor or parents statement"
+      };
+      mod5Container.innerHTML = `
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
+          <span class="font-bold text-slate-400 uppercase text-[10px] block">Monthly Living Expense:</span>
+          <span class="text-sm font-bold text-slate-900 mt-1 block">${costBank.monthlyCost}</span>
+        </div>
+        <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200">
+          <span class="font-bold text-slate-400 uppercase text-[10px] block">Bank Solvency Fund:</span>
+          <span class="text-sm font-bold text-emerald-800 mt-1 block">${costBank.bankFundSingle}</span>
+          <span class="text-[10px] text-slate-500 block mt-0.5">Maturity: ${costBank.bankMaturity}</span>
+        </div>
+      `;
+
+      // Module 6: Scholarships
+      const mod6Container = document.getElementById('mod6-scholarship-container');
+      mod6Container.innerHTML = `
+        <div class="font-bold text-slate-900 mb-1 text-sm">🏆 ${uni.scholarship}</div>
+        <p class="text-slate-600 leading-relaxed">Study First Info directly negotiates and profiles applicants for maximum scholarship eligibility, early bird concessions, and institutional grant packages.</p>
+      `;
+
+      // Module 7: Career & PSW
+      const mod7Container = document.getElementById('mod7-career-container');
+      mod7Container.innerHTML = `<p>${uni.careerAndPsw}</p>`;
+
+      // Module 8: Part-time Jobs
+      const mod8Container = document.getElementById('mod8-parttime-container');
+      mod8Container.innerHTML = `
+        <div class="text-2xl">💼</div>
+        <div>
+          <span class="font-bold text-teal-900 block text-sm">${uni.partTimeJobs || uni.workRights}</span>
+          <span class="text-teal-700 text-[11px] block mt-0.5">Students work in retail, hospitality, customer service, and university labs to cover living costs.</span>
+        </div>
+      `;
+
+      // Module 9: Application Process
+      const mod9Container = document.getElementById('mod9-steps-container');
+      mod9Container.innerHTML = '';
+      (uni.applicationSteps || country.roadmap).forEach((step, sIdx) => {
+        const div = document.createElement('div');
+        div.className = "flex items-start gap-2.5 p-3 rounded-2xl bg-slate-50 border border-slate-200 text-xs";
+        div.innerHTML = `
+          <span class="w-5 h-5 rounded-full bg-[#006837] text-white font-bold flex items-center justify-center flex-shrink-0 text-[10px]">
+            ${sIdx + 1}
+          </span>
+          <span class="text-slate-800 font-medium mt-0.5 leading-relaxed">${step}</span>
+        `;
+        mod9Container.appendChild(div);
+      });
+
+      // Update Form Context for Level 3
+      document.getElementById('prog-form-uni-title').innerText = uni.name;
+      document.getElementById('prog-lead-target').value = selectedProgramName 
+        ? `${uni.name} (${selectedProgramName})` 
+        : `${uni.name} (${uni.programs[0]?.name || 'All Degrees'})`;
+
+      // Transition View
+      document.getElementById('view-countries').classList.add('hidden');
+      document.getElementById('view-country-landing').classList.add('hidden');
+      document.getElementById('view-program-detail').classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Program selection action inside Level 3
+    function selectSpecificProgram(uniName, progName) {
+      document.getElementById('prog-lead-target').value = `${uniName} (${progName})`;
+      showToast("Program Selected", `Selected: ${progName}. Fill out your phone and GPA to complete evaluation.`);
+      document.getElementById('prog-lead-name').focus();
+    }
+
+    // Navigation back to Level 1
+    function navigateToLevel1() {
+      document.getElementById('view-country-landing').classList.add('hidden');
+      document.getElementById('view-program-detail').classList.add('hidden');
+      document.getElementById('view-countries').classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Navigation back to Level 2
+    function backToCountryLanding() {
+      openCountryLanding(activeCountryKey);
+    }
+
+    // Toggle GPA Scale between 5.0 (HSC) and 4.0 (Bachelor)
+    function setGpaScale(prefix, scale) {
+      const btn5 = document.getElementById(`${prefix}-scale-5`);
+      const btn4 = document.getElementById(`${prefix}-scale-4`);
+      const gpaInput = document.getElementById(`${prefix}-lead-gpa`);
+
+      if (scale === 5) {
+        btn5.className = "px-2 py-0.5 rounded bg-emerald-600 text-white transition-all";
+        btn4.className = "px-2 py-0.5 rounded text-slate-600 hover:text-slate-900 transition-all";
+        gpaInput.placeholder = "e.g. 4.75 (out of 5.00)";
+        gpaInput.max = "5.00";
+      } else {
+        btn4.className = "px-2 py-0.5 rounded bg-emerald-600 text-white transition-all";
+        btn5.className = "px-2 py-0.5 rounded text-slate-600 hover:text-slate-900 transition-all";
+        gpaInput.placeholder = "e.g. 3.40 (out of 4.00)";
+        gpaInput.max = "4.00";
+      }
+    }
+
+    // Toggle Accordion FAQ
+    function toggleAccordionFaq(prefix, index) {
+      const answer = document.getElementById(`${prefix}-ans-${index}`);
+      const icon = document.getElementById(`${prefix}-icon-${index}`);
+      if (!answer || !icon) return;
+
+      if (answer.classList.contains('collapsed')) {
+        answer.classList.remove('collapsed');
+        answer.classList.add('expanded');
+        icon.innerText = '−';
+      } else {
+        answer.classList.remove('expanded');
+        answer.classList.add('collapsed');
+        icon.innerText = '+';
+      }
+    }
+
+    // Scroll to Consultation Desk from Hero
+    function scrollToHeroLeadForm() {
+      openCountryLanding(activeCountryKey);
+      setTimeout(() => {
+        const formEl = document.getElementById('landing-lead-form');
+        if (formEl) {
+          formEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          document.getElementById('landing-lead-name')?.focus();
+        }
+      }, 350);
+    }
+
+    // Handle Form Lead Submissions
+    function handleLeadSubmit(e, type) {
+      e.preventDefault();
+      const name = document.getElementById(`${type}-lead-name`).value;
+      const phone = document.getElementById(`${type}-lead-phone`).value;
+      const branch = document.getElementById(`${type}-lead-branch`).value;
+
+      showToast(
+        "Profile Submitted Successfully!",
+        `Thank you ${name}! Senior counselor from ${branch} will contact you on WhatsApp (${phone}) within 2 hours.`
+      );
+    }
+
+    // Custom Toast Notification (Replaces native browser alert)
+    function showToast(title, message) {
+      const toast = document.getElementById('toast-box');
+      document.getElementById('toast-title').innerText = title;
+      document.getElementById('toast-desc').innerText = message;
+      toast.classList.remove('hidden');
+      setTimeout(() => {
+        toast.classList.add('hidden');
+      }, 5000);
+    }
+
+    // Initialize View on Page Load
+    window.onload = function() {
+      renderLevel1Cards();
+    };
+  </script>
+</body>
+</html>
