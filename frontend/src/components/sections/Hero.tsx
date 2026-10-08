@@ -344,7 +344,7 @@ export default function Hero() {
             </div>
 
             {/* 3 Proof Stat Cards */}
-            <div className="grid grid-cols-3 gap-3 sm:gap-4 max-w-2xl">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 max-w-2xl">
               
               {/* Card 1: Placed */}
               <div className="bg-white/95 rounded-2xl p-3.5 sm:p-4 border border-slate-200/90 shadow-sm hover:shadow-md transition-shadow">
