@@ -262,7 +262,7 @@ export default function RegionGrid() {
             {filteredCards.map((card) => (
               <div
                 key={card.id}
-                className="snap-start w-[320px] sm:w-[360px] md:w-[380px] lg:w-[400px] shrink-0 bg-gradient-to-b from-[#0a2f21] via-[#051c14] to-[#02100a] border border-emerald-500/20 hover:border-emerald-400/80 rounded-3xl p-6 sm:p-7 flex flex-col justify-between shadow-[0_12px_36px_rgba(0,0,0,0.22)] hover:shadow-[0_20px_50px_rgba(16,185,129,0.2)] hover:-translate-y-2 transition-all duration-300 relative overflow-hidden text-white group"
+                className="snap-start w-[85vw] sm:w-[360px] md:w-[380px] lg:w-[400px] shrink-0 bg-gradient-to-b from-[#0a2f21] via-[#051c14] to-[#02100a] border border-emerald-500/20 hover:border-emerald-400/80 rounded-3xl p-6 sm:p-7 flex flex-col justify-between shadow-[0_12px_36px_rgba(0,0,0,0.22)] hover:shadow-[0_20px_50px_rgba(16,185,129,0.2)] hover:-translate-y-2 transition-all duration-300 relative overflow-hidden text-white group"
               >
                 {/* Metallic top edge highlight */}
                 <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-400/50 to-transparent" />

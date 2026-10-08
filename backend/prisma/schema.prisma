@@ -121,6 +121,13 @@ model Appointment {
 model Lead {
   id                 String   @id @default(uuid())
   userId             String?  // Link if registered
+  name               String?
+  email              String?
+  phone              String?
+  studyLevel         String?
+  academicScore      String?
+  englishScore       String?
+  budget             String?
   source             String   @default("WEBSITE")
   preferredCountry   String?
   recommendedCountry String?

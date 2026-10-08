@@ -86,7 +86,7 @@ export default function RegisterForm({ onSwitchToLogin }: { onSwitchToLogin: () 
       )}
 
       <form onSubmit={handleSubmit} className="space-y-3.5">
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div>
             <label className="block text-[11px] font-bold text-gray-700 mb-1">First Name</label>
             <input 
@@ -111,7 +111,7 @@ export default function RegisterForm({ onSwitchToLogin }: { onSwitchToLogin: () 
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div>
             <label className="block text-[11px] font-bold text-gray-700 mb-1">Email</label>
             <input 
@@ -150,7 +150,7 @@ export default function RegisterForm({ onSwitchToLogin }: { onSwitchToLogin: () 
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div>
             <label className="block text-[11px] font-bold text-gray-700 mb-1">Target Country</label>
             <select

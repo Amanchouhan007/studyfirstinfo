@@ -1,4 +1,4 @@
-export default function AcademicInfoCard() {
+export default function AcademicInfoCard({ profile }: { profile?: any }) {
   return (
     <div className="bg-white border border-gray-100 rounded-2xl p-6 shadow-sm mb-8">
       <h2 className="text-xl font-bold text-primary mb-6">Academic Background</h2>
@@ -9,8 +9,8 @@ export default function AcademicInfoCard() {
           <div className="absolute -left-[45px] w-6 h-6 rounded-full bg-accent text-white flex items-center justify-center font-bold text-xs border-4 border-white shadow-sm">
             3
           </div>
-          <h3 className="font-bold text-primary text-lg">Undergraduate: BSc Computer Science</h3>
-          <p className="text-gray-500 font-medium text-sm">University: BUET | CGPA: <span className="font-bold text-accent">3.85/4.00</span></p>
+          <h3 className="font-bold text-primary text-lg">Undergraduate: BSc</h3>
+          <p className="text-gray-500 font-medium text-sm">CGPA: <span className="font-bold text-accent">{profile?.academicScore || '3.85'}/4.00</span></p>
           <p className="text-gray-400 text-xs font-semibold mt-1">Graduation: 2025</p>
         </div>
 
