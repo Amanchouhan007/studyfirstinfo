@@ -21,7 +21,7 @@ export default function PromoPopup({
 
   useEffect(() => {
     // Check if the popup has been closed in this session
-    const hasClosed = sessionStorage.getItem('promoPopupClosed');
+    const hasClosed = localStorage.getItem('promoPopupClosed');
     if (!hasClosed) {
       // Delay showing the popup to not overwhelm the user immediately
       const timer = setTimeout(() => {
@@ -33,7 +33,7 @@ export default function PromoPopup({
 
   const handleClose = () => {
     setIsOpen(false);
-    sessionStorage.setItem('promoPopupClosed', 'true');
+    localStorage.setItem('promoPopupClosed', 'true');
   };
 
   if (!isOpen) return null;
@@ -47,7 +47,7 @@ export default function PromoPopup({
       >
         <button 
           onClick={handleClose}
-          className="absolute top-3 right-3 text-gray-400 hover:text-gray-600 bg-gray-50 hover:bg-gray-100 rounded-full p-1.5 transition-colors z-10 focus:outline-none focus:ring-2 focus:ring-accent"
+          className="absolute top-3 right-3 text-gray-400 hover:text-gray-600 bg-gray-50 hover:bg-gray-100 rounded-full p-1.5 transition-colors z-[50] focus:outline-none focus:ring-2 focus:ring-accent"
           aria-label="Close promotion"
         >
           <X size={16} />
