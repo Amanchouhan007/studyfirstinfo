@@ -347,25 +347,25 @@ export default function CountriesPage() {
                   onClick={() => setActiveRegion('europe')} 
                   className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${activeRegion === 'europe' ? 'bg-[#006837] text-white shadow-sm' : 'bg-white text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 border border-slate-200'}`}
                 >
-                  ðŸ‡ªðŸ‡º Schengen Europe
+                  🇪🇺 Schengen Europe
                 </button>
                 <button 
                   onClick={() => setActiveRegion('uk')} 
                   className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${activeRegion === 'uk' ? 'bg-[#006837] text-white shadow-sm' : 'bg-white text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 border border-slate-200'}`}
                 >
-                  ðŸ‡¬ðŸ‡§ United Kingdom
+                  🇬🇧 United Kingdom
                 </button>
                 <button 
                   onClick={() => setActiveRegion('oceania')} 
                   className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${activeRegion === 'oceania' ? 'bg-[#006837] text-white shadow-sm' : 'bg-white text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 border border-slate-200'}`}
                 >
-                  ðŸ‡³ðŸ‡¿ New Zealand
+                  🇳🇿 New Zealand
                 </button>
                 <button 
                   onClick={() => setActiveRegion('asia')} 
                   className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${activeRegion === 'asia' ? 'bg-[#006837] text-white shadow-sm' : 'bg-white text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 border border-slate-200'}`}
                 >
-                  ðŸ‡²ðŸ‡¾ Malaysia &amp; Asia
+                  🇲🇾 Malaysia &amp; Asia
                 </button>
               </div>
             </div>
@@ -575,7 +575,7 @@ export default function CountriesPage() {
                 <section className="bg-white rounded-3xl p-6 sm:p-9 border border-slate-200 shadow-sm space-y-6">
                   <div className="flex items-center gap-3 border-b border-slate-200 pb-4">
                     <span className="w-10 h-10 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-xl font-bold">
-                      ðŸŒŸ
+                      🌟
                     </span>
                     <div>
                       <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900">
@@ -602,7 +602,7 @@ export default function CountriesPage() {
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 pb-4">
                     <div className="flex items-center gap-3">
                       <span className="w-10 h-10 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-xl font-bold">
-                        ðŸ›ï¸
+                        🏛️
                       </span>
                       <div>
                         <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900">
@@ -674,7 +674,7 @@ export default function CountriesPage() {
                 <section className="bg-white rounded-3xl p-6 sm:p-9 border border-slate-200 shadow-sm space-y-6">
                   <div className="flex items-center gap-3 border-b border-slate-200 pb-4">
                     <span className="w-10 h-10 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-xl font-bold">
-                      ðŸ’¶
+                      💵
                     </span>
                     <div>
                       <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900">
@@ -697,7 +697,7 @@ export default function CountriesPage() {
                 <section className="bg-white rounded-3xl p-6 sm:p-9 border border-slate-200 shadow-sm space-y-6">
                   <div className="flex items-center gap-3 border-b border-slate-200 pb-4">
                     <span className="w-10 h-10 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center text-xl font-bold">
-                      ðŸš€
+                      🚀
                     </span>
                     <div>
                       <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900">

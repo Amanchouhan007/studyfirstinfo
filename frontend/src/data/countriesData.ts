@@ -99,7 +99,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
   "new-zealand": {
     id: "new-zealand",
     code: "NZ",
-    flag: "ðŸ‡³ðŸ‡¿",
+    flag: "🇳🇿",
     name: "New Zealand",
     regionCode: "oceania",
     regionBadge: "OCEANIA",
@@ -113,7 +113,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
     livingCost: "NZ$ 1,200 â€“ NZ$ 1,800 / month",
     institutionsCount: "8+ Listed",
     heroImg: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1920&q=80",
-    pillBadge: "ðŸ‡³ðŸ‡¿ Family-Friendly Study Hub",
+    pillBadge: "🇳🇿 Family-Friendly Study Hub",
     subBadge: "Pay Tuition After Visa AIP â€¢ Spouse Full-Time Work Rights",
     heroHeading: "Study in New Zealand: Pay Fees After Visa & Spouse Rights",
     heroDesc: "Zero upfront tuition risk: pay university fees only after receiving official Approval in Principle (AIP) from Immigration New Zealand. Accompanying spouses receive full-time open work permits, and dependent children study in New Zealand domestic public schools completely free.",
@@ -126,10 +126,10 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
     psw: "Up to 3-Year Open PSW",
     pswSub: "Direct Skilled Migrant PR routes",
     whyStudy: [
-      { icon: "ðŸ›¡ï¸", title: "Pay Tuition After Visa (AIP)", desc: "You do not transfer tuition fees until Immigration New Zealand issues official Approval in Principle confirming visa approval." },
-      { icon: "ðŸ‘¨â€ðŸ‘©â€ðŸ‘§", title: "Spouse Full-Time Work Rights", desc: "Spouses receive open work permits with no hourly restrictions, and children receive free domestic schooling." },
-      { icon: "ðŸ“ˆ", title: "Up to 3-Year Open PSW", desc: "Graduates qualify for up to 3 years of post-study work rights with clear permanent residency points under the Green List." },
-      { icon: "ðŸ’°", title: "Savings & FDR Accepted", desc: "Both Savings and Fixed Deposit (FDR) accounts are accepted with 4 to 6 months of maturity." }
+      { icon: "🛡️", title: "Pay Tuition After Visa (AIP)", desc: "You do not transfer tuition fees until Immigration New Zealand issues official Approval in Principle confirming visa approval." },
+      { icon: "👨‍👩‍👧", title: "Spouse Full-Time Work Rights", desc: "Spouses receive open work permits with no hourly restrictions, and children receive free domestic schooling." },
+      { icon: "📈", title: "Up to 3-Year Open PSW", desc: "Graduates qualify for up to 3 years of post-study work rights with clear permanent residency points under the Green List." },
+      { icon: "💰", title: "Savings & FDR Accepted", desc: "Both Savings and Fixed Deposit (FDR) accounts are accepted with 4 to 6 months of maturity." }
     ],
     solvency: [
       { title: "Bank Solvency Requirement", detail: "Bachelor: ~70 Lac to 1 Crore BDT | Master: ~60 to 80 Lac BDT | Spouse/Child: >20 Lac BDT." },
@@ -243,7 +243,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
   "hungary": {
     id: "hungary",
     code: "HU",
-    flag: "ðŸ‡­ðŸ‡º",
+    flag: "🇭🇺",
     name: "Hungary",
     regionCode: "europe",
     regionBadge: "EUROPE (SCHENGEN)",
@@ -257,7 +257,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
     livingCost: "â‚¬400 â€“ â‚¬700 / month",
     institutionsCount: "10+ Listed",
     heroImg: "https://images.unsplash.com/photo-1549877452-9c387954fbc2?auto=format&fit=crop&w=1920&q=80",
-    pillBadge: "ðŸ‡­ðŸ‡º Central European Schengen Hub",
+    pillBadge: "🇭🇺 Central European Schengen Hub",
     subBadge: "Direct Dhaka Embassy File Submission (No India Trip)",
     heroHeading: "Study in Hungary: 100% Scholarships & Direct Dhaka Visa",
     heroDesc: "Over 500+ successful Hungary student visas handled by Study First Info Ltd. Enjoy 100% tuition coverage with Stipendium Hungaricum, free borderless mobility across 29 Schengen countries, and direct Dhaka embassy interviews without traveling to India.",
@@ -270,10 +270,10 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
     psw: "1.5 â€“ 2 Years PSW",
     pswSub: "Schengen Job Seeker TRP",
     whyStudy: [
-      { icon: "ðŸ›ï¸", title: "Direct Dhaka Embassy", desc: "Submit your student visa file directly at the Embassy of Hungary in Dhaka. Zero third-country travel to New Delhi required!" },
-      { icon: "ðŸŽ“", title: "100% Full-Ride Scholarship", desc: "Stipendium Hungaricum covers 100% tuition fees, free dormitory accommodation, monthly stipends, and medical insurance." },
-      { icon: "ðŸ“œ", title: "MOI English Waiver", desc: "Accepts Medium of Instruction (MOI) certificates from accredited Bangladeshi universities without requiring IELTS for eligible degrees." },
-      { icon: "ðŸŒ", title: "29-Country Schengen Travel", desc: "Your Hungarian student residence permit gives you complete borderless mobility and legal part-time work rights across the Schengen zone." }
+      { icon: "🏛️", title: "Direct Dhaka Embassy", desc: "Submit your student visa file directly at the Embassy of Hungary in Dhaka. Zero third-country travel to New Delhi required!" },
+      { icon: "🎓", title: "100% Full-Ride Scholarship", desc: "Stipendium Hungaricum covers 100% tuition fees, free dormitory accommodation, monthly stipends, and medical insurance." },
+      { icon: "📜", title: "MOI English Waiver", desc: "Accepts Medium of Instruction (MOI) certificates from accredited Bangladeshi universities without requiring IELTS for eligible degrees." },
+      { icon: "🌍", title: "29-Country Schengen Travel", desc: "Your Hungarian student residence permit gives you complete borderless mobility and legal part-time work rights across the Schengen zone." }
     ],
     solvency: [
       { title: "Embassy Living Solvency Amount", detail: "~â‚¬10,000 to â‚¬12,000 proof in student or legal sponsor account." },
@@ -387,7 +387,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
   "united-kingdom": {
     id: "united-kingdom",
     code: "GB",
-    flag: "ðŸ‡¬ðŸ‡§",
+    flag: "🇬🇧",
     name: "United Kingdom",
     regionCode: "uk",
     regionBadge: "UNITED KINGDOM",
@@ -401,7 +401,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
     livingCost: "Â£800 â€“ Â£1,200 / month outside London",
     institutionsCount: "8+ Listed",
     heroImg: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1920&q=80",
-    pillBadge: "ðŸ‡¬ðŸ‡§ 1-Year Fast-Track Masters",
+    pillBadge: "🇬🇧 1-Year Fast-Track Masters",
     subBadge: "Up to Â£10,000 Scholarships â€¢ 2-Year Graduate Route PSW",
     heroHeading: "Study in the UK: 1-Year Masters & Â£10k Grants",
     heroDesc: "A 1-Year Master's degree in the UK saves a full year of living and tuition expenses while unlocking the 2-Year Graduate Route Post-Study Work Permit. Enjoy Â£3,000 to Â£10,000 merit scholarships and MOI waivers from 28+ Bangladeshi universities.",
@@ -415,8 +415,8 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
     pswSub: "Post-Study Work Permit (PSW)",
     whyStudy: [
       { icon: "â±ï¸", title: "1-Year Fast Master's Degree", desc: "Graduate in just 12 months, saving a full year of tuition and living expenses compared to 2-year programs elsewhere." },
-      { icon: "ðŸ“œ", title: "MOI Waiver from 28 Unis", desc: "Graduates from 28+ leading private and public Bangladeshi universities can waive IELTS with an official MOI certificate." },
-      { icon: "ðŸ’¼", title: "2-Year Post-Study Work", desc: "Qualify for the 2-Year Graduate Route PSW allowing you to work full-time in any corporate sector across the UK." }
+      { icon: "📜", title: "MOI Waiver from 28 Unis", desc: "Graduates from 28+ leading private and public Bangladeshi universities can waive IELTS with an official MOI certificate." },
+      { icon: "💼", title: "2-Year Post-Study Work", desc: "Qualify for the 2-Year Graduate Route PSW allowing you to work full-time in any corporate sector across the UK." }
     ],
     solvency: [
       { title: "UKVI 28-Day Bank Rule", detail: "Tuition balance + living expenses held for 28 consecutive days." },
@@ -522,7 +522,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
   "malaysia": {
     id: "malaysia",
     code: "MY",
-    flag: "ðŸ‡²ðŸ‡¾",
+    flag: "🇲🇾",
     name: "Malaysia",
     regionCode: "asia",
     regionBadge: "SOUTHEAST ASIA",
@@ -536,7 +536,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
     livingCost: "RM 1,200 â€“ RM 2,000 / month",
     institutionsCount: "6+ Listed",
     heroImg: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1920&q=80",
-    pillBadge: "ðŸ‡²ðŸ‡¾ Top ASEAN Higher Education Hub",
+    pillBadge: "🇲🇾 Top ASEAN Higher Education Hub",
     subBadge: "100% Medical Waivers â€¢ MILA 50% Flat â€¢ UniSZA ~à§³5.5 Lakh",
     heroHeading: "Study in Malaysia: 100% Scholarships & Fast EMGS",
     heroDesc: "Earn accredited UK and Australian dual degrees at 70% lower budgets. Benefit from fast 3 to 4 week EMGS visa clearance, 100% tuition-free healthcare scholarships, and public university fees starting from only ~à§³5.5 Lakh BDT for the first year.",
@@ -549,9 +549,9 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
     psw: "Fast eVAL Clearance",
     pswSub: "3 to 4 week processing",
     whyStudy: [
-      { icon: "ðŸ¥", title: "100% Medical & Healthcare Quota", desc: "Zero tuition fees for Bachelor, Master & PhD in Nursing, Physiotherapy, Pharmacy, and MBA Healthcare Management." },
-      { icon: "ðŸ›ï¸", title: "UniSZA Public University Partner", desc: "Top 10 public university in Malaysia with total first-year official expenses of only ~à§³5.5 Lakh BDT." },
-      { icon: "ðŸŽ“", title: "MILA 50% Flat Scholarship", desc: "Guaranteed 50% flat discount on entire course fees across all undergraduate and postgraduate degrees." }
+      { icon: "🏥", title: "100% Medical & Healthcare Quota", desc: "Zero tuition fees for Bachelor, Master & PhD in Nursing, Physiotherapy, Pharmacy, and MBA Healthcare Management." },
+      { icon: "🏛️", title: "UniSZA Public University Partner", desc: "Top 10 public university in Malaysia with total first-year official expenses of only ~à§³5.5 Lakh BDT." },
+      { icon: "🎓", title: "MILA 50% Flat Scholarship", desc: "Guaranteed 50% flat discount on entire course fees across all undergraduate and postgraduate degrees." }
     ],
     solvency: [
       { title: "Bank Statement Requirement", detail: "Very flexible: ~à§³5 to à§³7 Lakh BDT proof of funds in student or parent account." },
@@ -654,7 +654,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
   "lithuania": {
     id: "lithuania",
     code: "LT",
-    flag: "ðŸ‡±ðŸ‡¹",
+    flag: "🇱🇹",
     name: "Lithuania",
     regionCode: "europe",
     regionBadge: "EUROPE (SCHENGEN)",
@@ -668,7 +668,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
     livingCost: "â‚¬400 â€“ â‚¬700 / month",
     institutionsCount: "7+ Listed",
     heroImg: "https://images.unsplash.com/photo-1549877452-9c387954fbc2?auto=format&fit=crop&w=1920&q=80",
-    pillBadge: "ðŸ‡±ðŸ‡¹ Affordable Schengen Destination",
+    pillBadge: "🇱🇹 Affordable Schengen Destination",
     subBadge: "Tuition from â‚¬3,500/Yr â€¢ European TRP Residence Permit",
     heroHeading: "Study in Lithuania: Affordable Tuition & Full Schengen Rights",
     heroDesc: "Study in the vibrant Baltic tech and FinTech hub of Vilnius and Kaunas. Complete European Union accredited degrees starting from only â‚¬3,500 per year with legal 20 hours/week work rights and 29-country Schengen mobility.",
@@ -681,8 +681,8 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
     psw: "1-Year Job Seeker TRP",
     pswSub: "EU residence extension",
     whyStudy: [
-      { icon: "ðŸ’¶", title: "Low Tuition Rates", desc: "European Union recognized bachelor degrees starting from only â‚¬3,500 to â‚¬4,500 per year." },
-      { icon: "ðŸŒ", title: "Schengen TRP Card", desc: "Temporary Residence Permit granting complete borderless mobility across 29 Schengen countries." }
+      { icon: "💵", title: "Low Tuition Rates", desc: "European Union recognized bachelor degrees starting from only â‚¬3,500 to â‚¬4,500 per year." },
+      { icon: "🌍", title: "Schengen TRP Card", desc: "Temporary Residence Permit granting complete borderless mobility across 29 Schengen countries." }
     ],
     solvency: [
       { title: "Bank Solvency Proof", detail: "Proof of ~â‚¬7,000 to â‚¬9,000 in student or sponsor account." }
@@ -741,7 +741,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
   "cyprus": {
     id: "cyprus",
     code: "CY",
-    flag: "ðŸ‡¨ðŸ‡¾",
+    flag: "🇨🇾",
     name: "Cyprus",
     regionCode: "europe",
     regionBadge: "MEDITERRANEAN EUROPE",
@@ -755,7 +755,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
     livingCost: "â‚¬350 â€“ â‚¬550 / month",
     institutionsCount: "4+ Listed",
     heroImg: "https://images.unsplash.com/photo-1584646098378-0874589d76b1?auto=format&fit=crop&w=1920&q=80",
-    pillBadge: "ðŸ‡¨ðŸ‡¾ Mediterranean Low Budget Hub",
+    pillBadge: "🇨🇾 Mediterranean Low Budget Hub",
     subBadge: "Deposit Only â‚¬3,400 (~à§³4.5 Lakh BDT) â€¢ 43% Flat Waiver",
     heroHeading: "Study in Cyprus: 43% Flat Waiver & Low Deposit",
     heroDesc: "Study First Info holds a direct institutional contract with Cyprus International University (CIU). Fly to Europe with an initial deposit of only â‚¬3,400 (~4.5 Lakh BDT), guaranteed 43% flat tuition discounts, and IELTS 5.0 or MOI waivers.",
@@ -768,7 +768,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
     psw: "Credit Mobility",
     pswSub: "Direct transfer to UK & Europe",
     whyStudy: [
-      { icon: "ðŸ’°", title: "43% Flat Tuition Scholarship", desc: "Exclusive direct contract with Cyprus International University saving nearly ~â‚¬4,300 across your entire degree." },
+      { icon: "💰", title: "43% Flat Tuition Scholarship", desc: "Exclusive direct contract with Cyprus International University saving nearly ~â‚¬4,300 across your entire degree." },
       { icon: "âœˆï¸", title: "Lowest Initial Deposit", desc: "Start your file and fly with an initial deposit of only â‚¬3,400 (~4.5 Lakh BDT). Pay remaining fees in easy installments." }
     ],
     solvency: [
@@ -829,7 +829,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
   "greece": {
     id: "greece",
     code: "GR",
-    flag: "ðŸ‡¬ðŸ‡·",
+    flag: "🇬🇷",
     name: "Greece",
     regionCode: "europe",
     regionBadge: "EUROPE (SCHENGEN)",
@@ -843,7 +843,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
     livingCost: "â‚¬450 â€“ â‚¬700 / month",
     institutionsCount: "3+ Listed",
     heroImg: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1920&q=80",
-    pillBadge: "ðŸ‡¬ðŸ‡· Pay Tuition After Visa Hub",
+    pillBadge: "🇬🇷 Pay Tuition After Visa Hub",
     subBadge: "90% Visa Ratio â€¢ Pay Fees After Visa Confirmation",
     heroHeading: "Study in Greece: Pay Fees After Visa & Schengen Rights",
     heroDesc: "Study in Greece with minimal financial risk: pay university tuition fees strictly after your Schengen visa is confirmed. Enjoy an exceptional 90% visa approval track record and complete borderless travel throughout 29 Schengen states.",
@@ -856,8 +856,8 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
     psw: "Schengen Mobility",
     pswSub: "Full European job access",
     whyStudy: [
-      { icon: "ðŸ›¡ï¸", title: "Pay Tuition After Visa", desc: "Zero financial loss risk: pay tuition fees only after your official European visa approval." },
-      { icon: "ðŸ“ˆ", title: "~90% Visa Approval", desc: "One of the highest visa success records for Bangladeshi students in the European Schengen area." }
+      { icon: "🛡️", title: "Pay Tuition After Visa", desc: "Zero financial loss risk: pay tuition fees only after your official European visa approval." },
+      { icon: "📈", title: "~90% Visa Approval", desc: "One of the highest visa success records for Bangladeshi students in the European Schengen area." }
     ],
     solvency: [
       { title: "Bank Solvency Amount", detail: "~â‚¬7,000 to â‚¬9,000 living expense proof in student or parent account." }
@@ -917,7 +917,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
   "germany": {
     id: "germany",
     code: "DE",
-    flag: "ðŸ‡©ðŸ‡ª",
+    flag: "🇩🇪",
     name: "Germany",
     regionCode: "europe",
     regionBadge: "EUROPE (SCHENGEN)",
@@ -931,7 +931,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
     livingCost: "â‚¬850 â€“ â‚¬1,000 / month",
     institutionsCount: "5+ Listed",
     heroImg: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1920&q=80",
-    pillBadge: "ðŸ‡©ðŸ‡ª 100% Tuition-Free Public Universities",
+    pillBadge: "🇩🇪 100% Tuition-Free Public Universities",
     subBadge: "No Tuition Fees Across All 16 German Federal States",
     heroHeading: "Study in Germany: Zero Tuition Fees & High-Tech Careers",
     heroDesc: "Germany offers world-leading engineering, computing, and business degrees at 100% tuition-free public universities. Benefit from 20 hours/week part-time employment, an 18-month job seeker visa, and direct pathways to EU permanent residency.",
@@ -944,8 +944,8 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
     psw: "18-Month Post Study Work",
     pswSub: "Direct EU Blue Card pathway",
     whyStudy: [
-      { icon: "ðŸ’¸", title: "100% Tuition-Free Education", desc: "Public universities in Germany charge zero tuition fees for both domestic and international students." },
-      { icon: "ðŸ­", title: "Economic Powerhouse of Europe", desc: "Home to global industrial giants (Siemens, BMW, Bosch, SAP) offering extensive internships." }
+      { icon: "💸", title: "100% Tuition-Free Education", desc: "Public universities in Germany charge zero tuition fees for both domestic and international students." },
+      { icon: "🏭", title: "Economic Powerhouse of Europe", desc: "Home to global industrial giants (Siemens, BMW, Bosch, SAP) offering extensive internships." }
     ],
     solvency: [
       { title: "German Blocked Account (Sperrkonto)", detail: "Statutory amount of â‚¬11,208 to â‚¬11,904 deposited in verified escrow." }
@@ -1005,7 +1005,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
   "china": {
     id: "china",
     code: "CN",
-    flag: "ðŸ‡¨ðŸ‡³",
+    flag: "🇨🇳",
     name: "China",
     regionCode: "asia",
     regionBadge: "EAST ASIA",
@@ -1019,7 +1019,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
     livingCost: "2,000 â€“ 3,500 RMB / month",
     institutionsCount: "15+ Listed",
     heroImg: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=1920&q=80",
-    pillBadge: "ðŸ‡¨ðŸ‡³ 100% CSC Full-Ride Hub",
+    pillBadge: "🇨🇳 100% CSC Full-Ride Hub",
     subBadge: "Zero Tuition â€¢ Free Dormitory â€¢ Monthly Cash Stipend",
     heroHeading: "Study in China: 100% Full-Ride Scholarships & Global Tech",
     heroDesc: "Study at world-class Chinese universities with comprehensive Chinese Government Scholarships (CSC) and provincial awards. Enjoy zero tuition fees, verified campus accommodation, and generous monthly cash allowances.",
@@ -1032,7 +1032,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
     psw: "High-Tech Z-Visa Route",
     pswSub: "Direct MNC recruitment",
     whyStudy: [
-      { icon: "ðŸŽ“", title: "100% Full-Ride Funding", desc: "CSC scholarships cover full tuition, campus housing, and monthly living stipends for bachelor, master, and doctoral scholars." },
+      { icon: "🎓", title: "100% Full-Ride Funding", desc: "CSC scholarships cover full tuition, campus housing, and monthly living stipends for bachelor, master, and doctoral scholars." },
       { icon: "âš¡", title: "Global STEM & AI Leader", desc: "Top world-ranked labs in artificial intelligence, civil engineering, robotics, and international trade." }
     ],
     solvency: [
@@ -1084,7 +1084,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
   "russia": {
     id: "russia",
     code: "RU",
-    flag: "ðŸ‡·ðŸ‡º",
+    flag: "🇷🇺",
     name: "Russia",
     regionCode: "europe",
     regionBadge: "EURASIA",
@@ -1098,7 +1098,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
     livingCost: "$250 â€“ $400 / month",
     institutionsCount: "10+ Listed",
     heroImg: "https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?auto=format&fit=crop&w=1920&q=80",
-    pillBadge: "ðŸ‡·ðŸ‡º Pay After Visa Destination",
+    pillBadge: "🇷🇺 Pay After Visa Destination",
     subBadge: "Dhaka Embassy Visa â€¢ Pay Tuition Strictly After Visa",
     heroHeading: "Study in Russia: Pay Fees After Visa & State Quotas",
     heroDesc: "Study at premier Russian state universities with zero financial risk: pay university tuition fees strictly after receiving your visa sticker from the Russian Embassy in Dhaka.",
@@ -1111,8 +1111,8 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
     psw: "Eurasian Work Permit",
     pswSub: "Direct transition to work visa",
     whyStudy: [
-      { icon: "ðŸ›¡ï¸", title: "Pay Tuition After Visa", desc: "No university fee transfer is required before visa issuance. You pay only after your visa is secured." },
-      { icon: "ðŸ›ï¸", title: "Direct Dhaka Embassy", desc: "Complete consular processing in Dhaka without needing to travel to India." }
+      { icon: "🛡️", title: "Pay Tuition After Visa", desc: "No university fee transfer is required before visa issuance. You pay only after your visa is secured." },
+      { icon: "🏛️", title: "Direct Dhaka Embassy", desc: "Complete consular processing in Dhaka without needing to travel to India." }
     ],
     solvency: [
       { title: "Bank Solvency Proof", detail: "Very accessible: ~à§³5 Lakh to à§³7 Lakh BDT bank balance." }
@@ -1162,7 +1162,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
   "south-korea": {
     id: "south-korea",
     code: "KR",
-    flag: "ðŸ‡°ðŸ‡·",
+    flag: "🇰🇷",
     name: "South Korea",
     regionCode: "asia",
     regionBadge: "ASIA",
@@ -1193,7 +1193,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
   "ireland": {
     id: "ireland",
     code: "IE",
-    flag: "ðŸ‡®ðŸ‡ª",
+    flag: "🇮🇪",
     name: "Ireland",
     regionCode: "europe",
     regionBadge: "EUROPE",
@@ -1224,7 +1224,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
   "thailand": {
     id: "thailand",
     code: "TH",
-    flag: "ðŸ‡¹ðŸ‡­",
+    flag: "🇹🇭",
     name: "Thailand",
     regionCode: "asia",
     regionBadge: "ASIA",
