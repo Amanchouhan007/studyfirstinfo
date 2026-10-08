@@ -1,10 +1,10 @@
-export default function StudyPreferencesCard() {
+export default function StudyPreferencesCard({ profile }: { profile?: any }) {
   const preferences = [
-    { label: 'Target Country', value: '🇩🇪 Germany' },
-    { label: 'Target Degree', value: 'Masters' },
+    { label: 'Target Country', value: profile?.preferredCountry || '🇩🇪 Germany' },
+    { label: 'Target Degree', value: profile?.studyLevel || 'Masters' },
     { label: 'Target Field', value: 'Computer Science / AI' },
     { label: 'Intake', value: 'Winter 2027' },
-    { label: 'Budget', value: 'Tuition Free / Full Scholarship' },
+    { label: 'Budget', value: profile?.budget || 'Tuition Free / Full Scholarship' },
     { label: 'Track', value: 'Agency-Assisted' },
   ];
 

@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Check, Send, FileText, Download, Sparkles, ShieldCheck } from 'lucide-react';
+import { studentService } from '../../services/api/student';
 
 export default function LeadMagnet() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [isDownloaded, setIsDownloaded] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const checklist = [
     'Official Blocked Account (€11,208) Setup Guide',
@@ -15,9 +17,24 @@ export default function LeadMagnet() {
     'Step-by-step Fintiba & Coracle partner walk-through',
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsDownloaded(true);
+    setIsSubmitting(true);
+    try {
+      await studentService.evaluateEligibility({
+        name,
+        email,
+        source: 'LEAD_MAGNET_DOWNLOAD',
+        preferredCountry: 'Germany'
+      });
+      setIsDownloaded(true);
+    } catch (err) {
+      console.error(err);
+      // Fallback if backend offline
+      setIsDownloaded(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -124,10 +141,11 @@ export default function LeadMagnet() {
 
                   <button 
                     type="submit" 
-                    className="w-full bg-accent hover:bg-emerald-600 text-white font-black py-3 sm:py-3.5 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 text-xs sm:text-sm active:scale-98 cursor-pointer"
+                    disabled={isSubmitting}
+                    className="w-full bg-accent hover:bg-emerald-600 disabled:bg-emerald-800 text-white font-black py-3 sm:py-3.5 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 text-xs sm:text-sm active:scale-98 cursor-pointer"
                   >
-                    <span>Send Download Link Instantly</span>
-                    <Send size={15} />
+                    <span>{isSubmitting ? 'Sending...' : 'Send Download Link Instantly'}</span>
+                    {!isSubmitting && <Send size={15} />}
                   </button>
                 </form>
               )}

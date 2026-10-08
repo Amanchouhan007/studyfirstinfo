@@ -1,34 +1,57 @@
-/**
- * Eligibility Service Boundary
- * 
- * IMPORTANT: Final business matching rules are NOT implemented in this foundation.
- * This class establishes the architectural boundary for future rule implementation.
- */
+import { PrismaClient } from '@prisma/client';
 
-interface ProfileInput {
-  studyLevel: string;
-  academicScore: number;
+const prisma = new PrismaClient();
+
+export interface ProfileInput {
+  userId?: string;
+  name?: string;
+  email?: string;
+  phone?: string;
+  studyLevel?: string;
+  academicScore?: string;
   englishTestType?: string;
   englishScore?: string;
   budget?: string;
   preferredCountry?: string;
+  source?: string;
 }
 
 export class EligibilityService {
-  /**
-   * Evaluate a student profile against the country/university rule engine
-   */
-  public evaluateProfile(profile: ProfileInput) {
+  public async evaluateProfile(profile: ProfileInput) {
     // Forward to the abstract RuleProvider
     const ruleProvider = new RuleProvider();
-    return ruleProvider.executeRules(profile);
+    const evaluation = ruleProvider.executeRules(profile);
+
+    // 1. Persist the Lead (evaluation request)
+    const lead = await prisma.lead.create({
+      data: {
+        userId: profile.userId,
+        name: profile.name,
+        email: profile.email,
+        phone: profile.phone,
+        studyLevel: profile.studyLevel,
+        academicScore: profile.academicScore,
+        englishScore: profile.englishScore,
+        budget: profile.budget,
+        preferredCountry: profile.preferredCountry,
+        source: profile.source || 'EVALUATION_FLOW',
+        eligibilityStatus: evaluation.status
+      }
+    });
+
+    // 2. Client rules are missing. Return PENDING_BUSINESS_RULES safely.
+    // Do not invent fake eligibility.
+    return {
+      leadId: lead.id,
+      status: evaluation.status,
+      recommendedCountry: null,
+      recommendedUniversity: null,
+      alternativePathway: null,
+      message: evaluation.message
+    };
   }
 }
 
-/**
- * RuleProvider acts as the strategy context for executing dynamic rules.
- * Currently it explicitly returns a "rules not configured" state as per Phase 4 requirements.
- */
 class RuleProvider {
   public executeRules(profile: ProfileInput) {
     // DO NOT INVENT BUSINESS RULES HERE (GPA/IELTS/Budget)
@@ -36,7 +59,7 @@ class RuleProvider {
     
     return {
       status: "PENDING_BUSINESS_RULES",
-      message: "The eligibility rule engine has not been configured with client data.",
+      message: "Your profile has been submitted for evaluation. Final eligibility depends on configured university and destination requirements.",
       inputProfile: profile,
       matchedUniversities: [],
       alternativePathways: []

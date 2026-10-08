@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Lock, Sparkles, CheckCircle2, Download, Check, AlertCircle, Info } from 'lucide-react';
+import { studentService } from '../../services/api/student';
 
 export default function EligibilityMatcher() {
   const [gradeScale, setGradeScale] = useState<'hsc' | 'bachelor'>('hsc');
@@ -11,6 +12,8 @@ export default function EligibilityMatcher() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [backendMessage, setBackendMessage] = useState('');
 
   const currentGpa = gradeScale === 'hsc' ? gpaHSC : gpaBachelor;
   const maxGpa = gradeScale === 'hsc' ? 5.0 : 4.0;
@@ -87,9 +90,30 @@ export default function EligibilityMatcher() {
   const gaugeLabel = isMinimal ? 'ALMOST NULL' : isModerate ? 'PARTIAL ODDS' : 'HIGH CHANCE';
   const gaugeLabelColor = isMinimal ? 'text-rose-400' : isModerate ? 'text-amber-400' : 'text-emerald-400';
 
-  const handleUnlock = (e: React.FormEvent) => {
+  const handleUnlock = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsUnlocked(true);
+    setIsSubmitting(true);
+    
+    try {
+      const res = await studentService.evaluateEligibility({
+        name,
+        email,
+        phone,
+        studyLevel: gradeScale === 'hsc' ? 'SSC/HSC' : 'Bachelor',
+        academicScore: currentGpa.toString(),
+        englishScore: english,
+        budget,
+        source: 'SCHOLARSHIP_CALCULATOR'
+      });
+      setBackendMessage(res.message);
+      setIsUnlocked(true);
+    } catch (error) {
+      console.error(error);
+      // Fallback local unlock if backend down
+      setIsUnlocked(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -332,9 +356,9 @@ export default function EligibilityMatcher() {
                     {isMinimal ? 'Alternative Routes Explored' : 'Initial Assessment Complete'}
                   </h4>
                   <p className="text-xs text-gray-300">
-                    {isMinimal 
+                    {backendMessage || (isMinimal 
                       ? `Based on CGPA ${currentGpa.toFixed(2)}, there are alternative pathway programs available for ${name || 'you'}.`
-                      : `A preliminary overview of eligible universities has been prepared based on ${email || name || 'your profile'}.`}
+                      : `A preliminary overview of eligible universities has been prepared based on ${email || name || 'your profile'}.`)}
                   </p>
                   <a
                     href={`https://wa.me/8801713000000?text=${encodeURIComponent(
@@ -378,11 +402,12 @@ export default function EligibilityMatcher() {
                   />
                   <button
                     type="submit"
-                    className="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-4 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-lg active:scale-95 cursor-pointer mt-1"
+                    disabled={isSubmitting}
+                    className="w-full bg-emerald-600 hover:bg-emerald-500 disabled:bg-emerald-800 text-white font-bold py-3 px-4 rounded-xl text-xs sm:text-sm flex items-center justify-center gap-2 transition-all shadow-lg active:scale-95 cursor-pointer mt-1"
                   >
                     <Lock size={14} />
                     <span>
-                      {isMinimal ? 'View Feasible Admission Pathways' : 'Get My Free Matching Universities'}
+                      {isSubmitting ? 'Evaluating...' : isMinimal ? 'View Feasible Admission Pathways' : 'Get My Free Matching Universities'}
                     </span>
                   </button>
                 </form>
