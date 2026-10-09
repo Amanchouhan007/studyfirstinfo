@@ -64,7 +64,7 @@ export default function Footer() {
               <li><a href="#instagram" onClick={handlePlaceholderClick} className="flex items-center gap-2 hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 rounded-sm">Instagram</a></li>
               <li><a href="#linkedin" onClick={handlePlaceholderClick} className="flex items-center gap-2 hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 rounded-sm">LinkedIn</a></li>
               <li><a href="#youtube" onClick={handlePlaceholderClick} className="flex items-center gap-2 hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 rounded-sm">YouTube</a></li>
-              <li><a href="https://wa.me/8801712345678" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-emerald-400 font-semibold hover:text-emerald-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 rounded-sm"><MessageCircle size={16} /> WhatsApp</a></li>
+              <li><a href="https://wa.me/8801898833034" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-emerald-400 font-semibold hover:text-emerald-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 rounded-sm"><MessageCircle size={16} /> WhatsApp</a></li>
             </ul>
           </div>
         </div>

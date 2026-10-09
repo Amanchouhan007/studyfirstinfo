@@ -93,6 +93,10 @@ export const FLAG_MAP: Record<string, string> = {
   'lithuania': 'https://flagcdn.com/w80/lt.png',
   'china': 'https://flagcdn.com/w80/cn.png',
   'russia': 'https://flagcdn.com/w80/ru.png',
+  'south-korea': 'https://flagcdn.com/w80/kr.png',
+  'south_korea': 'https://flagcdn.com/w80/kr.png',
+  'ireland': 'https://flagcdn.com/w80/ie.png',
+  'thailand': 'https://flagcdn.com/w80/th.png',
 };
 
 export const COUNTRIES_DB: Record<string, CountryRecord> = {
@@ -1171,7 +1175,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
     highlights: [],
     livingCost: "Pending",
     institutionsCount: "Pending",
-    heroImg: "",
+    heroImg: "https://images.unsplash.com/photo-1517154421773-0529f29ea451?auto=format&fit=crop&w=1920&q=80",
     pillBadge: "Pending",
     subBadge: "Pending",
     heroHeading: "Study in South Korea",
@@ -1202,7 +1206,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
     highlights: [],
     livingCost: "Pending",
     institutionsCount: "Pending",
-    heroImg: "",
+    heroImg: "https://images.unsplash.com/photo-1590089415225-401ed6f9db8e?auto=format&fit=crop&w=1920&q=80",
     pillBadge: "Pending",
     subBadge: "Pending",
     heroHeading: "Study in Ireland",
@@ -1233,7 +1237,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
     highlights: [],
     livingCost: "Pending",
     institutionsCount: "Pending",
-    heroImg: "",
+    heroImg: "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1920&q=80",
     pillBadge: "Pending",
     subBadge: "Pending",
     heroHeading: "Study in Thailand",

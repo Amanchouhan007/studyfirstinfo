@@ -63,7 +63,7 @@ export default function CountriesPage() {
 
   const resolveCountryKey = (raw: string | null): string | null => {
     if (!raw) return null;
-    const lower = raw.toLowerCase().trim().replace(/%20|\+/g, '-').replace(/\s+/g, '-');
+    const lower = raw.toLowerCase().trim().replace(/%20|\+/g, '-').replace(/[\s_]+/g, '-');
     if (catalog[lower]) return lower;
     if (lower === 'uk' || lower === 'united-kingdom' || lower.includes('england') || lower.includes('britain')) return 'united-kingdom';
     if (lower === 'nz' || lower === 'new-zealand' || lower.includes('zealand')) return 'new-zealand';
@@ -75,6 +75,9 @@ export default function CountriesPage() {
     if (lower.includes('lithuania')) return 'lithuania';
     if (lower.includes('china')) return 'china';
     if (lower.includes('russia')) return 'russia';
+    if (lower.includes('korea')) return 'south-korea';
+    if (lower.includes('ireland')) return 'ireland';
+    if (lower.includes('thailand')) return 'thailand';
     return null;
   };
 
@@ -309,6 +312,18 @@ export default function CountriesPage() {
                         <img src={FLAG_MAP['russia']} alt="" className="w-4 h-3 object-cover rounded-xs" />
                         <span>Russia</span>
                       </button>
+                      <button type="button" onClick={() => openCountryLanding('south-korea')} className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10 cursor-pointer flex items-center gap-1.5">
+                        <img src={FLAG_MAP['south-korea']} alt="" className="w-4 h-3 object-cover rounded-xs" />
+                        <span>South Korea</span>
+                      </button>
+                      <button type="button" onClick={() => openCountryLanding('ireland')} className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10 cursor-pointer flex items-center gap-1.5">
+                        <img src={FLAG_MAP['ireland']} alt="" className="w-4 h-3 object-cover rounded-xs" />
+                        <span>Ireland</span>
+                      </button>
+                      <button type="button" onClick={() => openCountryLanding('thailand')} className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10 cursor-pointer flex items-center gap-1.5">
+                        <img src={FLAG_MAP['thailand']} alt="" className="w-4 h-3 object-cover rounded-xs" />
+                        <span>Thailand</span>
+                      </button>
                     </div>
                   </div>
 
@@ -478,11 +493,15 @@ export default function CountriesPage() {
                   onClick={navigateToLevel1}
                   className="font-bold text-emerald-800 hover:text-emerald-950 flex items-center gap-1.5 bg-emerald-50 px-3 py-1.5 rounded-xl border border-emerald-200 transition-all cursor-pointer"
                 >
-                  <span>â† All Destinations</span>
+                  <span>&larr; All Destinations</span>
                 </button>
                 <span className="text-slate-400">/</span>
                 <span className="font-bold text-slate-900 flex items-center gap-2">
-                  <img src={FLAG_MAP[activeCountry.id] || ''} alt="" className="w-5 h-3.5 object-cover rounded-xs shadow-2xs" />
+                  <img 
+                    src={FLAG_MAP[activeCountry.id] || (activeCountry.code ? `https://flagcdn.com/w80/${activeCountry.code.toLowerCase()}.png` : '')} 
+                    alt={activeCountry.name} 
+                    className="w-5 h-3.5 object-cover rounded-xs shadow-2xs" 
+                  />
                   <span>{activeCountry.name} Study Guide</span>
                 </span>
               </div>
@@ -502,7 +521,11 @@ export default function CountriesPage() {
                           : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-100'
                       }`}
                     >
-                      <img src={FLAG_MAP[c.id] || ''} alt="" className="w-4 h-3 object-cover rounded-xs" />
+                      <img 
+                        src={FLAG_MAP[c.id] || (c.code ? `https://flagcdn.com/w80/${c.code.toLowerCase()}.png` : '')} 
+                        alt={c.name} 
+                        className="w-4 h-3 object-cover rounded-xs" 
+                      />
                       <span>{c.name}</span>
                     </button>
                   );
@@ -512,11 +535,13 @@ export default function CountriesPage() {
 
             {/* Dynamic Country Hero Banner with actual photographic overlay */}
             <section className="relative rounded-3xl overflow-hidden shadow-2xl border border-emerald-900/60 min-h-[460px] sm:min-h-[500px] flex flex-col justify-end text-white">
-              <img 
-                src={activeCountry.heroImg} 
-                alt={`${activeCountry.name} Campus`} 
-                className="absolute inset-0 w-full h-full object-cover object-center filter brightness-90"
-              />
+              {activeCountry.heroImg && (
+                <img 
+                  src={activeCountry.heroImg} 
+                  alt={`${activeCountry.name} Campus`} 
+                  className="absolute inset-0 w-full h-full object-cover object-center filter brightness-90"
+                />
+              )}
               <div 
                 className="absolute inset-0"
                 style={{
@@ -527,7 +552,11 @@ export default function CountriesPage() {
               <div className="relative z-10 p-6 sm:p-10 lg:p-12 space-y-6 text-left">
                 <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                   <span className="px-3.5 py-1 rounded-full bg-amber-400 text-slate-950 text-xs font-black uppercase tracking-wider shadow-md flex items-center gap-1.5">
-                    <img src={FLAG_MAP[activeCountry.id] || ''} alt="" className="w-4 h-3 object-cover rounded-xs" />
+                    <img 
+                      src={FLAG_MAP[activeCountry.id] || (activeCountry.code ? `https://flagcdn.com/w80/${activeCountry.code.toLowerCase()}.png` : '')} 
+                      alt="" 
+                      className="w-4 h-3 object-cover rounded-xs" 
+                    />
                     <span>{activeCountry.pillBadge.replace(/[\uD83C-\uDBFF\uDC00-\uDFFF]+/g, '').trim()}</span>
                   </span>
                   <span className="px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-emerald-200 text-xs font-semibold border border-white/20">
@@ -896,7 +925,11 @@ export default function CountriesPage() {
                 </button>
                 <span className="text-slate-400">/</span>
                 <button onClick={backToCountryLanding} className="font-bold text-emerald-800 hover:text-emerald-950 flex items-center gap-1.5 cursor-pointer">
-                  <img src={FLAG_MAP[activeCountry.id] || ''} alt="" className="w-4 h-3 object-cover rounded-xs" />
+                  <img 
+                    src={FLAG_MAP[activeCountry.id] || (activeCountry.code ? `https://flagcdn.com/w80/${activeCountry.code.toLowerCase()}.png` : '')} 
+                    alt="" 
+                    className="w-4 h-3 object-cover rounded-xs" 
+                  />
                   <span>{activeCountry.name}</span>
                 </button>
                 <span className="text-slate-400">/</span>
