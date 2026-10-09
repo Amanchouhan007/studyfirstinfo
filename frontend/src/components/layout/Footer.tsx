@@ -1,4 +1,4 @@
-import { MessageCircle } from 'lucide-react';
+import { MessageCircle, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import logoImg from '../../assets/image.png';
 
@@ -60,6 +60,7 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-3 sm:mb-4 text-sm sm:text-base lg:text-lg">Connect</h3>
             <ul className="space-y-2 sm:space-y-3 text-xs sm:text-sm">
+              <li><a href="mailto:inquiry@studyfirstinfo.com" className="flex items-center gap-2 hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 rounded-sm"><Mail size={16} /> inquiry@studyfirstinfo.com</a></li>
               <li><a href="#facebook" onClick={handlePlaceholderClick} className="flex items-center gap-2 hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 rounded-sm">Facebook</a></li>
               <li><a href="#instagram" onClick={handlePlaceholderClick} className="flex items-center gap-2 hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 rounded-sm">Instagram</a></li>
               <li><a href="#linkedin" onClick={handlePlaceholderClick} className="flex items-center gap-2 hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 rounded-sm">LinkedIn</a></li>

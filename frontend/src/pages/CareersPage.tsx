@@ -453,7 +453,7 @@ export default function CareersPage() {
                 Explore Available Roles at Study First Info
               </h2>
               <p className="text-xs text-slate-500 mt-1">
-                Apply online using the fast form below or send your updated CV directly to <strong className="text-emerald-800">StudyFirstInfo@gmail.com</strong>
+                Apply online using the fast form below or send your updated CV directly to <a href="mailto:inquiry@studyfirstinfo.com?subject=Job%20Application" className="font-bold text-emerald-800 hover:text-emerald-900 underline decoration-emerald-500/30 transition-colors">inquiry@studyfirstinfo.com</a>
               </p>
             </div>
 
@@ -634,7 +634,7 @@ export default function CareersPage() {
             <div className="p-4 rounded-2xl bg-amber-50 border border-amber-200 text-xs text-amber-950 flex items-center gap-3">
               <Mail size={24} className="text-amber-800 flex-shrink-0" />
               <p>
-                Prefer direct email? You can always send your updated CV directly to <strong className="text-emerald-900">StudyFirstInfo@gmail.com</strong> with the subject line <em>&quot;Application for [Job Title] - [Preferred Branch]&quot;</em>.
+                Prefer direct email? You can always send your updated CV directly to <a href="mailto:inquiry@studyfirstinfo.com?subject=Job%20Application" className="font-bold text-emerald-900 hover:text-emerald-950 underline decoration-emerald-600/40 transition-colors">inquiry@studyfirstinfo.com</a> with the subject line <em>&quot;Application for [Job Title] - [Preferred Branch]&quot;</em>.
               </p>
             </div>
           </div>
@@ -888,7 +888,7 @@ export default function CareersPage() {
             <div className="mt-6 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
               <div className="text-xs text-slate-500">
                 <span>Apply directly or email: </span>
-                <strong className="text-emerald-800">StudyFirstInfo@gmail.com</strong>
+                <a href="mailto:inquiry@studyfirstinfo.com?subject=Job%20Application" className="font-bold text-emerald-800 hover:text-emerald-900 underline decoration-emerald-500/30 transition-colors">inquiry@studyfirstinfo.com</a>
               </div>
               <button
                 type="button"

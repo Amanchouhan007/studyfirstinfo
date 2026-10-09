@@ -4,6 +4,7 @@ import {
   ArrowRight, 
   MapPin, 
   Phone, 
+  Mail,
   Check, 
   Send,
   Building2,
@@ -455,6 +456,15 @@ export default function AboutPage() {
             <p className="text-xs sm:text-sm text-slate-600">
               Open Saturday through Thursday (10:00 AM – 6:30 PM). Bring your academic transcripts for on-the-spot profile screening!
             </p>
+            <div className="pt-2 flex flex-wrap items-center justify-center gap-3 text-xs font-semibold">
+              <a 
+                href="mailto:inquiry@studyfirstinfo.com" 
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200/80 hover:bg-emerald-100 hover:text-emerald-950 transition-colors shadow-2xs"
+              >
+                <Mail size={14} className="text-emerald-700" />
+                <span>Official Admissions Inquiries: inquiry@studyfirstinfo.com</span>
+              </a>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
