@@ -590,10 +590,10 @@ export default function EventsPage() {
             Visit Any Study First Info Desk for Walk-In Registration
           </h3>
           <p className="text-xs sm:text-sm text-slate-600 max-w-2xl mx-auto mb-8">
-            If you missed an online event slot, you can directly walk into any of our 3 official branches with your academic certificates for an instant spot profile assessment!
+            If you missed an online event slot, you can directly walk into any of our 4 official branches with your academic certificates for an instant spot profile assessment!
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
             {/* Banani Head Office */}
             <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-500 transition-colors">
               <div className="flex items-center gap-2 mb-2 font-bold text-slate-900 text-base">
@@ -604,8 +604,12 @@ export default function EventsPage() {
                 Rosa Bella Apartment, House 3, Level 2, Block D, Road 17, Banani C/A, Dhaka-1213
               </p>
               <div className="text-xs text-emerald-700 font-bold space-y-1">
-                <p>📞 01898 833034</p>
-                <p>📞 +8809613752752</p>
+                <a href="tel:+8801898833034" className="flex items-center gap-1.5 hover:underline transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 rounded">
+                  📞 +880 1898-833034
+                </a>
+                <a href="tel:+8809613752752" className="flex items-center gap-1.5 hover:underline transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 rounded">
+                  📞 +8809613752752
+                </a>
               </div>
             </div>
 
@@ -619,8 +623,15 @@ export default function EventsPage() {
                 7th Floor (Lift-6), BTI Central Plaza (opposite Ananda Cinema Hall), Green Road, Dhaka 1215
               </p>
               <div className="text-xs text-emerald-700 font-bold space-y-1">
-                <p>📞 01898 833035</p>
-                <p>📞 +8809613752752</p>
+                <a href="tel:+8801806971441" className="flex items-center gap-1.5 hover:underline transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 rounded">
+                  📞 +880 1806-971441
+                </a>
+                <a href="tel:+8801898833034" className="flex items-center gap-1.5 hover:underline transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 rounded">
+                  📞 +880 1898-833034
+                </a>
+                <a href="tel:+8809613752752" className="flex items-center gap-1.5 hover:underline transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 rounded">
+                  📞 +8809613752752
+                </a>
               </div>
             </div>
 
@@ -634,8 +645,37 @@ export default function EventsPage() {
                 Sylhet Millennium Shopping Centre, Lift 10, Room 907, Jallarpar Road, Zindabazar, Sylhet 3100
               </p>
               <div className="text-xs text-emerald-700 font-bold space-y-1">
-                <p>📞 01898 833036</p>
-                <p>📞 01898 833034</p>
+                <a href="tel:+8801898383120" className="flex items-center gap-1.5 hover:underline transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 rounded">
+                  📞 +880 1898-383120
+                </a>
+                <a href="tel:+8801898833034" className="flex items-center gap-1.5 hover:underline transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 rounded">
+                  📞 +880 1898-833034
+                </a>
+                <a href="tel:+8809613752752" className="flex items-center gap-1.5 hover:underline transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 rounded">
+                  📞 +8809613752752
+                </a>
+              </div>
+            </div>
+
+            {/* Chittagong Branch */}
+            <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-500 transition-colors">
+              <div className="flex items-center gap-2 mb-2 font-bold text-slate-900 text-base">
+                <MapPin size={18} className="text-emerald-700 shrink-0" />
+                <span>Chittagong Branch</span>
+              </div>
+              <p className="text-xs text-slate-600 leading-relaxed mb-3">
+                Sanmar Ocean City, Level 5, GEC Circle, Chittagong
+              </p>
+              <div className="text-xs text-emerald-700 font-bold space-y-1">
+                <a href="tel:+8801806971443" className="flex items-center gap-1.5 hover:underline transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 rounded">
+                  📞 +880 1806-971443
+                </a>
+                <a href="tel:+8801898833034" className="flex items-center gap-1.5 hover:underline transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 rounded">
+                  📞 +880 1898-833034
+                </a>
+                <a href="tel:+8809613752752" className="flex items-center gap-1.5 hover:underline transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 rounded">
+                  📞 +8809613752752
+                </a>
               </div>
             </div>
           </div>
@@ -825,6 +865,7 @@ export default function EventsPage() {
                     <option value="Banani Head Office">Banani Head Office (Rosa Bella, Road 17, Block D)</option>
                     <option value="Farmgate Branch">Farmgate Branch (BTI Central Plaza, Green Road)</option>
                     <option value="Sylhet Branch">Sylhet Branch (Millennium Centre, Zindabazar)</option>
+                      <option value="Chittagong Branch">Chittagong Branch (Sanmar Ocean City, GEC)</option>
                     <option value="Online Video Livestream">Online Virtual Attendee (Live Broadcast)</option>
                   </select>
                 </div>

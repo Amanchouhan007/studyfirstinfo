@@ -70,6 +70,80 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Compact Branch Contact Directory */}
+        <div className="border-t border-gray-800 pt-6 sm:pt-8 mb-8 sm:mb-10">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 mb-4">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-emerald-400">
+              Official Branch Helplines
+            </h4>
+            <span className="text-[11px] text-gray-400">
+              Saturday – Thursday: 10:00 AM – 6:30 PM
+            </span>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
+            <div className="bg-gray-800/60 border border-gray-700/60 rounded-xl p-3 hover:border-emerald-500/50 transition-colors">
+              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wide block">Head Office</span>
+              <p className="font-semibold text-white text-xs mt-0.5">Banani Campus</p>
+              <div className="mt-1.5 space-y-0.5 font-mono text-[11px] text-emerald-400">
+                <a href="tel:+8801898833034" className="block hover:underline focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-400 rounded">
+                  +880 1898-833034
+                </a>
+                <a href="tel:+8809613752752" className="block text-gray-400 hover:text-emerald-400 hover:underline focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-400 rounded">
+                  +8809613752752
+                </a>
+              </div>
+            </div>
+
+            <div className="bg-gray-800/60 border border-gray-700/60 rounded-xl p-3 hover:border-emerald-500/50 transition-colors">
+              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wide block">Central Hub</span>
+              <p className="font-semibold text-white text-xs mt-0.5">Farmgate Branch</p>
+              <div className="mt-1.5 space-y-0.5 font-mono text-[11px] text-emerald-400">
+                <a href="tel:+8801806971441" className="block hover:underline focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-400 rounded">
+                  +880 1806-971441
+                </a>
+                <a href="tel:+8801898833034" className="block text-emerald-300 hover:underline focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-400 rounded">
+                  +880 1898-833034
+                </a>
+                <a href="tel:+8809613752752" className="block text-gray-400 hover:text-emerald-400 hover:underline focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-400 rounded">
+                  +8809613752752
+                </a>
+              </div>
+            </div>
+
+            <div className="bg-gray-800/60 border border-gray-700/60 rounded-xl p-3 hover:border-emerald-500/50 transition-colors">
+              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wide block">Regional Desk</span>
+              <p className="font-semibold text-white text-xs mt-0.5">Sylhet Branch</p>
+              <div className="mt-1.5 space-y-0.5 font-mono text-[11px] text-emerald-400">
+                <a href="tel:+8801898383120" className="block hover:underline focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-400 rounded">
+                  +880 1898-383120
+                </a>
+                <a href="tel:+8801898833034" className="block text-emerald-300 hover:underline focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-400 rounded">
+                  +880 1898-833034
+                </a>
+                <a href="tel:+8809613752752" className="block text-gray-400 hover:text-emerald-400 hover:underline focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-400 rounded">
+                  +8809613752752
+                </a>
+              </div>
+            </div>
+
+            <div className="bg-gray-800/60 border border-gray-700/60 rounded-xl p-3 hover:border-emerald-500/50 transition-colors">
+              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wide block">Port City Hub</span>
+              <p className="font-semibold text-white text-xs mt-0.5">Chittagong Branch</p>
+              <div className="mt-1.5 space-y-0.5 font-mono text-[11px] text-emerald-400">
+                <a href="tel:+8801806971443" className="block hover:underline focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-400 rounded">
+                  +880 1806-971443
+                </a>
+                <a href="tel:+8801898833034" className="block text-emerald-300 hover:underline focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-400 rounded">
+                  +880 1898-833034
+                </a>
+                <a href="tel:+8809613752752" className="block text-gray-400 hover:text-emerald-400 hover:underline focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-400 rounded">
+                  +8809613752752
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="border-t border-gray-800 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs sm:text-sm text-center sm:text-left">
           <p>Copyright © 2026 Study First Info Ltd. All rights reserved.</p>
           <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6">

@@ -1046,7 +1046,7 @@ export default function ServicesPage() {
             <h4 className="text-sm font-bold uppercase tracking-wider text-emerald-400 mb-4 text-center">
               Visit Us In-Person (Saturday to Thursday: 10:00 AM – 6:30 PM)
             </h4>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs sm:text-sm">
               
               <div className="bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-5 hover:border-emerald-400 transition-colors">
                 <div className="font-bold text-white text-base mb-1 flex items-center gap-2">
@@ -1056,9 +1056,14 @@ export default function ServicesPage() {
                 <p className="text-slate-300 text-xs leading-relaxed mb-3">
                   Rosa Bella Apartment, House 3, Level 2, Block D, Road 17, Banani C/A, Dhaka-1213
                 </p>
-                <p className="text-emerald-400 font-mono text-xs flex items-center gap-1.5">
-                  <Phone size={12} /> 01898 833034 | 01898 833033
-                </p>
+                <div className="text-emerald-400 font-mono text-xs space-y-1">
+                  <a href="tel:+8801898833034" className="flex items-center gap-1.5 hover:underline transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-400 rounded">
+                    <Phone size={12} /> +880 1898-833034
+                  </a>
+                  <a href="tel:+8809613752752" className="flex items-center gap-1.5 hover:underline transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-400 rounded">
+                    <Phone size={12} /> +8809613752752
+                  </a>
+                </div>
               </div>
 
               <div className="bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-5 hover:border-emerald-400 transition-colors">
@@ -1069,9 +1074,17 @@ export default function ServicesPage() {
                 <p className="text-slate-300 text-xs leading-relaxed mb-3">
                   7th Floor (Lift-6), BTI Central Plaza (opposite Ananda Cinema Hall), Green Road, Dhaka 1215
                 </p>
-                <p className="text-emerald-400 font-mono text-xs flex items-center gap-1.5">
-                  <Phone size={12} /> 01898 833035 | +8809613752752
-                </p>
+                <div className="text-emerald-400 font-mono text-xs space-y-1">
+                  <a href="tel:+8801806971441" className="flex items-center gap-1.5 hover:underline transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-400 rounded">
+                    <Phone size={12} /> +880 1806-971441
+                  </a>
+                  <a href="tel:+8801898833034" className="flex items-center gap-1.5 hover:underline transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-400 rounded">
+                    <Phone size={12} /> +880 1898-833034
+                  </a>
+                  <a href="tel:+8809613752752" className="flex items-center gap-1.5 hover:underline transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-400 rounded">
+                    <Phone size={12} /> +8809613752752
+                  </a>
+                </div>
               </div>
 
               <div className="bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-5 hover:border-emerald-400 transition-colors">
@@ -1082,9 +1095,38 @@ export default function ServicesPage() {
                 <p className="text-slate-300 text-xs leading-relaxed mb-3">
                   Sylhet Millennium Shopping Centre, Lift 10, Room 907, Jallarpar Road, Zindabazar, Sylhet 3100
                 </p>
-                <p className="text-emerald-400 font-mono text-xs flex items-center gap-1.5">
-                  <Phone size={12} /> 01898 833036
+                <div className="text-emerald-400 font-mono text-xs space-y-1">
+                  <a href="tel:+8801898383120" className="flex items-center gap-1.5 hover:underline transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-400 rounded">
+                    <Phone size={12} /> +880 1898-383120
+                  </a>
+                  <a href="tel:+8801898833034" className="flex items-center gap-1.5 hover:underline transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-400 rounded">
+                    <Phone size={12} /> +880 1898-833034
+                  </a>
+                  <a href="tel:+8809613752752" className="flex items-center gap-1.5 hover:underline transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-400 rounded">
+                    <Phone size={12} /> +8809613752752
+                  </a>
+                </div>
+              </div>
+
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-5 hover:border-emerald-400 transition-colors">
+                <div className="font-bold text-white text-base mb-1 flex items-center gap-2">
+                  <Building2 size={16} className="text-emerald-400" />
+                  <span>Chittagong Branch</span>
+                </div>
+                <p className="text-slate-300 text-xs leading-relaxed mb-3">
+                  Sanmar Ocean City, Level 5, GEC Circle, Chittagong
                 </p>
+                <div className="text-emerald-400 font-mono text-xs space-y-1">
+                  <a href="tel:+8801806971443" className="flex items-center gap-1.5 hover:underline transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-400 rounded">
+                    <Phone size={12} /> +880 1806-971443
+                  </a>
+                  <a href="tel:+8801898833034" className="flex items-center gap-1.5 hover:underline transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-400 rounded">
+                    <Phone size={12} /> +880 1898-833034
+                  </a>
+                  <a href="tel:+8809613752752" className="flex items-center gap-1.5 hover:underline transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-emerald-400 rounded">
+                    <Phone size={12} /> +8809613752752
+                  </a>
+                </div>
               </div>
 
             </div>
@@ -1519,6 +1561,7 @@ export default function ServicesPage() {
                   <option value="Banani Head Office">Banani Head Office (Road 17, Block D)</option>
                   <option value="Farmgate Branch">Farmgate Branch (BTI Central Plaza)</option>
                   <option value="Sylhet Branch">Sylhet Branch (Millennium Centre, Zindabazar)</option>
+                      <option value="Chittagong Branch">Chittagong Branch (Sanmar Ocean City, GEC)</option>
                   <option value="Online Video Call">Online Video Consultation (WhatsApp / Meet)</option>
                 </select>
               </div>
