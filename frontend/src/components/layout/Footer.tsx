@@ -53,7 +53,7 @@ export default function Footer() {
               <li><a href="#" className="flex items-center gap-2 hover:text-accent transition-colors">Instagram</a></li>
               <li><a href="#" className="flex items-center gap-2 hover:text-accent transition-colors">LinkedIn</a></li>
               <li><a href="#" className="flex items-center gap-2 hover:text-accent transition-colors">YouTube</a></li>
-              <li><a href="https://wa.me/8801712345678" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-accent transition-colors"><MessageCircle size={16} /> WhatsApp</a></li>
+              <li><a href="https://wa.me/8801898833034" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-accent transition-colors"><MessageCircle size={16} /> WhatsApp</a></li>
             </ul>
           </div>
         </div>
