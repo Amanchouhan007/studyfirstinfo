@@ -3,6 +3,7 @@ import { getCountries, getCountryByIdOrCode, getUniversities, getCourses } from 
 import { register, login, logout, me } from '../controllers/authController';
 import { getProfile, updateProfile } from '../controllers/profileController';
 import { evaluateLead, getLeads } from '../controllers/leadController';
+import { getEvents, createEventRegistration, getEventRegistrations } from '../controllers/eventController';
 import { requireAuth, optionalAuth } from '../middleware/authMiddleware';
 
 const router = Router();
@@ -27,8 +28,9 @@ router.get('/countries', getCountries);
 router.get('/countries/:identifier', getCountryByIdOrCode);
 router.get('/universities', getUniversities);
 router.get('/courses', getCourses);
-router.use('/events', (req, res) => { res.json({ msg: 'Events routes pending' }) });
-router.use('/event-registrations', (req, res) => { res.json({ msg: 'Event registrations routes pending' }) });
+router.get('/events', getEvents);
+router.post('/event-registrations', optionalAuth, createEventRegistration);
+router.get('/event-registrations', requireAuth, getEventRegistrations);
 router.use('/counselors', (req, res) => { res.json({ msg: 'Counselors routes pending' }) });
 router.use('/appointments', (req, res) => { res.json({ msg: 'Appointments routes pending' }) });
 

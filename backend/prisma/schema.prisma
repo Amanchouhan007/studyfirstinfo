@@ -87,16 +87,21 @@ model Event {
 }
 
 model EventRegistration {
-  id                String   @id @default(uuid())
-  eventId           String
-  event             Event    @relation(fields: [eventId], references: [id])
-  userId            String?  // Optional, can be anonymous lead
-  user              User?    @relation(fields: [userId], references: [id])
-  name              String
-  email             String
-  phone             String
-  countryOfInterest String?
-  createdAt         DateTime @default(now())
+  id                 String   @id @default(uuid())
+  eventId            String?
+  event              Event?   @relation(fields: [eventId], references: [id])
+  userId             String?  // Optional, can be anonymous lead
+  user               User?    @relation(fields: [userId], references: [id])
+  name               String
+  email              String
+  phone              String
+  degree             String?
+  academicScore      String?
+  englishProficiency String?
+  venue              String?
+  notes              String?
+  countryOfInterest  String?
+  createdAt          DateTime @default(now())
 }
 
 model Counselor {

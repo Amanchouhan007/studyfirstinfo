@@ -49,23 +49,23 @@ export default function AdminPage() {
       {/* Main Content Area */}
       <div className="flex-1 min-w-0 flex flex-col">
         {/* Top Sticky Header */}
-        <header className="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-gray-100 px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between shadow-xs">
-          <div className="flex items-center gap-3">
+        <header className="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-gray-100 px-3 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-2 sm:gap-4 shadow-xs">
+          <div className="flex items-center gap-2 sm:gap-3 min-w-0 flex-1">
             <button
               onClick={() => setSidebarOpen(true)}
-              className="lg:hidden p-2 text-gray-600 hover:text-primary hover:bg-gray-100 rounded-xl transition-colors cursor-pointer"
+              className="lg:hidden p-1.5 sm:p-2 text-gray-600 hover:text-primary hover:bg-gray-100 rounded-xl transition-colors cursor-pointer shrink-0"
               aria-label="Open Sidebar"
             >
-              <Menu size={22} />
+              <Menu size={20} className="sm:w-[22px] sm:h-[22px]" />
             </button>
 
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-bold text-accent">Admin HQ</span>
+            <div className="min-w-0 flex-1">
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <span className="text-[11px] sm:text-xs font-bold text-accent">Admin HQ</span>
                 <span className="text-gray-300">&bull;</span>
-                <span className="text-xs font-semibold text-gray-500 capitalize">{currentTab}</span>
+                <span className="text-[11px] sm:text-xs font-semibold text-gray-500 capitalize truncate">{currentTab}</span>
               </div>
-              <h1 className="text-base sm:text-lg font-black text-primary tracking-tight truncate">
+              <h1 className="text-sm sm:text-lg font-black text-primary tracking-tight truncate">
                 {title}
               </h1>
               <p className="text-xs text-gray-500 hidden sm:block truncate max-w-lg">{subtitle}</p>
@@ -73,21 +73,22 @@ export default function AdminPage() {
           </div>
 
           {/* Top Right Quick Actions */}
-          <div className="flex items-center gap-2.5 sm:gap-4">
+          <div className="flex items-center gap-2 sm:gap-4 shrink-0">
             <Link
               to="/auth"
-              className="inline-flex items-center gap-1.5 text-xs font-bold text-rose-600 bg-rose-50 hover:bg-rose-100 px-3.5 py-1.5 rounded-xl transition-all border border-rose-200 cursor-pointer"
+              className="inline-flex items-center gap-1 sm:gap-1.5 text-xs font-bold text-rose-600 bg-rose-50 hover:bg-rose-100 px-2.5 sm:px-3.5 py-1.5 rounded-xl transition-all border border-rose-200 cursor-pointer"
+              title="Logout"
             >
               <LogOut size={13} />
-              <span>Logout</span>
+              <span className="hidden sm:inline">Logout</span>
             </Link>
 
-            <div className="flex items-center gap-2 pl-2 border-l border-gray-200">
+            <div className="flex items-center gap-2 pl-1.5 sm:pl-2 border-l border-gray-200">
               <div className="text-right hidden sm:block">
                 <div className="text-xs font-bold text-gray-900">Admin Director</div>
                 <div className="text-[10px] text-emerald-600 font-semibold">Dhaka HQ</div>
               </div>
-              <div className="w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold text-xs shadow-xs border border-white/20">
+              <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-accent text-white flex items-center justify-center font-bold text-xs shadow-xs border border-white/20 shrink-0">
                 AD
               </div>
             </div>

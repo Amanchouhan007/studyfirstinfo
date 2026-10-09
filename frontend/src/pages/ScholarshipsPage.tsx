@@ -174,6 +174,66 @@ const SCHOLARSHIPS_DATA: ScholarshipItem[] = [
     categories: ['europe']
   },
   {
+    id: 'germany',
+    country: 'Germany',
+    flag: '🇩🇪',
+    region: 'Western Europe',
+    badge: '100% Zero Tuition',
+    badgeColor: 'text-emerald-800 bg-emerald-100/90 border border-emerald-200',
+    title: 'Germany: DAAD & Public Zero Tuition',
+    description: 'World-class education at public research universities with 0€ tuition fees. Combine with DAAD scholarships or monthly student assistantships across Berlin, Munich, Aachen, and Heidelberg.',
+    universities: 'TU Munich, RWTH Aachen, Heidelberg, Freie Univ Berlin, IU International',
+    features: [
+      'Coverage: 100% Free Tuition at Public Universities',
+      'Requirement: APS Certificate + IELTS 6.0–6.5 or MOI',
+      'Blocked Account: €11,904/yr (Assisted via Fintiba/Coracle)',
+      'Work Rights: 140 full days / 280 half days legal work'
+    ],
+    intakeNote: 'Winter & Summer Intakes',
+    schemeName: 'Germany DAAD & Public Zero Tuition',
+    categories: ['fullride', 'europe']
+  },
+  {
+    id: 'ireland',
+    country: 'Ireland',
+    flag: '🇮🇪',
+    region: 'Western Europe',
+    badge: 'Up to €10,000 Off',
+    badgeColor: 'text-emerald-800 bg-emerald-100/90 border border-emerald-200',
+    title: 'Ireland: Government & University Merit Scholarships',
+    description: 'Generous merit scholarships up to €10,000 at top Dublin and Galway universities. Benefit from 2-year post-study work rights (Stamp 1G) in Europe’s premier Silicon Docks tech hub.',
+    universities: 'Trinity College Dublin (TCD), UCD, Univ of Galway, DCU, Griffith College',
+    features: [
+      'Scholarship: €3,000 to €10,000 merit awards + GOI-IES',
+      'Language: IELTS 6.0–6.5 or Duolingo 110+ accepted',
+      'Work: 2-Year Graduate Scheme (Stamp 1G)',
+      'Career: European HQ hub for Google, Meta, Pfizer'
+    ],
+    intakeNote: 'Sept & Jan Intakes',
+    schemeName: 'Ireland Government & Merit Awards',
+    categories: ['europe']
+  },
+  {
+    id: 'thailand',
+    country: 'Thailand',
+    flag: '🇹🇭',
+    region: 'Southeast Asia',
+    badge: 'Low Tuition & Royal Grants',
+    badgeColor: 'text-teal-800 bg-teal-100/90 border border-teal-200',
+    title: 'Thailand: Affordable International Degrees & Royal Waivers',
+    description: 'High quality English-medium education in Bangkok at ultra-affordable tuition fees ($1,800–$3,500/yr). Royal Thai Government and AIT merit waivers available with high visa track records.',
+    universities: 'Asian Institute of Technology (AIT), Mahidol, Chulalongkorn, Assumption (ABAC)',
+    features: [
+      'Tuition: Ultra-low from $1,800 to $3,500/year',
+      'Waivers: 50% to 100% Royal Thai & AIT Grants',
+      'Visa Track Record: Consistently high approval rate with direct embassy filing',
+      'Mobility: Fast gateway to ASEAN regional careers'
+    ],
+    intakeNote: 'Aug & Jan Intakes',
+    schemeName: 'Thailand Royal & AIT Scholarships',
+    categories: ['asia']
+  },
+  {
     id: 'nz',
     country: 'New Zealand',
     flag: '🇳🇿',
@@ -495,7 +555,7 @@ export default function ScholarshipsPage() {
                     : 'bg-white text-slate-700 border-slate-200 hover:border-emerald-500 hover:text-emerald-700'
                 }`}
               >
-                All Destinations (8)
+                All Destinations ({SCHOLARSHIPS_DATA.length})
               </button>
               <button 
                 onClick={() => setActiveFilter('fullride')}

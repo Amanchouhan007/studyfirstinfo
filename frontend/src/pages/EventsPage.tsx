@@ -13,6 +13,7 @@ import {
   X
 } from 'lucide-react';
 import { fetchCountries } from '../services/api/catalog';
+import { eventService } from '../services/api/events';
 import type { CountryRecord } from '../data/countriesData';
 
 interface EventItem {
@@ -189,7 +190,10 @@ export default function EventsPage() {
   
   // Registration Form State
   const [formSubmitted, setFormSubmitted] = useState(false);
-
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [entryToken, setEntryToken] = useState<string>('');
+  const [serverMessage, setServerMessage] = useState<string>('');
 
   const [formData, setFormData] = useState({
     name: '',
@@ -250,13 +254,41 @@ export default function EventsPage() {
     fetchCountries().then(setCatalog);
   }, []);
 
-  const handleRegistrationSubmit = (e: React.FormEvent) => {
+  const handleRegistrationSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setFormSubmitted(true);
-    showToast(
-      'Service Notice',
-      'Registration submission will be connected when the event registration service is enabled.'
-    );
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const response = await eventService.registerForEvent({
+        eventName: selectedEventName,
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        country: formData.country,
+        level: formData.level,
+        degree: formData.level,
+        gpa: formData.gpa,
+        academicScore: formData.gpa,
+        english: formData.english,
+        englishProficiency: formData.english,
+        venue: formData.venue,
+        notes: formData.notes
+      });
+
+      const token = response.entryToken || `SFI-EXP-${Math.random().toString(36).substr(2, 6).toUpperCase()}`;
+      setEntryToken(token);
+      setServerMessage(response.message || 'Event pre-registration confirmed successfully!');
+      setFormSubmitted(true);
+      showToast('Registration Confirmed', response.message || 'Your event entry token has been generated!');
+    } catch (err: any) {
+      console.error('Registration submission failed:', err);
+      const errorMsg = err.message || 'Failed to submit registration. Please check your network and try again.';
+      setSubmitError(errorMsg);
+      showToast('Registration Error', errorMsg);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const filteredEvents = filter === 'all'
@@ -810,13 +842,22 @@ export default function EventsPage() {
                   />
                 </div>
 
+                {/* Error Banner */}
+                {submitError && (
+                  <div className="p-3.5 bg-rose-50 border border-rose-200 text-rose-700 text-xs rounded-xl font-semibold flex items-center gap-2 animate-in fade-in duration-200">
+                    <span className="shrink-0">⚠️</span>
+                    <span>{submitError}</span>
+                  </div>
+                )}
+
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full py-3.5 rounded-xl bg-[#dc2626] hover:bg-[#b91c1c] text-white font-bold text-sm tracking-wide shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  disabled={isSubmitting}
+                  className="w-full py-3.5 rounded-xl bg-[#dc2626] hover:bg-[#b91c1c] disabled:bg-red-900 text-white font-bold text-sm tracking-wide shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer disabled:cursor-not-allowed"
                 >
-                  <span>Confirm Pre-Registration &amp; Get Entry Pass</span>
-                  <ArrowRight size={16} />
+                  <span>{isSubmitting ? 'Confirming Registration...' : 'Confirm Pre-Registration & Get Entry Pass'}</span>
+                  {!isSubmitting && <ArrowRight size={16} />}
                 </button>
 
                 <p className="text-[11px] text-center text-slate-500">
@@ -827,23 +868,46 @@ export default function EventsPage() {
 
             {/* Confirmed Entry Pass View */}
             {formSubmitted && (
-              <div className="mt-4 p-5 rounded-2xl bg-slate-50 border border-emerald-200 text-center animate-in fade-in duration-300">
-                <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Check size={24} />
+              <div className="mt-4 p-5 rounded-2xl bg-emerald-50/80 border border-emerald-300 text-center animate-in fade-in duration-300 space-y-3">
+                <div className="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto shadow-xs">
+                  <Check size={26} />
                 </div>
-                <h4 className="text-sm font-bold text-slate-800 mb-1">Registration form submitted locally</h4>
-                <p className="text-xs text-slate-500">
-                  Registration submission will be connected when the event registration service is enabled.
-                </p>
-                <button
-                  onClick={() => {
-                    setFormSubmitted(false);
-                    closeRegistrationModal();
-                  }}
-                  className="mt-4 px-5 py-2 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-bold transition-all"
-                >
-                  Close
-                </button>
+                <div>
+                  <h4 className="text-base font-bold text-slate-900 mb-0.5">Pre-Registration Confirmed!</h4>
+                  <p className="text-xs text-slate-600 font-medium">{serverMessage}</p>
+                </div>
+
+                {entryToken && (
+                  <div className="bg-white border-2 border-dashed border-emerald-400 p-3 rounded-xl">
+                    <div className="text-[10px] font-extrabold uppercase text-slate-400 tracking-wider">Official Entry Pass Token</div>
+                    <div className="text-lg font-black text-emerald-800 font-mono tracking-wider mt-0.5">{entryToken}</div>
+                    <div className="text-[11px] text-slate-500 mt-0.5">{selectedEventName} • {formData.venue}</div>
+                  </div>
+                )}
+
+                <div className="pt-1 flex flex-col sm:flex-row gap-2">
+                  <a
+                    href={`https://wa.me/8801713000000?text=${encodeURIComponent(
+                      `Hi Study First Info, I pre-registered for ${selectedEventName} at ${formData.venue}. My Entry Token is ${entryToken}. Name: ${formData.name}.`
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 py-2.5 px-4 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold transition-all shadow-xs"
+                  >
+                    Receive Pass on WhatsApp
+                  </a>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setFormSubmitted(false);
+                      setSubmitError(null);
+                      closeRegistrationModal();
+                    }}
+                    className="py-2.5 px-4 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-700 text-xs font-bold transition-all"
+                  >
+                    Done
+                  </button>
+                </div>
               </div>
             )}
 
