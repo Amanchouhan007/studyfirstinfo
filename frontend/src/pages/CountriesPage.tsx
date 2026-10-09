@@ -41,6 +41,7 @@ export default function CountriesPage() {
 
   // Form values
   const [selectedProgramTarget, setSelectedProgramTarget] = useState<string>('Select any program below');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   // Floating Toast
   const [toast, setToast] = useState<{ show: boolean; title: string; message: string }>({
@@ -121,12 +122,17 @@ export default function CountriesPage() {
 
   const handleLeadSubmit = (e: React.FormEvent<HTMLFormElement>, formType: string) => {
     e.preventDefault();
+    if (isSubmitting) return;
+    setIsSubmitting(true);
     const targetTitle = formType === 'landing' ? activeCountry?.name : activeUni?.name;
     showToast(
       "Profile Submitted Successfully!",
       `Thank you! Your academic profile for ${targetTitle} has been allocated to a Senior Counselor.`
     );
     (e.target as HTMLFormElement).reset();
+    setTimeout(() => {
+      setIsSubmitting(false);
+    }, 1200);
   };
 
   const countryKeys = Object.keys(catalog);
@@ -371,7 +377,7 @@ export default function CountriesPage() {
             </div>
 
             {/* Country Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" id="country-cards-container">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8" id="country-cards-container">
               {filteredCountryKeys.map((key) => {
                 const country = catalog[key];
                 return (
@@ -808,20 +814,20 @@ export default function CountriesPage() {
                     </div>
 
                     <div>
-                      <div className="flex items-center justify-between mb-1">
+                      <div className="flex items-center justify-between mb-1.5">
                         <label className="font-bold text-slate-700">Academic Score (GPA/CGPA) *</label>
-                        <div className="flex items-center gap-1 bg-slate-100 p-0.5 rounded-lg text-[9px] font-bold">
+                        <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl text-[11px] font-bold">
                           <button 
                             type="button" 
                             onClick={() => setLandingGpaScale(5)} 
-                            className={`px-2 py-0.5 rounded cursor-pointer ${landingGpaScale === 5 ? 'bg-emerald-600 text-white' : 'text-slate-600'}`}
+                            className={`px-3 py-1 rounded-lg transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 ${landingGpaScale === 5 ? 'bg-emerald-600 text-white shadow-xs' : 'text-slate-600 hover:text-slate-900'}`}
                           >
                             Scale 5.0 (HSC)
                           </button>
                           <button 
                             type="button" 
                             onClick={() => setLandingGpaScale(4)} 
-                            className={`px-2 py-0.5 rounded cursor-pointer ${landingGpaScale === 4 ? 'bg-emerald-600 text-white' : 'text-slate-600'}`}
+                            className={`px-3 py-1 rounded-lg transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 ${landingGpaScale === 4 ? 'bg-emerald-600 text-white shadow-xs' : 'text-slate-600 hover:text-slate-900'}`}
                           >
                             Scale 4.0 (Bachelor)
                           </button>
@@ -861,9 +867,10 @@ export default function CountriesPage() {
 
                     <button 
                       type="submit" 
-                      className="w-full py-3.5 rounded-xl bg-[#dc2626] hover:bg-[#b91c1c] text-white font-bold text-xs tracking-wide shadow-lg hover:shadow-red-600/30 transition-all flex items-center justify-center gap-2 cursor-pointer"
+                      disabled={isSubmitting}
+                      className={`w-full py-3.5 rounded-xl bg-[#dc2626] hover:bg-[#b91c1c] text-white font-bold text-xs tracking-wide shadow-lg hover:shadow-red-600/30 transition-all flex items-center justify-center gap-2 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                     >
-                      <span>Submit Profile for Free Assessment</span>
+                      <span>{isSubmitting ? 'Submitting...' : 'Submit Profile for Free Assessment'}</span>
                       <ArrowRight className="w-4 h-4" />
                     </button>
                   </form>
@@ -1192,20 +1199,20 @@ export default function CountriesPage() {
                     </div>
 
                     <div>
-                      <div className="flex items-center justify-between mb-1">
+                      <div className="flex items-center justify-between mb-1.5">
                         <label className="font-bold text-slate-700">Academic Score (GPA / CGPA) *</label>
-                        <div className="flex items-center gap-1 bg-slate-100 p-0.5 rounded-lg text-[9px] font-bold">
+                        <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl text-[11px] font-bold">
                           <button 
                             type="button" 
                             onClick={() => setProgGpaScale(5)} 
-                            className={`px-2 py-0.5 rounded cursor-pointer ${progGpaScale === 5 ? 'bg-emerald-600 text-white' : 'text-slate-600'}`}
+                            className={`px-3 py-1 rounded-lg transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 ${progGpaScale === 5 ? 'bg-emerald-600 text-white shadow-xs' : 'text-slate-600 hover:text-slate-900'}`}
                           >
                             Scale 5.0 (HSC)
                           </button>
                           <button 
                             type="button" 
                             onClick={() => setProgGpaScale(4)} 
-                            className={`px-2 py-0.5 rounded cursor-pointer ${progGpaScale === 4 ? 'bg-emerald-600 text-white' : 'text-slate-600'}`}
+                            className={`px-3 py-1 rounded-lg transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 ${progGpaScale === 4 ? 'bg-emerald-600 text-white shadow-xs' : 'text-slate-600 hover:text-slate-900'}`}
                           >
                             Scale 4.0 (Bachelor)
                           </button>
@@ -1245,9 +1252,10 @@ export default function CountriesPage() {
 
                     <button 
                       type="submit" 
-                      className="w-full py-3.5 rounded-xl bg-[#dc2626] hover:bg-[#b91c1c] text-white font-bold text-xs tracking-wide shadow-lg hover:shadow-red-600/30 transition-all flex items-center justify-center gap-2 cursor-pointer"
+                      disabled={isSubmitting}
+                      className={`w-full py-3.5 rounded-xl bg-[#dc2626] hover:bg-[#b91c1c] text-white font-bold text-xs tracking-wide shadow-lg hover:shadow-red-600/30 transition-all flex items-center justify-center gap-2 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                     >
-                      <span>Submit Profile for Evaluation</span>
+                      <span>{isSubmitting ? 'Submitting...' : 'Submit Profile for Evaluation'}</span>
                       <ArrowRight className="w-4 h-4" />
                     </button>
                   </form>

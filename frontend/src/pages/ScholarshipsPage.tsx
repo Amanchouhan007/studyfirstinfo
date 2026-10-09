@@ -489,7 +489,7 @@ export default function ScholarshipsPage() {
             <div className="flex flex-wrap items-center gap-2">
               <button 
                 onClick={() => setActiveFilter('all')}
-                className={`px-3.5 py-1.5 rounded-full text-xs font-bold border transition-all cursor-pointer ${
+                className={`px-4 py-2 rounded-full text-xs sm:text-sm font-bold border transition-all cursor-pointer min-h-[36px] flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 ${
                   activeFilter === 'all' 
                     ? 'bg-[#006837] text-white border-[#006837] shadow-sm' 
                     : 'bg-white text-slate-700 border-slate-200 hover:border-emerald-500 hover:text-emerald-700'
@@ -499,7 +499,7 @@ export default function ScholarshipsPage() {
               </button>
               <button 
                 onClick={() => setActiveFilter('fullride')}
-                className={`px-3.5 py-1.5 rounded-full text-xs font-bold border transition-all cursor-pointer ${
+                className={`px-4 py-2 rounded-full text-xs sm:text-sm font-bold border transition-all cursor-pointer min-h-[36px] flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 ${
                   activeFilter === 'fullride' 
                     ? 'bg-[#006837] text-white border-[#006837] shadow-sm' 
                     : 'bg-white text-slate-700 border-slate-200 hover:border-emerald-500 hover:text-emerald-700'
@@ -509,7 +509,7 @@ export default function ScholarshipsPage() {
               </button>
               <button 
                 onClick={() => setActiveFilter('europe')}
-                className={`px-3.5 py-1.5 rounded-full text-xs font-bold border transition-all cursor-pointer ${
+                className={`px-4 py-2 rounded-full text-xs sm:text-sm font-bold border transition-all cursor-pointer min-h-[36px] flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 ${
                   activeFilter === 'europe' 
                     ? 'bg-[#006837] text-white border-[#006837] shadow-sm' 
                     : 'bg-white text-slate-700 border-slate-200 hover:border-emerald-500 hover:text-emerald-700'
@@ -519,7 +519,7 @@ export default function ScholarshipsPage() {
               </button>
               <button 
                 onClick={() => setActiveFilter('asia')}
-                className={`px-3.5 py-1.5 rounded-full text-xs font-bold border transition-all cursor-pointer ${
+                className={`px-4 py-2 rounded-full text-xs sm:text-sm font-bold border transition-all cursor-pointer min-h-[36px] flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 ${
                   activeFilter === 'asia' 
                     ? 'bg-[#006837] text-white border-[#006837] shadow-sm' 
                     : 'bg-white text-slate-700 border-slate-200 hover:border-emerald-500 hover:text-emerald-700'
@@ -529,7 +529,7 @@ export default function ScholarshipsPage() {
               </button>
               <button 
                 onClick={() => setActiveFilter('commonwealth')}
-                className={`px-3.5 py-1.5 rounded-full text-xs font-bold border transition-all cursor-pointer ${
+                className={`px-4 py-2 rounded-full text-xs sm:text-sm font-bold border transition-all cursor-pointer min-h-[36px] flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 ${
                   activeFilter === 'commonwealth' 
                     ? 'bg-[#006837] text-white border-[#006837] shadow-sm' 
                     : 'bg-white text-slate-700 border-slate-200 hover:border-emerald-500 hover:text-emerald-700'

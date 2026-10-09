@@ -630,14 +630,14 @@ export default function AboutPage() {
                 </div>
 
                 <div>
-                  <div className="flex items-center justify-between mb-1">
+                  <div className="flex items-center justify-between mb-1.5">
                     <label htmlFor="lead-gpa" className="font-bold text-slate-700">Academic Score (GPA / CGPA) *</label>
-                    <div className="flex items-center gap-1 bg-slate-100 p-0.5 rounded-lg text-[9px] font-bold">
+                    <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl text-[11px] font-bold">
                       <button
                         type="button"
                         onClick={() => setGpaScale(5)}
-                        className={`px-2 py-0.5 rounded transition-all cursor-pointer ${
-                          gpaScale === 5 ? 'bg-emerald-600 text-white' : 'text-slate-600 hover:text-slate-900'
+                        className={`px-3 py-1 rounded-lg transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 ${
+                          gpaScale === 5 ? 'bg-emerald-600 text-white shadow-xs' : 'text-slate-600 hover:text-slate-900'
                         }`}
                       >
                         Scale 5.0 (HSC)
@@ -645,8 +645,8 @@ export default function AboutPage() {
                       <button
                         type="button"
                         onClick={() => setGpaScale(4)}
-                        className={`px-2 py-0.5 rounded transition-all cursor-pointer ${
-                          gpaScale === 4 ? 'bg-emerald-600 text-white' : 'text-slate-600 hover:text-slate-900'
+                        className={`px-3 py-1 rounded-lg transition-all cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 ${
+                          gpaScale === 4 ? 'bg-emerald-600 text-white shadow-xs' : 'text-slate-600 hover:text-slate-900'
                         }`}
                       >
                         Scale 4.0 (Bachelor)

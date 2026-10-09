@@ -32,7 +32,7 @@ export default function FloatingActions() {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="bg-gray-800 text-white p-2.5 sm:p-3 rounded-full shadow-lg hover:bg-gray-700 transition-all opacity-85 hover:opacity-100 cursor-pointer"
+          className="bg-gray-800 text-white p-2.5 sm:p-3 rounded-full shadow-lg hover:bg-gray-700 transition-all opacity-85 hover:opacity-100 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
           aria-label="Back to top"
         >
           <ArrowUp className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -40,10 +40,10 @@ export default function FloatingActions() {
       )}
       
       <a
-        href={`https://wa.me/1234567890?text=${whatsappMessage}`}
+        href={`https://wa.me/8801712345678?text=${whatsappMessage}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-[#25D366] text-white rounded-full shadow-2xl hover:scale-105 active:scale-95 transition-transform duration-300"
+        className="relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-[#25D366] text-white rounded-full shadow-2xl hover:scale-105 active:scale-95 transition-transform duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
         aria-label="Chat on WhatsApp"
       >
         <div className="absolute inset-0 bg-[#25D366] rounded-full animate-ping opacity-60"></div>

@@ -11,36 +11,33 @@ export async function fetchCountries(): Promise<Record<string, CountryRecord>> {
   try {
     const response = await fetch(`${API_BASE_URL}/countries`);
     if (!response.ok) {
-      throw new Error(`API Error: ${response.status}`);
+      return COUNTRIES_DB;
     }
-    
-    // We expect an array from the DB. But frontend uses a dictionary mapping for `COUNTRIES_DB`.
-    // The DB only stores normalized data, leaving out rich presentation data.
-    // For read-only safety, if we reach the DB, we can map its records back into the frontend structure.
-    // HOWEVER, to preserve all existing visual presentation fields (images, marketing text, SVGs) 
-    // without completely breaking the UI, we merge the API data over the local data where matched.
 
     const apiCountries = await response.json();
+    if (!Array.isArray(apiCountries)) {
+      return COUNTRIES_DB;
+    }
     
     // Fallback dictionary base
     const mergedDb = { ...COUNTRIES_DB };
 
     // Merge API data over local data if available
     apiCountries.forEach((apiCountry: any) => {
-      const existing = mergedDb[apiCountry.code.toLowerCase()];
-      if (existing) {
-        // We have API data for this country, merge only relational identifiers safely
-        mergedDb[apiCountry.code.toLowerCase()] = {
-          ...existing,
-          id: apiCountry.id, // Update to official UUID if needed
-          name: apiCountry.name || existing.name,
-        };
+      if (apiCountry?.code) {
+        const existing = mergedDb[apiCountry.code.toLowerCase()];
+        if (existing) {
+          mergedDb[apiCountry.code.toLowerCase()] = {
+            ...existing,
+            id: apiCountry.id || existing.id,
+            name: apiCountry.name || existing.name,
+          };
+        }
       }
     });
 
     return mergedDb;
   } catch (error) {
-    console.warn('Backend API unavailable. Falling back to local COUNTRIES_DB.', error);
     return COUNTRIES_DB;
   }
 }

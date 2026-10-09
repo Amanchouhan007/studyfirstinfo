@@ -91,7 +91,7 @@ export default function Navbar() {
           </Link>
 
           {/* Center: Desktop Navigation Links */}
-          <div className="hidden lg:flex items-center space-x-7">
+          <div className="hidden xl:flex items-center space-x-5 2xl:space-x-7">
             {navItems.map((item) => {
               const active = isItemActive(item);
               return (
@@ -99,7 +99,7 @@ export default function Navbar() {
                   key={item.name}
                   to={item.href}
                   onClick={(e) => handleNavClick(e, item)}
-                  className={`text-sm font-semibold tracking-wide transition-colors duration-150 relative py-1 cursor-pointer select-none ${
+                  className={`text-sm font-semibold tracking-wide transition-colors duration-150 relative py-1 cursor-pointer select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 rounded-sm ${
                     active 
                       ? 'text-accent font-bold' 
                       : 'text-gray-700 hover:text-accent'
@@ -118,14 +118,14 @@ export default function Navbar() {
           <div className="flex items-center gap-2 sm:gap-4 shrink-0">
             <Link 
               to="/auth" 
-              className="hidden sm:inline-flex items-center text-xs sm:text-sm text-gray-700 hover:text-primary font-semibold px-3 py-2 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer"
+              className="hidden sm:inline-flex items-center text-xs sm:text-sm text-gray-700 hover:text-primary font-semibold px-3 py-2 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
             >
               Login
             </Link>
 
             <Link 
               to="/auth" 
-              className="bg-accent hover:bg-green-700 text-white text-xs sm:text-sm px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl font-bold transition-all shadow-md shadow-emerald-700/20 hover:shadow-lg hover:shadow-emerald-700/30 active:scale-95 flex items-center gap-1 sm:gap-1.5 cursor-pointer whitespace-nowrap"
+              className="bg-accent hover:bg-green-700 text-white text-xs sm:text-sm px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl font-bold transition-all shadow-md shadow-emerald-700/20 hover:shadow-lg hover:shadow-emerald-700/30 active:scale-95 flex items-center gap-1 sm:gap-1.5 cursor-pointer whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
             >
               <span>Register<span className="hidden xs:inline"> Free</span></span>
               <ArrowRight size={14} className="shrink-0" />
@@ -134,7 +134,7 @@ export default function Navbar() {
             {/* Mobile Hamburger Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 text-gray-600 hover:text-primary hover:bg-gray-100 rounded-xl transition-colors cursor-pointer"
+              className="xl:hidden p-2 text-gray-600 hover:text-primary hover:bg-gray-100 rounded-xl transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
               aria-label="Toggle Navigation Menu"
             >
               {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
@@ -145,7 +145,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-gray-100 bg-white/98 backdrop-blur-lg px-4 pt-3 pb-6 space-y-2 shadow-xl animate-in slide-in-from-top-2 duration-200">
+        <div className="xl:hidden border-t border-gray-100 bg-white/98 backdrop-blur-lg px-4 pt-3 pb-6 space-y-2 shadow-xl animate-in slide-in-from-top-2 duration-200">
           <div className="flex flex-col space-y-1">
             {navItems.map((item) => {
               const active = isItemActive(item);
