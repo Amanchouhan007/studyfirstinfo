@@ -522,6 +522,179 @@ export const pathways: Record<string, RouteCard> = {
         '✓ Both Savings and FDR accounts accepted with 4 to 6 months maturity.'
       ]
     }
+  },
+  germany: {
+    id: 'germany',
+    category: 'europe',
+    icon: '🇩🇪',
+    regionCode: 'DE',
+    badge: '100% Tuition-Free Public Universities',
+    badgeClass: 'bg-[#c6f6d5] text-[#065f46]',
+    title: 'Germany Pathways',
+    countries: ['Germany', 'TU Munich (TUM)', 'Berlin Tech Partners', 'Public Universities'],
+    glowColor: 'bg-emerald-500/10 group-hover:bg-emerald-500/20',
+    points: [
+      { prefix: 'Zero Tuition Fees', text: ' across all 16 German federal states at public universities' },
+      { prefix: '18-Month Job Seeker Visa', text: ' post-graduation leading directly to an EU Blue Card' },
+      { text: 'Official Blocked Account (€11,208 to €11,904) setup and escrow guidance' },
+      { text: '20 hrs/week legal student work rights (120 full days / 240 half days/year)' }
+    ],
+    details: {
+      countryTitle: 'Germany Public University Corridors',
+      badge: '100% Tuition-Free & High-Tech',
+      generalOverview: 'Germany offers world-class engineering, computing, and business degrees at 100% tuition-free public universities. Bangladeshi students benefit from generous 18-month post-study work permits and paid Werkstudent internships in Europe\'s largest economy.',
+      countriesIncluded: [
+        { name: 'Germany', flag: '🇩🇪' },
+        { name: 'Munich (TUM)', flag: '🇩🇪' },
+        { name: 'Berlin Tech', flag: '🇩🇪' },
+        { name: 'Aachen & Stuttgart', flag: '🇩🇪' }
+      ],
+      description: 'Offers 100% tuition-free public university seats with Uni-Assist VPD guidance, Blocked Account setup, and direct EU Blue Card career pathways.',
+      intakes: 'Winter (Oct 2026) / Summer (Apr 2027)',
+      workRights: '20 hrs/week (120 full days/yr)',
+      english: 'IELTS 6.5 / German B2 or MOI',
+      universities: [
+        {
+          name: 'Technical University of Munich (TUM) & Public Partners',
+          country: 'Germany',
+          tuition: '€0 Tuition Fee (~€150/sem contribution)',
+          scholarship: 'DAAD Merit Scholarships & Research Grants',
+          requirement: '13 years education / Studienkolleg or Bachelor CGPA 3.0+; IELTS 6.5 / German B2'
+        },
+        {
+          name: 'RWTH Aachen & Berlin University Partners',
+          country: 'Germany',
+          tuition: '€0 Tuition Fee (~€300/sem ticket & contribution)',
+          scholarship: 'Deutschlandstipendium (€300/mo grant)',
+          requirement: 'Recognized Bachelor / HSC background; English or German proficiency'
+        }
+      ],
+      scholarships: [
+        { name: 'DAAD Scholarship Schemes', value: '€934/month stipend + travel & health insurance' },
+        { name: 'Deutschlandstipendium', value: '€300/month national merit grant' }
+      ],
+      workRightsInfo: [
+        '✓ 100% tuition-free higher education at public universities across Germany.',
+        '✓ 20 hours per week legal student employment during semesters (120 full days / 240 half days/year).',
+        '✓ Paid Werkstudent (working student) positions paying €14–€20/hour.',
+        '✓ 18-Month job seeker visa (Aufenthaltserlaubnis) leading directly to an EU Blue Card.'
+      ]
+    }
+  },
+  ireland: {
+    id: 'ireland',
+    category: 'europe',
+    icon: '🇮🇪',
+    regionCode: 'IE',
+    badge: 'EU Tech Capital & 2-Yr PSW',
+    badgeClass: 'bg-[#e6fffa] text-[#234e52]',
+    title: 'Ireland Tech Corridor',
+    countries: ['Ireland', 'Dublin Tech Hubs', 'National College of Ireland', 'University College Dublin (UCD)'],
+    glowColor: 'bg-emerald-500/10 group-hover:bg-emerald-500/20',
+    points: [
+      { prefix: '2-Year Graduate Route PSW', text: ' post-study work visa for Master\'s graduates in the Eurozone' },
+      { prefix: 'European Tech Headquarters', text: ' home to Google, Meta, Apple, Pfizer, and Intel European HQs' },
+      { text: '100% English-speaking European Union member with globally recognized degrees' },
+      { text: '20 hours/week part-time work during terms, 40 hours/week during holidays' }
+    ],
+    details: {
+      countryTitle: 'Ireland Tech & University Corridor',
+      badge: 'EU Tech Capital & 2-Yr PSW',
+      generalOverview: 'Ireland is Europe\'s premier technology and pharmaceutical hub, hosting European headquarters for over 1,000 multinational giants. As the only native English-speaking country in the Eurozone, it offers Bangladeshi graduates exceptional post-study work opportunities via the 2-Year Third Level Graduate Scheme.',
+      countriesIncluded: [
+        { name: 'Ireland', flag: '🇮🇪' },
+        { name: 'Dublin', flag: '🇮🇪' },
+        { name: 'Cork', flag: '🇮🇪' },
+        { name: 'Galway', flag: '🇮🇪' }
+      ],
+      description: 'Direct access to world-ranked Irish universities and institutes of technology with high-demand graduate careers in software engineering, data analytics, fintech, and biotechnology.',
+      intakes: 'Sept 2026 / Jan 2027',
+      workRights: '20 hrs/week (40 hrs in holidays)',
+      english: 'IELTS 6.0–6.5 / Duolingo 115+ / MOI',
+      universities: [
+        {
+          name: 'National College of Ireland (NCI)',
+          country: 'Ireland',
+          tuition: '€10,000 – €15,000 / year',
+          scholarship: 'Up to €4,000 Dean\'s Award / International Merit Scholarship',
+          requirement: 'Bachelor CGPA 2.75+; IELTS 6.0–6.5 / Duolingo 110–120 / MOI accepted'
+        },
+        {
+          name: 'University College Dublin (UCD) & Dublin Hubs',
+          country: 'Ireland',
+          tuition: '€14,000 – €22,000 / year',
+          scholarship: 'Global Excellence Postgraduate Scholarship (€2,000 to €5,000)',
+          requirement: 'Bachelor CGPA 3.0+; IELTS 6.5 or equivalent'
+        }
+      ],
+      scholarships: [
+        { name: 'Government of Ireland International Scholarship', value: '€10,000 stipend + full tuition waiver' },
+        { name: 'Global Excellence Postgraduate Award', value: '€2,000 to €5,000 tuition reduction' }
+      ],
+      workRightsInfo: [
+        '✓ 2-Year Third Level Graduate Scheme (Stamp 1G) post-study work permit for Master\'s graduates.',
+        '✓ 1-Year Stamp 1G post-study work permit for Bachelor\'s graduates.',
+        '✓ 20 hours/week legal part-time work during academic terms; 40 hours/week during holidays.',
+        '✓ Direct access to Silicon Docks European tech conglomerates (Google, Meta, TikTok, Stripe).'
+      ]
+    }
+  },
+  thailand: {
+    id: 'thailand',
+    category: 'asia',
+    icon: '🇹🇭',
+    regionCode: 'TH',
+    badge: '100% English • Affordable ASEAN Hub',
+    badgeClass: 'bg-[#fefcbf] text-[#744210]',
+    title: 'Thailand ASEAN Hub',
+    countries: ['Thailand', 'Asian Institute of Tech (AIT)', 'Stamford International', 'Bangkok Hubs'],
+    glowColor: 'bg-amber-500/10 group-hover:bg-amber-500/20',
+    points: [
+      { prefix: 'Zero Language Barrier', text: ' — 100% English-medium international curricula with MOI acceptance' },
+      { prefix: 'Ultra-Affordable Budget', text: ' tuition from $2,500/yr and monthly living from $250/month' },
+      { text: 'Asian Institute of Technology (AIT) international research network & fellowships' },
+      { text: 'Fast visa processing with straightforward embassy approval from Dhaka' }
+    ],
+    details: {
+      countryTitle: 'Thailand International University Corridors',
+      badge: '100% English • Affordable ASEAN Hub',
+      generalOverview: 'Thailand offers prestigious English-medium international higher education in the heart of Southeast Asia. With institutions like the Asian Institute of Technology (AIT) and international partner campuses in Bangkok, students experience world-class education at a fraction of Western costs with low living expenses and streamlined visa clearance.',
+      countriesIncluded: [
+        { name: 'Thailand', flag: '🇹🇭' },
+        { name: 'Bangkok', flag: '🇹🇭' },
+        { name: 'AIT Campus', flag: '🇹🇭' }
+      ],
+      description: 'Premier Asian gateway offering accredited Bachelor and Master degrees with industry internships, low tuition, and easy credit transfer options.',
+      intakes: 'August 2026 / January 2027',
+      workRights: 'Campus internships & project roles',
+      english: 'MOI accepted / IELTS 5.0–5.5',
+      universities: [
+        {
+          name: 'Asian Institute of Technology (AIT)',
+          country: 'Thailand',
+          tuition: '$3,500 – $6,000 / year',
+          scholarship: 'Royal Thai Government (RTG) Fellowships & AIT Merit Awards',
+          requirement: 'Bachelor pass with CGPA 2.75+; MOI or IELTS 5.5'
+        },
+        {
+          name: 'Stamford International University (Bangkok)',
+          country: 'Thailand',
+          tuition: '$2,500 – $4,500 / year',
+          scholarship: 'Early Bird & ASEAN Leadership Grants (up to 30%)',
+          requirement: 'HSC / Bachelor pass; 100% English medium, MOI accepted'
+        }
+      ],
+      scholarships: [
+        { name: 'Royal Thai Government (RTG) Fellowships', value: 'Full/partial tuition fellowship grants' },
+        { name: 'AIT President\'s Merit Scholarships', value: 'Up to 50% tuition reduction' }
+      ],
+      workRightsInfo: [
+        '✓ 100% English-medium international curricula with MOI acceptance.',
+        '✓ Affordable monthly living expenses (~$250 to $400/month including accommodation).',
+        '✓ Authorized university laboratory internships and research assistantships.',
+        '✓ Fast and straightforward student visa processing via the Royal Thai Embassy in Dhaka.'
+      ]
+    }
   }
 };
 
@@ -530,8 +703,17 @@ export function getPathwayById(id?: string): RouteCard {
   const clean = id.toLowerCase().trim();
   
   if (pathways[clean]) return pathways[clean];
-  if (clean.includes('schengen') || clean.includes('europe') || clean.includes('hungary') || clean.includes('greece')) {
+  if (clean.includes('schengen') || clean.includes('hungary') || clean.includes('greece')) {
     return pathways.schengen;
+  }
+  if (clean.includes('germany') || clean.includes('deutschland') || clean.includes('munich') || clean.includes('berlin')) {
+    return pathways.germany;
+  }
+  if (clean.includes('ireland') || clean.includes('irish') || clean.includes('dublin')) {
+    return pathways.ireland;
+  }
+  if (clean.includes('thailand') || clean.includes('thai') || clean.includes('bangkok') || clean.includes('ait')) {
+    return pathways.thailand;
   }
   if (clean.includes('russia')) {
     return pathways.russia;
@@ -550,6 +732,9 @@ export function getPathwayById(id?: string): RouteCard {
   }
   if (clean.includes('zealand') || clean.includes('nz') || clean.includes('oceania') || clean.includes('australia')) {
     return pathways.newzealand;
+  }
+  if (clean.includes('europe')) {
+    return pathways.schengen;
   }
   
   return pathways.schengen;

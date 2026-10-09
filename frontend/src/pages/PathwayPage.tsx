@@ -60,12 +60,15 @@ export default function PathwayPage() {
     else if (raw.includes('uk') || raw.includes('england') || raw.includes('united kingdom') || raw.includes('wales') || raw.includes('london')) countryKey = 'united-kingdom';
     else if (raw.includes('malaysia') || raw.includes('unisza') || raw.includes('mila') || raw.includes('segi') || raw.includes('inti') || raw.includes('apu')) countryKey = 'malaysia';
     else if (raw.includes('zealand') || raw.includes('new zealand') || raw.includes('nz')) countryKey = 'new-zealand';
-    else if (raw.includes('germany')) countryKey = 'germany';
+    else if (raw.includes('germany') || raw.includes('munich') || raw.includes('berlin') || raw.includes('tum')) countryKey = 'germany';
+    else if (raw.includes('ireland') || raw.includes('dublin') || raw.includes('ucd') || raw.includes('trinity') || raw.includes('nci')) countryKey = 'ireland';
+    else if (raw.includes('thailand') || raw.includes('bangkok') || raw.includes('ait') || raw.includes('stamford')) countryKey = 'thailand';
+    else if (raw.includes('korea') || raw.includes('sookmyung') || raw.includes('gachon') || raw.includes('kmcu')) countryKey = 'south-korea';
     else if (raw.includes('cyprus')) countryKey = 'cyprus';
     else if (raw.includes('greece') || raw.includes('athens')) countryKey = 'greece';
     else if (raw.includes('lithuania') || raw.includes('smk')) countryKey = 'lithuania';
-    else if (raw.includes('china')) countryKey = 'china';
-    else if (raw.includes('russia')) countryKey = 'russia';
+    else if (raw.includes('china') || raw.includes('hit') || raw.includes('zhejiang')) countryKey = 'china';
+    else if (raw.includes('russia') || raw.includes('novosibirsk') || raw.includes('moscow')) countryKey = 'russia';
     else if (raw.includes('poland') || raw.includes('czech') || raw.includes('spain') || raw.includes('bulgaria') || raw.includes('malta')) countryKey = 'hungary';
     else {
       countryKey = encodeURIComponent(countryName);

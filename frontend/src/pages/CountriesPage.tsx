@@ -249,7 +249,7 @@ export default function CountriesPage() {
 
                     {/* Floating Orbital Badge 1: Compare Destinations */}
                     <div className="absolute -top-2 left-2 bg-[#121c2d]/90 border border-slate-700/80 rounded-xl px-3 py-1.5 shadow-xl backdrop-blur-md flex items-center gap-2 text-xs">
-                      <span className="w-4 h-4 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-[10px] font-bold">âœ“</span>
+                      <span className="w-4 h-4 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-[10px] font-bold">✓</span>
                       <span className="font-bold text-slate-200">Compare Destinations</span>
                     </div>
 
@@ -660,7 +660,7 @@ export default function CountriesPage() {
                               <span className="px-2.5 py-0.5 rounded-md text-[10px] font-extrabold uppercase bg-emerald-100 text-emerald-800">
                                 {uni.badge}
                               </span>
-                              <span className="text-xs text-slate-500 font-medium">â€¢ {uni.type}</span>
+                              <span className="text-xs text-slate-500 font-medium">• {uni.type}</span>
                             </div>
                             <h4 
                               onClick={() => openUniversityProgram(activeCountry.id, uni.id)}
@@ -940,7 +940,7 @@ export default function CountriesPage() {
                 onClick={backToCountryLanding}
                 className="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs transition-all flex items-center gap-1.5 cursor-pointer"
               >
-                <span>â† Back to Country Guide</span>
+                <span>← Back to Country Guide</span>
               </button>
             </nav>
 

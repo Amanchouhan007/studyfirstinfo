@@ -114,16 +114,16 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
       "Spouse allowed with open work rights (UG & PG)",
       "Pay tuition fee after Approval in Principle (AIP)"
     ],
-    livingCost: "NZ$ 1,200 â€“ NZ$ 1,800 / month",
+    livingCost: "NZ$ 1,200 – NZ$ 1,800 / month",
     institutionsCount: "8+ Listed",
     heroImg: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1920&q=80",
     pillBadge: "🇳🇿 Family-Friendly Study Hub",
-    subBadge: "Pay Tuition After Visa AIP â€¢ Spouse Full-Time Work Rights",
+    subBadge: "Pay Tuition After Visa AIP • Spouse Full-Time Work Rights",
     heroHeading: "Study in New Zealand: Pay Fees After Visa & Spouse Rights",
     heroDesc: "Zero upfront tuition risk: pay university fees only after receiving official Approval in Principle (AIP) from Immigration New Zealand. Accompanying spouses receive full-time open work permits, and dependent children study in New Zealand domestic public schools completely free.",
-    tuition: "NZ$ 24,000 â€“ NZ$ 45,000/yr",
+    tuition: "NZ$ 24,000 – NZ$ 45,000/yr",
     tuitionSub: "Payable strictly after AIP",
-    living: "NZ$ 1,200 â€“ NZ$ 1,800/mo",
+    living: "NZ$ 1,200 – NZ$ 1,800/mo",
     livingSub: "High quality of life",
     work: "25 Hours / Week",
     workSub: "Full-time during vacations",
@@ -163,9 +163,9 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
         tagline: "New Zealand's flagship research university located in central Auckland.",
         intakes: "February 2027, July 2027",
         deadlines: "Nov 30 for Feb Intake | April 30 for July Intake",
-        tuitionUG: "NZ$ 35,000 â€“ NZ$ 55,000 / year",
-        tuitionPG: "NZ$ 40,000 â€“ NZ$ 70,000+ / year",
-        scholarship: "NZ$ 5,000 â€“ NZ$ 20,000 International Student Excellence Scholarship",
+        tuitionUG: "NZ$ 35,000 – NZ$ 55,000 / year",
+        tuitionPG: "NZ$ 40,000 – NZ$ 70,000+ / year",
+        scholarship: "NZ$ 5,000 – NZ$ 20,000 International Student Excellence Scholarship",
         workRights: "25 hrs/week during study; full-time during holidays",
         entryUG: "HSC GPA 4.00/5.00 | IELTS 6.0 (no band < 5.5) / PTE 52",
         entryPG: "Bachelor CGPA 2.75/4.00 | IELTS 6.5 (no band < 6.0) / PTE 59",
@@ -176,8 +176,8 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
           "Up to 3-year Post-Study Work Visa (PSW) with direct pathways to skilled migrant Permanent Residency."
         ],
         costAndBank: {
-          monthlyCost: "NZ$ 1,300 â€“ NZ$ 1,900 / month",
-          bankFundSingle: "UG: ~à§³70 Lac â€“ 1 Crore BDT | PG: ~à§³60 â€“ 80 Lac BDT",
+          monthlyCost: "NZ$ 1,300 – NZ$ 1,900 / month",
+          bankFundSingle: "UG: ~৳70 Lac – 1 Crore BDT | PG: ~৳60 – 80 Lac BDT",
           bankMaturity: "4 to 6 months maturity required (both Savings & FDR accepted)",
           familyFund: "Spouse & Child: >20 Lac BDT additional statement"
         },
@@ -189,7 +189,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
           "Receive unconditional Offer of Place (OOP)",
           "Prepare financial evidence (4-6 month maturity statement/FDR)",
           "Submit online visa file to Immigration New Zealand (INZ)",
-          "INZ AIP (Approval in Principle) issued â†’ Pay official tuition fees",
+          "INZ AIP (Approval in Principle) issued → Pay official tuition fees",
           "Final e-Visa stamp and pre-departure briefing"
         ],
         programs: [
@@ -208,12 +208,12 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
         tagline: "Hands-on vocational qualifications directly mapped to New Zealand Green List occupations.",
         intakes: "February 2027, July 2027",
         deadlines: "Dec 10 for Feb Intake | May 25 for July Intake",
-        tuitionUG: "Diploma: NZ$ 18,000 â€“ NZ$ 25,000 / yr | Degree: NZ$ 24,000 â€“ NZ$ 35,000 / yr",
-        tuitionPG: "PGD: NZ$ 25,000 â€“ NZ$ 32,000 / yr",
-        scholarship: "NZ$ 2,500 â€“ NZ$ 5,000 Regional Grants",
+        tuitionUG: "Diploma: NZ$ 18,000 – NZ$ 25,000 / yr | Degree: NZ$ 24,000 – NZ$ 35,000 / yr",
+        tuitionPG: "PGD: NZ$ 25,000 – NZ$ 32,000 / yr",
+        scholarship: "NZ$ 2,500 – NZ$ 5,000 Regional Grants",
         workRights: "25 hrs/week part-time",
         entryUG: "Diploma: HSC pass, IELTS 5.5 | Degree: HSC GPA 4.0, IELTS 6.0",
-        entryPG: "Bachelor pass | IELTS 6.0â€“6.5",
+        entryPG: "Bachelor pass | IELTS 6.0–6.5",
         whyStudy: [
           "Lower entry barriers for students with academic gaps or moderate language scores.",
           "Vocational diplomas directly matched to NZ Green List shortage occupations (Nursing, IT, Civil).",
@@ -221,8 +221,8 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
           "Pay tuition fee strictly after INZ Approval in Principle (AIP)."
         ],
         costAndBank: {
-          monthlyCost: "NZ$ 1,000 â€“ NZ$ 1,400 / month",
-          bankFundSingle: "Diploma/UG: ~à§³65 â€“ 70 Lac BDT",
+          monthlyCost: "NZ$ 1,000 – NZ$ 1,400 / month",
+          bankFundSingle: "Diploma/UG: ~৳65 – 70 Lac BDT",
           bankMaturity: "4 to 6 months maturity required",
           familyFund: "Spouse & child sponsorship support supported"
         },
@@ -230,7 +230,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
         partTimeJobs: "25 hours per week during semester; full-time during vacations.",
         applicationSteps: [
           "Profile assessment & pathway selection",
-          "Application to Wintec â†’ Offer of Place",
+          "Application to Wintec → Offer of Place",
           "Financial documentation prep",
           "Visa lodgement & AIP clearance",
           "Pay fees & receive student visa"
@@ -258,20 +258,20 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
       "Stipendium Hungaricum: 100% tuition, dorm, medical & monthly stipend",
       "IELTS waiver possible with English Medium Instruction (MOI)"
     ],
-    livingCost: "â‚¬400 â€“ â‚¬700 / month",
+    livingCost: "€400 – €700 / month",
     institutionsCount: "10+ Listed",
     heroImg: "https://images.unsplash.com/photo-1549877452-9c387954fbc2?auto=format&fit=crop&w=1920&q=80",
     pillBadge: "🇭🇺 Central European Schengen Hub",
     subBadge: "Direct Dhaka Embassy File Submission (No India Trip)",
     heroHeading: "Study in Hungary: 100% Scholarships & Direct Dhaka Visa",
     heroDesc: "Over 500+ successful Hungary student visas handled by Study First Info Ltd. Enjoy 100% tuition coverage with Stipendium Hungaricum, free borderless mobility across 29 Schengen countries, and direct Dhaka embassy interviews without traveling to India.",
-    tuition: "â‚¬0 to â‚¬7,800/yr",
+    tuition: "€0 to €7,800/yr",
     tuitionSub: "100% Full-Ride Eligible",
-    living: "â‚¬400 â€“ â‚¬650/mo",
-    livingSub: "Dormitories from â‚¬150/mo",
+    living: "€400 – €650/mo",
+    livingSub: "Dormitories from €150/mo",
     work: "24 Hours / Week",
     workSub: "Legal student work rights",
-    psw: "1.5 â€“ 2 Years PSW",
+    psw: "1.5 – 2 Years PSW",
     pswSub: "Schengen Job Seeker TRP",
     whyStudy: [
       { icon: "🏛️", title: "Direct Dhaka Embassy", desc: "Submit your student visa file directly at the Embassy of Hungary in Dhaka. Zero third-country travel to New Delhi required!" },
@@ -280,7 +280,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
       { icon: "🌍", title: "29-Country Schengen Travel", desc: "Your Hungarian student residence permit gives you complete borderless mobility and legal part-time work rights across the Schengen zone." }
     ],
     solvency: [
-      { title: "Embassy Living Solvency Amount", detail: "~â‚¬10,000 to â‚¬12,000 proof in student or legal sponsor account." },
+      { title: "Embassy Living Solvency Amount", detail: "~€10,000 to €12,000 proof in student or legal sponsor account." },
       { title: "Bank Statement Maturity", detail: "3 to 6 months of steady transaction history proving source of income." },
       { title: "Sponsor Relationship Proof", detail: "Father/Mother or close relative with affidavit of financial support." },
       { title: "Tuition Deposit Policy", detail: "Paid directly to university escrow account following conditional offer issuance." }
@@ -302,13 +302,13 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
       {
         id: "metu",
         name: "Budapest Metropolitan University (METU)",
-        badge: "Diamond Partner â€¢ Central Budapest",
+        badge: "Diamond Partner • Central Budapest",
         type: "Private University of Applied Sciences",
         tagline: "Highest visa approval record with Study First Info; modern business & media campus in Budapest.",
         intakes: "February 2027, September 2026",
         deadlines: "Application Start: 1 Aug | Deadline: 20 Nov for Feb Intake",
-        tuitionUG: "â‚¬7,000 â€“ â‚¬7,800 / year",
-        tuitionPG: "â‚¬7,200 â€“ â‚¬8,200 / year",
+        tuitionUG: "€7,000 – €7,800 / year",
+        tuitionPG: "€7,200 – €8,200 / year",
         scholarship: "Stipendium Hungaricum (100% funded) + University Fee Waivers",
         workRights: "24 hrs/week legal employment",
         entryUG: "GPA 50-60%: Foundation program | GPA 60-69%: Math test mandatory for Business | GPA 70%+: Direct entry without Math test. MOI or IELTS 5.5 accepted.",
@@ -321,8 +321,8 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
           "Study gap accepted with proper professional documentation."
         ],
         costAndBank: {
-          monthlyCost: "â‚¬400 â€“ â‚¬700 / month (Dorms â‚¬150â€“â‚¬250/mo)",
-          bankFundSingle: "~â‚¬10,000 â€“ â‚¬12,000 in student or sponsor's account",
+          monthlyCost: "€400 – €700 / month (Dorms €150–€250/mo)",
+          bankFundSingle: "~€10,000 – €12,000 in student or sponsor's account",
           bankMaturity: "3 months bank statement recommended",
           familyFund: "Sponsor statement with proof of source of income"
         },
@@ -331,17 +331,17 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
         applicationSteps: [
           "Application start: 1 Aug | Application deadline: 20 Nov",
           "Submit academic certificates & MOI or IELTS test report",
-          "Math test required only for students with GPA 60â€“69% (GPA 70%+ exempt)",
+          "Math test required only for students with GPA 60–69% (GPA 70%+ exempt)",
           "Receive official Acceptance Letter and Tuition Invoice",
           "Embassy visa file submission directly in Dhaka",
           "Interview at the Hungarian Embassy in Dhaka & receive National D Visa"
         ],
         programs: [
-          { name: "BSc Business Administration and Management", level: "Bachelor (3.5 Yrs)", fee: "â‚¬7,000/yr" },
-          { name: "BSc Commerce and Marketing", level: "Bachelor (3.5 Yrs)", fee: "â‚¬7,000/yr" },
-          { name: "BA Communication and Media Studies", level: "Bachelor (3 Yrs)", fee: "â‚¬7,800/yr" },
-          { name: "Master of Business Administration (MBA)", level: "Master (2 Yrs)", fee: "â‚¬8,200/yr" },
-          { name: "MSc Marketing & Business Development", level: "Master (2 Yrs)", fee: "â‚¬7,200/yr" }
+          { name: "BSc Business Administration and Management", level: "Bachelor (3.5 Yrs)", fee: "€7,000/yr" },
+          { name: "BSc Commerce and Marketing", level: "Bachelor (3.5 Yrs)", fee: "€7,000/yr" },
+          { name: "BA Communication and Media Studies", level: "Bachelor (3 Yrs)", fee: "€7,800/yr" },
+          { name: "Master of Business Administration (MBA)", level: "Master (2 Yrs)", fee: "€8,200/yr" },
+          { name: "MSc Marketing & Business Development", level: "Master (2 Yrs)", fee: "€7,200/yr" }
         ]
       },
       {
@@ -352,11 +352,11 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
         tagline: "Over 500 years of academic heritage. World-renowned faculties in Medicine, Computer Science, and Engineering.",
         intakes: "September 2026, February 2027",
         deadlines: "June 15 for September | Nov 15 for February",
-        tuitionUG: "â‚¬6,000 â€“ â‚¬8,500 / year (Medicine up to â‚¬14,000)",
-        tuitionPG: "â‚¬6,500 â€“ â‚¬9,000 / year",
+        tuitionUG: "€6,000 – €8,500 / year (Medicine up to €14,000)",
+        tuitionPG: "€6,500 – €9,000 / year",
         scholarship: "Full Stipendium Hungaricum (100% Free Tuition, Dorm, Insurance, Monthly Stipend)",
         workRights: "24 hrs/week legal work",
-        entryUG: "HSC pass | IELTS 5.5â€“6.0 or MOI | Entrance test for Medicine & Engineering",
+        entryUG: "HSC pass | IELTS 5.5–6.0 or MOI | Entrance test for Medicine & Engineering",
         entryPG: "Bachelor degree in relevant stream | IELTS 6.0 or MOI",
         whyStudy: [
           "Over 500 years of continuous academic heritage with Nobel laureate connections.",
@@ -365,8 +365,8 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
           "Affordable campus life in Hungary's second-largest city."
         ],
         costAndBank: {
-          monthlyCost: "â‚¬350 â€“ â‚¬550 / month (University dorms available)",
-          bankFundSingle: "~â‚¬9,000 â€“ â‚¬11,000 living expense proof",
+          monthlyCost: "€350 – €550 / month (University dorms available)",
+          bankFundSingle: "~€9,000 – €11,000 living expense proof",
           bankMaturity: "3 months bank statement",
           familyFund: "Student or parents account"
         },
@@ -380,9 +380,9 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
           "National D Visa grant"
         ],
         programs: [
-          { name: "BSc in Computer Science & Artificial Intelligence", level: "Bachelor (3 Yrs)", fee: "â‚¬6,500/yr" },
-          { name: "BSc in Mechatronics & Mechanical Engineering", level: "Bachelor (3.5 Yrs)", fee: "â‚¬7,000/yr" },
-          { name: "Doctor of General Medicine (6 Years)", level: "Integrated Master (6 Yrs)", fee: "â‚¬14,000/yr" }
+          { name: "BSc in Computer Science & Artificial Intelligence", level: "Bachelor (3 Yrs)", fee: "€6,500/yr" },
+          { name: "BSc in Mechatronics & Mechanical Engineering", level: "Bachelor (3.5 Yrs)", fee: "€7,000/yr" },
+          { name: "Doctor of General Medicine (6 Years)", level: "Integrated Master (6 Yrs)", fee: "€14,000/yr" }
         ]
       }
     ]
@@ -400,25 +400,25 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
     highlights: [
       "2-Year Graduate Route Post-Study Work Permit",
       "Fast 1-Year Master's saving 50% tuition and living costs",
-      "Â£3,000 to Â£10,000 Guaranteed & Merit Scholarships"
+      "£3,000 to £10,000 Guaranteed & Merit Scholarships"
     ],
-    livingCost: "Â£800 â€“ Â£1,200 / month outside London",
+    livingCost: "£800 – £1,200 / month outside London",
     institutionsCount: "8+ Listed",
     heroImg: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1920&q=80",
     pillBadge: "🇬🇧 1-Year Fast-Track Masters",
-    subBadge: "Up to Â£10,000 Scholarships â€¢ 2-Year Graduate Route PSW",
-    heroHeading: "Study in the UK: 1-Year Masters & Â£10k Grants",
-    heroDesc: "A 1-Year Master's degree in the UK saves a full year of living and tuition expenses while unlocking the 2-Year Graduate Route Post-Study Work Permit. Enjoy Â£3,000 to Â£10,000 merit scholarships and MOI waivers from 28+ Bangladeshi universities.",
-    tuition: "Â£14,500 â€“ Â£22,000/yr",
-    tuitionSub: "Up to Â£10,000 Grants Available",
-    living: "Â£850 â€“ Â£1,200/mo",
+    subBadge: "Up to £10,000 Scholarships • 2-Year Graduate Route PSW",
+    heroHeading: "Study in the UK: 1-Year Masters & £10k Grants",
+    heroDesc: "A 1-Year Master's degree in the UK saves a full year of living and tuition expenses while unlocking the 2-Year Graduate Route Post-Study Work Permit. Enjoy £3,000 to £10,000 merit scholarships and MOI waivers from 28+ Bangladeshi universities.",
+    tuition: "£14,500 – £22,000/yr",
+    tuitionSub: "Up to £10,000 Grants Available",
+    living: "£850 – £1,200/mo",
     livingSub: "Lower outside London",
     work: "20 Hours / Week",
     workSub: "Full-time during holidays",
     psw: "2-Year Graduate Route",
     pswSub: "Post-Study Work Permit (PSW)",
     whyStudy: [
-      { icon: "â±ï¸", title: "1-Year Fast Master's Degree", desc: "Graduate in just 12 months, saving a full year of tuition and living expenses compared to 2-year programs elsewhere." },
+      { icon: "⏱️", title: "1-Year Fast Master's Degree", desc: "Graduate in just 12 months, saving a full year of tuition and living expenses compared to 2-year programs elsewhere." },
       { icon: "📜", title: "MOI Waiver from 28 Unis", desc: "Graduates from 28+ leading private and public Bangladeshi universities can waive IELTS with an official MOI certificate." },
       { icon: "💼", title: "2-Year Post-Study Work", desc: "Qualify for the 2-Year Graduate Route PSW allowing you to work full-time in any corporate sector across the UK." }
     ],
@@ -441,17 +441,17 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
       {
         id: "hertfordshire",
         name: "University of Hertfordshire",
-        badge: "25 Mins to Central London â€¢ Top 50 UK",
+        badge: "25 Mins to Central London • Top 50 UK",
         type: "Public University",
         tagline: "Hatfield campus just 25 mins by train to Kings Cross London. Accepts CGPA down to 2.50 and genuine study gaps.",
         intakes: "January 2027, September 2026",
         deadlines: "Available Intake: January 2027 | App Deadline: Nov 2026",
-        tuitionUG: "LLB (Hons): Â£17,450 / year (First year net: ~Â£14,200 after scholarship)",
-        tuitionPG: "Â£18,600 â€“ Â£20,460 / year (1-Year Fast Master's)",
-        scholarship: "Up to Â£3,000 Guaranteed Scholarship for Self-Funded Students",
+        tuitionUG: "LLB (Hons): £17,450 / year (First year net: ~£14,200 after scholarship)",
+        tuitionPG: "£18,600 – £20,460 / year (1-Year Fast Master's)",
+        scholarship: "Up to £3,000 Guaranteed Scholarship for Self-Funded Students",
         workRights: "20 hrs/week during term time",
         entryUG: "HSC GPA 4.0/5.0 (65%) | IELTS 6.0 / PTE 59 / MOI accepted",
-        entryPG: "Bachelor CGPA 2.50/4.0 (UK 2:2 equivalent) | IELTS 6.0â€“6.5 / PTE 59 / MOI accepted",
+        entryPG: "Bachelor CGPA 2.50/4.0 (UK 2:2 equivalent) | IELTS 6.0–6.5 / PTE 59 / MOI accepted",
         whyStudy: [
           "Only 25 minutes by direct train from Hatfield Campus to Central London (Kings Cross).",
           "Top 50 UK University (Guardian Guide 2026); sprawling 125-acre modern campus.",
@@ -459,8 +459,8 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
           "Low CGPA accepted (down to 2.50/4.00 for business and computing degrees)."
         ],
         costAndBank: {
-          monthlyCost: "Â£850 â€“ Â£1,100 / month",
-          bankFundSingle: "~à§³40 Lakh BDT held for 28 consecutive days in approved bank",
+          monthlyCost: "£850 – £1,100 / month",
+          bankFundSingle: "~৳40 Lakh BDT held for 28 consecutive days in approved bank",
           bankMaturity: "28 consecutive days maturity prior to visa application",
           familyFund: "Student or parents bank account with relationship affidavit"
         },
@@ -475,34 +475,34 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
           "Submit UKVI student visa file"
         ],
         programs: [
-          { name: "Bachelor of Laws LLB (Hons)", level: "Bachelor (3 Yrs)", fee: "Â£17,450/yr (Â£14,200 net)" },
-          { name: "MSc Computer Science & Software Engineering", level: "Master (1 Yr)", fee: "Â£18,600/yr" },
-          { name: "MSc Artificial Intelligence & Robotics", level: "Master (1 Yr)", fee: "Â£19,500/yr" },
-          { name: "Master of Business Administration (MBA)", level: "Master (1 Yr)", fee: "Â£20,460/yr" }
+          { name: "Bachelor of Laws LLB (Hons)", level: "Bachelor (3 Yrs)", fee: "£17,450/yr (£14,200 net)" },
+          { name: "MSc Computer Science & Software Engineering", level: "Master (1 Yr)", fee: "£18,600/yr" },
+          { name: "MSc Artificial Intelligence & Robotics", level: "Master (1 Yr)", fee: "£19,500/yr" },
+          { name: "Master of Business Administration (MBA)", level: "Master (1 Yr)", fee: "£20,460/yr" }
         ]
       },
       {
         id: "cardiff",
         name: "Cardiff University (Russell Group)",
-        badge: "Russell Group Member â€¢ QS Top 180",
+        badge: "Russell Group Member • QS Top 180",
         type: "World Elite Research University",
         tagline: "World top-180 research university. Cardiff is consistently ranked the UK's most affordable capital city.",
         intakes: "January 2027, September 2026",
         deadlines: "Sept to Oct application window | Payment Deadline: Nov/Dec",
-        tuitionUG: "Â£21,000 â€“ Â£28,000 / year",
-        tuitionPG: "Â£24,000 â€“ Â£33,000 / year (1-Year Master's)",
-        scholarship: "Up to Â£8,000 â€“ Â£10,000 Postgraduate Scholarship Awards",
+        tuitionUG: "£21,000 – £28,000 / year",
+        tuitionPG: "£24,000 – £33,000 / year (1-Year Master's)",
+        scholarship: "Up to £8,000 – £10,000 Postgraduate Scholarship Awards",
         workRights: "20 hrs/week during term time",
         entryUG: "HSC top grades / Foundation | IELTS 6.5",
         entryPG: "4-Year Bachelor with CGPA 3.0/4.0+ | IELTS 6.5",
         whyStudy: [
           "World Top 180 elite Russell Group research university.",
-          "Generous postgraduate scholarships up to Â£8,000 â€“ Â£10,000 for January and September intakes.",
+          "Generous postgraduate scholarships up to £8,000 – £10,000 for January and September intakes.",
           "Cardiff is consistently ranked as the UK's most cost-effective capital city for student living."
         ],
         costAndBank: {
-          monthlyCost: "Â£750 â€“ Â£1,000 / month",
-          bankFundSingle: "~à§³40 Lakh BDT held for 28 consecutive days",
+          monthlyCost: "£750 – £1,000 / month",
+          bankFundSingle: "~৳40 Lakh BDT held for 28 consecutive days",
           bankMaturity: "28 consecutive days maturity",
           familyFund: "Student or parents bank account"
         },
@@ -515,9 +515,9 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
           "CAS issuance & UKVI Visa lodgement"
         ],
         programs: [
-          { name: "MSc Strategic Marketing & Analytics", level: "Master (1 Yr)", fee: "Â£25,500/yr" },
-          { name: "MSc Data Science and Analytics", level: "Master (1 Yr)", fee: "Â£28,500/yr" },
-          { name: "MSc Healthcare & Public Health", level: "Master (1 Yr)", fee: "Â£24,500/yr" }
+          { name: "MSc Strategic Marketing & Analytics", level: "Master (1 Yr)", fee: "£25,500/yr" },
+          { name: "MSc Data Science and Analytics", level: "Master (1 Yr)", fee: "£28,500/yr" },
+          { name: "MSc Healthcare & Public Health", level: "Master (1 Yr)", fee: "£24,500/yr" }
         ]
       }
     ]
@@ -531,34 +531,34 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
     regionCode: "asia",
     regionBadge: "SOUTHEAST ASIA",
     tagline: "Top Asian Education Hub & Save 70% Budget",
-    usp: "Official Partner of UniSZA | 1st Year Cost Only à§³5.5 Lakh | UK & US Credit Transfers",
+    usp: "Official Partner of UniSZA | 1st Year Cost Only ৳5.5 Lakh | UK & US Credit Transfers",
     highlights: [
-      "Top 10 Public University (UniSZA): 1st year official cost only à§³5.5 Lakh BDT",
+      "Top 10 Public University (UniSZA): 1st year official cost only ৳5.5 Lakh BDT",
       "MILA University: Guaranteed 50% Flat Scholarship on entire degree",
-      "Save 60%â€“80% compared with UK, USA, or Australia"
+      "Save 60%–80% compared with UK, USA, or Australia"
     ],
-    livingCost: "RM 1,200 â€“ RM 2,000 / month",
+    livingCost: "RM 1,200 – RM 2,000 / month",
     institutionsCount: "6+ Listed",
     heroImg: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1920&q=80",
     pillBadge: "🇲🇾 Top ASEAN Higher Education Hub",
-    subBadge: "100% Medical Waivers â€¢ MILA 50% Flat â€¢ UniSZA ~à§³5.5 Lakh",
+    subBadge: "100% Medical Waivers • MILA 50% Flat • UniSZA ~৳5.5 Lakh",
     heroHeading: "Study in Malaysia: 100% Scholarships & Fast EMGS",
-    heroDesc: "Earn accredited UK and Australian dual degrees at 70% lower budgets. Benefit from fast 3 to 4 week EMGS visa clearance, 100% tuition-free healthcare scholarships, and public university fees starting from only ~à§³5.5 Lakh BDT for the first year.",
-    tuition: "RM 10,500 â€“ RM 18,000/yr",
-    tuitionSub: "~à§³3.12 Lakh BDT/yr (UniSZA Public)",
-    living: "RM 1,200 â€“ RM 1,800/mo",
-    livingSub: "~à§³30k â€“ à§³45k BDT/mo",
+    heroDesc: "Earn accredited UK and Australian dual degrees at 70% lower budgets. Benefit from fast 3 to 4 week EMGS visa clearance, 100% tuition-free healthcare scholarships, and public university fees starting from only ~৳5.5 Lakh BDT for the first year.",
+    tuition: "RM 10,500 – RM 18,000/yr",
+    tuitionSub: "~৳3.12 Lakh BDT/yr (UniSZA Public)",
+    living: "RM 1,200 – RM 1,800/mo",
+    livingSub: "~৳30k – ৳45k BDT/mo",
     work: "Permitted on Vacations",
     workSub: "Semester break work allowed",
     psw: "Fast eVAL Clearance",
     pswSub: "3 to 4 week processing",
     whyStudy: [
       { icon: "🏥", title: "100% Medical & Healthcare Quota", desc: "Zero tuition fees for Bachelor, Master & PhD in Nursing, Physiotherapy, Pharmacy, and MBA Healthcare Management." },
-      { icon: "🏛️", title: "UniSZA Public University Partner", desc: "Top 10 public university in Malaysia with total first-year official expenses of only ~à§³5.5 Lakh BDT." },
+      { icon: "🏛️", title: "UniSZA Public University Partner", desc: "Top 10 public university in Malaysia with total first-year official expenses of only ~৳5.5 Lakh BDT." },
       { icon: "🎓", title: "MILA 50% Flat Scholarship", desc: "Guaranteed 50% flat discount on entire course fees across all undergraduate and postgraduate degrees." }
     ],
     solvency: [
-      { title: "Bank Statement Requirement", detail: "Very flexible: ~à§³5 to à§³7 Lakh BDT proof of funds in student or parent account." },
+      { title: "Bank Statement Requirement", detail: "Very flexible: ~৳5 to ৳7 Lakh BDT proof of funds in student or parent account." },
       { title: "EMGS Visa Processing Fee", detail: "Approximately ~RM 3,000 to RM 6,000 payable directly after offer letter." }
     ],
     roadmap: [
@@ -569,19 +569,19 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
       "Step 05: Single Entry Visa (SEV) stamped at Malaysian High Commission Dhaka."
     ],
     faqs: [
-      { q: "What is the total first-year budget for UniSZA?", a: "The total official first-year cost at UniSZA is approximately ~à§³5.5 Lakh BDT." }
+      { q: "What is the total first-year budget for UniSZA?", a: "The total official first-year cost at UniSZA is approximately ~৳5.5 Lakh BDT." }
     ],
     universities: [
       {
         id: "unisza",
         name: "Universiti Sultan Zainal Abidin (UniSZA)",
-        badge: "Official Direct Partner â€¢ Top 10 Public",
+        badge: "Official Direct Partner • Top 10 Public",
         type: "Prestigious Government Public University",
-        tagline: "Subsidized government public university. 1st year total official expenses only ~à§³5.5 Lakh BDT.",
+        tagline: "Subsidized government public university. 1st year total official expenses only ~৳5.5 Lakh BDT.",
         intakes: "September 2026, February 2027",
         deadlines: "Rolling admissions: ~2 months prior to intake start",
-        tuitionUG: "RM 10,500 / year (~à§³3.12 Lakh BDT/yr)",
-        tuitionPG: "Master: RM 25,000 total | PhD: RM 27,000â€“RM 43,000 total",
+        tuitionUG: "RM 10,500 / year (~৳3.12 Lakh BDT/yr)",
+        tuitionPG: "Master: RM 25,000 total | PhD: RM 27,000–RM 43,000 total",
         scholarship: "Subsidized Public University Fees & 100% EMGS Packages",
         workRights: "Permitted during semester breaks & vacations",
         entryUG: "HSC GPA 3.0+ | IELTS 5.5",
@@ -589,12 +589,12 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
         whyStudy: [
           "Ranked among the Top 10 Public Universities in Malaysia (THE World University Rankings 2026).",
           "Official Direct Recruitment Partner: Study First Info Ltd. provides seamless end-to-end processing.",
-          "1st year total official expenses only à§³5.5 Lakh BDT (includes Tuition, EMGS, Admin, Registration).",
+          "1st year total official expenses only ৳5.5 Lakh BDT (includes Tuition, EMGS, Admin, Registration).",
           "Medium of Instruction (MOI) fully accepted for Research Master's and PhD programs."
         ],
         costAndBank: {
-          monthlyCost: "RM 1,000 â€“ RM 1,500 / month (~à§³25,000 â€“ à§³38,000 BDT)",
-          bankFundSingle: "Very flexible: ~à§³5 Lakh to à§³7 Lakh BDT proof of funds",
+          monthlyCost: "RM 1,000 – RM 1,500 / month (~৳25,000 – ৳38,000 BDT)",
+          bankFundSingle: "Very flexible: ~৳5 Lakh to ৳7 Lakh BDT proof of funds",
           bankMaturity: "Recent 3 months bank statement",
           familyFund: "Student or parental sponsorship accepted"
         },
@@ -621,11 +621,11 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
         tagline: "Spacious green campus in Nilai. Complete 3 to 3.5 year fast-track bachelor degrees at 50% flat discount.",
         intakes: "October 2026, January 2027",
         deadlines: "6 weeks prior to intake launch",
-        tuitionUG: "RM 12,000 â€“ RM 18,000 / year (Net)",
-        tuitionPG: "RM 14,000 â€“ RM 20,000 / year",
+        tuitionUG: "RM 12,000 – RM 18,000 / year (Net)",
+        tuitionPG: "RM 14,000 – RM 20,000 / year",
         scholarship: "50% Flat Scholarship on Entire Degree (100% waiver for GPA 75%+)",
         workRights: "Permitted during vacations",
-        entryUG: "HSC pass | IELTS 5.0â€“5.5 or MOI accepted",
+        entryUG: "HSC pass | IELTS 5.0–5.5 or MOI accepted",
         entryPG: "Bachelor degree | MOI or IELTS 5.5",
         whyStudy: [
           "Guaranteed 50% FLAT scholarship across the entire program duration for UG & PG.",
@@ -633,8 +633,8 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
           "Fast graduation: complete a 3 to 3.5 year bachelor's degree."
         ],
         costAndBank: {
-          monthlyCost: "RM 1,200 â€“ RM 1,800 / month",
-          bankFundSingle: "~à§³5 Lakh to à§³6 Lakh BDT",
+          monthlyCost: "RM 1,200 – RM 1,800 / month",
+          bankFundSingle: "~৳5 Lakh to ৳6 Lakh BDT",
           bankMaturity: "Recent bank statement",
           familyFund: "Student or parents account"
         },
@@ -663,33 +663,33 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
     regionCode: "europe",
     regionBadge: "EUROPE (SCHENGEN)",
     tagline: "EU Schengen Degree & Ultra Low Tuition Fees",
-    usp: "Starting Tuition â‚¬3,500/Year | European TRP Card | English-Taught Degrees",
+    usp: "Starting Tuition €3,500/Year | European TRP Card | English-Taught Degrees",
     highlights: [
-      "Affordable European Union degrees starting from only â‚¬3,500/year",
+      "Affordable European Union degrees starting from only €3,500/year",
       "Temporary Residence Permit (TRP) with full European mobility",
       "Part-time legal work rights: 20 hours/week"
     ],
-    livingCost: "â‚¬400 â€“ â‚¬700 / month",
+    livingCost: "€400 – €700 / month",
     institutionsCount: "7+ Listed",
     heroImg: "https://images.unsplash.com/photo-1549877452-9c387954fbc2?auto=format&fit=crop&w=1920&q=80",
     pillBadge: "🇱🇹 Affordable Schengen Destination",
-    subBadge: "Tuition from â‚¬3,500/Yr â€¢ European TRP Residence Permit",
+    subBadge: "Tuition from €3,500/Yr • European TRP Residence Permit",
     heroHeading: "Study in Lithuania: Affordable Tuition & Full Schengen Rights",
-    heroDesc: "Study in the vibrant Baltic tech and FinTech hub of Vilnius and Kaunas. Complete European Union accredited degrees starting from only â‚¬3,500 per year with legal 20 hours/week work rights and 29-country Schengen mobility.",
-    tuition: "â‚¬3,500 â€“ â‚¬4,500/yr",
+    heroDesc: "Study in the vibrant Baltic tech and FinTech hub of Vilnius and Kaunas. Complete European Union accredited degrees starting from only €3,500 per year with legal 20 hours/week work rights and 29-country Schengen mobility.",
+    tuition: "€3,500 – €4,500/yr",
     tuitionSub: "Affordable EU Degree",
-    living: "â‚¬400 â€“ â‚¬700/mo",
-    livingSub: "Dormitories from â‚¬150/mo",
+    living: "€400 – €700/mo",
+    livingSub: "Dormitories from €150/mo",
     work: "20 Hours / Week",
     workSub: "Legal work rights",
     psw: "1-Year Job Seeker TRP",
     pswSub: "EU residence extension",
     whyStudy: [
-      { icon: "💵", title: "Low Tuition Rates", desc: "European Union recognized bachelor degrees starting from only â‚¬3,500 to â‚¬4,500 per year." },
+      { icon: "💵", title: "Low Tuition Rates", desc: "European Union recognized bachelor degrees starting from only €3,500 to €4,500 per year." },
       { icon: "🌍", title: "Schengen TRP Card", desc: "Temporary Residence Permit granting complete borderless mobility across 29 Schengen countries." }
     ],
     solvency: [
-      { title: "Bank Solvency Proof", detail: "Proof of ~â‚¬7,000 to â‚¬9,000 in student or sponsor account." }
+      { title: "Bank Solvency Proof", detail: "Proof of ~€7,000 to €9,000 in student or sponsor account." }
     ],
     roadmap: [
       "Step 01: Profile review & SKVC credential recognition check.",
@@ -708,7 +708,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
         tagline: "Campuses in Vilnius, Kaunas, and Klaipeda; project-based education with direct company internships.",
         intakes: "February 2027 (Spring), September 2026",
         deadlines: "Spring Intake Deadline: 1 December",
-        tuitionUG: "â‚¬3,500 â€“ â‚¬4,500 / year (3 Years)",
+        tuitionUG: "€3,500 – €4,500 / year (3 Years)",
         tuitionPG: "N/A (Bachelor Specialist)",
         scholarship: "Institutional merit discounts & performance grants",
         workRights: "20 hrs/week legal work",
@@ -717,11 +717,11 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
         whyStudy: [
           "Lithuania's largest private college of applied sciences with modern campuses in Vilnius, Kaunas, and Klaipeda.",
           "Highly practical syllabus directly oriented toward European tech, game design, and business jobs.",
-          "Affordable tuition starting from only â‚¬3,500 per year."
+          "Affordable tuition starting from only €3,500 per year."
         ],
         costAndBank: {
-          monthlyCost: "â‚¬400 â€“ â‚¬700 / month (Dorms from â‚¬150/mo)",
-          bankFundSingle: "~â‚¬7,000 â€“ â‚¬9,000 in student or sponsor account",
+          monthlyCost: "€400 – €700 / month (Dorms from €150/mo)",
+          bankFundSingle: "~€7,000 – €9,000 in student or sponsor account",
           bankMaturity: "3 months bank statement",
           familyFund: "Student or parents bank statement"
         },
@@ -734,9 +734,9 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
           "National D Visa lodgement and TRP issuance"
         ],
         programs: [
-          { name: "Information and Cyber Security", level: "Bachelor (3 Yrs)", fee: "â‚¬4,400/yr" },
-          { name: "Programming and Multimedia", level: "Bachelor (3 Yrs)", fee: "â‚¬4,400/yr" },
-          { name: "International Business", level: "Bachelor (3 Yrs)", fee: "â‚¬3,500/yr" }
+          { name: "Information and Cyber Security", level: "Bachelor (3 Yrs)", fee: "€4,400/yr" },
+          { name: "Programming and Multimedia", level: "Bachelor (3 Yrs)", fee: "€4,400/yr" },
+          { name: "International Business", level: "Bachelor (3 Yrs)", fee: "€3,500/yr" }
         ]
       }
     ]
@@ -750,66 +750,66 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
     regionCode: "europe",
     regionBadge: "MEDITERRANEAN EUROPE",
     tagline: "Affordable Mediterranean Degree & 43% Flat Discount",
-    usp: "Deposit Only â‚¬3,400 (~à§³4.5 Lakh BDT) | 43% Flat Tuition Discount | MOI Accepted",
+    usp: "Deposit Only €3,400 (~৳4.5 Lakh BDT) | 43% Flat Tuition Discount | MOI Accepted",
     highlights: [
-      "Initial deposit only â‚¬3,400 (~4.5 Lakh BDT)",
+      "Initial deposit only €3,400 (~4.5 Lakh BDT)",
       "Guaranteed 43% to 45% tuition discount for international applicants",
       "IELTS waiver possible with Medium of Instruction (MOI)"
     ],
-    livingCost: "â‚¬350 â€“ â‚¬550 / month",
+    livingCost: "€350 – €550 / month",
     institutionsCount: "4+ Listed",
     heroImg: "https://images.unsplash.com/photo-1584646098378-0874589d76b1?auto=format&fit=crop&w=1920&q=80",
     pillBadge: "🇨🇾 Mediterranean Low Budget Hub",
-    subBadge: "Deposit Only â‚¬3,400 (~à§³4.5 Lakh BDT) â€¢ 43% Flat Waiver",
+    subBadge: "Deposit Only €3,400 (~৳4.5 Lakh BDT) • 43% Flat Waiver",
     heroHeading: "Study in Cyprus: 43% Flat Waiver & Low Deposit",
-    heroDesc: "Study First Info holds a direct institutional contract with Cyprus International University (CIU). Fly to Europe with an initial deposit of only â‚¬3,400 (~4.5 Lakh BDT), guaranteed 43% flat tuition discounts, and IELTS 5.0 or MOI waivers.",
-    tuition: "â‚¬3,000 â€“ â‚¬4,200/yr",
+    heroDesc: "Study First Info holds a direct institutional contract with Cyprus International University (CIU). Fly to Europe with an initial deposit of only €3,400 (~4.5 Lakh BDT), guaranteed 43% flat tuition discounts, and IELTS 5.0 or MOI waivers.",
+    tuition: "€3,000 – €4,200/yr",
     tuitionSub: "After 43% Flat Discount",
-    living: "â‚¬350 â€“ â‚¬500/mo",
+    living: "€350 – €500/mo",
     livingSub: "Affordable Mediterranean living",
     work: "20 Hours / Week",
     workSub: "In designated commercial sectors",
     psw: "Credit Mobility",
     pswSub: "Direct transfer to UK & Europe",
     whyStudy: [
-      { icon: "💰", title: "43% Flat Tuition Scholarship", desc: "Exclusive direct contract with Cyprus International University saving nearly ~â‚¬4,300 across your entire degree." },
-      { icon: "âœˆï¸", title: "Lowest Initial Deposit", desc: "Start your file and fly with an initial deposit of only â‚¬3,400 (~4.5 Lakh BDT). Pay remaining fees in easy installments." }
+      { icon: "💰", title: "43% Flat Tuition Scholarship", desc: "Exclusive direct contract with Cyprus International University saving nearly ~€4,300 across your entire degree." },
+      { icon: "✈️", title: "Lowest Initial Deposit", desc: "Start your file and fly with an initial deposit of only €3,400 (~4.5 Lakh BDT). Pay remaining fees in easy installments." }
     ],
     solvency: [
-      { title: "Initial Payable Deposit", detail: "Only â‚¬3,400 to obtain official university acceptance and immigration clearance." }
+      { title: "Initial Payable Deposit", detail: "Only €3,400 to obtain official university acceptance and immigration clearance." }
     ],
     roadmap: [
       "Step 01: Submit academic transcripts & passport copy to Study First Info.",
       "Step 02: University issues conditional offer letter with 43% flat scholarship in 3-5 days.",
-      "Step 03: Pay initial deposit of â‚¬3,400 into official university escrow.",
+      "Step 03: Pay initial deposit of €3,400 into official university escrow.",
       "Step 04: Immigration clearance and visa approval letter issued."
     ],
     faqs: [
-      { q: "What is the initial deposit required for Cyprus?", a: "The initial deposit to obtain university acceptance and visa clearance is only â‚¬3,400 (approximately ~à§³4.5 Lakh BDT)." }
+      { q: "What is the initial deposit required for Cyprus?", a: "The initial deposit to obtain university acceptance and visa clearance is only €3,400 (approximately ~৳4.5 Lakh BDT)." }
     ],
     universities: [
       {
         id: "ciu",
         name: "Cyprus International University (CIU)",
-        badge: "Direct Contract Partner â€¢ 43% Flat Discount",
+        badge: "Direct Contract Partner • 43% Flat Discount",
         type: "International University",
         tagline: "Ultra-modern 300-acre Mediterranean campus. High visa issuance rate with minimal financial friction.",
         intakes: "September 2026, February 2027",
         deadlines: "Rolling monthly admissions",
-        tuitionUG: "â‚¬3,000 â€“ â‚¬4,200 / year (Net fee)",
-        tuitionPG: "â‚¬3,500 â€“ â‚¬5,000 / year",
-        scholarship: "Guaranteed 43% Flat Scholarship (~â‚¬4,300 total value)",
+        tuitionUG: "€3,000 – €4,200 / year (Net fee)",
+        tuitionPG: "€3,500 – €5,000 / year",
+        scholarship: "Guaranteed 43% Flat Scholarship (~€4,300 total value)",
         workRights: "20 hrs/week in designated sectors",
-        entryUG: "HSC pass | IELTS 4.5â€“5.0 or MOI accepted",
+        entryUG: "HSC pass | IELTS 4.5–5.0 or MOI accepted",
         entryPG: "Bachelor pass | MOI or IELTS 5.0",
         whyStudy: [
           "Guaranteed 43% flat tuition scholarship on all undergraduate degrees.",
-          "Lowest initial deposit in Europe: only â‚¬3,400 (~à§³4.5 Lakh BDT) to process visa.",
+          "Lowest initial deposit in Europe: only €3,400 (~৳4.5 Lakh BDT) to process visa.",
           "Credit transfer options available to UK and European partner institutions."
         ],
         costAndBank: {
-          monthlyCost: "â‚¬350 â€“ â‚¬550 / month",
-          bankFundSingle: "Very flexible: ~à§³3.5 Lakh to à§³5 Lakh BDT",
+          monthlyCost: "€350 – €550 / month",
+          bankFundSingle: "Very flexible: ~৳3.5 Lakh to ৳5 Lakh BDT",
           bankMaturity: "Recent 3 months bank statement",
           familyFund: "Student or parents account"
         },
@@ -818,13 +818,13 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
         applicationSteps: [
           "Quick documentation check (MOI or basic IELTS)",
           "Offer letter issuance",
-          "Pay initial deposit of â‚¬3,400",
+          "Pay initial deposit of €3,400",
           "Visa clearance confirmation"
         ],
         programs: [
-          { name: "BSc in Computer Engineering & Software", level: "Bachelor (4 Yrs)", fee: "â‚¬3,500/yr" },
-          { name: "BA in Business Administration", level: "Bachelor (4 Yrs)", fee: "â‚¬3,200/yr" },
-          { name: "Master of Business Administration (MBA)", level: "Master (1.5 Yrs)", fee: "â‚¬3,800/yr" }
+          { name: "BSc in Computer Engineering & Software", level: "Bachelor (4 Yrs)", fee: "€3,500/yr" },
+          { name: "BA in Business Administration", level: "Bachelor (4 Yrs)", fee: "€3,200/yr" },
+          { name: "Master of Business Administration (MBA)", level: "Master (1.5 Yrs)", fee: "€3,800/yr" }
         ]
       }
     ]
@@ -844,16 +844,16 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
       "High visa success ratio (~90%)",
       "Full Schengen mobility across Europe"
     ],
-    livingCost: "â‚¬450 â€“ â‚¬700 / month",
+    livingCost: "€450 – €700 / month",
     institutionsCount: "3+ Listed",
     heroImg: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1920&q=80",
     pillBadge: "🇬🇷 Pay Tuition After Visa Hub",
-    subBadge: "90% Visa Ratio â€¢ Pay Fees After Visa Confirmation",
+    subBadge: "90% Visa Ratio • Pay Fees After Visa Confirmation",
     heroHeading: "Study in Greece: Pay Fees After Visa & Schengen Rights",
     heroDesc: "Study in Greece with minimal financial risk: pay university tuition fees strictly after your Schengen visa is confirmed. Enjoy an exceptional 90% visa approval track record and complete borderless travel throughout 29 Schengen states.",
-    tuition: "â‚¬3,500 â€“ â‚¬6,500/yr",
+    tuition: "€3,500 – €6,500/yr",
     tuitionSub: "Pay strictly after visa",
-    living: "â‚¬450 â€“ â‚¬700/mo",
+    living: "€450 – €700/mo",
     livingSub: "Affordable Mediterranean cost",
     work: "20 Hours / Week",
     workSub: "Legal work rights",
@@ -864,7 +864,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
       { icon: "📈", title: "~90% Visa Approval", desc: "One of the highest visa success records for Bangladeshi students in the European Schengen area." }
     ],
     solvency: [
-      { title: "Bank Solvency Amount", detail: "~â‚¬7,000 to â‚¬9,000 living expense proof in student or parent account." }
+      { title: "Bank Solvency Amount", detail: "~€7,000 to €9,000 living expense proof in student or parent account." }
     ],
     roadmap: [
       "Step 01: Submit academic certificates for conditional offer.",
@@ -884,11 +884,11 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
         tagline: "Pay tuition only after your visa is issued; prime gateway to EU shipping and tourism hospitality jobs.",
         intakes: "October 2026, February 2027",
         deadlines: "6 weeks prior to intake",
-        tuitionUG: "â‚¬3,500 â€“ â‚¬6,500 / year",
-        tuitionPG: "â‚¬4,000 â€“ â‚¬7,000 / year",
+        tuitionUG: "€3,500 – €6,500 / year",
+        tuitionPG: "€4,000 – €7,000 / year",
         scholarship: "University tuition discounts based on merit",
         workRights: "20 hrs/week legal employment",
-        entryUG: "HSC / A-Level pass | IELTS 5.0â€“5.5 or MOI",
+        entryUG: "HSC / A-Level pass | IELTS 5.0–5.5 or MOI",
         entryPG: "Bachelor degree pass | MOI or IELTS 5.5",
         whyStudy: [
           "Pay tuition fees ONLY after your European visa is approved.",
@@ -896,8 +896,8 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
           "Full Schengen visa granting free movement across 29 European countries."
         ],
         costAndBank: {
-          monthlyCost: "â‚¬450 â€“ â‚¬700 / month",
-          bankFundSingle: "~â‚¬7,000 â€“ â‚¬9,000 living expense proof",
+          monthlyCost: "€450 – €700 / month",
+          bankFundSingle: "~€7,000 – €9,000 living expense proof",
           bankMaturity: "3 months bank statement",
           familyFund: "Student or parents account"
         },
@@ -910,9 +910,9 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
           "Pay tuition fees after visa approval"
         ],
         programs: [
-          { name: "BSc in Maritime Management & Shipping Logistics", level: "Bachelor (3 Yrs)", fee: "â‚¬4,500/yr" },
-          { name: "BA in International Tourism & Hospitality", level: "Bachelor (3 Yrs)", fee: "â‚¬3,800/yr" },
-          { name: "BSc in Business & Information Systems", level: "Bachelor (3 Yrs)", fee: "â‚¬3,900/yr" }
+          { name: "BSc in Maritime Management & Shipping Logistics", level: "Bachelor (3 Yrs)", fee: "€4,500/yr" },
+          { name: "BA in International Tourism & Hospitality", level: "Bachelor (3 Yrs)", fee: "€3,800/yr" },
+          { name: "BSc in Business & Information Systems", level: "Bachelor (3 Yrs)", fee: "€3,900/yr" }
         ]
       }
     ]
@@ -930,18 +930,18 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
     highlights: [
       "100% Tuition-Free public university seats across Germany",
       "18-Month Post-Study Work Permit across 29 EU nations",
-      "Official Blocked Account (â‚¬11,208 to â‚¬11,904) setup support"
+      "Official Blocked Account (€11,208 to €11,904) setup support"
     ],
-    livingCost: "â‚¬850 â€“ â‚¬1,000 / month",
+    livingCost: "€850 – €1,000 / month",
     institutionsCount: "5+ Listed",
     heroImg: "https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1920&q=80",
     pillBadge: "🇩🇪 100% Tuition-Free Public Universities",
     subBadge: "No Tuition Fees Across All 16 German Federal States",
     heroHeading: "Study in Germany: Zero Tuition Fees & High-Tech Careers",
     heroDesc: "Germany offers world-leading engineering, computing, and business degrees at 100% tuition-free public universities. Benefit from 20 hours/week part-time employment, an 18-month job seeker visa, and direct pathways to EU permanent residency.",
-    tuition: "0â‚¬ (Tuition-Free)",
+    tuition: "0€ (Tuition-Free)",
     tuitionSub: "Only minor semester contribution",
-    living: "â‚¬850 â€“ â‚¬1,000/mo",
+    living: "€850 – €1,000/mo",
     livingSub: "Covered by Blocked Account",
     work: "20 Hours / Week",
     workSub: "120 full days / 240 half days",
@@ -952,7 +952,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
       { icon: "🏭", title: "Economic Powerhouse of Europe", desc: "Home to global industrial giants (Siemens, BMW, Bosch, SAP) offering extensive internships." }
     ],
     solvency: [
-      { title: "German Blocked Account (Sperrkonto)", detail: "Statutory amount of â‚¬11,208 to â‚¬11,904 deposited in verified escrow." }
+      { title: "German Blocked Account (Sperrkonto)", detail: "Statutory amount of €11,208 to €11,904 deposited in verified escrow." }
     ],
     roadmap: [
       "Step 01: Profile review & 13-year education equivalency check.",
@@ -967,13 +967,13 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
       {
         id: "tum-partners",
         name: "Technical University of Munich (TUM) & Public Partners",
-        badge: "Top 50 QS World Ranked â€¢ Public University",
+        badge: "Top 50 QS World Ranked • Public University",
         type: "Public University",
         tagline: "Germany's top engineering university. Zero tuition fees with world-class artificial intelligence and robotics labs.",
         intakes: "Winter (October), Summer (April)",
         deadlines: "July 15 for Winter | Jan 15 for Summer",
-        tuitionUG: "â‚¬0 Tuition Fee (~â‚¬150/sem contribution)",
-        tuitionPG: "â‚¬0 Tuition Fee (~â‚¬150/sem contribution)",
+        tuitionUG: "€0 Tuition Fee (~€150/sem contribution)",
+        tuitionPG: "€0 Tuition Fee (~€150/sem contribution)",
         scholarship: "DAAD Merit Scholarships & Industrial Research Grants",
         workRights: "20 Hours / Week",
         entryUG: "13 years education (or Studienkolleg) | IELTS 6.5 or German B2",
@@ -981,11 +981,11 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
         whyStudy: [
           "100% tuition-free higher education at a global top 50 institution.",
           "World capital of automotive and mechanical engineering.",
-          "Direct access to paid working-student (Werkstudent) jobs paying â‚¬14â€“â‚¬20/hr."
+          "Direct access to paid working-student (Werkstudent) jobs paying €14–€20/hr."
         ],
         costAndBank: {
-          monthlyCost: "â‚¬850 â€“ â‚¬1,050 / month",
-          bankFundSingle: "â‚¬11,208 Blocked Account (Sperrkonto)",
+          monthlyCost: "€850 – €1,050 / month",
+          bankFundSingle: "€11,208 Blocked Account (Sperrkonto)",
           bankMaturity: "Deposited prior to visa interview",
           familyFund: "Sponsor or self-funded blocked account"
         },
@@ -998,9 +998,9 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
           "Blocked account activation & embassy appointment"
         ],
         programs: [
-          { name: "BSc in Informatics / Computer Science", level: "Bachelor (3 Yrs)", fee: "â‚¬0 Tuition" },
-          { name: "MSc in Robotics, Cognition & Intelligence", level: "Master (2 Yrs)", fee: "â‚¬0 Tuition" },
-          { name: "MSc in Mechanical & Automotive Engineering", level: "Master (2 Yrs)", fee: "â‚¬0 Tuition" }
+          { name: "BSc in Informatics / Computer Science", level: "Bachelor (3 Yrs)", fee: "€0 Tuition" },
+          { name: "MSc in Robotics, Cognition & Intelligence", level: "Master (2 Yrs)", fee: "€0 Tuition" },
+          { name: "MSc in Mechanical & Automotive Engineering", level: "Master (2 Yrs)", fee: "€0 Tuition" }
         ]
       }
     ]
@@ -1018,29 +1018,29 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
     highlights: [
       "100% fully funded Chinese Government Scholarships (CSC)",
       "Zero tuition + free on-campus single/double accommodation",
-      "Monthly living allowance from 2,500 to 3,500 RMB (~à§³40kâ€“à§³55k BDT)"
+      "Monthly living allowance from 2,500 to 3,500 RMB (~৳40k–৳55k BDT)"
     ],
-    livingCost: "2,000 â€“ 3,500 RMB / month",
+    livingCost: "2,000 – 3,500 RMB / month",
     institutionsCount: "15+ Listed",
     heroImg: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=1920&q=80",
     pillBadge: "🇨🇳 100% CSC Full-Ride Hub",
-    subBadge: "Zero Tuition â€¢ Free Dormitory â€¢ Monthly Cash Stipend",
+    subBadge: "Zero Tuition • Free Dormitory • Monthly Cash Stipend",
     heroHeading: "Study in China: 100% Full-Ride Scholarships & Global Tech",
     heroDesc: "Study at world-class Chinese universities with comprehensive Chinese Government Scholarships (CSC) and provincial awards. Enjoy zero tuition fees, verified campus accommodation, and generous monthly cash allowances.",
     tuition: "100% Full Waiver (CSC)",
-    tuitionSub: "Or 12,000â€“25,000 RMB self-funded",
+    tuitionSub: "Or 12,000–25,000 RMB self-funded",
     living: "Covered by Stipend",
-    livingSub: "2,500â€“3,500 RMB monthly stipend",
+    livingSub: "2,500–3,500 RMB monthly stipend",
     work: "Campus Research & Internships",
     workSub: "Permitted during study",
     psw: "High-Tech Z-Visa Route",
     pswSub: "Direct MNC recruitment",
     whyStudy: [
       { icon: "🎓", title: "100% Full-Ride Funding", desc: "CSC scholarships cover full tuition, campus housing, and monthly living stipends for bachelor, master, and doctoral scholars." },
-      { icon: "âš¡", title: "Global STEM & AI Leader", desc: "Top world-ranked labs in artificial intelligence, civil engineering, robotics, and international trade." }
+      { icon: "⚡", title: "Global STEM & AI Leader", desc: "Top world-ranked labs in artificial intelligence, civil engineering, robotics, and international trade." }
     ],
     solvency: [
-      { title: "Bank Solvency Proof", detail: "CSC Full-Ride scholars are exempt from large bank solvency requirements (~à§³3 to à§³5 Lakh BDT statement sufficient)." }
+      { title: "Bank Solvency Proof", detail: "CSC Full-Ride scholars are exempt from large bank solvency requirements (~৳3 to ৳5 Lakh BDT statement sufficient)." }
     ],
     roadmap: [
       "Step 01: Pre-admission evaluation & CSC category matching.",
@@ -1069,7 +1069,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
         whyStudy: ["Full financial security with monthly stipend", "Modern research campuses", "Global industry linkages"],
         costAndBank: {
           monthlyCost: "Covered by monthly stipend (~3,000 RMB)",
-          bankFundSingle: "Nominal: ~à§³3 Lakh to à§³5 Lakh BDT",
+          bankFundSingle: "Nominal: ~৳3 Lakh to ৳5 Lakh BDT",
           bankMaturity: "1 to 3 months statement",
           familyFund: "Student or parents"
         },
@@ -1099,16 +1099,16 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
       "Direct visa processing at the Russian Embassy in Dhaka",
       "100% Russian State Quota scholarships available"
     ],
-    livingCost: "$250 â€“ $400 / month",
+    livingCost: "$250 – $400 / month",
     institutionsCount: "10+ Listed",
     heroImg: "https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?auto=format&fit=crop&w=1920&q=80",
     pillBadge: "🇷🇺 Pay After Visa Destination",
-    subBadge: "Dhaka Embassy Visa â€¢ Pay Tuition Strictly After Visa",
+    subBadge: "Dhaka Embassy Visa • Pay Tuition Strictly After Visa",
     heroHeading: "Study in Russia: Pay Fees After Visa & State Quotas",
     heroDesc: "Study at premier Russian state universities with zero financial risk: pay university tuition fees strictly after receiving your visa sticker from the Russian Embassy in Dhaka.",
-    tuition: "$1,800 â€“ $4,500/yr",
+    tuition: "$1,800 – $4,500/yr",
     tuitionSub: "Pay strictly after visa",
-    living: "$250 â€“ $400/mo",
+    living: "$250 – $400/mo",
     livingSub: "Extremely affordable dorms & living",
     work: "20 Hours / Week",
     workSub: "Legal work rights permitted",
@@ -1119,7 +1119,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
       { icon: "🏛️", title: "Direct Dhaka Embassy", desc: "Complete consular processing in Dhaka without needing to travel to India." }
     ],
     solvency: [
-      { title: "Bank Solvency Proof", detail: "Very accessible: ~à§³5 Lakh to à§³7 Lakh BDT bank balance." }
+      { title: "Bank Solvency Proof", detail: "Very accessible: ~৳5 Lakh to ৳7 Lakh BDT bank balance." }
     ],
     roadmap: [
       "Step 01: Application submission for Russian Ministry Invitation Letter.",
@@ -1139,16 +1139,16 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
         tagline: "Pay tuition only after visa approval; top global ranking in Physics, IT, Medicine, and Engineering.",
         intakes: "September & October",
         deadlines: "August 15",
-        tuitionUG: "$2,200 â€“ $3,800 / year",
-        tuitionPG: "$2,500 â€“ $4,200 / year",
+        tuitionUG: "$2,200 – $3,800 / year",
+        tuitionPG: "$2,500 – $4,200 / year",
         scholarship: "Russian Government State Quota (100% Tuition + 15,000 Ruble Stipend)",
         workRights: "20 hours/week legal work permit",
         entryUG: "HSC 60%+ | English Medium or 1-Year Preparatory",
         entryPG: "Bachelor Degree | MOI accepted",
         whyStudy: ["Pay after visa security", "Low living expense ($250/mo)", "Globally recognized degree"],
         costAndBank: {
-          monthlyCost: "$250 â€“ $400 / month",
-          bankFundSingle: "~à§³5 Lakh to à§³7 Lakh BDT",
+          monthlyCost: "$250 – $400 / month",
+          bankFundSingle: "~৳5 Lakh to ৳7 Lakh BDT",
           bankMaturity: "Recent 1-3 months",
           familyFund: "Student or sponsor"
         },
