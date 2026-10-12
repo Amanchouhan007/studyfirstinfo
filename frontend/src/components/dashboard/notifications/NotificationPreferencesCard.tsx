@@ -21,7 +21,7 @@ export default function NotificationPreferencesCard() {
   };
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 sm:p-7">
+    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-4 sm:p-7">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-gray-100">
         <div>
           <h2 className="text-xl font-bold text-primary">Notification Preferences</h2>

@@ -113,7 +113,7 @@ export default function NotificationsList() {
   };
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 mb-8">
+    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-4 sm:p-6 mb-6 sm:mb-8">
       {/* Filter and Action Header */}
       <div className="flex flex-wrap items-center justify-between gap-4 pb-5 border-b border-gray-100">
         <div className="flex flex-wrap items-center gap-1 bg-gray-100 p-1 rounded-xl text-xs font-bold">

@@ -193,13 +193,14 @@ export default function CounselorGrid({
                       >
                         <Calendar size={16} /> Book Appointment
                       </button>
-                      <button 
-                        type="button"
-                        onClick={() => onOpenBooking(counselor)}
+                      <a 
+                        href={`https://wa.me/${counselor.phone.replace(/\D/g, '')}?text=${encodeURIComponent(`Hi ${counselor.name}, I would like to consult with you about study abroad opportunities.`)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="w-full flex items-center justify-center gap-2 bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white py-2 rounded-xl font-bold text-xs sm:text-sm transition-all cursor-pointer"
                       >
                         <MessageCircle size={16} /> WhatsApp Direct Message
-                      </button>
+                      </a>
                     </div>
 
                     <button 

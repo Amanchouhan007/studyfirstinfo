@@ -36,13 +36,13 @@ export default function AdminCounselorGrid() {
   ];
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 mb-8">
-      <div className="flex items-center justify-between mb-5 pb-3 border-b border-gray-100">
+    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-4 sm:p-6 mb-6 sm:mb-8">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-5 pb-3 border-b border-gray-100">
         <div>
           <h2 className="text-lg font-bold text-primary">Counselor Allocation &amp; Desk Performance</h2>
           <p className="text-xs text-gray-500">Live caseload, student conversion benchmarks, and direct desk contact</p>
         </div>
-        <span className="text-xs font-bold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200">
+        <span className="self-start sm:self-auto shrink-0 text-xs font-bold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200">
           4 Desks Operational
         </span>
       </div>

@@ -45,7 +45,7 @@ export default function CompactDocumentsView() {
       </div>
 
       {/* Upload Box (Simple & Functional) */}
-      <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+      <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-4 sm:p-6">
         <h2 className="text-sm font-bold text-primary uppercase tracking-wider mb-4">
           Upload New Document
         </h2>
@@ -89,7 +89,7 @@ export default function CompactDocumentsView() {
                 />
                 <label
                   htmlFor="doc-upload-input"
-                  className="flex-1 bg-gray-50 hover:bg-emerald-50/40 border border-dashed border-gray-300 hover:border-accent rounded-xl px-4 py-2.5 text-xs text-gray-600 flex items-center gap-2 cursor-pointer transition-colors truncate"
+                  className="flex-1 bg-gray-50 hover:bg-emerald-50/40 border border-dashed border-gray-300 hover:border-accent rounded-xl px-4 py-2.5 text-xs text-gray-600 flex items-center gap-2 cursor-pointer transition-colors truncate min-w-0"
                 >
                   <UploadCloud size={16} className="text-accent shrink-0" />
                   <span className="truncate">{uploadedFileName || 'Choose document file...'}</span>
@@ -98,7 +98,7 @@ export default function CompactDocumentsView() {
                 <button
                   type="submit"
                   disabled={!uploadedFileName}
-                  className="bg-accent hover:bg-emerald-700 text-white font-bold px-5 py-2.5 rounded-xl text-xs transition-all shadow-xs disabled:opacity-40 shrink-0"
+                  className="bg-accent hover:bg-emerald-700 text-white font-bold px-4 sm:px-5 py-2.5 rounded-xl text-xs transition-all shadow-xs disabled:opacity-40 shrink-0"
                 >
                   Upload
                 </button>
@@ -109,8 +109,8 @@ export default function CompactDocumentsView() {
       </div>
 
       {/* Documents List */}
-      <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
-        <div className="flex items-center justify-between mb-4 pb-2 border-b border-gray-100">
+      <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-4 sm:p-6">
+        <div className="flex flex-wrap items-center justify-between gap-2 mb-4 pb-2 border-b border-gray-100">
           <h2 className="text-sm font-bold text-primary uppercase tracking-wider">
             Uploaded Documents ({documents.length})
           </h2>
@@ -122,21 +122,21 @@ export default function CompactDocumentsView() {
         <div className="divide-y divide-gray-100">
           {documents.map((doc, idx) => (
             <div key={idx} className="py-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-3 min-w-0 flex-1">
                 <div className="w-10 h-10 rounded-xl bg-gray-50 text-primary flex items-center justify-center shrink-0 border border-gray-100">
                   <FileText size={18} className="text-accent" />
                 </div>
-                <div>
-                  <div className="font-bold text-primary text-sm">{doc.name}</div>
-                  <div className="text-xs text-gray-400 font-mono flex items-center gap-2">
-                    <span>{doc.file}</span>
+                <div className="min-w-0 flex-1">
+                  <div className="font-bold text-primary text-sm truncate">{doc.name}</div>
+                  <div className="text-xs text-gray-400 font-mono flex items-center gap-2 truncate">
+                    <span className="truncate">{doc.file}</span>
                     <span>&bull;</span>
-                    <span>{doc.size}</span>
+                    <span className="shrink-0">{doc.size}</span>
                   </div>
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 self-end sm:self-auto">
+              <div className="flex items-center gap-3 self-start sm:self-auto pt-1 sm:pt-0 shrink-0">
                 <span
                   className={`text-[11px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1 ${
                     doc.status === 'Verified'
@@ -150,7 +150,7 @@ export default function CompactDocumentsView() {
 
                 <button
                   onClick={() => alert(`Downloading ${doc.file}...`)}
-                  className="p-1.5 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-600 transition-colors"
+                  className="p-1.5 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-600 transition-colors cursor-pointer"
                   title="Download File"
                 >
                   <Download size={14} />

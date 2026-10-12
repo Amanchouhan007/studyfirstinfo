@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Program Matching – Abroad Inquiry (DEMO)</title>
+<style>
+/* DESIGN PLACEHOLDERS: replace with your real brand values */
+:root{
+  --sidebar:#12284c; --sidebar-text:#d6e0f5; --active-bg:#2b5fd9; --active-text:#fff;
+  --primary:#2b5fd9; --primary-dark:#1f49ad; --bg:#f4f6fb; --card:#fff; --text:#1c2433;
+  --muted:#5a6578; --border:#d9dfeb; --ok:#14683a; --ok-bg:#e3f5ea;
+  --no:#a12525; --no-bg:#fde8e8; --nv:#8a5a00; --nv-bg:#fff2d6;
+  --radius:10px; --sidebar-w:240px;
+  --font:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.5}
+.app{display:flex;min-height:100vh}
+.sidebar{width:var(--sidebar-w);background:var(--sidebar);color:var(--sidebar-text);padding:24px 14px;flex-shrink:0}
+.brand{font-weight:700;font-size:20px;color:#fff;padding:0 10px 24px}
+.sidebar nav a{display:flex;align-items:center;gap:8px;padding:11px 12px;margin-bottom:4px;border-radius:8px;color:var(--sidebar-text);text-decoration:none;font-size:15px}
+.sidebar nav a:hover{background:rgba(255,255,255,.08)}
+.sidebar nav a.active{background:var(--active-bg);color:var(--active-text);font-weight:600}
+.tag-new{font-size:11px;background:#fff;color:var(--primary-dark);border-radius:20px;padding:1px 8px;font-weight:700}
+.sidebar a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #f5a623;outline-offset:2px}
+main{flex:1;padding:32px;max-width:1280px;min-width:0}
+.demo-banner{background:var(--nv-bg);color:var(--nv);border:1px solid #e8c777;border-radius:var(--radius);padding:10px 14px;font-size:14px;margin-bottom:20px}
+.header{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:flex-start;margin-bottom:24px}
+h1{margin:0 0 6px;font-size:28px}
+.sub{margin:0 0 6px;color:var(--muted)}
+.link{background:none;border:0;color:var(--primary);text-decoration:underline;cursor:pointer;font:inherit;font-size:14px;padding:0}
+.savedbox{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:12px 16px;display:flex;gap:14px;align-items:center}
+.savedbox b{font-size:22px}
+.layout{display:grid;grid-template-columns:360px 1fr;gap:24px;align-items:start}
+.panel{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px}
+.panel h2{margin:0 0 4px;font-size:19px}
+label{display:block;font-size:14px;font-weight:600;margin:14px 0 4px}
+input,select{width:100%;padding:10px;border:1px solid #aab4c8;border-radius:8px;font:inherit;background:#fff;color:var(--text)}
+input:disabled,select:disabled{background:#eef1f6;color:var(--muted)}
+.help{font-size:12.5px;color:var(--muted);margin-top:3px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.progress{height:10px;background:#e4e9f3;border-radius:6px;overflow:hidden;margin:8px 0 4px}
+.progress>div{height:100%;background:var(--primary);width:0;transition:width .2s}
+.btn{border:1px solid var(--primary);background:var(--primary);color:#fff;border-radius:8px;padding:10px 16px;font:inherit;font-weight:600;cursor:pointer}
+.btn:hover{background:var(--primary-dark)}
+.btn.secondary{background:#fff;color:var(--primary-dark)}
+.btn.secondary:hover{background:#eef3ff}
+.btn.block{width:100%;margin-top:18px}
+.btn[aria-pressed="true"]{background:#e3ecff;color:var(--primary-dark)}
+.controls{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:10px;margin-bottom:10px}
+.controls label{margin:0 0 3px;font-size:12px}
+.count{font-size:14px;color:var(--muted);margin:8px 0 14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px}
+.card h3{margin:0;font-size:18px}
+.uni{color:var(--muted);font-size:14px;margin:2px 0 10px}
+.meta{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:14px;margin-bottom:12px}
+.badge{display:inline-block;padding:4px 10px;border-radius:20px;font-size:13px;font-weight:700;margin-bottom:10px}
+.b-ok{background:var(--ok-bg);color:var(--ok)}
+.b-no{background:var(--no-bg);color:var(--no)}
+.b-nv{background:var(--nv-bg);color:var(--nv)}
+.reasons{list-style:none;padding:0;margin:6px 0 12px;font-size:14px}
+.reasons li{padding:6px 0;border-top:1px solid #eef1f6;display:flex;gap:8px;flex-wrap:wrap}
+.src{font-size:11px;font-weight:700;border-radius:4px;padding:1px 6px;background:#e8edf7;color:#33415c;white-space:nowrap;align-self:center}
+.src.assume{background:#f1e6ff;color:#5b2a91}
+.ico{font-weight:700}
+.i-ok{color:var(--ok)}.i-no{color:var(--no)}.i-nv{color:var(--nv)}
+h4{margin:14px 0 2px;font-size:14px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.cta{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;background:#e9f0ff;border:1px solid #c5d6fb}
+.cta h2{margin:0}.cta p{margin:2px 0 0;color:var(--muted)}
+.modal-bg{position:fixed;inset:0;background:rgba(10,20,40,.55);display:none;align-items:center;justify-content:center;padding:16px;z-index:50}
+.modal-bg.open{display:flex}
+.modal{background:#fff;border-radius:12px;max-width:760px;width:100%;max-height:90vh;overflow:auto;padding:24px}
+.modal h2{margin-top:0}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{border:1px solid var(--border);padding:8px;text-align:left;vertical-align:top}
+th{background:#f0f3fa}
+.tablewrap{overflow-x:auto}
+.empty{text-align:center;color:var(--muted);padding:30px}
+@media (max-width:1000px){
+  .layout{grid-template-columns:1fr}
+  .controls{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  .app{flex-direction:column}
+  .sidebar{width:100%;padding:10px}
+  .brand{padding:0 6px 8px}
+  .sidebar nav{display:flex;overflow-x:auto;gap:6px}
+  .sidebar nav a{white-space:nowrap;margin:0}
+  main{padding:16px}
+  .row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">Abroad Inquiry</div>
+    <nav id="menu" aria-label="Main navigation"></nav>
+  </aside>
+  <main>
+    <div class="demo-banner"><b>DEMO CONTENT.</b> The programs, tuition and entry rules on this page are sample data supplied for this mockup. They are not independently verified university requirements. Results do not guarantee eligibility or admission.</div>
+
+    <div class="header">
+      <div>
+        <h1>Find Your Best-Fit Programs</h1>
+        <p class="sub">Discover programs that fit your academic profile, preferences, and budget.</p>
+        <button class="link" id="howBtn">How matching works</button>
+      </div>
+      <div class="savedbox">
+        <div><b id="savedCount">0</b><div class="help">saved programs</div></div>
+        <button class="btn secondary" id="compareBtn">Compare saved</button>
+      </div>
+    </div>
+
+    <div class="layout">
+      <section class="panel" aria-labelledby="ph">
+        <h2 id="ph">Your profile</h2>
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" id="pbar" aria-label="Profile completion"><div id="pfill"></div></div>
+        <div class="help"><b id="ptext">0% complete</b>. A complete profile is not the same as a strong academic fit. It only means every field is filled in.</div>
+
+        <label for="dest">Preferred study destination</label>
+        <select id="dest"><option value="">Select country</option><option>Hungary</option><option>Other</option></select>
+
+        <label for="level">Study level</label>
+        <select id="level"><option value="">Select level</option><option>Bachelor</option><option>Master</option></select>
+
+        <label for="field">Subject or field of interest</label>
+        <input id="field" placeholder="e.g. Business, Marketing, Media">
+        <div class="help">Only used for a "matches your field" note. It does not affect the criteria checks.</div>
+
+        <label for="qual">Academic qualification</label>
+        <select id="qual"><option value="">Select qualification</option><option>High school certificate</option><option>Bachelor's degree</option><option>Other</option></select>
+
+        <label for="scale">Grading scale</label>
+        <select id="scale"><option value="">Select scale</option><option value="pct">Percentage (0–100%)</option><option value="gpa4">GPA out of 4.0</option><option value="other">Other scale</option></select>
+        <div class="help">Your grade is kept on this original scale. It is never converted.</div>
+
+        <label for="grade">Grade / result</label>
+        <input id="grade" type="number" step="0.01" placeholder="Choose a scale first">
+        <div class="help" id="gradeHelp">Enter your result exactly as on your transcript.</div>
+
+        <div class="row">
+          <div><label for="etest">English test</label>
+            <select id="etest"><option value="">Select</option><option>IELTS</option><option>MOI</option><option>Other test</option><option>None yet</option></select></div>
+          <div><label for="escore">Score</label><input id="escore" type="number" step="0.5" placeholder="e.g. 6.0"></div>
+        </div>
+        <div class="help">MOI = medium of instruction letter (no score needed).</div>
+
+        <div class="row">
+          <div><label for="budget">Annual tuition budget</label><input id="budget" type="number" placeholder="e.g. 8000"></div>
+          <div><label for="cur">Currency</label><select id="cur"><option value="">Select</option><option>EUR</option><option>USD</option><option>GBP</option><option>Other</option></select></div>
+        </div>
+        <div class="help">Budget is compared only if it is in EUR, the programs' tuition currency.</div>
+
+        <label for="intake">Preferred intake</label>
+        <select id="intake" disabled><option>To be confirmed</option></select>
+        <div class="help">Intake dates are not supplied. Intake is not used in matching.</div>
+
+        <button class="btn block" id="findBtn">Find Matching Programs</button>
+      </section>
+
+      <section>
+        <div class="controls">
+          <div><label for="q">Search</label><input id="q" type="search" placeholder="Program or university"></div>
+          <div><label for="fc">Country</label><select id="fc"><option value="">All</option><option>Hungary</option></select></div>
+          <div><label for="ft">Tuition (€/yr)</label><select id="ft"><option value="">Any</option><option value="7000">Up to €7,000</option><option value="7500">Up to €7,500</option><option value="8000">Up to €8,000</option><option value="9000">Up to €9,000</option></select></div>
+          <div><label for="fl">Study level</label><select id="fl"><option value="">All</option><option>Bachelor</option><option>Master</option></select></div>
+          <div><label for="sort">Sort by</label><select id="sort"><option value="rel">Relevance</option><option value="tl">Tuition: low to high</option><option value="th">Tuition: high to low</option></select></div>
+        </div>
+        <div class="count"><span id="resCount" aria-live="polite"></span><button class="link" id="reset">Reset filters</button></div>
+        <div id="results"></div>
+
+        <div class="panel cta">
+          <div><h2>Need help choosing?</h2><p>Talk to a counsellor about your shortlist and next steps.</p></div>
+          <button class="btn" id="bookBtn">Book Counselling</button>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+
+<div class="modal-bg" id="modalBg" role="dialog" aria-modal="true"><div class="modal" id="modal"></div></div>
+
+<script>
+/* ---------- DEMO DATA (all sample content) ---------- */
+var MENU=["Profile","Search Programs","Program Matching","Mentors","Appointments","Messages","Application Update"];
+var PROGRAMS=[
+ {id:1,uni:"Budapest Metropolitan University",name:"BSc Business Administration and Management",level:"Bachelor",dur:"3.5 yrs",fee:7000,biz:"yes"},
+ {id:2,uni:"Budapest Metropolitan University",name:"BSc Commerce and Marketing",level:"Bachelor",dur:"3.5 yrs",fee:7000,biz:"unclear"},
+ {id:3,uni:"Budapest Metropolitan University",name:"BA Communication and Media Studies",level:"Bachelor",dur:"3 yrs",fee:7800,biz:"unclear",alwaysVerify:true},
+ {id:4,uni:"Budapest Metropolitan University",name:"Master of Business Administration (MBA)",level:"Master",dur:"2 yrs",fee:8200,biz:"yes"},
+ {id:5,uni:"Budapest Metropolitan University",name:"MSc Marketing & Business Development",level:"Master",dur:"2 yrs",fee:7200,biz:"yes"}
+];
+var COUNTRY="Hungary",CITY="Budapest";
+/* SUPPLIED RULES
+ Bachelor: 50-60% Foundation program | 60-69% Math test mandatory for Business | 70%+ direct entry | MOI or IELTS 5.5
+ Master: Bachelor CGPA 2.5+/4.0 | MOI or IELTS 6.0 */
+
+var $=function(i){return document.getElementById(i)};
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function money(n){return "€"+n.toLocaleString("en-US")+"/yr"}
+var saved=[];try{saved=JSON.parse(localStorage.getItem("ai_saved")||"[]")}catch(e){}
+function persist(){try{localStorage.setItem("ai_saved",JSON.stringify(saved))}catch(e){}}
+
+/* menu */
+$("menu").innerHTML=MENU.map(function(m){
+  var a=m==="Program Matching";
+  return '<a href="#" class="'+(a?"active":"")+'"'+(a?' aria-current="page"':"")+'>'+m+(a?' <span class="tag-new">New</span>':"")+'</a>';
+}).join("");
+$("menu").addEventListener("click",function(e){if(e.target.closest("a"))e.preventDefault()});
+
+/* profile */
+var ids=["dest","level","field","qual","scale","grade","etest","escore","budget","cur"];
+var profile={};
+function readProfile(){
+  ids.forEach(function(i){profile[i]=$(i).value.trim()});
+}
+function completion(){
+  readProfile();
+  var req=ids.filter(function(i){return !(i==="escore"&&(profile.etest==="MOI"||profile.etest==="None yet"))});
+  var done=req.filter(function(i){return profile[i]!==""}).length;
+  var pct=Math.round(done/req.length*100);
+  $("pfill").style.width=pct+"%";$("pbar").setAttribute("aria-valuenow",pct);
+  $("ptext").textContent=pct+"% complete";
+}
+function onScale(){
+  var s=$("scale").value,g=$("grade");
+  if(s==="pct"){g.min=0;g.max=100;g.placeholder="e.g. 65 (0–100)";$("gradeHelp").textContent="Percentage, 0–100."}
+  else if(s==="gpa4"){g.min=0;g.max=4;g.placeholder="e.g. 3.2 (0–4.0)";$("gradeHelp").textContent="GPA/CGPA out of 4.0."}
+  else if(s==="other"){g.removeAttribute("min");g.removeAttribute("max");g.placeholder="Your result";$("gradeHelp").textContent="Other scales can't be checked against the supplied rules and will show Needs verification."}
+  else{g.placeholder="Choose a scale first"}
+}
+function onEnglish(){
+  var t=$("etest").value,e=$("escore");
+  var off=(t==="MOI"||t==="None yet");
+  e.disabled=off;if(off)e.value="";
+  e.placeholder=t==="IELTS"?"e.g. 6.0":t==="Other test"?"Score":"Not needed";
+}
+
+/* ---------- matching ---------- */
+/* each check: {s:'ok'|'no'|'nv'|'info', t:text, src:'rule'|'input'} */
+function evaluate(p){
+  readProfile();
+  var c=[],isB=p.level==="Bachelor";
+  var g=parseFloat(profile.grade),hasG=!isNaN(g),sc=profile.scale;
+
+  /* level / country preferences (user inputs, not supplied rules) */
+  if(profile.level){
+    if(profile.level!==p.level)c.push({s:"no",src:"input",t:"This is a "+p.level+" program; you selected "+profile.level+"."});
+    else c.push({s:"info",src:"input",t:"Study level matches your selection ("+p.level+")."});
+  }
+  if(profile.dest){
+    if(profile.dest!==COUNTRY)c.push({s:"info",src:"input",t:"This program is in "+COUNTRY+"; you selected "+profile.dest+"."});
+    else c.push({s:"info",src:"input",t:"Destination matches your selection ("+COUNTRY+")."});
+  }
+  if(profile.field&&p.name.toLowerCase().indexOf(profile.field.toLowerCase())>-1)
+    c.push({s:"info",src:"input",t:'Program name matches your field "'+profile.field+'". This is only a note.'});
+
+  /* academic criteria (supplied rules) */
+  if(profile.level&&profile.level!==p.level){
+    c.push({s:"nv",src:"assume",t:"Academic criteria were not checked because the program level differs from your selection."});
+  } else if(isNaN(g)||!sc||!profile.qual){
+    c.push({s:"nv",src:"input",t:"Qualification, grading scale or grade is missing, so academic criteria can't be checked."});
+  } else if(p.level==="Bachelor"){
+    if(sc!=="pct"){
+      c.push({s:"nv",src:"rule",t:"Supplied bachelor rules use percentages. Your scale is different and is not converted."});
+    } else if(g<0||g>100){
+      c.push({s:"nv",src:"input",t:"Percentage must be between 0 and 100."});
+    } else if(g<50){
+      c.push({s:"no",src:"rule",t:"Below 50%. The supplied bachelor rules start at 50%."});
+      c.push({s:"info",src:"assume",t:"Assumption: results under 50% are treated as not meeting the supplied criteria. Your rules don't say."});
+    } else if(g===60){
+      c.push({s:"nv",src:"rule",t:"Exactly 60% sits in both supplied ranges (50–60% Foundation and 60–69% Math test). Verify which applies."});
+    } else if(g<60){
+      c.push({s:"nv",src:"rule",t:"50–60%: the supplied rule points to the Foundation program, not direct entry."});
+    } else if(g<70){
+      if(p.alwaysVerify)c.push({s:"nv",src:"rule",t:"60–69%: the Math-test rule is for Business. This program's requirement needs verification."});
+      else if(p.biz==="yes")c.push({s:"nv",src:"rule",t:"60–69%: a Math test is mandatory for Business (your supplied rule). Your Math test result is unknown."});
+      else c.push({s:"nv",src:"assume",t:"60–69%: Math test applies to Business. This program's Business classification is unclear."});
+    } else {
+      if(p.alwaysVerify)c.push({s:"nv",src:"assume",t:"70%+ is direct entry without a Math test under the supplied rule, but this program's specific requirements need verification."});
+      else c.push({s:"ok",src:"rule",t:"70% or above: direct entry without the Math test (supplied rule)."});
+    }
+  } else {
+    if(profile.qual!=="Bachelor's degree")c.push({s:"nv",src:"rule",t:"Supplied master rules refer to a bachelor degree. Your qualification is different."});
+    else if(sc!=="gpa4")c.push({s:"nv",src:"rule",t:"Supplied master rule uses CGPA out of 4.0. Your scale is different and is not converted."});
+    else if(g<0||g>4)c.push({s:"nv",src:"input",t:"GPA must be between 0 and 4.0."});
+    else if(g>=2.5)c.push({s:"ok",src:"rule",t:"CGPA "+g+"/4.0 is at or above the supplied 2.5/4.0 minimum."});
+    else c.push({s:"no",src:"rule",t:"CGPA "+g+"/4.0 is below the supplied 2.5/4.0 minimum."});
+  }
+
+  /* English */
+  var need=p.level==="Bachelor"?5.5:6.0;
+  if(!profile.level||profile.level===p.level){
+    var et=profile.etest;
+    if(!et)c.push({s:"nv",src:"input",t:"English test not provided. Supplied rule: MOI or IELTS "+need.toFixed(1)+"."});
+    else if(et==="MOI")c.push({s:"ok",src:"rule",t:"MOI is accepted (supplied rule). The university may still need to confirm your MOI letter."});
+    else if(et==="IELTS"){
+      var sc2=parseFloat(profile.escore);
+      if(isNaN(sc2))c.push({s:"nv",src:"input",t:"IELTS score not entered. Supplied rule: "+need.toFixed(1)+"."});
+      else if(sc2>=need)c.push({s:"ok",src:"rule",t:"IELTS "+sc2.toFixed(1)+" meets the supplied minimum of "+need.toFixed(1)+"."});
+      else c.push({s:"no",src:"rule",t:"IELTS "+sc2.toFixed(1)+" is below the supplied minimum of "+need.toFixed(1)+"."});
+    } else c.push({s:"nv",src:"rule",t:"Supplied rule accepts only MOI or IELTS. Other tests/status are not converted."});
+  }
+
+  /* budget */
+  if(profile.budget&&profile.cur){
+    if(profile.cur!=="EUR")c.push({s:"nv",src:"input",t:"Your budget is in "+profile.cur+". Tuition is in € and no currency conversion is used."});
+    else if(parseFloat(profile.budget)>=p.fee)c.push({s:"info",src:"input",t:"Tuition "+money(p.fee)+" is within your stated € budget."});
+    else c.push({s:"info",src:"input",t:"Tuition "+money(p.fee)+" is above your stated € budget. Shown as a note only; not a supplied criterion."});
+  }
+
+  c.push({s:"nv",src:"assume",t:"Intake: To be confirmed. Not used in matching."});
+  if(p.alwaysVerify)c.push({s:"nv",src:"rule",t:"Communication and Media Studies requirements are not clearly covered by the supplied rules."});
+  if(p.biz==="unclear"&&!p.alwaysVerify)c.push({s:"nv",src:"assume",t:"Whether this program counts as Business (for the Math-test rule) is unclear."});
+
+  /* overall: ignore informational intake line */
+  var core=c.filter(function(x){return x.t.indexOf("Intake:")!==0});
+  var status="ok";
+  if(core.some(function(x){return x.s==="no"}))status="no";
+  else if(core.some(function(x){return x.s==="nv"}))status="nv";
+  if(p.alwaysVerify&&status==="ok")status="nv";
+  /* nothing entered => verification */
+  if(!profile.grade&&!profile.level)status="nv";
+  return {status:status,checks:c};
+}
+var LABEL={ok:"Meets supplied criteria",no:"Does not meet supplied criteria",nv:"Needs verification"};
+var BADGE={ok:"b-ok",no:"b-no",nv:"b-nv"};
+var ICON={ok:["✓","i-ok"],no:["✕","i-no"],nv:["?","i-nv"],info:["•",""]};
+var ORDER={ok:0,nv:1,no:2};
+
+function checksHtml(checks){
+  return '<ul class="reasons">'+checks.map(function(x){
+    return '<li><span class="ico '+ICON[x.s][1]+'" aria-hidden="true">'+ICON[x.s][0]+'</span><span>'+esc(x.t)+'</span><span class="src'+(x.src==="rule"?"":" assume")+'">'+(x.src==="rule"?"Supplied rule":x.src==="input"?"Your input":"Assumption")+'</span></li>';
+  }).join("")+'</ul>';
+}
+
+/* ---------- results ---------- */
+var evalCache={};
+function render(){
+  var q=$("q").value.toLowerCase(),fc=$("fc").value,ft=$("ft").value,fl=$("fl").value,sort=$("sort").value;
+  var list=PROGRAMS.filter(function(p){
+    if(q&&(p.name+" "+p.uni).toLowerCase().indexOf(q)<0)return false;
+    if(fc&&fc!==COUNTRY)return false;
+    if(ft&&p.fee>parseFloat(ft))return false;
+    if(fl&&p.level!==fl)return false;
+    return true;
+  }).map(function(p){return {p:p,r:evaluate(p)}});
+  if(sort==="rel")list.sort(function(a,b){return ORDER[a.r.status]-ORDER[b.r.status]});
+  else if(sort==="tl")list.sort(function(a,b){return a.p.fee-b.p.fee});
+  else list.sort(function(a,b){return b.p.fee-a.p.fee});
+  $("resCount").textContent=list.length+" of "+PROGRAMS.length+" programs shown (demo)";
+  $("savedCount").textContent=saved.length;
+  if(!list.length){$("results").innerHTML='<div class="panel empty">No programs match these filters. Try resetting them.</div>';return}
+  $("results").innerHTML=list.map(function(x){
+    var p=x.p,r=x.r,isS=saved.indexOf(p.id)>-1;
+    return '<article class="card"><span class="badge '+BADGE[r.status]+'">'+LABEL[r.status]+'</span>'+
+    '<h3>'+esc(p.name)+'</h3><div class="uni">'+esc(p.uni)+' · '+CITY+', '+COUNTRY+' · <i>Demo content</i></div>'+
+    '<div class="meta"><span><b>Level:</b> '+p.level+'</span><span><b>Duration:</b> '+p.dur+'</span><span><b>Tuition:</b> '+money(p.fee)+'</span><span><b>Intake:</b> To be confirmed</span></div>'+
+    '<h4>Why this result</h4>'+checksHtml(r.checks)+
+    '<div class="help">Not a guarantee of eligibility or admission.</div>'+
+    '<div class="actions"><button class="btn" data-view="'+p.id+'">View Program</button>'+
+    '<button class="btn secondary" data-save="'+p.id+'" aria-pressed="'+isS+'">'+(isS?"✓ Saved":"Save Program")+'</button></div></article>';
+  }).join("");
+}
+
+/* ---------- modals ---------- */
+function openModal(html){$("modal").innerHTML=html+'<div class="actions"><button class="btn secondary" data-close>Close</button></div>';$("modalBg").classList.add("open");var b=$("modal").querySelector("[data-close]");b&&b.focus()}
+function closeModal(){$("modalBg").classList.remove("open")}
+$("modalBg").addEventListener("click",function(e){if(e.target===$("modalBg")||e.target.hasAttribute("data-close"))closeModal()});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeModal()});
+
+function viewProgram(id){
+  var p=PROGRAMS.filter(function(x){return x.id===id})[0],r=evaluate(p);
+  var rule=p.level==="Bachelor"
+    ?"Bachelor (supplied): 50–60% Foundation program · 60–69% Math test mandatory for Business · 70%+ direct entry without Math test · MOI or IELTS 5.5 accepted."
+    :"Master (supplied): Bachelor CGPA 2.5+/4.0 · MOI or IELTS 6.0.";
+  openModal('<h2>'+esc(p.name)+'</h2><p class="uni">'+esc(p.uni)+' · '+CITY+', '+COUNTRY+'</p>'+
+  '<div class="demo-banner">Demo content. Not verified by the university. No guarantee of eligibility or admission.</div>'+
+  '<div class="meta"><span><b>Level:</b> '+p.level+'</span><span><b>Duration:</b> '+p.dur+'</span><span><b>Tuition:</b> '+money(p.fee)+'</span><span><b>Intake:</b> To be confirmed</span></div>'+
+  '<h4>Supplied entry rules</h4><p>'+esc(rule)+'</p>'+
+  '<h4>Business classification (for Math-test rule)</h4><p>'+(p.alwaysVerify?"Needs verification. Requirements for this program are not clearly covered by the supplied rules.":p.biz==="yes"?"Treated as Business under your supplied matching rule (not independently verified).":"Unclear, so it Needs verification.")+'</p>'+
+  '<h4>Your current result: <span class="badge '+BADGE[r.status]+'">'+LABEL[r.status]+'</span></h4>'+checksHtml(r.checks));
+}
+function compare(){
+  if(saved.length<2){openModal('<h2>Compare saved programs</h2><p>Save at least two programs to compare them. You have saved '+saved.length+'.</p>');return}
+  var ps=PROGRAMS.filter(function(p){return saved.indexOf(p.id)>-1});
+  var rows=[["University",function(p){return p.uni}],["Location",function(){return CITY+", "+COUNTRY}],["Level",function(p){return p.level}],["Duration",function(p){return p.dur}],["Tuition",function(p){return money(p.fee)}],["Intake",function(){return "To be confirmed"}],
+   ["Your result",function(p){return LABEL[evaluate(p).status]}],
+   ["Supplied entry rule",function(p){return p.level==="Bachelor"?"50–60% Foundation; 60–69% Math test (Business); 70%+ direct; MOI or IELTS 5.5":"Bachelor CGPA 2.5+/4.0; MOI or IELTS 6.0"}],
+   ["Business classification",function(p){return p.alwaysVerify?"Needs verification":p.biz==="yes"?"Business (supplied rule)":"Needs verification"}]];
+  openModal('<h2>Compare saved programs</h2><p class="help">Demo content. Not a guarantee of eligibility or admission.</p><div class="tablewrap"><table><tr><th></th>'+ps.map(function(p){return '<th>'+esc(p.name)+'</th>'}).join("")+'</tr>'+
+   rows.map(function(r){return '<tr><th>'+r[0]+'</th>'+ps.map(function(p){return '<td>'+esc(r[1](p))+'</td>'}).join("")+'</tr>'}).join("")+'</table></div>');
+}
+function how(){
+  openModal('<h2>How matching works</h2>'+
+  '<p>Your profile is compared with the entry rules supplied for this demo. Each program gets one of three labels:</p>'+
+  '<ul><li><b>Meets supplied criteria:</b> your inputs satisfy every supplied rule that was checked.</li><li><b>Does not meet supplied criteria:</b> at least one supplied rule is not met.</li><li><b>Needs verification:</b> something is missing, unclear or can\'t be checked without conversion.</li></ul>'+
+  '<p>Every reason is tagged <b>Supplied rule</b>, <b>Your input</b> or <b>Assumption</b>.</p>'+
+  '<p>Grades stay on their original scale and tuition stays in €. Nothing is converted. A complete profile does not mean a strong academic fit. Results never guarantee eligibility or admission. All data is demo content.</p>');
+}
+function book(){
+  openModal('<h2>Book Counselling (demo)</h2><p class="help">Demo form. Nothing is sent or stored.</p>'+
+  '<form id="bf"><label for="bn">Your name</label><input id="bn" required><label for="be">Email</label><input id="be" type="email" required><label for="bt">What do you need help with?</label><input id="bt" placeholder="e.g. choosing between two programs"><button class="btn block" type="submit">Request session</button></form>');
+  $("bf").addEventListener("submit",function(e){e.preventDefault();$("modal").innerHTML='<h2>Request noted (demo)</h2><p>In the real platform a counsellor would contact you. Nothing was sent from this mockup.</p><div class="actions"><button class="btn secondary" data-close>Close</button></div>'});
+}
+
+/* ---------- events ---------- */
+$("results").addEventListener("click",function(e){
+  var v=e.target.closest("[data-view]"),s=e.target.closest("[data-save]");
+  if(v)viewProgram(+v.getAttribute("data-view"));
+  if(s){var id=+s.getAttribute("data-save"),i=saved.indexOf(id);if(i>-1)saved.splice(i,1);else saved.push(id);persist();render()}
+});
+ids.forEach(function(i){$(i).addEventListener("input",function(){completion();render()});$(i).addEventListener("change",function(){completion();render()})});
+$("scale").addEventListener("change",onScale);
+$("etest").addEventListener("change",onEnglish);
+["q","fc","ft","fl","sort"].forEach(function(i){$(i).addEventListener("input",render)});
+$("reset").addEventListener("click",function(){["q","fc","ft","fl"].forEach(function(i){$(i).value=""});$("sort").value="rel";render()});
+$("findBtn").addEventListener("click",function(){completion();render();$("results").scrollIntoView({behavior:"smooth",block:"start"})});
+$("compareBtn").addEventListener("click",compare);
+$("howBtn").addEventListener("click",how);
+$("bookBtn").addEventListener("click",book);
+onScale();onEnglish();completion();render();
+</script>
+</body>
+</html>

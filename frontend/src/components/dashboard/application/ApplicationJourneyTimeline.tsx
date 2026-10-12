@@ -68,7 +68,7 @@ export default function ApplicationJourneyTimeline() {
           <div className="absolute -left-[33px] sm:-left-[41px] top-0 w-8 h-8 rounded-full bg-accent text-white flex items-center justify-center shadow-lg ring-4 ring-accent/20 animate-bounce">
             <RefreshCw size={16} className="animate-spin" />
           </div>
-          <div className="bg-[#F0FDF4] border-2 border-accent/40 p-6 rounded-2xl shadow-sm">
+          <div className="bg-[#F0FDF4] border-2 border-accent/40 p-4 sm:p-6 rounded-2xl shadow-sm">
             <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
               <span className="text-xs font-bold uppercase tracking-wider text-accent bg-white px-2.5 py-1 rounded-full border border-accent/30 shadow-xs flex items-center gap-1.5">
                 <span className="w-2 h-2 rounded-full bg-accent animate-ping"></span>
@@ -89,7 +89,7 @@ export default function ApplicationJourneyTimeline() {
               <div className="w-full bg-gray-100 h-2.5 rounded-full overflow-hidden">
                 <div className="bg-accent h-full rounded-full transition-all duration-500" style={{ width: '60%' }}></div>
               </div>
-              <div className="text-xs text-gray-500 flex items-center justify-between pt-1">
+              <div className="text-xs text-gray-500 flex flex-col sm:flex-row sm:items-center justify-between gap-1 pt-1">
                 <span>Verification &amp; Eligibility Audit</span>
                 <span className="font-medium text-gray-700">Expected completion: <strong className="text-primary">Sep 12, 2026</strong></span>
               </div>

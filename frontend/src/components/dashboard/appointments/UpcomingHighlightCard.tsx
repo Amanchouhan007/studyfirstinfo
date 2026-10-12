@@ -7,11 +7,11 @@ export default function UpcomingHighlightCard() {
 
   if (isCancelled) {
     return (
-      <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6 mb-8 text-amber-800 text-sm flex items-center justify-between">
+      <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8 text-amber-800 text-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <span>The upcoming appointment on September 15 has been cancelled.</span>
         <button
           onClick={() => setIsCancelled(false)}
-          className="text-xs font-bold text-primary underline ml-4"
+          className="text-xs font-bold text-primary underline ml-0 sm:ml-4 self-start sm:self-auto cursor-pointer"
         >
           Undo Cancellation
         </button>
@@ -20,7 +20,7 @@ export default function UpcomingHighlightCard() {
   }
 
   return (
-    <div className="bg-white rounded-2xl border-2 border-accent shadow-sm p-6 sm:p-8 mb-8 relative overflow-hidden">
+    <div className="bg-white rounded-2xl border-2 border-accent shadow-sm p-4 sm:p-8 mb-6 sm:mb-8 relative overflow-hidden">
       {/* Subtle background glow */}
       <div className="absolute top-0 right-0 w-48 h-48 bg-accent/5 rounded-bl-full pointer-events-none -z-0"></div>
 

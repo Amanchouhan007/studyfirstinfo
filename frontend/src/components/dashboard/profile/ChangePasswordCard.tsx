@@ -23,7 +23,7 @@ export default function ChangePasswordCard() {
   };
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 sm:p-7">
+    <div id="change-password" className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 sm:p-7">
       <div className="flex items-center justify-between mb-4 pb-2 border-b border-gray-100">
         <div className="flex items-center gap-2">
           <Lock size={18} className="text-accent" />

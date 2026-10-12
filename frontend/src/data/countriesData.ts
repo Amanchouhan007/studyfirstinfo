@@ -15,6 +15,7 @@ interface FaqItem {
 }
 
 interface ProgramItem {
+  id?: string;
   name: string;
   level: string;
   fee: string;
@@ -97,6 +98,10 @@ export const FLAG_MAP: Record<string, string> = {
   'south_korea': 'https://flagcdn.com/w80/kr.png',
   'ireland': 'https://flagcdn.com/w80/ie.png',
   'thailand': 'https://flagcdn.com/w80/th.png',
+'bulgaria': 'https://flagcdn.com/w80/bg.png',
+  'czech-republic': 'https://flagcdn.com/w80/cz.png',
+  'denmark': 'https://flagcdn.com/w80/dk.png',
+  'finland': 'https://flagcdn.com/w80/fi.png',
 };
 
 export const COUNTRIES_DB: Record<string, CountryRecord> = {
@@ -115,7 +120,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
       "Pay tuition fee after Approval in Principle (AIP)"
     ],
     livingCost: "NZ$ 1,200 – NZ$ 1,800 / month",
-    institutionsCount: "8+ Listed",
+    institutionsCount: "14+ Listed",
     heroImg: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1920&q=80",
     pillBadge: "🇳🇿 Family-Friendly Study Hub",
     subBadge: "Pay Tuition After Visa AIP • Spouse Full-Time Work Rights",
@@ -239,6 +244,511 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
           { name: "Diploma in Information Technology Support", level: "Diploma (2 Years)", fee: "NZ$ 19,500/yr" },
           { name: "Bachelor of Nursing (Green List)", level: "Undergraduate (3 Years)", fee: "NZ$ 26,000/yr" },
           { name: "Graduate Diploma in Applied Management", level: "Grad Diploma (1 Year)", fee: "NZ$ 24,500/yr" }
+        ]
+      },
+      {
+        id: "aut",
+        name: "Auckland University of Technology (AUT)",
+        badge: "QS / Nationally Ranked",
+        type: "Public Research University",
+        tagline: "Top modern university",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "NZ$32,000–$48,000/yr",
+        tuitionPG: "NZ$36,000–$55,000/yr",
+        scholarship: "NZ$5,000–$15,000 International scholarships",
+        workRights: "Up to 25 hrs/week during study; full-time during holidays",
+        entryUG: "HSC GPA 4.0/5.0, IELTS 6.0 (min 5.5) / PTE 52",
+        entryPG: "CGPA 2.75/4.0, IELTS 6.5 (min 6.0) / PTE 59",
+        whyStudy: [
+          "Top modern university",
+          "focus on practical industry learning and tech integration",
+          "excellent student support",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Fund: UG ~70L-1Cr BDT, PG ~60-80L BDT (4-6 mo maturity)",
+          bankMaturity: "4 to 6 months maturity required",
+          familyFund: "Spouse >20L BDT"
+        },
+        careerAndPsw: "Post-Study Work Visa; Auckland tech corridor placement; spouse full-time work rights",
+        partTimeJobs: "Up to 25 hrs/week during study; full-time during holidays",
+        applicationSteps: [
+          "Step 1: Counselling",
+          "Step 2: Apply",
+          "Step 3: Offer of Place",
+          "Step 4: Financial/Visa docs",
+          "Step 5: INZ AIP",
+          "Step 6: Pay fees after visa",
+          "Step 7: Travel",
+        ],
+        programs: [
+          { name: "BSc / MSc in Engineering", level: "Undergraduate / Postgraduate", fee: "NZ$32,000–$48,000/yr" },
+          { name: "BSc / MSc in Computer Science", level: "Undergraduate / Postgraduate", fee: "NZ$32,000–$48,000/yr" },
+          { name: "BSc / MSc in AI", level: "Undergraduate / Postgraduate", fee: "NZ$32,000–$48,000/yr" },
+          { name: "BSc / MSc in Design", level: "Undergraduate / Postgraduate", fee: "NZ$32,000–$48,000/yr" },
+          { name: "BSc / MSc in Business", level: "Undergraduate / Postgraduate", fee: "NZ$32,000–$48,000/yr" },
+        ]
+      },
+      {
+        id: "university-of-waikato",
+        name: "University of Waikato",
+        badge: "Verified Academic Institution",
+        type: "Public Research University",
+        tagline: "Triple Crown accredited Business School",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "NZ$30,000–$45,000/yr",
+        tuitionPG: "NZ$35,000–$52,000/yr",
+        scholarship: "NZ$2,500–$15,000 Vice-Chancellor's International Excellence Awards",
+        workRights: "Up to 25 hrs/week during study; full-time during holidays",
+        entryUG: "HSC GPA 4.0/5.0, IELTS 6.0 (min 5.5) / PTE 52",
+        entryPG: "CGPA 2.75/4.0, IELTS 6.5 (min 6.0) / PTE 59",
+        whyStudy: [
+          "Triple Crown accredited Business School",
+          "serene Hamilton campus",
+          "lower regional living costs",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Fund: UG ~70L-1Cr BDT, PG ~60-80L BDT (4-6 mo maturity)",
+          bankMaturity: "4 to 6 months maturity required",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "Post-Study Work Visa; regional settlement points for PR; spouse full-time work rights",
+        partTimeJobs: "Up to 25 hrs/week during study; full-time during holidays",
+        applicationSteps: [
+          "Step 1: Apply",
+          "Step 2: Offer",
+          "Step 3: Financial Evidence",
+          "Step 4: Visa Lodgement",
+          "Step 5: INZ AIP",
+          "Step 6: Pay tuition fee",
+          "Step 7: Travel",
+        ],
+        programs: [
+          { name: "BSc / MSc in Management", level: "Undergraduate / Postgraduate", fee: "NZ$30,000–$45,000/yr" },
+          { name: "BSc / MSc in Supply Chain", level: "Undergraduate / Postgraduate", fee: "NZ$30,000–$45,000/yr" },
+          { name: "BSc / MSc in Environmental Science", level: "Undergraduate / Postgraduate", fee: "NZ$30,000–$45,000/yr" },
+          { name: "BSc / MSc in CS", level: "Undergraduate / Postgraduate", fee: "NZ$30,000–$45,000/yr" },
+          { name: "BSc / MSc in Law", level: "Undergraduate / Postgraduate", fee: "NZ$30,000–$45,000/yr" },
+        ]
+      },
+      {
+        id: "massey-university",
+        name: "Massey University",
+        badge: "Verified Academic Institution",
+        type: "Public Research University",
+        tagline: "World leader in agriculture & food tech",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "NZ$31,000–$46,000/yr",
+        tuitionPG: "NZ$35,000–$55,000/yr",
+        scholarship: "NZ$5,000–$10,000 merit tuition waivers",
+        workRights: "Up to 25 hrs/week during study; full-time during holidays",
+        entryUG: "HSC GPA 4.0/5.0, IELTS 6.0 (min 5.5)",
+        entryPG: "CGPA 2.75/4.0, IELTS 6.5 (min 6.0)",
+        whyStudy: [
+          "World leader in agriculture & food tech",
+          "multi-campus network (Auckland, Palmerston North)",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Fund: UG ~70L-1Cr BDT, PG ~60-80L BDT (4-6 mo maturity)",
+          bankMaturity: "4 to 6 months maturity required",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "High demand in agriculture, food sciences, and veterinary; Post-study work pathways",
+        partTimeJobs: "Up to 25 hrs/week during study; full-time during holidays",
+        applicationSteps: [
+          "Step 1: Counselling",
+          "Step 2: Apply",
+          "Step 3: Offer of Place",
+          "Step 4: Medical/Police",
+          "Step 5: INZ Assessment",
+          "Step 6: Pay tuition after visa",
+          "Step 7: Fly",
+        ],
+        programs: [
+          { name: "BSc / MSc in Agriculture", level: "Undergraduate / Postgraduate", fee: "NZ$31,000–$46,000/yr" },
+          { name: "BSc / MSc in Food Technology", level: "Undergraduate / Postgraduate", fee: "NZ$31,000–$46,000/yr" },
+          { name: "BSc / MSc in Aviation", level: "Undergraduate / Postgraduate", fee: "NZ$31,000–$46,000/yr" },
+          { name: "BSc / MSc in Business", level: "Undergraduate / Postgraduate", fee: "NZ$31,000–$46,000/yr" },
+          { name: "BSc / MSc in Nursing", level: "Undergraduate / Postgraduate", fee: "NZ$31,000–$46,000/yr" },
+        ]
+      },
+      {
+        id: "victoria-university-of-we",
+        name: "Victoria University of Wellington",
+        badge: "Verified Academic Institution",
+        type: "Public Research University",
+        tagline: "Located in the capital city",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "NZ$32,000–$50,000/yr",
+        tuitionPG: "NZ$37,000–$58,000/yr",
+        scholarship: "NZ$10,000 Tongarewa International Scholarship & Master's awards",
+        workRights: "Up to 25 hrs/week during study; full-time during holidays",
+        entryUG: "HSC GPA 4.0/5.0, IELTS 6.0 (min 5.5)",
+        entryPG: "CGPA 2.75/4.0, IELTS 6.5 (min 6.0)",
+        whyStudy: [
+          "Located in the capital city",
+          "close links to government ministries, research agencies, and tech firms",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Fund: UG ~70L-1Cr BDT, PG ~60-80L BDT (4-6 mo maturity)",
+          bankMaturity: "4 to 6 months maturity required",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "Government and corporate post-study employment; 3-year PSW; spouse full work rights",
+        partTimeJobs: "Up to 25 hrs/week during study; full-time during holidays",
+        applicationSteps: [
+          "Step 1: Apply",
+          "Step 2: Offer",
+          "Step 3: Financial evidence",
+          "Step 4: INZ Visa assessment",
+          "Step 5: Pay tuition after AIP",
+          "Step 6: Final visa",
+        ],
+        programs: [
+          { name: "BSc / MSc in Public Policy", level: "Undergraduate / Postgraduate", fee: "NZ$32,000–$50,000/yr" },
+          { name: "BSc / MSc in Architecture", level: "Undergraduate / Postgraduate", fee: "NZ$32,000–$50,000/yr" },
+          { name: "BSc / MSc in Law", level: "Undergraduate / Postgraduate", fee: "NZ$32,000–$50,000/yr" },
+          { name: "BSc / MSc in Software Dev", level: "Undergraduate / Postgraduate", fee: "NZ$32,000–$50,000/yr" },
+          { name: "BSc / MSc in AI", level: "Undergraduate / Postgraduate", fee: "NZ$32,000–$50,000/yr" },
+        ]
+      },
+      {
+        id: "university-of-canterbury",
+        name: "University of Canterbury",
+        badge: "Verified Academic Institution",
+        type: "Public Research University",
+        tagline: "World-renowned engineering faculty",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "NZ$34,000–$52,000/yr",
+        tuitionPG: "NZ$38,000–$60,000/yr",
+        scholarship: "NZ$10,000–$25,000 high-achievement international scholarships",
+        workRights: "Up to 25 hrs/week during study; full-time during holidays",
+        entryUG: "HSC GPA 4.0/5.0, IELTS 6.0 (min 5.5)",
+        entryPG: "CGPA 2.75/4.0, IELTS 6.5 (min 6.0)",
+        whyStudy: [
+          "World-renowned engineering faculty",
+          "Christchurch innovation & infrastructure rebuilding hub",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Fund: UG ~70L-1Cr BDT, PG ~60-80L BDT (4-6 mo maturity)",
+          bankMaturity: "4 to 6 months maturity required",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "Christchurch engineering & tech boom; skilled migrant PR pathways; Post-study work permit",
+        partTimeJobs: "Up to 25 hrs/week during study; full-time during holidays",
+        applicationSteps: [
+          "Step 1: Select program",
+          "Step 2: Apply",
+          "Step 3: Offer",
+          "Step 4: Financial assessment",
+          "Step 5: Lodgement",
+          "Step 6: Pay tuition after AIP",
+          "Step 7: Visa",
+        ],
+        programs: [
+          { name: "BSc / MSc in Civil & Mechanical Engineering", level: "Undergraduate / Postgraduate", fee: "NZ$34,000–$52,000/yr" },
+          { name: "BSc / MSc in Forestry", level: "Undergraduate / Postgraduate", fee: "NZ$34,000–$52,000/yr" },
+          { name: "BSc / MSc in Data Science", level: "Undergraduate / Postgraduate", fee: "NZ$34,000–$52,000/yr" },
+          { name: "BSc / MSc in Commerce", level: "Undergraduate / Postgraduate", fee: "NZ$34,000–$52,000/yr" },
+        ]
+      },
+      {
+        id: "lincoln-university",
+        name: "Lincoln University",
+        badge: "Verified Academic Institution",
+        type: "Public Research University",
+        tagline: "Specialist land-based university in the Southern Hemisphere",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "NZ$30,000–$44,000/yr",
+        tuitionPG: "NZ$35,000–$50,000/yr",
+        scholarship: "NZ$5,000–$10,000 International Global Challenges scholarships",
+        workRights: "Up to 25 hrs/week during study; full-time during holidays",
+        entryUG: "HSC GPA 4.0/5.0, IELTS 6.0 (min 5.5)",
+        entryPG: "CGPA 2.75/4.0, IELTS 6.5 (min 6.0)",
+        whyStudy: [
+          "Specialist land-based university in the Southern Hemisphere",
+          "top graduate employment rate",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Fund: UG ~70L-1Cr BDT, PG ~60-80L BDT (4-6 mo maturity)",
+          bankMaturity: "4 to 6 months maturity required",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "Agritech & environmental sector demand; regional migration bonus; spouse work permit",
+        partTimeJobs: "Up to 25 hrs/week during study; full-time during holidays",
+        applicationSteps: [
+          "Step 1: Apply",
+          "Step 2: Offer of Place",
+          "Step 3: Financial prep",
+          "Step 4: INZ lodgement",
+          "Step 5: Pay tuition after AIP",
+          "Step 6: Fly",
+        ],
+        programs: [
+          { name: "BSc / MSc in Agribusiness", level: "Undergraduate / Postgraduate", fee: "NZ$30,000–$44,000/yr" },
+          { name: "BSc / MSc in Environmental Management", level: "Undergraduate / Postgraduate", fee: "NZ$30,000–$44,000/yr" },
+          { name: "BSc / MSc in Tourism", level: "Undergraduate / Postgraduate", fee: "NZ$30,000–$44,000/yr" },
+          { name: "BSc / MSc in Agriculture Science", level: "Undergraduate / Postgraduate", fee: "NZ$30,000–$44,000/yr" },
+        ]
+      },
+      {
+        id: "university-of-otago",
+        name: "University of Otago",
+        badge: "Verified Academic Institution",
+        type: "Public Research University",
+        tagline: "NZ's oldest university (Dunedin)",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "NZ$35,000–$55,000/yr",
+        tuitionPG: "NZ$38,000–$65,000+/yr",
+        scholarship: "NZ$10,000–$25,000+ Otago International Excellence scholarships",
+        workRights: "Up to 25 hrs/week during study; full-time during holidays",
+        entryUG: "HSC GPA 4.0/5.0, IELTS 6.0 (min 5.5)",
+        entryPG: "CGPA 2.75/4.0, IELTS 6.5 (min 6.0)",
+        whyStudy: [
+          "NZ's oldest university (Dunedin)",
+          "premier medical and clinical health science faculty",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Fund: UG ~70L-1Cr BDT, PG ~60-80L BDT (4-6 mo maturity)",
+          bankMaturity: "4 to 6 months maturity required",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "Clinical placements & healthcare shortage list; long-term PR pathways; spouse work rights",
+        partTimeJobs: "Up to 25 hrs/week during study; full-time during holidays",
+        applicationSteps: [
+          "Step 1: Apply",
+          "Step 2: Offer",
+          "Step 3: Financials",
+          "Step 4: Medical/Police",
+          "Step 5: INZ Assessment",
+          "Step 6: Pay tuition after AIP",
+          "Step 7: Visa",
+        ],
+        programs: [
+          { name: "BSc / MSc in Health Sciences", level: "Undergraduate / Postgraduate", fee: "NZ$35,000–$55,000/yr" },
+          { name: "BSc / MSc in Biomedical Science", level: "Undergraduate / Postgraduate", fee: "NZ$35,000–$55,000/yr" },
+          { name: "BSc / MSc in Dentistry", level: "Undergraduate / Postgraduate", fee: "NZ$35,000–$55,000/yr" },
+          { name: "BSc / MSc in Nursing", level: "Undergraduate / Postgraduate", fee: "NZ$35,000–$55,000/yr" },
+          { name: "BSc / MSc in Finance", level: "Undergraduate / Postgraduate", fee: "NZ$35,000–$55,000/yr" },
+        ]
+      },
+      {
+        id: "ara-institute-of-canterbu",
+        name: "Ara Institute of Canterbury",
+        badge: "Verified Academic Institution",
+        type: "Public Research University",
+        tagline: "South Island's largest vocational institute",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "Diploma: NZ$18,000–$26,000/yr; Degree: NZ$25,000–$35,000/yr",
+        tuitionPG: "Diploma: NZ$18,000–$26,000/yr; Degree: NZ$25,000–$35,000/yr",
+        scholarship: "Regional & course-specific international bursaries",
+        workRights: "Up to 25 hrs/week during study; full-time during holidays",
+        entryUG: "Diploma: IELTS 5.5. PGD: IELTS 6.0. Degree: IELTS 6.0",
+        entryPG: "Diploma: IELTS 5.5. PGD: IELTS 6.0. Degree: IELTS 6.0",
+        whyStudy: [
+          "South Island's largest vocational institute",
+          "direct project ties across Canterbury",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Fund: ~70L BDT (4-6 mo maturity)",
+          bankMaturity: "4 to 6 months maturity required",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "Canterbury construction & ICT workforce needs; post-study work visa; spouse work permit",
+        partTimeJobs: "Up to 25 hrs/week during study; full-time during holidays",
+        applicationSteps: [
+          "Step 1: Apply",
+          "Step 2: Offer",
+          "Step 3: Financial verification",
+          "Step 4: INZ Assessment",
+          "Step 5: Pay tuition after AIP",
+          "Step 6: Visa",
+        ],
+        programs: [
+          { name: "BSc / MSc in ICT", level: "Undergraduate / Postgraduate", fee: "Diploma: NZ$18,000–$26,000/yr; Degree: NZ$25,000–$35,000/yr" },
+          { name: "BSc / MSc in Construction Management", level: "Undergraduate / Postgraduate", fee: "Diploma: NZ$18,000–$26,000/yr; Degree: NZ$25,000–$35,000/yr" },
+          { name: "BSc / MSc in Hospitality", level: "Undergraduate / Postgraduate", fee: "Diploma: NZ$18,000–$26,000/yr; Degree: NZ$25,000–$35,000/yr" },
+          { name: "BSc / MSc in Nursing", level: "Undergraduate / Postgraduate", fee: "Diploma: NZ$18,000–$26,000/yr; Degree: NZ$25,000–$35,000/yr" },
+        ]
+      },
+      {
+        id: "otago-polytechnic",
+        name: "Otago Polytechnic",
+        badge: "Applied Learning & STEM Focus",
+        type: "Government Institute of Technology",
+        tagline: "Exceptional student satisfaction",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "Diploma: NZ$19,000–$27,000/yr; Degree: NZ$26,000–$36,000/yr",
+        tuitionPG: "Diploma: NZ$19,000–$27,000/yr; Degree: NZ$26,000–$36,000/yr",
+        scholarship: "NZ$2,500–$7,500 international student awards",
+        workRights: "Up to 25 hrs/week during study; full-time during holidays",
+        entryUG: "Diploma: IELTS 5.5. Degree: IELTS 6.0",
+        entryPG: "Diploma: IELTS 5.5. Degree: IELTS 6.0",
+        whyStudy: [
+          "Exceptional student satisfaction",
+          "experiential learning tied to local employers",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Fund: ~70L BDT (4-6 mo maturity)",
+          bankMaturity: "4 to 6 months maturity required",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "Direct entry to regional employment; post-study work rights; spouse full-time work",
+        partTimeJobs: "Up to 25 hrs/week during study; full-time during holidays",
+        applicationSteps: [
+          "Step 1: Apply",
+          "Step 2: Offer",
+          "Step 3: Prepare funds",
+          "Step 4: Visa application",
+          "Step 5: Pay fees after visa",
+          "Step 6: Fly",
+        ],
+        programs: [
+          { name: "BSc / MSc in Applied Science", level: "Undergraduate / Postgraduate", fee: "Diploma: NZ$19,000–$27,000/yr; Degree: NZ$26,000–$36,000/yr" },
+          { name: "BSc / MSc in Design", level: "Undergraduate / Postgraduate", fee: "Diploma: NZ$19,000–$27,000/yr; Degree: NZ$26,000–$36,000/yr" },
+          { name: "BSc / MSc in Construction", level: "Undergraduate / Postgraduate", fee: "Diploma: NZ$19,000–$27,000/yr; Degree: NZ$26,000–$36,000/yr" },
+          { name: "BSc / MSc in Culinary Arts", level: "Undergraduate / Postgraduate", fee: "Diploma: NZ$19,000–$27,000/yr; Degree: NZ$26,000–$36,000/yr" },
+          { name: "BSc / MSc in Occupational Therapy", level: "Undergraduate / Postgraduate", fee: "Diploma: NZ$19,000–$27,000/yr; Degree: NZ$26,000–$36,000/yr" },
+        ]
+      },
+      {
+        id: "sit",
+        name: "Southern Institute of Technology (SIT)",
+        badge: "Applied Learning & STEM Focus",
+        type: "Government Institute of Technology",
+        tagline: "Lowest tuition fees",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "Diploma: NZ$18,000–$24,000/yr; Degree: NZ$24,000–$32,000/yr",
+        tuitionPG: "Diploma: NZ$18,000–$24,000/yr; Degree: NZ$24,000–$32,000/yr",
+        scholarship: "Accommodation bursaries and subsidized tuition packages",
+        workRights: "Up to 25 hrs/week during study; full-time during holidays",
+        entryUG: "Diploma: IELTS 5.5. Degree: IELTS 6.0",
+        entryPG: "Diploma: IELTS 5.5. Degree: IELTS 6.0",
+        whyStudy: [
+          "Lowest tuition fees",
+          "Zero-fees English & accommodation support packages",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Fund: ~70L BDT (4-6 mo maturity)",
+          bankMaturity: "4 to 6 months maturity required",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "Pathways for regional settlement and long-term residency; post-study work visa",
+        partTimeJobs: "Up to 25 hrs/week during study; full-time during holidays",
+        applicationSteps: [
+          "Step 1: Apply",
+          "Step 2: Offer",
+          "Step 3: Financial verification",
+          "Step 4: INZ Assessment",
+          "Step 5: Pay tuition after AIP",
+          "Step 6: Visa",
+        ],
+        programs: [
+          { name: "BSc / MSc in IT", level: "Undergraduate / Postgraduate", fee: "Diploma: NZ$18,000–$24,000/yr; Degree: NZ$24,000–$32,000/yr" },
+          { name: "BSc / MSc in Hospitality", level: "Undergraduate / Postgraduate", fee: "Diploma: NZ$18,000–$24,000/yr; Degree: NZ$24,000–$32,000/yr" },
+          { name: "BSc / MSc in Business", level: "Undergraduate / Postgraduate", fee: "Diploma: NZ$18,000–$24,000/yr; Degree: NZ$24,000–$32,000/yr" },
+          { name: "BSc / MSc in Trades", level: "Undergraduate / Postgraduate", fee: "Diploma: NZ$18,000–$24,000/yr; Degree: NZ$24,000–$32,000/yr" },
+          { name: "BSc / MSc in Nursing", level: "Undergraduate / Postgraduate", fee: "Diploma: NZ$18,000–$24,000/yr; Degree: NZ$24,000–$32,000/yr" },
+        ]
+      },
+      {
+        id: "toi-ohomai-institute-of-t",
+        name: "Toi Ohomai Institute of Technology",
+        badge: "Applied Learning & STEM Focus",
+        type: "Government Institute of Technology",
+        tagline: "Bay of Plenty regional focus",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "Diploma: NZ$18,000–$25,000/yr; Degree: NZ$24,000–$34,000/yr",
+        tuitionPG: "Diploma: NZ$18,000–$25,000/yr; Degree: NZ$24,000–$34,000/yr",
+        scholarship: "Regional international study bursaries",
+        workRights: "Up to 25 hrs/week during study; full-time during holidays",
+        entryUG: "Diploma: IELTS 5.5. Degree: IELTS 6.0",
+        entryPG: "Diploma: IELTS 5.5. Degree: IELTS 6.0",
+        whyStudy: [
+          "Bay of Plenty regional focus",
+          "maritime, forestry, and tourism linkages",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Fund: ~70L BDT (4-6 mo maturity)",
+          bankMaturity: "4 to 6 months maturity required",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "Growing logistics, tourism, and marine tech job market; post-study work permit",
+        partTimeJobs: "Up to 25 hrs/week during study; full-time during holidays",
+        applicationSteps: [
+          "Step 1: Apply",
+          "Step 2: Offer",
+          "Step 3: Prepare funds",
+          "Step 4: INZ Visa",
+          "Step 5: Pay fees after AIP",
+          "Step 6: Visa",
+        ],
+        programs: [
+          { name: "BSc / MSc in Forestry", level: "Undergraduate / Postgraduate", fee: "Diploma: NZ$18,000–$25,000/yr; Degree: NZ$24,000–$34,000/yr" },
+          { name: "BSc / MSc in Marine Studies", level: "Undergraduate / Postgraduate", fee: "Diploma: NZ$18,000–$25,000/yr; Degree: NZ$24,000–$34,000/yr" },
+          { name: "BSc / MSc in Business", level: "Undergraduate / Postgraduate", fee: "Diploma: NZ$18,000–$25,000/yr; Degree: NZ$24,000–$34,000/yr" },
+          { name: "BSc / MSc in IT", level: "Undergraduate / Postgraduate", fee: "Diploma: NZ$18,000–$25,000/yr; Degree: NZ$24,000–$34,000/yr" },
+          { name: "BSc / MSc in Nursing", level: "Undergraduate / Postgraduate", fee: "Diploma: NZ$18,000–$25,000/yr; Degree: NZ$24,000–$34,000/yr" },
+        ]
+      },
+      {
+        id: "ica",
+        name: "International College of Auckland (ICA)",
+        badge: "Verified Academic Institution",
+        type: "Government Institute of Technology",
+        tagline: "Specialized pathway provider for students needing bridge qualifications or study gap coverage",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "Diploma: NZ$16,000–$22,000/yr",
+        tuitionPG: "Diploma: NZ$16,000–$22,000/yr",
+        scholarship: "Pathway fee reductions & flexible instalments",
+        workRights: "Up to 25 hrs/week during study; full-time during holidays",
+        entryUG: "Diploma: HSC pass, IELTS 5.5 / internal test",
+        entryPG: "Diploma: HSC pass, IELTS 5.5 / internal test",
+        whyStudy: [
+          "Specialized pathway provider for students needing bridge qualifications or study gap coverage",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Fund: ~65-70L BDT (4-6 mo maturity)",
+          bankMaturity: "4 to 6 months maturity required",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "Articulation into university degrees; student work rights during study",
+        partTimeJobs: "Up to 25 hrs/week during study; full-time during holidays",
+        applicationSteps: [
+          "Step 1: Apply",
+          "Step 2: Offer",
+          "Step 3: Financial docs",
+          "Step 4: INZ Assessment",
+          "Step 5: Pay fee after AIP",
+          "Step 6: Fly",
+        ],
+        programs: [
+          { name: "BSc / MSc in Business", level: "Undergraduate / Postgraduate", fee: "Diploma: NZ$16,000–$22,000/yr" },
+          { name: "BSc / MSc in Computing", level: "Undergraduate / Postgraduate", fee: "Diploma: NZ$16,000–$22,000/yr" },
+          { name: "BSc / MSc in Telecommunications", level: "Undergraduate / Postgraduate", fee: "Diploma: NZ$16,000–$22,000/yr" },
         ]
       }
     ]
@@ -384,6 +894,304 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
           { name: "BSc in Mechatronics & Mechanical Engineering", level: "Bachelor (3.5 Yrs)", fee: "€7,000/yr" },
           { name: "Doctor of General Medicine (6 Years)", level: "Integrated Master (6 Yrs)", fee: "€14,000/yr" }
         ]
+      },
+      {
+        id: "university-of-pcs",
+        name: "University of Pécs",
+        badge: "WHO / PMDC Recognized Medical Track",
+        type: "Public Research University",
+        tagline: "Hungary's oldest university (est. 1367)",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "€4,500 – €9,000/yr",
+        tuitionPG: "€4,500 – €9,000/yr",
+        scholarship: "Stipendium Hungaricum (100% full ride) + University merit discounts",
+        workRights: "24 hours per week legal work rights",
+        entryUG: "HSC GPA 3.5+/5.0 or Bachelor CGPA 2.75+; IELTS 5.5-6.5 or MOI accepted",
+        entryPG: "HSC GPA 3.5+/5.0 or Bachelor CGPA 2.75+; IELTS 5.5-6.5 or MOI accepted",
+        whyStudy: [
+          "Hungary's oldest university (est. 1367)",
+          "official partner of Study First Info",
+          "expo presence by regional delegate Arif Syed",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Living cost: €350–€550/mo in Pécs",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "EU-wide recognized degrees; Schengen residency & post-study job seeker visa",
+        partTimeJobs: "24 hours per week legal work rights",
+        applicationSteps: [
+          "Step 1: DreamApply portal",
+          "Step 2: Online interview",
+          "Step 3: Offer letter",
+          "Step 4: Dhaka Embassy submission",
+          "Step 5: Visa",
+        ],
+        programs: [
+          { name: "Bachelor's, Master's, PhD in Business, Health Sciences, Gene", level: "Bachelor / Master", fee: "€4,500 – €9,000/yr" },
+        ]
+      },
+      {
+        id: "john-von-neumann-universi",
+        name: "John von Neumann University",
+        badge: "Verified Academic Institution",
+        type: "Public Research University",
+        tagline: "NO APPLICATION FEE before offer letter",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "€3,500 – €5,500/yr",
+        tuitionPG: "€3,500 – €5,500/yr",
+        scholarship: "Stipendium Hungaricum & institutional tuition discounts",
+        workRights: "24 hours per week legal work rights",
+        entryUG: "HSC / Bachelor pass; MOI accepted or IELTS 5.5",
+        entryPG: "HSC / Bachelor pass; MOI accepted or IELTS 5.5",
+        whyStudy: [
+          "NO APPLICATION FEE before offer letter",
+          "IELTS not mandatory (MOI accepted)",
+          "modern Kecskemét campus",
+          "high visa success",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Living cost: €350–€500/mo in Kecskemét",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "Automotive & IT hub in Kecskemét (Mercedes-Benz industrial ecosystem)",
+        partTimeJobs: "24 hours per week legal work rights",
+        applicationSteps: [
+          "Step 1: Zero application fee apply",
+          "Step 2: Document check",
+          "Step 3: Offer letter",
+          "Step 4: Embassy file in Dhaka",
+          "Step 5: Visa",
+        ],
+        programs: [
+          { name: "Bachelor's & Master's in Computer Science, Business Administ", level: "Bachelor / Master", fee: "€3,500 – €5,500/yr" },
+        ]
+      },
+      {
+        id: "szchenyi-istvn-university",
+        name: "Széchenyi István University (University of Győr)",
+        badge: "Verified Academic Institution",
+        type: "Public Research University",
+        tagline: "Located in automotive capital Győr",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "€3,000 – €6,500/yr",
+        tuitionPG: "€3,000 – €6,500/yr",
+        scholarship: "Stipendium Hungaricum fully funded scholarship",
+        workRights: "24 hours per week legal work rights",
+        entryUG: "HSC / Bachelor 60%+; IELTS 5.5 or MOI accepted",
+        entryPG: "HSC / Bachelor 60%+; IELTS 5.5 or MOI accepted",
+        whyStudy: [
+          "Located in automotive capital Győr",
+          "direct industrial tie-up with Audi Hungaria",
+          "high practical placement rate",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Living cost: €400–€600/mo in Győr",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "Direct engineering career pathways with Audi & European manufacturing giants",
+        partTimeJobs: "24 hours per week legal work rights",
+        applicationSteps: [
+          "Step 1: Apply",
+          "Step 2: Assessment",
+          "Step 3: Offer letter",
+          "Step 4: Embassy visa submission in Dhaka",
+          "Step 5: Travel",
+        ],
+        programs: [
+          { name: "Bachelor's & Master's in Automotive Engineering, Mechanical,", level: "Bachelor / Master", fee: "€3,000 – €6,500/yr" },
+        ]
+      },
+      {
+        id: "elte",
+        name: "Eötvös Loránd University (ELTE)",
+        badge: "QS / Nationally Ranked",
+        type: "Public Research University",
+        tagline: "Hungary's top-ranked public research university in Budapest",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "€4,000 – €7,500/yr",
+        tuitionPG: "€4,000 – €7,500/yr",
+        scholarship: "Stipendium Hungaricum (100% funded)",
+        workRights: "24 hours per week legal work rights",
+        entryUG: "HSC GPA 4.0+/5.0 or Bachelor CGPA 3.0+; IELTS 6.0 or MOI; subject entrance test",
+        entryPG: "HSC GPA 4.0+/5.0 or Bachelor CGPA 3.0+; IELTS 6.0 or MOI; subject entrance test",
+        whyStudy: [
+          "Hungary's top-ranked public research university in Budapest",
+          "rich Nobel laureate heritage",
+          "world-renowned faculty",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Living cost: €500–€700/mo in Budapest",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "Top EU research & corporate tech careers; post-study Schengen stay-back",
+        partTimeJobs: "24 hours per week legal work rights",
+        applicationSteps: [
+          "Step 1: ELTE portal",
+          "Step 2: Entrance exam",
+          "Step 3: Conditional offer",
+          "Step 4: Dhaka Embassy visa file",
+        ],
+        programs: [
+          { name: "Bachelor's, Master's, PhD in Computer Science, Data Science,", level: "Bachelor / Master", fee: "€4,000 – €7,500/yr" },
+        ]
+      },
+      {
+        id: "university-of-szeged",
+        name: "University of Szeged",
+        badge: "WHO / PMDC Recognized Medical Track",
+        type: "Public Research University",
+        tagline: "Nobel Prize winning research legacy (Albert Szent-Györgyi & Katalin Karikó)",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "€4,000 – €8,000/yr (Medicine higher)",
+        tuitionPG: "€4,000 – €8,000/yr (Medicine higher)",
+        scholarship: "Stipendium Hungaricum scholarship",
+        workRights: "24 hours per week legal work rights",
+        entryUG: "HSC / Bachelor pass; IELTS 5.5-6.5 or MOI accepted",
+        entryPG: "HSC / Bachelor pass; IELTS 5.5-6.5 or MOI accepted",
+        whyStudy: [
+          "Nobel Prize winning research legacy (Albert Szent-Györgyi & Katalin Karikó)",
+          "top university in southern Hungary",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Living cost: €350–€550/mo in Szeged",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "EU medical and scientific research career opportunities; Schengen work permit",
+        partTimeJobs: "24 hours per week legal work rights",
+        applicationSteps: [
+          "Step 1: DreamApply portal",
+          "Step 2: Entrance exam/interview",
+          "Step 3: Offer",
+          "Step 4: Embassy visa in Dhaka",
+        ],
+        programs: [
+          { name: "Bachelor's & Master's in Medicine, Chemistry, Biology, Compu", level: "Bachelor / Master", fee: "€4,000 – €8,000/yr (Medicine higher)" },
+        ]
+      },
+      {
+        id: "university-of-miskolc",
+        name: "University of Miskolc",
+        badge: "Verified Academic Institution",
+        type: "Public Research University",
+        tagline: "Affordable public university",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "€3,500 – €5,500/yr",
+        tuitionPG: "€3,500 – €5,500/yr",
+        scholarship: "Stipendium Hungaricum scholarship",
+        workRights: "24 hours per week legal work rights",
+        entryUG: "HSC / Bachelor pass; IELTS 5.5 or MOI accepted",
+        entryPG: "HSC / Bachelor pass; IELTS 5.5 or MOI accepted",
+        whyStudy: [
+          "Affordable public university",
+          "heavy industrial engineering legacy",
+          "low cost of living",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Living cost: €300–€450/mo in Miskolc",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "Central European manufacturing, engineering, and logistics roles",
+        partTimeJobs: "24 hours per week legal work rights",
+        applicationSteps: [
+          "Step 1: Apply online",
+          "Step 2: Academic review",
+          "Step 3: Offer letter",
+          "Step 4: Dhaka Embassy visa process",
+        ],
+        programs: [
+          { name: "Bachelor's & Master's in Materials Engineering, Mechanical,", level: "Bachelor / Master", fee: "€3,500 – €5,500/yr" },
+        ]
+      },
+      {
+        id: "semmelweis-university",
+        name: "Semmelweis University",
+        badge: "QS / Nationally Ranked",
+        type: "Public Research University",
+        tagline: "Premier medical university",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "€12,000 – €18,000/yr",
+        tuitionPG: "€12,000 – €18,000/yr",
+        scholarship: "Stipendium Hungaricum (Full medical tuition covered)",
+        workRights: "24 hours per week legal work rights",
+        entryUG: "HSC Pre-medical stream (strong Biology/Chemistry); entrance exam; IELTS 6.5 or MOI",
+        entryPG: "HSC Pre-medical stream (strong Biology/Chemistry); entrance exam; IELTS 6.5 or MOI",
+        whyStudy: [
+          "Premier medical university",
+          "ranked top 250 in the world",
+          "qualifications directly recognized across EU and UK",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Living cost: €500–€750/mo in Budapest",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "Direct medical licensing across Europe and the UK; clinical hospital residencies",
+        partTimeJobs: "24 hours per week legal work rights",
+        applicationSteps: [
+          "Step 1: Semmelweis portal",
+          "Step 2: Medical entrance exam",
+          "Step 3: Acceptance",
+          "Step 4: Dhaka Embassy visa",
+        ],
+        programs: [
+          { name: "BSc / MSc in 6 yrs", level: "Undergraduate / Postgraduate", fee: "€12,000 – €18,000/yr" },
+        ]
+      },
+      {
+        id: "corvinus-university-of-bu",
+        name: "Corvinus University of Budapest",
+        badge: "Verified Academic Institution",
+        type: "Public Research University",
+        tagline: "Premier business & economics university in Hungary",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "€6,000 – €8,500/yr",
+        tuitionPG: "€6,000 – €8,500/yr",
+        scholarship: "Stipendium Hungaricum scholarship",
+        workRights: "24 hours per week legal work rights",
+        entryUG: "HSC GPA 4.0+/5.0; strong mathematics background; IELTS 6.0-6.5 or MOI",
+        entryPG: "HSC GPA 4.0+/5.0; strong mathematics background; IELTS 6.0-6.5 or MOI",
+        whyStudy: [
+          "Premier business & economics university in Hungary",
+          "EQUIS and AMBA international accreditations",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Living cost: €500–€700/mo in Budapest",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "International banking, corporate finance, FMCG, and management consulting",
+        partTimeJobs: "24 hours per week legal work rights",
+        applicationSteps: [
+          "Step 1: Direct portal",
+          "Step 2: Math/oral interview",
+          "Step 3: Offer letter",
+          "Step 4: Embassy visa submission in Dhaka",
+        ],
+        programs: [
+          { name: "Bachelor's & Master's in International Business, Finance, Ec", level: "Bachelor / Master", fee: "€6,000 – €8,500/yr" },
+        ]
       }
     ]
   },
@@ -519,6 +1327,237 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
           { name: "MSc Data Science and Analytics", level: "Master (1 Yr)", fee: "£28,500/yr" },
           { name: "MSc Healthcare & Public Health", level: "Master (1 Yr)", fee: "£24,500/yr" }
         ]
+      },
+      {
+        id: "cardiff-university",
+        name: "Cardiff University",
+        badge: "Verified Academic Institution",
+        type: "Public Research University",
+        tagline: "Prestigious Russell Group University",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "PG: £24,000 – £33,000/yr",
+        tuitionPG: "£24,000 – £33,000/yr",
+        scholarship: "Up to £8,000 – £10,000 Postgraduate Scholarship",
+        workRights: "20 hours per week during term time",
+        entryUG: "Bachelor 4-yr Honours with CGPA 3.0/4.0+; IELTS 6.5 (min 6.0) or 7.0; £45 check fee",
+        entryPG: "Bachelor 4-yr Honours with CGPA 3.0/4.0+; IELTS 6.5 (min 6.0) or 7.0; £45 check fee",
+        whyStudy: [
+          "Prestigious Russell Group University",
+          "QS World #=179",
+          "world-class research",
+          "affordable capital city living in Wales",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Bank statement: ~40 Lac BDT (28 days maturity outside London)",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "Russell Group brand prestige; 2-year Graduate Route PSW; top UK employer links",
+        partTimeJobs: "20 hours per week during term time",
+        applicationSteps: [
+          "Step 1: Apply via UCAS / Direct portal",
+          "Step 2: Offer",
+          "Step 3: CAS deposit",
+          "Step 4: CAS",
+          "Step 5: UKVI Visa. Timeline: Sept-Oct for Jan launch",
+        ],
+        programs: [
+          { name: "BSc / MSc in 1 yr", level: "Undergraduate / Postgraduate", fee: "PG: £24,000 – £33,000/yr" },
+        ]
+      },
+      {
+        id: "bcu",
+        name: "Birmingham City University (BCU)",
+        badge: "Verified Academic Institution",
+        type: "Public Research University",
+        tagline: "Located in UK's 2nd largest city",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "PG: £16,500 – £19,500/yr",
+        tuitionPG: "£16,500 – £19,500/yr",
+        scholarship: "Up to £3,000 Scholarship based on Academic Score",
+        workRights: "20 hours per week during term time",
+        entryUG: "Bachelor CGPA 2.50/4.0 (UK 2:2 equivalent); IELTS 6.0-6.5 (min 5.5/6.0) or MOI accepted",
+        entryPG: "Bachelor CGPA 2.50/4.0 (UK 2:2 equivalent); IELTS 6.0-6.5 (min 5.5/6.0) or MOI accepted",
+        whyStudy: [
+          "Located in UK's 2nd largest city",
+          "accepts MOI from 28 Bangladeshi universities",
+          "£500M campus investment",
+          "mock law courtroom",
+          "50+ accredited courses",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Bank statement: ~40 Lac BDT maintained for 28 consecutive days",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "50+ professional body accreditations; 2-year PSW permit; Birmingham corporate hub",
+        partTimeJobs: "20 hours per week during term time",
+        applicationSteps: [
+          "Step 1: Direct application",
+          "Step 2: Offer",
+          "Step 3: Pre-CAS credibility interview",
+          "Step 4: CAS deposit",
+          "Step 5: Visa",
+        ],
+        programs: [
+          { name: "UG & PG in Business & Management, Computing & Technology, En", level: "Bachelor / Master", fee: "PG: £16,500 – £19,500/yr" },
+        ]
+      },
+      {
+        id: "newcastle-university",
+        name: "Newcastle University",
+        badge: "Verified Academic Institution",
+        type: "Public Research University",
+        tagline: "Elite Russell Group institution",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "PG: £21,000 – £29,000/yr",
+        tuitionPG: "£21,000 – £29,000/yr",
+        scholarship: "£8,000 Master's Program Scholarship",
+        workRights: "20 hours per week during term time",
+        entryUG: "Bachelor's CGPA 2.80–3.00/4.0; IELTS 6.5 (no band < 6.0)",
+        entryPG: "Bachelor's CGPA 2.80–3.00/4.0; IELTS 6.5 (no band < 6.0)",
+        whyStudy: [
+          "Elite Russell Group institution",
+          "high graduate employability and global research ranking",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Bank statement: ~40 Lac BDT (28 days maturity)",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "2-year Graduate Route PSW; engineering and tech placement opportunities",
+        partTimeJobs: "20 hours per week during term time",
+        applicationSteps: [
+          "Step 1: Apply",
+          "Step 2: Conditional offer",
+          "Step 3: CAS deposit",
+          "Step 4: CAS issuance",
+          "Step 5: UKVI Visa application",
+        ],
+        programs: [
+          { name: "Master's & Bachelor's in Computing, Advanced Engineering, Ar", level: "Bachelor / Master", fee: "PG: £21,000 – £29,000/yr" },
+        ]
+      },
+      {
+        id: "university-of-york",
+        name: "University of York",
+        badge: "QS / Nationally Ranked",
+        type: "Public Research University",
+        tagline: "Prestigious Russell Group university",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "PG: £22,000 – £30,000/yr",
+        tuitionPG: "£22,000 – £30,000/yr",
+        scholarship: "£8,000 Master's Program Scholarship",
+        workRights: "20 hours per week during term time",
+        entryUG: "Bachelor's CGPA 3.00/4.0; IELTS 6.5 (no band < 6.0)",
+        entryPG: "Bachelor's CGPA 3.00/4.0; IELTS 6.5 (no band < 6.0)",
+        whyStudy: [
+          "Prestigious Russell Group university",
+          "World Top 150",
+          "historic collegiate campus",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Bank statement: ~40 Lac BDT maintained 28 days",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "2-year Graduate Route PSW; strong academic & industry recruitment networks",
+        partTimeJobs: "20 hours per week during term time",
+        applicationSteps: [
+          "Step 1: UCAS/Direct portal",
+          "Step 2: Offer",
+          "Step 3: CAS deposit",
+          "Step 4: CAS",
+          "Step 5: UKVI Visa",
+        ],
+        programs: [
+          { name: "Master's & Bachelor's in Computer Science & AI, Economics, M", level: "Bachelor / Master", fee: "PG: £22,000 – £30,000/yr" },
+        ]
+      },
+      {
+        id: "uel",
+        name: "University of East London (UEL)",
+        badge: "Verified Academic Institution",
+        type: "Public Research University",
+        tagline: "Prime London location",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "£15,000 – £17,500/yr",
+        tuitionPG: "£15,000 – £17,500/yr",
+        scholarship: "£1,000 – £3,000 early payment discount",
+        workRights: "20 hours per week during term time",
+        entryUG: "HSC GPA 3.5+ / Bachelor CGPA 2.50+; IELTS 6.0/6.5",
+        entryPG: "HSC GPA 3.5+ / Bachelor CGPA 2.50+; IELTS 6.0/6.5",
+        whyStudy: [
+          "Prime London location",
+          "career-first modern syllabus",
+          "accommodates lower IELTS and study gaps",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Bank statement: ~40 Lac BDT maintained 28 days (£13,761 London living cost)",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "Direct London employment and startup ecosystem; 2-year Graduate Route PSW",
+        partTimeJobs: "20 hours per week during term time",
+        applicationSteps: [
+          "Step 1: Apply",
+          "Step 2: Pre-CAS assessment",
+          "Step 3: CAS deposit (£1,000+)",
+          "Step 4: CAS",
+          "Step 5: UKVI Visa",
+        ],
+        programs: [
+          { name: "UG & PG in Computer Science, FinTech, Construction Managemen", level: "Bachelor / Master", fee: "£15,000 – £17,500/yr" },
+        ]
+      },
+      {
+        id: "coventry-university",
+        name: "Coventry University",
+        badge: "Verified Academic Institution",
+        type: "Public Research University",
+        tagline: "Modern dynamic university",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "£16,800 – £20,500/yr",
+        tuitionPG: "£16,800 – £20,500/yr",
+        scholarship: "Up to £3,000 merit scholarships",
+        workRights: "20 hours per week during term time",
+        entryUG: "HSC GPA 4.0+ / Bachelor CGPA 2.75+; IELTS 6.0/6.5",
+        entryPG: "HSC GPA 4.0+ / Bachelor CGPA 2.75+; IELTS 6.0/6.5",
+        whyStudy: [
+          "Modern dynamic university",
+          "high graduate employability",
+          "industry links",
+          "partner degree pathways",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Bank statement: ~40 Lac BDT maintained 28 days",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "Midlands automotive and engineering sector employment; 2-year PSW permit",
+        partTimeJobs: "20 hours per week during term time",
+        applicationSteps: [
+          "Step 1: Direct application",
+          "Step 2: Pre-CAS check",
+          "Step 3: CAS deposit",
+          "Step 4: CAS",
+          "Step 5: UKVI Visa",
+        ],
+        programs: [
+          { name: "Bachelor's & Master's in Automotive Engineering, Software En", level: "Bachelor / Master", fee: "£16,800 – £20,500/yr" },
+        ]
       }
     ]
   },
@@ -651,6 +1690,160 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
           { name: "Bachelor of Business Management", level: "Bachelor (3 Yrs)", fee: "RM 13,500/yr" },
           { name: "Fast-Track MBA (Master of Business Administration)", level: "Master (1 Yr)", fee: "RM 16,000 total" }
         ]
+      },
+      {
+        id: "segi-university-kota-dama",
+        name: "SEGi University (Kota Damansara)",
+        badge: "QS / Nationally Ranked",
+        type: "Public Research University",
+        tagline: "QS 5 Stars Plus",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "Total 3-4 year programme fee: RM 58,570 to RM 134,170",
+        tuitionPG: "Total 3-4 year programme fee: RM 58,570 to RM 134,170",
+        scholarship: "40%–80% profile-based scholarships; up to 100% waivers for top academic profiles",
+        workRights: "20 hrs/week during semester breaks",
+        entryUG: "HSC GPA 3.0+ (Pharmacy/Health higher); IELTS 5.0-5.5 or MOI accepted",
+        entryPG: "HSC GPA 3.0+ (Pharmacy/Health higher); IELTS 5.0-5.5 or MOI accepted",
+        whyStudy: [
+          "QS 5 Stars Plus",
+          "Top 1.5% globally (#701-710)",
+          "TWO degree certificates (SEGi + UK)",
+          "90+ nationalities",
+          "25+ global mobility partners (KMCU, Sunchon, HIT China)",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Living cost: RM 1,500–2,000/month",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "UK Dual Award degree recognized globally; international exchange & internships",
+        partTimeJobs: "20 hrs/week during semester breaks",
+        applicationSteps: [
+          "Step 1: Apply",
+          "Step 2: Offer letter",
+          "Step 3: EMGS approval",
+          "Step 4: eVAL",
+          "Step 5: Single entry visa",
+        ],
+        programs: [
+          { name: "BSc / MSc in Univ of Greenwich & Chichester", level: "Undergraduate / Postgraduate", fee: "Total 3-4 year programme fee: RM 58,570 to RM 134,170" },
+        ]
+      },
+      {
+        id: "inti-international-univer",
+        name: "INTI International University (Nilai / Subang / Penang)",
+        badge: "Verified Academic Institution",
+        type: "Public Research University",
+        tagline: "Save 60-80% compared with UK/US/Australia",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "RM 20,000 – RM 35,000/yr (Fraction of UK/US costs)",
+        tuitionPG: "RM 20,000 – RM 35,000/yr (Fraction of UK/US costs)",
+        scholarship: "Merit Scholarship, Early Bird, Country Scholarship, and Progression Scholarship",
+        workRights: "Permitted during semester breaks",
+        entryUG: "HSC GPA 3.0+ / Bachelor CGPA 2.50+; IELTS 5.0-5.5 or MOI accepted",
+        entryPG: "HSC GPA 3.0+ / Bachelor CGPA 2.50+; IELTS 5.0-5.5 or MOI accepted",
+        whyStudy: [
+          "Save 60-80% compared with UK/US/Australia",
+          "transfer credits to hundreds of US/UK/Aus/European universities",
+          "full residential campus",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Living cost: RM 1,200–1,800/month",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "Direct credit transfer pathways; US/UK degrees without leaving Asia; high employability",
+        partTimeJobs: "Permitted during semester breaks",
+        applicationSteps: [
+          "Step 1: Apply",
+          "Step 2: Offer letter",
+          "Step 3: EMGS clearance",
+          "Step 4: eVAL",
+          "Step 5: Single Entry Visa",
+        ],
+        programs: [
+          { name: "BSc / MSc in Hertfordshire", level: "Undergraduate / Postgraduate", fee: "RM 20,000 – RM 35,000/yr (Fraction of UK/US costs)" },
+          { name: "BSc / MSc in Coventry", level: "Undergraduate / Postgraduate", fee: "RM 20,000 – RM 35,000/yr (Fraction of UK/US costs)" },
+        ]
+      },
+      {
+        id: "um",
+        name: "Universiti Malaya (UM)",
+        badge: "QS / Nationally Ranked",
+        type: "Public Research University",
+        tagline: "Malaysia's #1 ranked university",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "RM 18,000 – RM 45,000/yr",
+        tuitionPG: "RM 18,000 – RM 45,000/yr",
+        scholarship: "Government and ASEAN research grants",
+        workRights: "Restricted on-campus employment",
+        entryUG: "HSC GPA 4.8+/5.0 or Bachelor CGPA 3.50+; IELTS 6.0",
+        entryPG: "HSC GPA 4.8+/5.0 or Bachelor CGPA 3.50+; IELTS 6.0",
+        whyStudy: [
+          "Malaysia's #1 ranked university",
+          "QS World Top 60",
+          "premier research infrastructure",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Living cost: RM 1,500–2,200/month",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "Top-tier global corporate employment; worldwide recognition",
+        partTimeJobs: "Restricted on-campus employment",
+        applicationSteps: [
+          "Step 1: Direct portal",
+          "Step 2: Faculty assessment",
+          "Step 3: eVAL",
+          "Step 4: Single Entry Visa",
+        ],
+        programs: [
+          { name: "UG & PG in Engineering, Medicine, Computer Science, Business", level: "Bachelor / Master", fee: "RM 18,000 – RM 45,000/yr" },
+        ]
+      },
+      {
+        id: "apu",
+        name: "Asia Pacific University (APU)",
+        badge: "Verified Academic Institution",
+        type: "Public Research University",
+        tagline: "Premier technology university",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "RM 25,000 – RM 35,000/yr",
+        tuitionPG: "RM 25,000 – RM 35,000/yr",
+        scholarship: "Merit-based tuition discounts ranging from 10% to 50%",
+        workRights: "Permitted during vacations",
+        entryUG: "HSC GPA 3.5+ / Bachelor CGPA 2.75+; IELTS 5.5 or MOI accepted",
+        entryPG: "HSC GPA 3.5+ / Bachelor CGPA 2.75+; IELTS 5.5 or MOI accepted",
+        whyStudy: [
+          "Premier technology university",
+          "100% employability rate",
+          "UK dual degree with De Montfort University",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Living cost: RM 1,500–2,000/month",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "High demand in ASEAN tech corridors (KL, Singapore); global IT recruitment",
+        partTimeJobs: "Permitted during vacations",
+        applicationSteps: [
+          "Step 1: Online application",
+          "Step 2: Offer",
+          "Step 3: EMGS",
+          "Step 4: eVAL",
+          "Step 5: Single Entry Visa",
+        ],
+        programs: [
+          { name: "UG & PG in Artificial Intelligence, Cybersecurity, Software", level: "Bachelor / Master", fee: "RM 25,000 – RM 35,000/yr" },
+        ]
       }
     ]
   },
@@ -738,6 +1931,225 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
           { name: "Programming and Multimedia", level: "Bachelor (3 Yrs)", fee: "€4,400/yr" },
           { name: "International Business", level: "Bachelor (3 Yrs)", fee: "€3,500/yr" }
         ]
+      },
+      {
+        id: "vbc",
+        name: "Vilnius Business College (VBC)",
+        badge: "Verified Academic Institution",
+        type: "Government Institute of Technology",
+        tagline: "Focus on IT and digital entrepreneurship",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "€3,800 – €4,500/yr (€1,900–€2,250/semester)",
+        tuitionPG: "€3,800 – €4,500/yr (€1,900–€2,250/semester)",
+        scholarship: "Performance grants and tuition waivers",
+        workRights: "20 hours per week legal work rights",
+        entryUG: "12-yr Higher Secondary GPA 4.5/5.0 or 3.5/4.0; IELTS 5.5 / PTE 59 / Duolingo 110",
+        entryPG: "12-yr Higher Secondary GPA 4.5/5.0 or 3.5/4.0; IELTS 5.5 / PTE 59 / Duolingo 110",
+        whyStudy: [
+          "Focus on IT and digital entrepreneurship",
+          "high graduate employment",
+          "central Vilnius campus",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Living cost: €400–€700/mo",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "European tech startup ecosystem; TRP job seeker pathways",
+        partTimeJobs: "20 hours per week legal work rights",
+        applicationSteps: [
+          "Step 1: Apply",
+          "Step 2: Interview",
+          "Step 3: SKVC",
+          "Step 4: TRP / National D Visa. Deadline: 30 Oct 2026 for Feb 2027 intake",
+        ],
+        programs: [
+          { name: "BSc / MSc in 3 yrs", level: "Undergraduate / Postgraduate", fee: "€3,800 – €4,500/yr (€1,900–€2,250/semester)" },
+        ]
+      },
+      {
+        id: "ltvk",
+        name: "Lithuania Business College (LTVK)",
+        badge: "Verified Academic Institution",
+        type: "Government Institute of Technology",
+        tagline: "Ultra-affordable EU degree",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "€3,500/yr (€1,750/semester)",
+        tuitionPG: "€3,500/yr (€1,750/semester)",
+        scholarship: "College fee concessions",
+        workRights: "20 hours per week legal work rights",
+        entryUG: "12-yr Higher Secondary Education; IELTS / PTE / Duolingo / Cambridge B2",
+        entryPG: "12-yr Higher Secondary Education; IELTS / PTE / Duolingo / Cambridge B2",
+        whyStudy: [
+          "Ultra-affordable EU degree",
+          "coastal city living in Klaipeda",
+          "low application fee €130",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Living cost: €350–€550/mo in Klaipeda",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "Logistics, maritime, and IT employment across the Schengen area",
+        partTimeJobs: "20 hours per week legal work rights",
+        applicationSteps: [
+          "Step 1: Apply online (€130 fee)",
+          "Step 2: Document verification",
+          "Step 3: SKVC",
+          "Step 4: National D Visa. Intake: Feb 2027",
+        ],
+        programs: [
+          { name: "BSc / MSc in 3 yrs", level: "Undergraduate / Postgraduate", fee: "€3,500/yr (€1,750/semester)" },
+        ]
+      },
+      {
+        id: "vilnius-university",
+        name: "Vilnius University",
+        badge: "QS / Nationally Ranked",
+        type: "Public Research University",
+        tagline: "Lithuania's oldest and highest-ranked university",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "General: €2,500–€5,000/yr; Medicine: €10,000–€14,000/yr",
+        tuitionPG: "General: €2,500–€5,000/yr; Medicine: €10,000–€14,000/yr",
+        scholarship: "Lithuanian State Scholarships for international students",
+        workRights: "20 hours per week legal work rights",
+        entryUG: "HSC GPA 4.5+ / Bachelor CGPA 3.2+; IELTS 6.0 / PTE",
+        entryPG: "HSC GPA 4.5+ / Bachelor CGPA 3.2+; IELTS 6.0 / PTE",
+        whyStudy: [
+          "Lithuania's oldest and highest-ranked university",
+          "historical reputation",
+          "comprehensive faculties",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Living cost: €500–€700/mo in Vilnius",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "Premier European research & corporate roles; TRP post-study permit",
+        partTimeJobs: "20 hours per week legal work rights",
+        applicationSteps: [
+          "Step 1: Apply via VU portal",
+          "Step 2: SKVC recognition",
+          "Step 3: Embassy National D Visa",
+        ],
+        programs: [
+          { name: "BSc / MSc in €10", level: "Undergraduate / Postgraduate", fee: "General: €2,500–€5,000/yr; Medicine: €10,000–€14,000/yr" },
+          { name: "BSc / MSc in 000–€14", level: "Undergraduate / Postgraduate", fee: "General: €2,500–€5,000/yr; Medicine: €10,000–€14,000/yr" },
+          { name: "BSc / MSc in 000", level: "Undergraduate / Postgraduate", fee: "General: €2,500–€5,000/yr; Medicine: €10,000–€14,000/yr" },
+        ]
+      },
+      {
+        id: "ktu",
+        name: "Kaunas University of Technology (KTU)",
+        badge: "Applied Learning & STEM Focus",
+        type: "Public Research University",
+        tagline: "Lithuania's premier tech university",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "€2,400–€3,500/yr",
+        tuitionPG: "€2,500–€4,500/yr",
+        scholarship: "KTU Tuition Waiver Scholarships",
+        workRights: "20 hours per week legal work rights",
+        entryUG: "HSC GPA 4.0+ / Bachelor CGPA 2.8+; IELTS 5.5-6.0",
+        entryPG: "HSC GPA 4.0+ / Bachelor CGPA 2.8+; IELTS 5.5-6.0",
+        whyStudy: [
+          "Lithuania's premier tech university",
+          "top modern labs",
+          "industry connections in Kaunas",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Living cost: €400–€600/mo in Kaunas",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "High-demand engineering & IT jobs in the Baltics; Schengen residency",
+        partTimeJobs: "20 hours per week legal work rights",
+        applicationSteps: [
+          "Step 1: Apply",
+          "Step 2: SKVC assessment",
+          "Step 3: National D Visa",
+        ],
+        programs: [
+          { name: "Bachelor's & Master's in Engineering, IT, Business, Artifici", level: "Bachelor / Master", fee: "€2,400–€3,500/yr" },
+        ]
+      },
+      {
+        id: "vilnius-gediminas-technic",
+        name: "Vilnius Gediminas Technical University (VILNIUS TECH)",
+        badge: "Verified Academic Institution",
+        type: "Public Research University",
+        tagline: "Leader in engineering and architecture",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "€2,800–€3,800/yr",
+        tuitionPG: "€3,000–€4,500/yr",
+        scholarship: "University fee waivers",
+        workRights: "20 hours per week legal work rights",
+        entryUG: "HSC / Bachelor in science/math; IELTS 5.5+",
+        entryPG: "HSC / Bachelor in science/math; IELTS 5.5+",
+        whyStudy: [
+          "Leader in engineering and architecture",
+          "modern innovation ecosystem",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Living cost: €450–€650/mo",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "Engineering & construction careers across the European Union",
+        partTimeJobs: "20 hours per week legal work rights",
+        applicationSteps: [
+          "Step 1: Apply online",
+          "Step 2: SKVC evaluation",
+          "Step 3: National D Visa",
+        ],
+        programs: [
+          { name: "Bachelor's & Master's in Civil Engineering, Architecture, Ro", level: "Bachelor / Master", fee: "€2,800–€3,800/yr" },
+        ]
+      },
+      {
+        id: "vmu",
+        name: "Vytautas Magnus University (VMU)",
+        badge: "Verified Academic Institution",
+        type: "Public Research University",
+        tagline: "Liberal arts education model",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "€2,150–€3,500/yr",
+        tuitionPG: "€2,300–€4,000/yr",
+        scholarship: "VMU international student scholarships",
+        workRights: "20 hours per week legal work rights",
+        entryUG: "HSC / Bachelor pass; IELTS 5.5",
+        entryPG: "HSC / Bachelor pass; IELTS 5.5",
+        whyStudy: [
+          "Liberal arts education model",
+          "vibrant multicultural student community in Kaunas",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Living cost: €400–€600/mo",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "Social research, NGO, and European business careers",
+        partTimeJobs: "20 hours per week legal work rights",
+        applicationSteps: [
+          "Step 1: Apply",
+          "Step 2: Online interview",
+          "Step 3: SKVC",
+          "Step 4: National D Visa",
+        ],
+        programs: [
+          { name: "Bachelor's & Master's in Humanities, Social Sciences, Busine", level: "Bachelor / Master", fee: "€2,150–€3,500/yr" },
+        ]
       }
     ]
   },
@@ -757,7 +2169,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
       "IELTS waiver possible with Medium of Instruction (MOI)"
     ],
     livingCost: "€350 – €550 / month",
-    institutionsCount: "4+ Listed",
+    institutionsCount: "2+ Listed",
     heroImg: "https://images.unsplash.com/photo-1584646098378-0874589d76b1?auto=format&fit=crop&w=1920&q=80",
     pillBadge: "🇨🇾 Mediterranean Low Budget Hub",
     subBadge: "Deposit Only €3,400 (~৳4.5 Lakh BDT) • 43% Flat Waiver",
@@ -825,6 +2237,41 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
           { name: "BSc in Computer Engineering & Software", level: "Bachelor (4 Yrs)", fee: "€3,500/yr" },
           { name: "BA in Business Administration", level: "Bachelor (4 Yrs)", fee: "€3,200/yr" },
           { name: "Master of Business Administration (MBA)", level: "Master (1.5 Yrs)", fee: "€3,800/yr" }
+        ]
+      },
+      {
+        id: "euc",
+        name: "European University Cyprus (EUC)",
+        badge: "WHO / PMDC Recognized Medical Track",
+        type: "Public Research University",
+        tagline: "Accredited European institution",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "€4,500 – €8,000/yr",
+        tuitionPG: "€4,500 – €8,000/yr",
+        scholarship: "20%–40% merit scholarships",
+        workRights: "20 hrs/week permitted",
+        entryUG: "HSC pass / Bachelor; IELTS 5.0 or MOI accepted",
+        entryPG: "HSC pass / Bachelor; IELTS 5.0 or MOI accepted",
+        whyStudy: [
+          "Accredited European institution",
+          "official Microsoft innovation center on campus",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Living cost: €400–€600/mo",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "European career stepping stone; clinical & tech roles",
+        partTimeJobs: "20 hrs/week permitted",
+        applicationSteps: [
+          "Step 1: Direct application",
+          "Step 2: Document verification",
+          "Step 3: Entry visa",
+        ],
+        programs: [
+          { name: "UG & PG in Health Sciences, Medicine, Computing, Business", level: "Bachelor / Master", fee: "€4,500 – €8,000/yr" },
         ]
       }
     ]
@@ -1021,7 +2468,7 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
       "Monthly living allowance from 2,500 to 3,500 RMB (~৳40k–৳55k BDT)"
     ],
     livingCost: "2,000 – 3,500 RMB / month",
-    institutionsCount: "15+ Listed",
+    institutionsCount: "21+ Listed",
     heroImg: "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?auto=format&fit=crop&w=1920&q=80",
     pillBadge: "🇨🇳 100% CSC Full-Ride Hub",
     subBadge: "Zero Tuition • Free Dormitory • Monthly Cash Stipend",
@@ -1080,6 +2527,795 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
           { name: "BSc in Computer Science & Artificial Intelligence", level: "Bachelor (4 Yrs)", fee: "100% CSC" },
           { name: "MSc in International Trade & Cross-Border Logistics", level: "Master (2.5 Yrs)", fee: "100% CSC" },
           { name: "MSc in Civil & Environmental Engineering", level: "Master (2.5 Yrs)", fee: "100% CSC" }
+        ]
+      },
+      {
+        id: "hust",
+        name: "Huazhong University of Science and Technology (HUST)",
+        badge: "QS / Nationally Ranked",
+        type: "Public Research University",
+        tagline: "Located in Wuhan (Hubei)",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "Bachelor's (Chinese-taught Sci/Eng/Econ/Mgmt): 25,000 RMB/yr; Literature/Law/Edu: 18,000 RMB/yr; Medicine (Chinese): 33,000 RMB/yr; English-taught Engineering: 30,000 RMB/yr; MBBS (English): 40,000 RMB/yr; Pharmacy (English): 35,000 RMB/yr; Master's (Chinese-taught): 25,000-40,000 RMB/yr; Master's (English-taught): 33,000-48,000 RMB/yr; PhD: 30,000-50,000 RMB/yr.",
+        tuitionPG: "Bachelor's (Chinese-taught Sci/Eng/Econ/Mgmt): 25,000 RMB/yr; Literature/Law/Edu: 18,000 RMB/yr; Medicine (Chinese): 33,000 RMB/yr; English-taught Engineering: 30,000 RMB/yr; MBBS (English): 40,000 RMB/yr; Pharmacy (English): 35,000 RMB/yr; Master's (Chinese-taught): 25,000-40,000 RMB/yr; Master's (English-taught): 33,000-48,000 RMB/yr; PhD: 30,000-50,000 RMB/yr.",
+        scholarship: "Chinese Government Scholarship (CSC) [Full Tuition, Accommodation, Monthly Stipend, Medical Insurance]; HUST University Scholarship [Full/Partial Tuition]; Chinese University Program Scholarship [Tuition Support]; China Link Scholarship (exchange/research).",
+        workRights: "On-campus student assistantships and university-approved internships under Chinese student visa regulations.",
+        entryUG: "Academic transcripts & certificates, Passport, Study Plan, Recommendation Letters (PG), CV (PG), Medical Examination Form; English: IELTS 6.0-6.5 / TOEFL 80-90 or HSK.",
+        entryPG: "Academic transcripts & certificates, Passport, Study Plan, Recommendation Letters (PG), CV (PG), Medical Examination Form; English: IELTS 6.0-6.5 / TOEFL 80-90 or HSK.",
+        whyStudy: [
+          "Located in Wuhan (Hubei)",
+          "Top 10 in China, QS ~319",
+          "Project 985/211/Double First-Class",
+          "Internationally recognized for Engineering, Optics, Medicine (MBBS), AI & Mechanical Engineering",
+          "beautiful forest campus",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Accommodation: CNY 8,000-16,000/yr",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Living Cost: CNY 2,000-3,500/month"
+        },
+        careerAndPsw: "High graduate employability; Wuhan technology & optics hub ('Optics Valley') and top hospitals for medical graduates.",
+        partTimeJobs: "On-campus student assistantships and university-approved internships under Chinese student visa regulations.",
+        applicationSteps: [
+          "Step 1: Apply via iso.hust.edu.cn",
+          "Step 2: Submit passport, transcripts, study plan, medical report, recommendations",
+          "Step 3: Review & interview",
+          "Step 4: Admission notification & JW202",
+          "Step 5: Chinese X1 visa filing.",
+        ],
+        programs: [
+          { name: "BSc / MSc in MBBS", level: "Undergraduate / Postgraduate", fee: "Bachelor's (Chinese-taught Sci/Eng/Econ/Mgmt): 25,000 RMB/yr; Literature/Law/Edu: 18,000 RMB/yr; Medicine (Chinese): 33,000 RMB/yr; English-taught Engineering: 30,000 RMB/yr; MBBS (English): 40,000 RMB/yr; Pharmacy (English): 35,000 RMB/yr; Master's (Chinese-taught): 25,000-40,000 RMB/yr; Master's (English-taught): 33,000-48,000 RMB/yr; PhD: 30,000-50,000 RMB/yr." },
+        ]
+      },
+      {
+        id: "sjtu",
+        name: "Shanghai Jiao Tong University (SJTU)",
+        badge: "QS / Nationally Ranked",
+        type: "Public Research University",
+        tagline: "Shanghai",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "Bachelor's (Arts & Humanities): 24,800 RMB/yr; Bachelor's (Sci & Eng): 28,900 RMB/yr; MBBS: 45,000 RMB/yr; Master's (Arts): 28,900 RMB/yr; Master's (Eng & Sci): 32,000-45,500 RMB/yr; MBA: Higher tuition (program-dependent); PhD: 36,000-45,500 RMB/yr; Chinese Language/Non-degree: 9,000-18,000 RMB.",
+        tuitionPG: "Bachelor's (Arts & Humanities): 24,800 RMB/yr; Bachelor's (Sci & Eng): 28,900 RMB/yr; MBBS: 45,000 RMB/yr; Master's (Arts): 28,900 RMB/yr; Master's (Eng & Sci): 32,000-45,500 RMB/yr; MBA: Higher tuition (program-dependent); PhD: 36,000-45,500 RMB/yr; Chinese Language/Non-degree: 9,000-18,000 RMB.",
+        scholarship: "Chinese Government Scholarship (CSC) [Full Tuition, Accommodation, Monthly Stipend, Medical Insurance]; Shanghai Government Scholarship (SGS) [Full Tuition, Accommodation, Living Allowance, Insurance]; SJTU Scholarship [Full/Partial Tuition]; Chinese University Program.",
+        workRights: "Allowed for on-campus work-study and approved off-campus internships with university consent.",
+        entryUG: "Academic transcripts & certificates, Passport, Study Plan, Recommendation Letters (PG), CV (PG), Medical Form; English: IELTS 6.0-6.5 / TOEFL 80-90 or HSK.",
+        entryPG: "Academic transcripts & certificates, Passport, Study Plan, Recommendation Letters (PG), CV (PG), Medical Form; English: IELTS 6.0-6.5 / TOEFL 80-90 or HSK.",
+        whyStudy: [
+          "Shanghai",
+          "Member of C9 League (China's Ivy League)",
+          "QS ~47, China Top 5",
+          "Project 985/211/Double First-Class",
+          "Global prestige in Engineering, CS, AI, Business, Medicine",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Accommodation: CNY 8,000-18,000/yr",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Living Cost: CNY 2,000-3,500/month"
+        },
+        careerAndPsw: "High global graduate employability; direct recruitment by multinational firms and tech giants in Shanghai and worldwide.",
+        partTimeJobs: "Allowed for on-campus work-study and approved off-campus internships with university consent.",
+        applicationSteps: [
+          "Step 1: Direct SJTU application portal (global.sjtu.edu.cn)",
+          "Step 2: Application fee",
+          "Step 3: Academic review",
+          "Step 4: Interview",
+          "Step 5: Admission offer & JW202/Visa docs.",
+        ],
+        programs: [
+          { name: "BSc / MSc in MBBS", level: "Undergraduate / Postgraduate", fee: "Bachelor's (Arts & Humanities): 24,800 RMB/yr; Bachelor's (Sci & Eng): 28,900 RMB/yr; MBBS: 45,000 RMB/yr; Master's (Arts): 28,900 RMB/yr; Master's (Eng & Sci): 32,000-45,500 RMB/yr; MBA: Higher tuition (program-dependent); PhD: 36,000-45,500 RMB/yr; Chinese Language/Non-degree: 9,000-18,000 RMB." },
+        ]
+      },
+      {
+        id: "scu",
+        name: "Sichuan University (SCU)",
+        badge: "QS / Nationally Ranked",
+        type: "Public Research University",
+        tagline: "Chengdu, Sichuan",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "Bachelor's (Humanities/Econ/Mgmt): 17,500 RMB/yr; Bachelor's (Sci & Eng): 22,000 RMB/yr; Pharmacy/Public Health: 29,250 RMB/yr; Dentistry: 36,000 RMB/yr; MBBS: 45,000 RMB/yr; Master's: 25,000-40,000 RMB/yr; PhD: 30,000-45,000 RMB/yr; Chinese Language: 8,000-18,000 RMB.",
+        tuitionPG: "Bachelor's (Humanities/Econ/Mgmt): 17,500 RMB/yr; Bachelor's (Sci & Eng): 22,000 RMB/yr; Pharmacy/Public Health: 29,250 RMB/yr; Dentistry: 36,000 RMB/yr; MBBS: 45,000 RMB/yr; Master's: 25,000-40,000 RMB/yr; PhD: 30,000-45,000 RMB/yr; Chinese Language: 8,000-18,000 RMB.",
+        scholarship: "Chinese Government Scholarship (CSC); Chinese University Program Scholarship (Full); Sichuan Provincial Government Scholarship (Partial).",
+        workRights: "Campus work-study opportunities permitted under local regulations.",
+        entryUG: "Academic transcripts & certificates, Passport, English proficiency (IELTS 6.0-6.5/TOEFL) or HSK, Study Plan, Recommendation Letters (PG), CV, Medical Examination Form.",
+        entryPG: "Academic transcripts & certificates, Passport, English proficiency (IELTS 6.0-6.5/TOEFL) or HSK, Study Plan, Recommendation Letters (PG), CV, Medical Examination Form.",
+        whyStudy: [
+          "Chengdu, Sichuan",
+          "QS ~324, China Top 15",
+          "Project 985/211/Double First-Class",
+          "World-famous for Dentistry (Stomatology) & Medical Sciences",
+          "located in Chengdu (one of China's most livable and affordable major cities)",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Accommodation: CNY 8,000-16,000/yr",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Living Cost: CNY 2,000-3,500/month"
+        },
+        careerAndPsw: "Exceptional clinical & dental career tracks; biomedical industry pathways; regional tech and engineering hubs in southwest China.",
+        partTimeJobs: "Campus work-study opportunities permitted under local regulations.",
+        applicationSteps: [
+          "Step 1: Apply via global.scu.edu.cn",
+          "Step 2: Document upload & evaluation",
+          "Step 3: Departmental assessment/interview",
+          "Step 4: Admission letter & visa package.",
+        ],
+        programs: [
+          { name: "BSc / MSc in MBBS", level: "Undergraduate / Postgraduate", fee: "Bachelor's (Humanities/Econ/Mgmt): 17,500 RMB/yr; Bachelor's (Sci & Eng): 22,000 RMB/yr; Pharmacy/Public Health: 29,250 RMB/yr; Dentistry: 36,000 RMB/yr; MBBS: 45,000 RMB/yr; Master's: 25,000-40,000 RMB/yr; PhD: 30,000-45,000 RMB/yr; Chinese Language: 8,000-18,000 RMB." },
+        ]
+      },
+      {
+        id: "seu",
+        name: "Southeast University (SEU)",
+        badge: "QS / Nationally Ranked",
+        type: "Public Research University",
+        tagline: "Nanjing, Jiangsu",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "Bachelor's (Humanities & Mgmt): 18,000-22,000 RMB/yr; Bachelor's (Sci & Eng): 24,000-30,000 RMB/yr; Bachelor's (Architecture, 5 yrs): 30,000-34,000 RMB/yr; Master's: 30,000-36,000 RMB/yr; PhD: 34,000-40,000 RMB/yr; Chinese Language: 8,000-16,000 RMB.",
+        tuitionPG: "Bachelor's (Humanities & Mgmt): 18,000-22,000 RMB/yr; Bachelor's (Sci & Eng): 24,000-30,000 RMB/yr; Bachelor's (Architecture, 5 yrs): 30,000-34,000 RMB/yr; Master's: 30,000-36,000 RMB/yr; PhD: 34,000-40,000 RMB/yr; Chinese Language: 8,000-16,000 RMB.",
+        scholarship: "Chinese Government Scholarship (CSC) [Full Tuition, Accommodation, Monthly Stipend, Medical Insurance]; Southeast University Scholarship [Full/Partial Tuition]; Chinese University Program [Tuition Support]; Jiangsu Provincial Government Scholarship [Tuition Support].",
+        workRights: "On-campus positions and permitted internship training.",
+        entryUG: "Academic transcripts & certificates, Passport, Study Plan, Recommendation Letters (PG), CV (PG), Medical Examination Form; English: IELTS 6.0-6.5 / TOEFL 80-90 or HSK.",
+        entryPG: "Academic transcripts & certificates, Passport, Study Plan, Recommendation Letters (PG), CV (PG), Medical Examination Form; English: IELTS 6.0-6.5 / TOEFL 80-90 or HSK.",
+        whyStudy: [
+          "Nanjing, Jiangsu",
+          "QS ~392, China Top 20",
+          "Project 985/211/Double First-Class",
+          "One of China's oldest and most renowned engineering schools",
+          "top-ranked nationwide for Architecture, Civil Engineering, and Transportation Engineering",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Accommodation: CNY 8,000-16,000/yr",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Living Cost: CNY 2,000-3,500/month"
+        },
+        careerAndPsw: "High graduate employability in infrastructure, construction, tech, and engineering conglomerates; strong industry partnerships in Yangtze River Delta.",
+        partTimeJobs: "On-campus positions and permitted internship training.",
+        applicationSteps: [
+          "Step 1: Apply online via cis.seu.edu.cn",
+          "Step 2: Upload documents",
+          "Step 3: Academic review",
+          "Step 4: Offer & JW202",
+          "Step 5: Apply for X1 visa.",
+        ],
+        programs: [
+          { name: "Bachelor's: Architecture, Civil Engineering, CS & Technology", level: "Bachelor / Master", fee: "Bachelor's (Humanities & Mgmt): 18,000-22,000 RMB/yr; Bachelor's (Sci & Eng): 24,000-30,000 RMB/yr; Bachelor's (Architecture, 5 yrs): 30,000-34,000 RMB/yr; Master's: 30,000-36,000 RMB/yr; PhD: 34,000-40,000 RMB/yr; Chinese Language: 8,000-16,000 RMB." },
+        ]
+      },
+      {
+        id: "tongji-university",
+        name: "Tongji University",
+        badge: "QS / Nationally Ranked",
+        type: "Public Research University",
+        tagline: "Shanghai",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "Bachelor's (Science): 24,600 RMB/yr; Bachelor's (Arts/Humanities): 20,000 RMB/yr; Architecture/Design: 28,700 RMB/yr; Civil Engineering (English): 35,000 RMB/yr; MBBS (English): 45,000 RMB/yr; Master's (Science): 28,700 RMB/yr; Master's (Arts): 22,960 RMB/yr; Environmental/Software Engineering (English): 39,000 RMB/yr; PhD: starts ~28,700 RMB/yr.",
+        tuitionPG: "Bachelor's (Science): 24,600 RMB/yr; Bachelor's (Arts/Humanities): 20,000 RMB/yr; Architecture/Design: 28,700 RMB/yr; Civil Engineering (English): 35,000 RMB/yr; MBBS (English): 45,000 RMB/yr; Master's (Science): 28,700 RMB/yr; Master's (Arts): 22,960 RMB/yr; Environmental/Software Engineering (English): 39,000 RMB/yr; PhD: starts ~28,700 RMB/yr.",
+        scholarship: "Chinese Government Scholarship (CSC); Shanghai Municipal Government Scholarship (Full Tuition, Accom Category A, Stipend, Insurance); Tongji University International Student Excellence Scholarship (Full/Partial Tuition).",
+        workRights: "On-campus student positions and authorized internships.",
+        entryUG: "Academic transcripts & certificates, Passport, English proficiency (IELTS 6.0-6.5 / TOEFL) or HSK, Study Plan, Recommendation Letters (PG), CV, Medical Examination Form.",
+        entryPG: "Academic transcripts & certificates, Passport, English proficiency (IELTS 6.0-6.5 / TOEFL) or HSK, Study Plan, Recommendation Letters (PG), CV, Medical Examination Form.",
+        whyStudy: [
+          "Shanghai",
+          "QS ~177, China Top 15",
+          "Project 985/211/Double First-Class",
+          "Globally legendary reputation for Architecture, Civil Engineering, Urban Planning, and Design",
+          "strong Sino-German cooperation and European partnerships",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Accommodation: CNY 8,000-16,000/yr",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Living Cost: CNY 2,000-3,500/month"
+        },
+        careerAndPsw: "Exceptional career opportunities in urban construction, architectural firms, multinational engineering consultancies, and tech industries in Shanghai.",
+        partTimeJobs: "On-campus student positions and authorized internships.",
+        applicationSteps: [
+          "Step 1: Apply through study.tongji.edu.cn",
+          "Step 2: Academic assessment",
+          "Step 3: Interview",
+          "Step 4: Admission Notice & JW202",
+          "Step 5: Student visa application.",
+        ],
+        programs: [
+          { name: "BSc / MSc in English", level: "Undergraduate / Postgraduate", fee: "Bachelor's (Science): 24,600 RMB/yr; Bachelor's (Arts/Humanities): 20,000 RMB/yr; Architecture/Design: 28,700 RMB/yr; Civil Engineering (English): 35,000 RMB/yr; MBBS (English): 45,000 RMB/yr; Master's (Science): 28,700 RMB/yr; Master's (Arts): 22,960 RMB/yr; Environmental/Software Engineering (English): 39,000 RMB/yr; PhD: starts ~28,700 RMB/yr." },
+        ]
+      },
+      {
+        id: "whu",
+        name: "Wuhan University (WHU)",
+        badge: "QS / Nationally Ranked",
+        type: "Public Research University",
+        tagline: "Wuhan, Hubei",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "Bachelor's: 20,000-40,000 RMB/yr; MBBS: approx. 40,000-45,000 RMB/yr; Master's: 25,000-45,000 RMB/yr; PhD: 30,000-50,000 RMB/yr; Chinese Language/Non-degree: 8,250-16,500 RMB.",
+        tuitionPG: "Bachelor's: 20,000-40,000 RMB/yr; MBBS: approx. 40,000-45,000 RMB/yr; Master's: 25,000-45,000 RMB/yr; PhD: 30,000-50,000 RMB/yr; Chinese Language/Non-degree: 8,250-16,500 RMB.",
+        scholarship: "Chinese Government Scholarship (CSC); Wuhan University Scholarship (Full/Partial Tuition); Chinese University Program (Full Scholarship); Hubei Provincial Government Scholarship (Partial); Confucius Institute Scholarship.",
+        workRights: "Campus work-study permitted.",
+        entryUG: "Academic transcripts & certificates, Passport, Study Plan, Recommendation Letters (PG), CV, Medical Form; English: IELTS 6.0-6.5 / TOEFL 80-90 or HSK.",
+        entryPG: "Academic transcripts & certificates, Passport, Study Plan, Recommendation Letters (PG), CV, Medical Form; English: IELTS 6.0-6.5 / TOEFL 80-90 or HSK.",
+        whyStudy: [
+          "Wuhan, Hubei",
+          "Established 1893",
+          "QS ~194, China Top 10",
+          "Project 985/211/Double First-Class",
+          "World leader in Remote Sensing & Surveying",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Accommodation: CNY 8,000-16,000/yr",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Living Cost: CNY 2,000-3,500/month"
+        },
+        careerAndPsw: "High graduate employability across Central China, national research institutes, geospatial/remote sensing firms, and international hospitals.",
+        partTimeJobs: "Campus work-study permitted.",
+        applicationSteps: [
+          "Step 1: Apply online via en.whu.edu.cn",
+          "Step 2: Document evaluation",
+          "Step 3: Interview",
+          "Step 4: Acceptance notice & JW202",
+          "Step 5: Visa filing.",
+        ],
+        programs: [
+          { name: "Bachelor's: CS, AI, Software Engineering, Electrical, Civil,", level: "Bachelor / Master", fee: "Bachelor's: 20,000-40,000 RMB/yr; MBBS: approx. 40,000-45,000 RMB/yr; Master's: 25,000-45,000 RMB/yr; PhD: 30,000-50,000 RMB/yr; Chinese Language/Non-degree: 8,250-16,500 RMB." },
+        ]
+      },
+      {
+        id: "zju",
+        name: "Zhejiang University (ZJU)",
+        badge: "QS / Nationally Ranked",
+        type: "Public Research University",
+        tagline: "Hangzhou, Zhejiang",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "CNY 20,000-50,000/year depending on program and degree level.",
+        tuitionPG: "CNY 20,000-50,000/year depending on program and degree level.",
+        scholarship: "Chinese Government Scholarship (CSC); Zhejiang University Scholarship; Chinese University Program; Zhejiang Provincial Government Scholarship; Confucius Institute Scholarship.",
+        workRights: "Campus work-study and approved internship opportunities.",
+        entryUG: "Academic transcripts & certificates, Passport, Study Plan, Recommendation Letters (PG), CV, Medical Form; English: IELTS 6.0-6.5 / TOEFL or HSK.",
+        entryPG: "Academic transcripts & certificates, Passport, Study Plan, Recommendation Letters (PG), CV, Medical Form; English: IELTS 6.0-6.5 / TOEFL or HSK.",
+        whyStudy: [
+          "Hangzhou, Zhejiang",
+          "QS ~44, China Top 5",
+          "C9 League (China's Ivy League), Project 985/211/Double First-Class",
+          "Known as China's entrepreneurship and AI capital (headquarters of Alibaba)",
+          "world-class research power",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Accommodation: CNY 8,000-16,000/yr",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Living Cost: CNY 2,000-3,500/month"
+        },
+        careerAndPsw: "Extraordinary tech ecosystem in Hangzhou (Alibaba, NetEase, AI startups); high graduate employability worldwide.",
+        partTimeJobs: "Campus work-study and approved internship opportunities.",
+        applicationSteps: [
+          "Step 1: Apply via ZJU international application portal",
+          "Step 2: Document screening",
+          "Step 3: Online interview/test",
+          "Step 4: JW202 issuance",
+          "Step 5: Visa application.",
+        ],
+        programs: [
+          { name: "Bachelor's, Master's, PhD in Computer Science, AI, Software", level: "Bachelor / Master", fee: "CNY 20,000-50,000/year depending on program and degree level." },
+        ]
+      },
+      {
+        id: "sysu",
+        name: "Sun Yat-sen University (SYSU)",
+        badge: "QS / Nationally Ranked",
+        type: "Public Research University",
+        tagline: "Guangzhou, Zhuhai & Shenzhen, Guangdong Province",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "Approximately 22,000-45,000 RMB/yr (Liberal Arts: ~22,000-26,000; Sci/Eng: ~26,000-35,000; MBBS: ~40,000-48,000; Master's/PhD: ~30,000-48,000 RMB/yr).",
+        tuitionPG: "Approximately 22,000-45,000 RMB/yr (Liberal Arts: ~22,000-26,000; Sci/Eng: ~26,000-35,000; MBBS: ~40,000-48,000; Master's/PhD: ~30,000-48,000 RMB/yr).",
+        scholarship: "Chinese Government Scholarship (CSC); Guangdong Provincial Government Scholarship; Sun Yat-sen University International Student Scholarship.",
+        workRights: "Campus work-study permitted with university approval.",
+        entryUG: "Passport, Academic transcripts & certificates, English proficiency (IELTS 6.0-6.5/TOEFL) or HSK, Study Plan, Recommendation Letters (PG), CV, Medical Examination Form.",
+        entryPG: "Passport, Academic transcripts & certificates, English proficiency (IELTS 6.0-6.5/TOEFL) or HSK, Study Plan, Recommendation Letters (PG), CV, Medical Examination Form.",
+        whyStudy: [
+          "Guangzhou, Zhuhai & Shenzhen, Guangdong Province",
+          "Major C9/Project 985/211/Double First-Class university",
+          "Top 10 in China",
+          "Located in Greater Bay Area (China's economic engine)",
+          "world-class clinical medicine and medical affiliated hospital network",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Accommodation: CNY 8,000-16,000/yr",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Living Cost: CNY 2,000-3,500/month"
+        },
+        careerAndPsw: "High employability across the Guangdong-Hong Kong-Macau Greater Bay Area; leading hospital residencies; technology and finance corridors.",
+        partTimeJobs: "Campus work-study permitted with university approval.",
+        applicationSteps: [
+          "Step 1: Apply via SYSU international admission portal",
+          "Step 2: Submit academic credentials, personal statement, medical report",
+          "Step 3: Assessment/interview",
+          "Step 4: Admission & JW202",
+          "Step 5: Visa filing.",
+        ],
+        programs: [
+          { name: "BSc / MSc in Clinical Medicine/MBBS", level: "Undergraduate / Postgraduate", fee: "Approximately 22,000-45,000 RMB/yr (Liberal Arts: ~22,000-26,000; Sci/Eng: ~26,000-35,000; MBBS: ~40,000-48,000; Master's/PhD: ~30,000-48,000 RMB/yr)." },
+        ]
+      },
+      {
+        id: "jinan-university",
+        name: "Jinan University",
+        badge: "WHO / PMDC Recognized Medical Track",
+        type: "Public Research University",
+        tagline: "Guangzhou, Guangdong Province",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "MBBS: 40,000 CNY/year.",
+        tuitionPG: "MBBS: 40,000 CNY/year.",
+        scholarship: "University scholarships and Guangdong provincial awards where applicable.",
+        workRights: "Regulated under Chinese student visa laws (internships permitted).",
+        entryUG: "SSC & HSC Certificates & Marksheets, Passport, Medical Report, Police Clearance Certificate, Bank Statement & Solvency Certificate, Parents NID & Contact Info; English proficiency.",
+        entryPG: "SSC & HSC Certificates & Marksheets, Passport, Medical Report, Police Clearance Certificate, Bank Statement & Solvency Certificate, Parents NID & Contact Info; English proficiency.",
+        whyStudy: [
+          "Guangzhou, Guangdong Province",
+          "Renowned as the \"Paramount Academy of Overseas Chinese\"",
+          "highly diverse international community",
+          "excellent clinical medical training",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Hostel: 4,000 CNY/year",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Food cost: approx. 8,000-10,000 BDT/month"
+        },
+        careerAndPsw: "1-year clinical internship included; preparation for USMLE, PLAB, BMDC licensing examinations.",
+        partTimeJobs: "Regulated under Chinese student visa laws (internships permitted).",
+        applicationSteps: [
+          "Step 1: Application form, Photo, Passport, SSC/HSC certificates/marks, Medical, Police clearance, Bank statement",
+          "Step 2: Admission Offer",
+          "Step 3: JW202 form",
+          "Step 4: Visa.",
+        ],
+        programs: [
+          { name: "BSc / MSc in Clinical Medicine", level: "Undergraduate / Postgraduate", fee: "MBBS: 40,000 CNY/year." },
+          { name: "BSc / MSc in 6 Years: 5 yrs academic + 1 yr internship", level: "Undergraduate / Postgraduate", fee: "MBBS: 40,000 CNY/year." },
+        ]
+      },
+      {
+        id: "southern-medical-universi",
+        name: "Southern Medical University",
+        badge: "WHO / PMDC Recognized Medical Track",
+        type: "State Medical University",
+        tagline: "Guangzhou, Guangdong Province",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "MBBS: 45,000 CNY/year.",
+        tuitionPG: "MBBS: 45,000 CNY/year.",
+        scholarship: "Chinese Government Scholarships, Guangdong Provincial Government Scholarships, University Merit Awards.",
+        workRights: "Clinical rotations and on-campus hospital training.",
+        entryUG: "SSC & HSC marksheets/certificates, Passport, Medical Report, Police Clearance, Bank statement & solvency certificate; pre-medical science background.",
+        entryPG: "SSC & HSC marksheets/certificates, Passport, Medical Report, Police Clearance, Bank statement & solvency certificate; pre-medical science background.",
+        whyStudy: [
+          "Guangzhou, Guangdong Province",
+          "Former First Military Medical University",
+          "one of China's premier independent medical universities with extensive top-tier affiliated hospital networks",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Hostel: 9,000 CNY/year",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Food cost: 8,000-10,000 BDT/month"
+        },
+        careerAndPsw: "1-year clinical hospital internship; recognized by WHO/WFME, eligible for international medical licensing (BMDC, USMLE, PLAB).",
+        partTimeJobs: "Clinical rotations and on-campus hospital training.",
+        applicationSteps: [
+          "Step 1: Application form & documentation submission",
+          "Step 2: Evaluation",
+          "Step 3: Admission notice & JW202 form",
+          "Step 4: Embassy Visa.",
+        ],
+        programs: [
+          { name: "BSc / MSc in Clinical Medicine", level: "Undergraduate / Postgraduate", fee: "MBBS: 45,000 CNY/year." },
+          { name: "BSc / MSc in 6 Years: 5 yrs study + 1 yr internship", level: "Undergraduate / Postgraduate", fee: "MBBS: 45,000 CNY/year." },
+        ]
+      },
+      {
+        id: "nanjing-medical-universit",
+        name: "Nanjing Medical University",
+        badge: "QS / Nationally Ranked",
+        type: "State Medical University",
+        tagline: "Nanjing, Jiangsu Province",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "MBBS: 34,000 CNY/year.",
+        tuitionPG: "MBBS: 34,000 CNY/year.",
+        scholarship: "Jiangsu Provincial Government Scholarship, Nanjing Municipal Scholarship, University Merit Scholarship.",
+        workRights: "Permitted clinical rotations.",
+        entryUG: "SSC & HSC Certificates & Marksheets, Passport, Medical Report, Police Clearance, Bank Statement & Solvency Certificate.",
+        entryPG: "SSC & HSC Certificates & Marksheets, Passport, Medical Report, Police Clearance, Bank Statement & Solvency Certificate.",
+        whyStudy: [
+          "Nanjing, Jiangsu Province",
+          "Top-ranked medical institution in China",
+          "prestigious clinical faculty and modern teaching hospitals",
+          "historic and safe city of Nanjing",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Hostel: 6,000 CNY/year",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Living/food: 8,000-10,000 BDT/month"
+        },
+        careerAndPsw: "Direct hospital clinical postings; international medical qualification recognition (BMDC, AMC, USMLE, PLAB).",
+        partTimeJobs: "Permitted clinical rotations.",
+        applicationSteps: [
+          "Step 1: Application form",
+          "Step 2: Submission of academic & medical documents",
+          "Step 3: Verification",
+          "Step 4: Admission letter & JW202 form",
+          "Step 5: Student Visa.",
+        ],
+        programs: [
+          { name: "BSc / MSc in Clinical Medicine", level: "Undergraduate / Postgraduate", fee: "MBBS: 34,000 CNY/year." },
+          { name: "BSc / MSc in 6 Years", level: "Undergraduate / Postgraduate", fee: "MBBS: 34,000 CNY/year." },
+        ]
+      },
+      {
+        id: "southwest-medical-univers",
+        name: "Southwest Medical University",
+        badge: "WHO / PMDC Recognized Medical Track",
+        type: "State Medical University",
+        tagline: "Chengdu / Luzhou, Sichuan Province",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "MBBS: 33,000 CNY/year.",
+        tuitionPG: "MBBS: 33,000 CNY/year.",
+        scholarship: "Sichuan Provincial Government Scholarship, University International Student Scholarship.",
+        workRights: "Clinical electives.",
+        entryUG: "SSC & HSC pass with good science grades, Passport, Medical Report, Police Clearance, Bank statement & solvency.",
+        entryPG: "SSC & HSC pass with good science grades, Passport, Medical Report, Police Clearance, Bank statement & solvency.",
+        whyStudy: [
+          "Chengdu / Luzhou, Sichuan Province",
+          "Renowned medical university in southwest China",
+          "very affordable living and hostel costs",
+          "comprehensive teaching hospitals",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Hostel: 6,000 CNY/year",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Food cost: ~8,000-10,000 BDT/month"
+        },
+        careerAndPsw: "1-year clinical internship; worldwide medical licensing exam eligibility.",
+        partTimeJobs: "Clinical electives.",
+        applicationSteps: [
+          "Step 1: Online application",
+          "Step 2: Document screening",
+          "Step 3: Offer letter & JW202",
+          "Step 4: Chinese Embassy X1 visa.",
+        ],
+        programs: [
+          { name: "BSc / MSc in Clinical Medicine", level: "Undergraduate / Postgraduate", fee: "MBBS: 33,000 CNY/year." },
+          { name: "BSc / MSc in 6 Years", level: "Undergraduate / Postgraduate", fee: "MBBS: 33,000 CNY/year." },
+        ]
+      },
+      {
+        id: "ningxia-medical-universit",
+        name: "Ningxia Medical University",
+        badge: "WHO / PMDC Recognized Medical Track",
+        type: "State Medical University",
+        tagline: "Yinchuan, Ningxia",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "MBBS: 29,800 CNY/year.",
+        tuitionPG: "MBBS: 29,800 CNY/year.",
+        scholarship: "Ningxia Government Scholarship, Belt and Road Scholarship, University awards.",
+        workRights: "Campus assistance.",
+        entryUG: "SSC & HSC certificates/marksheets, Passport, Medical check report, Police clearance, Bank statement.",
+        entryPG: "SSC & HSC certificates/marksheets, Passport, Medical check report, Police clearance, Bank statement.",
+        whyStudy: [
+          "Yinchuan, Ningxia",
+          "Highly affordable tuition (under 30,000 CNY/yr)",
+          "culturally welcoming",
+          "well-established English-medium MBBS program for South Asian students",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Hostel: 5,000 CNY/year",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Food cost: ~8,000-10,000 BDT/month"
+        },
+        careerAndPsw: "Medical internship at university affiliated hospitals; globally recognized for medical licensure exams.",
+        partTimeJobs: "Campus assistance.",
+        applicationSteps: [
+          "Step 1: Document collection",
+          "Step 2: Portal application",
+          "Step 3: Screening",
+          "Step 4: Admission confirmation",
+          "Step 5: JW202",
+          "Step 6: Visa.",
+        ],
+        programs: [
+          { name: "BSc / MSc in Clinical Medicine", level: "Undergraduate / Postgraduate", fee: "MBBS: 29,800 CNY/year." },
+          { name: "BSc / MSc in 6 Years", level: "Undergraduate / Postgraduate", fee: "MBBS: 29,800 CNY/year." },
+        ]
+      },
+      {
+        id: "zhengzhou-medical-univers",
+        name: "Zhengzhou Medical University (Zhengzhou University)",
+        badge: "WHO / PMDC Recognized Medical Track",
+        type: "State Medical University",
+        tagline: "Zhengzhou, Henan Province",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "MBBS: 38,000 CNY/year.",
+        tuitionPG: "MBBS: 38,000 CNY/year.",
+        scholarship: "Henan Provincial Government Scholarship, Zhengzhou University President Scholarship, CSC.",
+        workRights: "Hospital postings.",
+        entryUG: "SSC & HSC certificates, Passport, Medical Report, Police Clearance, Bank statement & solvency certificate.",
+        entryPG: "SSC & HSC certificates, Passport, Medical Report, Police Clearance, Bank statement & solvency certificate.",
+        whyStudy: [
+          "Zhengzhou, Henan Province",
+          "Zhengzhou University First Affiliated Hospital is the largest hospital in the world by bed count",
+          "unparalleled clinical exposure and case variety",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Hostel: 4,500 / 6,500 CNY/year",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Food cost: 8,000-10,000 BDT/month"
+        },
+        careerAndPsw: "Clinical rotations in the world's largest hospital; high practical clinical competence; international licensing pathways.",
+        partTimeJobs: "Hospital postings.",
+        applicationSteps: [
+          "Step 1: Submission of educational documents",
+          "Step 2: Academic evaluation",
+          "Step 3: Admission letter & JW202",
+          "Step 4: Visa.",
+        ],
+        programs: [
+          { name: "BSc / MSc in Clinical Medicine", level: "Undergraduate / Postgraduate", fee: "MBBS: 38,000 CNY/year." },
+          { name: "BSc / MSc in 6 Years", level: "Undergraduate / Postgraduate", fee: "MBBS: 38,000 CNY/year." },
+        ]
+      },
+      {
+        id: "capital-medical-universit",
+        name: "Capital Medical University",
+        badge: "WHO / PMDC Recognized Medical Track",
+        type: "State Medical University",
+        tagline: "Beijing (Capital of China)",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "MBBS: 50,000 CNY/year.",
+        tuitionPG: "MBBS: 50,000 CNY/year.",
+        scholarship: "Beijing Municipal Government Scholarship, Chinese Government Scholarship (CSC), University awards.",
+        workRights: "Permitted clinical attachments.",
+        entryUG: "High academic scores in SSC & HSC (Biology & Chemistry focus), Passport, Medical Report, Police Clearance, Bank statement.",
+        entryPG: "High academic scores in SSC & HSC (Biology & Chemistry focus), Passport, Medical Report, Police Clearance, Bank statement.",
+        whyStudy: [
+          "Beijing (Capital of China)",
+          "One of China's top medical academic institutions",
+          "affiliated with numerous premier national hospitals in Beijing",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Hostel: 7,500 CNY/year",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Food cost: 8,000-10,000 BDT/month"
+        },
+        careerAndPsw: "Unrivaled clinical exposure in Beijing's national tertiary hospitals; high international licensing pass rates.",
+        partTimeJobs: "Permitted clinical attachments.",
+        applicationSteps: [
+          "Step 1: Application dossier submission",
+          "Step 2: Entrance review/interview",
+          "Step 3: Offer",
+          "Step 4: JW202",
+          "Step 5: Visa.",
+        ],
+        programs: [
+          { name: "BSc / MSc in Clinical Medicine", level: "Undergraduate / Postgraduate", fee: "MBBS: 50,000 CNY/year." },
+          { name: "BSc / MSc in 6 Years", level: "Undergraduate / Postgraduate", fee: "MBBS: 50,000 CNY/year." },
+        ]
+      },
+      {
+        id: "hebei-medical-university",
+        name: "Hebei Medical University",
+        badge: "WHO / PMDC Recognized Medical Track",
+        type: "State Medical University",
+        tagline: "Shijiazhuang, Hebei Province",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "MBBS: 44,000 CNY/year.",
+        tuitionPG: "MBBS: 44,000 CNY/year.",
+        scholarship: "Hebei Provincial Government Scholarship, University International Student Scholarship.",
+        workRights: "Clinical clerkships.",
+        entryUG: "SSC & HSC Certificates/Marksheets, Passport, Medical Certificate, Police Clearance, Bank Statement.",
+        entryPG: "SSC & HSC Certificates/Marksheets, Passport, Medical Certificate, Police Clearance, Bank Statement.",
+        whyStudy: [
+          "Shijiazhuang, Hebei Province",
+          "Close proximity to Beijing",
+          "established in 1894",
+          "one of the earliest institutions in China to admit international MBBS students",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Hostel: 4,000 CNY/year",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Food cost: 8,000-10,000 BDT/month"
+        },
+        careerAndPsw: "1-year comprehensive internship; recognized by WHO, BMDC, ECFMG, GMC.",
+        partTimeJobs: "Clinical clerkships.",
+        applicationSteps: [
+          "Step 1: Application submission",
+          "Step 2: Evaluation",
+          "Step 3: JW202 & Admission Notice",
+          "Step 4: Visa lodgement.",
+        ],
+        programs: [
+          { name: "BSc / MSc in Clinical Medicine", level: "Undergraduate / Postgraduate", fee: "MBBS: 44,000 CNY/year." },
+          { name: "BSc / MSc in 6 Years", level: "Undergraduate / Postgraduate", fee: "MBBS: 44,000 CNY/year." },
+        ]
+      },
+      {
+        id: "kunming-medical-universit",
+        name: "Kunming Medical University",
+        badge: "WHO / PMDC Recognized Medical Track",
+        type: "State Medical University",
+        tagline: "Kunming, Yunnan Province",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "MBBS: 35,000 CNY/year.",
+        tuitionPG: "MBBS: 35,000 CNY/year.",
+        scholarship: "Yunnan Provincial Government Scholarship, Chinese Government Scholarship, University Merit Scholarship.",
+        workRights: "Hospital training.",
+        entryUG: "SSC & HSC pass with science subjects, Passport, Medical Examination, Police Clearance, Bank statement.",
+        entryPG: "SSC & HSC pass with science subjects, Passport, Medical Examination, Police Clearance, Bank statement.",
+        whyStudy: [
+          "Kunming, Yunnan Province",
+          "The \"City of Eternal Spring\" (mild, pleasant climate year-round)",
+          "largest specialized medical university in Yunnan",
+          "very popular among South Asian students",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Hostel: 5,000 CNY/year",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Food: 8,000-10,000 BDT/month"
+        },
+        careerAndPsw: "1-year hospital internship; recognized by WHO, WFME, BMDC; career pathways across South Asia and abroad.",
+        partTimeJobs: "Hospital training.",
+        applicationSteps: [
+          "Step 1: Portal application",
+          "Step 2: Verification",
+          "Step 3: Offer",
+          "Step 4: JW202 form",
+          "Step 5: Visa issuance.",
+        ],
+        programs: [
+          { name: "BSc / MSc in Clinical Medicine", level: "Undergraduate / Postgraduate", fee: "MBBS: 35,000 CNY/year." },
+          { name: "BSc / MSc in 6 Years", level: "Undergraduate / Postgraduate", fee: "MBBS: 35,000 CNY/year." },
+        ]
+      },
+      {
+        id: "dalian-medical-university",
+        name: "Dalian Medical University",
+        badge: "WHO / PMDC Recognized Medical Track",
+        type: "State Medical University",
+        tagline: "Dalian, Liaoning Province",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "MBBS: 40,000 CNY/year.",
+        tuitionPG: "MBBS: 40,000 CNY/year.",
+        scholarship: "Liaoning Provincial Government Scholarship, Dalian Municipal Government Scholarship, CSC.",
+        workRights: "Practical internships.",
+        entryUG: "SSC & HSC marks (Biology/Chemistry), Passport, Medical Report, Police Clearance, Bank Statement & Solvency Certificate.",
+        entryPG: "SSC & HSC marks (Biology/Chemistry), Passport, Medical Report, Police Clearance, Bank Statement & Solvency Certificate.",
+        whyStudy: [
+          "Dalian, Liaoning Province",
+          "Beautiful coastal city campus",
+          "leading medical school in Northeast China",
+          "large international student body with excellent English-medium curriculum",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Hostel: 4,000 CNY/year",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Food cost: ~8,000-10,000 BDT/month"
+        },
+        careerAndPsw: "1-year clinical rotation in coastal modern teaching hospitals; international qualification recognition.",
+        partTimeJobs: "Practical internships.",
+        applicationSteps: [
+          "Step 1: Document evaluation",
+          "Step 2: University acceptance",
+          "Step 3: JW202 application",
+          "Step 4: Chinese visa.",
+        ],
+        programs: [
+          { name: "BSc / MSc in Clinical Medicine", level: "Undergraduate / Postgraduate", fee: "MBBS: 40,000 CNY/year." },
+          { name: "BSc / MSc in 6 Years", level: "Undergraduate / Postgraduate", fee: "MBBS: 40,000 CNY/year." },
+        ]
+      },
+      {
+        id: "cmu",
+        name: "China Medical University (CMU)",
+        badge: "WHO / PMDC Recognized Medical Track",
+        type: "State Medical University",
+        tagline: "Shenyang, Liaoning Province",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "MBBS: 40,000 CNY/year.",
+        tuitionPG: "MBBS: 40,000 CNY/year.",
+        scholarship: "Liaoning Government Scholarship, CMU Outstanding Student Scholarship, CSC.",
+        workRights: "Clinical rotations.",
+        entryUG: "SSC & HSC certificates/marksheets, Passport, Medical Report, Police Clearance Certificate, Bank Statement.",
+        entryPG: "SSC & HSC certificates/marksheets, Passport, Medical Report, Police Clearance Certificate, Bank Statement.",
+        whyStudy: [
+          "Shenyang, Liaoning Province",
+          "Historical medical pioneer founded in 1931",
+          "one of China's top medical universities",
+          "highly acclaimed clinical teaching hospitals",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Hostel: 6,000 CNY/year",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Food cost: 8,000-10,000 BDT/month"
+        },
+        careerAndPsw: "1-year hospital internship; high success rate in USMLE, PLAB, and national licensing exams.",
+        partTimeJobs: "Clinical rotations.",
+        applicationSteps: [
+          "Step 1: Online application",
+          "Step 2: Document assessment",
+          "Step 3: Admission Notice & JW202",
+          "Step 4: Chinese Embassy Visa.",
+        ],
+        programs: [
+          { name: "BSc / MSc in Clinical Medicine", level: "Undergraduate / Postgraduate", fee: "MBBS: 40,000 CNY/year." },
+          { name: "BSc / MSc in 6 Years", level: "Undergraduate / Postgraduate", fee: "MBBS: 40,000 CNY/year." },
+        ]
+      },
+      {
+        id: "soochow-university",
+        name: "Soochow University",
+        badge: "WHO / PMDC Recognized Medical Track",
+        type: "Public Research University",
+        tagline: "Suzhou, Jiangsu Province (close to Shanghai)",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "MBBS: 32,500 CNY/year.",
+        tuitionPG: "MBBS: 32,500 CNY/year.",
+        scholarship: "Jiangsu Provincial Government Scholarship, Soochow University President Scholarship, CSC.",
+        workRights: "Hospital training & campus roles.",
+        entryUG: "SSC & HSC with strong science credentials, Passport, Medical Report, Police Clearance, Bank Statement & Solvency Certificate.",
+        entryPG: "SSC & HSC with strong science credentials, Passport, Medical Report, Police Clearance, Bank Statement & Solvency Certificate.",
+        whyStudy: [
+          "Suzhou, Jiangsu Province (close to Shanghai)",
+          "Double First-Class university",
+          "beautiful classical campus in Suzhou (\"Venice of the East\")",
+          "high medical education standards",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Hostel: 6,000 CNY/year (3-sharing)",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Food cost: 8,000-10,000 BDT/month"
+        },
+        careerAndPsw: "Clinical rotations in Suzhou's modern hospital system; close integration with Shanghai medical corridor.",
+        partTimeJobs: "Hospital training & campus roles.",
+        applicationSteps: [
+          "Step 1: Document submission",
+          "Step 2: Faculty assessment",
+          "Step 3: Admission letter & JW202",
+          "Step 4: Visa processing.",
+        ],
+        programs: [
+          { name: "BSc / MSc in Clinical Medicine", level: "Undergraduate / Postgraduate", fee: "MBBS: 32,500 CNY/year." },
+          { name: "BSc / MSc in 6 Years", level: "Undergraduate / Postgraduate", fee: "MBBS: 32,500 CNY/year." },
         ]
       }
     ]
@@ -1170,30 +3406,188 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
     name: "South Korea",
     regionCode: "asia",
     regionBadge: "ASIA",
-    tagline: "Content Pending Client Data",
-    usp: "Content Pending Client Data",
-    highlights: [],
-    livingCost: "Pending",
-    institutionsCount: "Pending",
+    tagline: "High-Tech Innovation, Global R&D & 50%–70% Guaranteed Scholarships",
+    usp: "Samsung & LG Industry Partnerships | Global Korea Scholarship (GKS) | Fast E-Visa Processing",
+    highlights: [
+      "50% to 70% tuition scholarship guaranteed for international students",
+      "GKS 100% full-ride government funding availability",
+      "Fast E-visa processing directly from Seoul immigration"
+    ],
+    livingCost: "$ 500 – $ 850 / month",
+    institutionsCount: "3+ Listed",
     heroImg: "https://images.unsplash.com/photo-1517154421773-0529f29ea451?auto=format&fit=crop&w=1920&q=80",
-    pillBadge: "Pending",
-    subBadge: "Pending",
-    heroHeading: "Study in South Korea",
-    heroDesc: "Content Pending Client Data",
-    tuition: "Pending",
-    tuitionSub: "Pending",
-    living: "Pending",
-    livingSub: "Pending",
-    work: "Pending",
-    workSub: "Pending",
-    psw: "Pending",
-    pswSub: "Pending",
-    whyStudy: [],
-    solvency: [],
-    roadmap: [],
-    faqs: [],
-    universities: []
+    pillBadge: "🇰🇷 High-Tech Asian Study Hub",
+    subBadge: "50%–70% Scholarships • Global R&D & E-Visa",
+    heroHeading: "Study in South Korea: Global Tech Powerhouse with Generous Scholarships",
+    heroDesc: "Study in South Korea with globally ranked technical universities, cutting-edge semiconductor/AI labs, English-medium programs, and guaranteed scholarship funding up to 70%.",
+    tuition: "$ 2,000 – $ 5,500/semester",
+    tuitionSub: "After 30-70% scholarship deduction",
+    living: "$ 500 – $ 850/mo",
+    livingSub: "Including dorm & meals",
+    work: "20–25 Hours / Week",
+    workSub: "Permitted during term; unlimited in vacations",
+    psw: "Up to 2-Year D-10 Job Search Visa",
+    pswSub: "E-7 Skilled Worker Pathway",
+    whyStudy: [
+      {
+        icon: "🔬",
+        title: "Global Tech Powerhouse",
+        desc: "World leaders in electronics, semiconductors, robotics, AI, and automotive engineering."
+      },
+      {
+        icon: "🎓",
+        title: "Guaranteed 50%-70% Scholarships",
+        desc: "International student merit awards cover 30% to 70% of tuition automatically upon admission."
+      },
+      {
+        icon: "⚡",
+        title: "Streamlined E-Visa Process",
+        desc: "Certified university sponsor issues direct E-Visa certificate confirmation."
+      }
+    ],
+    solvency: [
+      {
+        title: "Bank Balance Certificate",
+        detail: "$10,000 to $20,000 maintained in student or parent account."
+      },
+      {
+        title: "Sponsor Relationship",
+        detail: "Parents or legal sponsors with verified tax return / source of income."
+      }
+    ],
+    roadmap: [
+      "Step 01: Profile assessment and university shortlisting.",
+      "Step 02: Submit application and portfolio/transcripts.",
+      "Step 03: Receive Certificate of Admission (CoA) and scholarship letter.",
+      "Step 04: Prepare bank balance certificate ($10k-$20k).",
+      "Step 05: Apply for D-2 student visa or E-visa confirmation.",
+      "Step 06: Fly to Seoul / Incheon / Busan."
+    ],
+    faqs: [
+      {
+        q: "Can I study in South Korea in English?",
+        a: "Yes. Leading Korean universities offer 100% English-taught undergraduate and graduate degrees in Business, Engineering, Computer Science, and International Studies."
+      },
+      {
+        q: "What scholarships are available?",
+        a: "Almost all admitted international students receive 30% to 70% tuition fee reduction. The Korean Government Global Korea Scholarship (GKS) covers 100% tuition, airfare, and monthly stipend."
+      }
+    ],
+    universities: [
+      {
+        id: "kmcu",
+        name: "Keimyung College University (KMCU)",
+        badge: "Verified Academic Institution",
+        type: "Government Institute of Technology",
+        tagline: "Mobility partner of SEGi",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "$3,000 – $4,500 / semester",
+        tuitionPG: "$3,000 – $4,500 / semester",
+        scholarship: "30%–50% international tuition waiver",
+        workRights: "20 hrs/week permitted with work permit",
+        entryUG: "HSC pass; IELTS 5.0-5.5 or TOPIK",
+        entryPG: "HSC pass; IELTS 5.0-5.5 or TOPIK",
+        whyStudy: [
+          "Mobility partner of SEGi",
+          "practical high-tech training",
+          "affordable living and exchange",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Living cost: $500–$750/mo",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "Korean industrial tech training; multinational linkages",
+        partTimeJobs: "20 hrs/week permitted with work permit",
+        applicationSteps: [
+          "Step 1: Direct application",
+          "Step 2: Offer",
+          "Step 3: Tuition deposit",
+          "Step 4: E-visa issuance",
+        ],
+        programs: [
+          { name: "Associate & Bachelor's in Business, IT, Engineering, Hospita", level: "Bachelor / Master", fee: "$3,000 – $4,500 / semester" },
+        ]
+      },
+      {
+        id: "sunchon-national-universi",
+        name: "Sunchon National University",
+        badge: "Verified Academic Institution",
+        type: "Public Research University",
+        tagline: "Renowned National university",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "$2,500 – $4,000 / semester (subsidized)",
+        tuitionPG: "$2,500 – $4,000 / semester (subsidized)",
+        scholarship: "Global Korea Scholarship (GKS - 100% funded) + University tuition waivers",
+        workRights: "20 hrs/week permitted",
+        entryUG: "HSC / Bachelor; IELTS 5.5 or TOPIK 3+",
+        entryPG: "HSC / Bachelor; IELTS 5.5 or TOPIK 3+",
+        whyStudy: [
+          "Renowned National university",
+          "substantial government R&D funding",
+          "mobility partner of SEGi",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Living cost: $450–$650/mo",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "Research institutes, smart farming, and Korean manufacturing conglomerates",
+        partTimeJobs: "20 hrs/week permitted",
+        applicationSteps: [
+          "Step 1: Apply",
+          "Step 2: Tuition deposit",
+          "Step 3: E-visa confirmation",
+          "Step 4: Fly",
+        ],
+        programs: [
+          { name: "UG & PG in Agriculture, Engineering, Science, Business", level: "Bachelor / Master", fee: "$2,500 – $4,000 / semester (subsidized)" },
+        ]
+      },
+      {
+        id: "sookmyung-womens-universi",
+        name: "Sookmyung Women's University / Gachon University",
+        badge: "QS / Nationally Ranked",
+        type: "Public Research University",
+        tagline: "Top private universities in Seoul metropolitan area",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "$3,500 – $5,500 / semester",
+        tuitionPG: "$3,500 – $5,500 / semester",
+        scholarship: "50% to 70% tuition scholarship guaranteed for international students",
+        workRights: "20–25 hrs/week permitted",
+        entryUG: "HSC / Bachelor GPA 3.5+; IELTS 5.5+ or TOPIK",
+        entryPG: "HSC / Bachelor GPA 3.5+; IELTS 5.5+ or TOPIK",
+        whyStudy: [
+          "Top private universities in Seoul metropolitan area",
+          "50%-70% guaranteed scholarships",
+          "E-visa processing",
+          "career ties to Samsung, LG, Hyundai",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Living cost: $600–$850/mo in Seoul",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "D-10 job seeker visa; direct tech & corporate hiring (Samsung, LG, Hyundai)",
+        partTimeJobs: "20–25 hrs/week permitted",
+        applicationSteps: [
+          "Step 1: Online application",
+          "Step 2: Interview",
+          "Step 3: E-visa issuance",
+        ],
+        programs: [
+          { name: "UG & PG in AI, Global Business, Health Sciences, Software", level: "Bachelor / Master", fee: "$3,500 – $5,500 / semester" },
+        ]
+      }
+    ]
   },
+
   "ireland": {
     id: "ireland",
     code: "IE",
@@ -1255,7 +3649,521 @@ export const COUNTRIES_DB: Record<string, CountryRecord> = {
     roadmap: [],
     faqs: [],
     universities: []
+  },
+
+  "bulgaria": {
+    id: "bulgaria",
+    code: "BG",
+    flag: "🇧🇬",
+    name: "Bulgaria",
+    regionCode: "europe",
+    regionBadge: "EU / SCHENGEN",
+    tagline: "Affordable European Degree & Direct Schengen Mobility",
+    usp: "Lowest Tuition in EU | Low Cost of Living | Globally Recognized Degrees",
+    highlights: [
+      "Tuition from €2,500 – €4,000 / year",
+      "Low bank solvency requirement (~৳12–15 Lac BDT)",
+      "Full European Bologna system degree accreditation"
+    ],
+    livingCost: "€ 350 – € 550 / month",
+    institutionsCount: "2+ Listed",
+    heroImg: "https://images.unsplash.com/photo-1548625361-195fe61a0701?auto=format&fit=crop&w=1920&q=80",
+    pillBadge: "🇧🇬 Low Tuition European Route",
+    subBadge: "Low Living Cost • Direct Embassy Submissions",
+    heroHeading: "Study in Bulgaria: Affordable EU Degrees with Schengen Access",
+    heroDesc: "Bulgaria offers accessible higher education within the European Higher Education Area (EHEA) with medical, engineering, and business faculties taught in English at very competitive tuition rates.",
+    tuition: "€ 2,500 – € 7,500/yr",
+    tuitionSub: "Among lowest in European Union",
+    living: "€ 350 – € 550/mo",
+    livingSub: "Very affordable student lifestyle",
+    work: "20 Hours / Week",
+    workSub: "Legal student work rights",
+    psw: "Post-Study Residence Permit",
+    pswSub: "Job seeking visas for graduates",
+    whyStudy: [
+      {
+        icon: "💶",
+        title: "Affordable Tuition",
+        desc: "Standard undergraduate degrees starting from €2,500/year."
+      },
+      {
+        icon: "🇪🇺",
+        title: "EU Recognized Qualifications",
+        desc: "Degrees fully compliant with EU Bologna standards and recognized worldwide."
+      },
+      {
+        icon: "🏠",
+        title: "Budget Student Life",
+        desc: "Cost of living between €350–€550/month covers housing, food, and transport."
+      },
+      {
+        icon: "🛂",
+        title: "Schengen Integration",
+        desc: "Travel freely across the Schengen zone during vacations and academic exchanges."
+      }
+    ],
+    solvency: [
+      {
+        title: "Bank Fund Requirement",
+        detail: "~12 to 15 Lac BDT bank statement required for student visa."
+      },
+      {
+        title: "Account Maturity",
+        detail: "3 to 6 months statement from student or immediate parents."
+      }
+    ],
+    roadmap: [
+      "Step 01: Academic credential assessment & document notarization.",
+      "Step 02: University application & conditional admission release.",
+      "Step 03: Ministry of Education certification (Nostrification).",
+      "Step 04: Official unconditional certificate & fee deposit.",
+      "Step 05: Visa application at Embassy of Bulgaria.",
+      "Step 06: D-Type student visa stamped & flight to Sofia/Varna."
+    ],
+    faqs: [
+      {
+        q: "Are Bulgarian medical and technical degrees recognized globally?",
+        a: "Yes, degrees from public universities like Sofia University and Varna Free University comply with EU directives and WHO/ECFMG standards."
+      },
+      {
+        q: "Can international students work during studies?",
+        a: "Yes, international students are permitted to work up to 20 hours per week during term time."
+      }
+    ],
+    universities: [
+      {
+        id: "sofia-university-technica",
+        name: "Sofia University / Technical University of Sofia",
+        badge: "WHO / PMDC Recognized Medical Track",
+        type: "Public Research University",
+        tagline: "EU member state",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "Starting from €1,000 to €3,500/yr (Medicine €8,000)",
+        tuitionPG: "Starting from €1,000 to €3,500/yr (Medicine €8,000)",
+        scholarship: "Ministry discounts & university bursaries",
+        workRights: "Permitted under student status",
+        entryUG: "HSC / Bachelor 62%+; English proficiency or MOI accepted",
+        entryPG: "HSC / Bachelor 62%+; English proficiency or MOI accepted",
+        whyStudy: [
+          "EU member state",
+          "starting tuition from €1,000/year",
+          "pay tuition fee after visa option",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Living cost: €350–€550/mo",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "EU-recognized degree; European Schengen mobility",
+        partTimeJobs: "Permitted under student status",
+        applicationSteps: [
+          "Step 1: Ministry of Education approval",
+          "Step 2: Bulgarian D Visa",
+          "Step 3: Pay tuition fee after visa",
+        ],
+        programs: [
+          { name: "Bachelor's & Master's in Engineering, IT, Medicine, Business", level: "Bachelor / Master", fee: "Starting from €1,000 to €3,500/yr (Medicine €8,000)" },
+        ]
+      },
+      {
+        id: "varna-free-university",
+        name: "varna free university",
+        badge: "WHO / PMDC Recognized Medical Track",
+        type: "Public Research University",
+        tagline: "EU member state",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "Starting from €1,000  to  €3,000/year",
+        tuitionPG: "Starting from €1,000  to  €3,000/year",
+        scholarship: "no scholarship opportunity  but low tution fee",
+        workRights: "weekly 20 hours",
+        entryUG: "HSC / Bachelor 60%+; English proficiency or ielts accepted",
+        entryPG: "HSC / Bachelor 60%+; English proficiency or ielts accepted",
+        whyStudy: [
+          "EU member state",
+          "starting tuition from €1,000/3000year",
+          "low tuition fee",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "EUR 300-550/month Includes: •	Accommodation •	Food •	Transport •	Basic expenses",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "After completing the foundaion course  in bulgaria,they provide a bulgarian  language certificate, whice make it very  easy to get a job.",
+        partTimeJobs: "weekly 20 hours",
+        applicationSteps: [
+          "Step 1: Ministry of Education  approval",
+          "Step 2: Bulgarian D Visa",
+          "Step 3: Pay tuition fee",
+        ],
+        programs: [
+          { name: "Bachelor's & Master's in Engineering,  IT, Medicine, Busines", level: "Bachelor / Master", fee: "Starting from €1,000  to  €3,000/year" },
+        ]
+      }
+    ]
+  },
+
+  "czech-republic": {
+    id: "czech-republic",
+    code: "CZ",
+    flag: "🇨🇿",
+    name: "Czech Republic",
+    regionCode: "europe",
+    regionBadge: "CENTRAL EUROPE",
+    tagline: "Historic Universities & Free Czech-Taught Public Tracks",
+    usp: "Zero Tuition for Czech-Taught Degrees | Moderate English Fees | Central EU Hub",
+    highlights: [
+      "Charles University: Founded in 1348 (Central Europe top rank)",
+      "Zero tuition fee option on Czech-language programs",
+      "High engineering & automotive job market in Prague/Brno"
+    ],
+    livingCost: "€ 450 – € 700 / month",
+    institutionsCount: "1+ Listed",
+    heroImg: "https://images.unsplash.com/photo-1541849546-216549ae216d?auto=format&fit=crop&w=1920&q=80",
+    pillBadge: "🇨🇿 Prestigious Central European Hub",
+    subBadge: "Historic Academics • Thriving Tech & Industry Hub",
+    heroHeading: "Study in the Czech Republic: Excellence in Prague & Central Europe",
+    heroDesc: "The Czech Republic offers world-renowned universities such as Charles University and Czech Technical University (CTU) with cutting-edge engineering, computing, and medical faculties in the heart of Europe.",
+    tuition: "€ 3,000 – € 12,000/yr",
+    tuitionSub: "Free for Czech-taught degree tracks",
+    living: "€ 450 – € 700/mo",
+    livingSub: "Balanced Central European living",
+    work: "Part-time allowed",
+    workSub: "No special work permit needed for full-time students",
+    psw: "9-Month Post-Study Job Seeker Visa",
+    pswSub: "Fast transition to Czech Employee Card",
+    whyStudy: [
+      {
+        icon: "🏛️",
+        title: "Historic Prestige",
+        desc: "Home to Central Europe’s oldest higher learning institutions with global prestige."
+      },
+      {
+        icon: "💼",
+        title: "Strong Labor Market",
+        desc: "One of the lowest unemployment rates in the EU with strong multinational presence."
+      },
+      {
+        icon: "🚆",
+        title: "Heart of Schengen",
+        desc: "Direct rail links to Berlin, Vienna, Bratislava, and Budapest."
+      },
+      {
+        icon: "🎯",
+        title: "Low Tuition Burden",
+        desc: "Zero tuition if studying in Czech; competitive fees in English-taught programs."
+      }
+    ],
+    solvency: [
+      {
+        title: "Bank Fund Requirement",
+        detail: "Approx. 130,000 to 160,000 CZK (~৳8–10 Lac BDT) in student personal bank account."
+      },
+      {
+        title: "Payment Card Proof",
+        detail: "International debit card linked to the account required for embassy verification."
+      }
+    ],
+    roadmap: [
+      "Step 01: Application submission and entrance exam / portfolio evaluation.",
+      "Step 02: Educational document nostrification in Czech Republic.",
+      "Step 03: Admission confirmation & accommodation contract.",
+      "Step 04: Financial solvency document translation to Czech language.",
+      "Step 05: Long-term student visa interview at Czech Embassy in New Delhi.",
+      "Step 06: Visa approval & travel to Prague."
+    ],
+    faqs: [
+      {
+        q: "Do I need an entrance exam for Czech universities?",
+        a: "Some technical and medical programs require entrance exams or nostrification tests, which Study First Info helps students prepare for."
+      },
+      {
+        q: "Can students work while studying in Prague?",
+        a: "Yes, accredited university students do not need a separate work permit to work part-time."
+      }
+    ],
+    universities: [
+      {
+        id: "ctu",
+        name: "Charles University / Czech Technical University (CTU)",
+        badge: "WHO / PMDC Recognized Medical Track",
+        type: "Public Research University",
+        tagline: "Zero tuition fee options at public universities (in Czech / scholarship tracks)",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "Zero tuition fee in Czech; €3,000–€8,000/yr in English",
+        tuitionPG: "Zero tuition fee in Czech; €3,000–€8,000/yr in English",
+        scholarship: "Czech Government Scholarships for developing countries",
+        workRights: "Permitted with student visa",
+        entryUG: "HSC / Bachelor; Nostrification of certificates; English or Czech proficiency",
+        entryPG: "HSC / Bachelor; Nostrification of certificates; English or Czech proficiency",
+        whyStudy: [
+          "Zero tuition fee options at public universities (in Czech / scholarship tracks)",
+          "central Schengen hub",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Living cost: €450–€700/mo",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "High-tech & automotive hub in Central Europe; Schengen residency",
+        partTimeJobs: "Permitted with student visa",
+        applicationSteps: [
+          "Step 1: Apply",
+          "Step 2: Nostrification",
+          "Step 3: Entrance exam",
+          "Step 4: Embassy visa",
+        ],
+        programs: [
+          { name: "Bachelor's & Master's in Engineering, Medicine, Computer Sci", level: "Bachelor / Master", fee: "Zero tuition fee in Czech; €3,000–€8,000/yr in English" },
+        ]
+      }
+    ]
+  },
+
+  "denmark": {
+    id: "denmark",
+    code: "DK",
+    flag: "🇩🇰",
+    name: "Denmark",
+    regionCode: "europe",
+    regionBadge: "NORDIC EUROPE",
+    tagline: "Nordic Innovation, High Quality of Life & Extended PSW",
+    usp: "3-Year Post-Study Work Permit | Top Global Innovation Index | High Student Wages",
+    highlights: [
+      "3-Year Post-Study Work Visa after Master’s degree",
+      "High minimum hourly wage for student part-time jobs",
+      "World Top 100 universities (Copenhagen, Aarhus)"
+    ],
+    livingCost: "€ 850 – € 1,200 / month",
+    institutionsCount: "1+ Listed",
+    heroImg: "https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?auto=format&fit=crop&w=1920&q=80",
+    pillBadge: "🇩🇰 Premium Nordic Study Hub",
+    subBadge: "3-Year Post Study Visa • High Earning Potential",
+    heroHeading: "Study in Denmark: Nordic Innovation & World-Ranked Research",
+    heroDesc: "Denmark provides an exceptional standard of living and forward-thinking research universities with collaborative teaching methodologies and extended post-study residence permits.",
+    tuition: "€ 8,000 – € 16,000/yr",
+    tuitionSub: "Premium academic faculties",
+    living: "€ 850 – € 1,200/mo",
+    livingSub: "High Nordic living standard",
+    work: "20 Hours / Week",
+    workSub: "Full-time during June, July & August",
+    psw: "Up to 3-Year Post-Study Work Visa",
+    pswSub: "Direct route to Danish green card",
+    whyStudy: [
+      {
+        icon: "🌟",
+        title: "Nordic Quality",
+        desc: "University of Copenhagen & Aarhus rank consistently among Europe’s elite research bodies."
+      },
+      {
+        icon: "💼",
+        title: "3-Year Post-Study Visa",
+        desc: "Master’s graduates automatically qualify for up to 3 years of post-study job seeking."
+      },
+      {
+        icon: "💰",
+        title: "High Hourly Pay",
+        desc: "Students earn high hourly rates (€15–€20/hr) making living costs self-sustainable."
+      },
+      {
+        icon: "🚲",
+        title: "Sustainable & Safe",
+        desc: "World leader in clean tech, green energy, and safety."
+      }
+    ],
+    solvency: [
+      {
+        title: "Living Cost Fund",
+        detail: "Approx. €8,000–€10,000 in student own account to cover first year living costs."
+      },
+      {
+        title: "Tuition Prepayment",
+        detail: "First semester or full-year tuition paid directly to university before visa."
+      }
+    ],
+    roadmap: [
+      "Step 01: Course selection and prerequisite subject matching.",
+      "Step 02: Online application via Optagelse or direct portal.",
+      "Step 03: Admission offer letter & tuition fee payment.",
+      "Step 04: University initiates ST1 visa application online.",
+      "Step 05: Biometrics submission at VFS Dhaka.",
+      "Step 06: Danish residence permit card issued & flight to Copenhagen."
+    ],
+    faqs: [
+      {
+        q: "How long is the Danish Post-Study Work visa?",
+        a: "Under current Danish immigration reforms, university graduates receive up to 3 years of post-study work rights."
+      },
+      {
+        q: "Is English widely spoken in Denmark?",
+        a: "Yes, over 95% of Danes speak fluent English, making daily life and student employment very accessible."
+      }
+    ],
+    universities: [
+      {
+        id: "university-of-copenhagen-",
+        name: "University of Copenhagen & Aarhus University",
+        badge: "Verified Academic Institution",
+        type: "Public Research University",
+        tagline: "Admission = ~100% visa success rate",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "€8,000 – €16,000/yr",
+        tuitionPG: "€8,000 – €16,000/yr",
+        scholarship: "Danish State Tuition Waivers",
+        workRights: "20 hrs/week (full-time June-August)",
+        entryUG: "HSC / 4-yr Bachelor with strong grades; IELTS 6.5 (no band < 6.0)",
+        entryPG: "HSC / 4-yr Bachelor with strong grades; IELTS 6.5 (no band < 6.0)",
+        whyStudy: [
+          "Admission = ~100% visa success rate",
+          "no student bank statement required",
+          "no embassy interview",
+          "spouse & children can fly together with full work rights",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Living cost: €800–€1,200/mo (No student bank statement needed)",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "Danish Post-Study Work Permit & Green Card schemes; spouse full work rights",
+        partTimeJobs: "20 hrs/week (full-time June-August)",
+        applicationSteps: [
+          "Step 1: Optagelse.dk / direct portal",
+          "Step 2: ST1 visa application",
+          "Step 3: VFS biometrics",
+          "Step 4: Residence permit",
+        ],
+        programs: [
+          { name: "Bachelor's & Master's in Engineering, Tech, Science, Economi", level: "Bachelor / Master", fee: "€8,000 – €16,000/yr" },
+        ]
+      }
+    ]
+  },
+
+  "finland": {
+    id: "finland",
+    code: "FI",
+    flag: "🇫🇮",
+    name: "Finland",
+    regionCode: "europe",
+    regionBadge: "NORDIC SCHENGEN",
+    tagline: "Happiest Country in the World & 30-Hour Student Work Rights",
+    usp: "30 Hours / Week Legal Work | 2-Year Post-Study Job Seeker Visa | High Safety",
+    highlights: [
+      "30 Hours/week legal part-time work allowance",
+      "2-Year Post-Study Work Visa after graduation",
+      "Ranked #1 Happiest Country in the world for 7 consecutive years"
+    ],
+    livingCost: "€ 600 – € 850 / month",
+    institutionsCount: "1+ Listed",
+    heroImg: "https://images.unsplash.com/photo-1538332576228-eb5b4c4de6f5?auto=format&fit=crop&w=1920&q=80",
+    pillBadge: "🇫🇮 30-Hour Work Allowance Hub",
+    subBadge: "2-Year PSW • Generous Part-Time Hours",
+    heroHeading: "Study in Finland: Practical UAS Degrees with High Work Rights",
+    heroDesc: "Finland is famous for its world-class education system, clean environment, and student-friendly policies including generous 30 hours per week working rights and 2-year post-study job seeker permits.",
+    tuition: "€ 8,000 – € 12,000/yr",
+    tuitionSub: "Substantial early-bird & merit waivers",
+    living: "€ 600 – € 850/mo",
+    livingSub: "Subsidized student housing & dining",
+    work: "30 Hours / Week",
+    workSub: "Highest student work hours in Europe",
+    psw: "2-Year Post-Study Residence Permit",
+    pswSub: "Direct path to Finnish PR",
+    whyStudy: [
+      {
+        icon: "⏱️",
+        title: "30-Hour Work Rights",
+        desc: "Finland increased legal student working hours to 30 hours per week."
+      },
+      {
+        icon: "🎓",
+        title: "Applied Learning (UAS)",
+        desc: "Hands-on curriculum directly integrated with Nordic tech and forestry industries."
+      },
+      {
+        icon: "🛡️",
+        title: "Unmatched Quality of Life",
+        desc: "Consistently ranked the safest and happiest nation globally."
+      },
+      {
+        icon: "🏅",
+        title: "Generous Scholarships",
+        desc: "Early-bird discounts and 50% tuition reduction for academic performance."
+      }
+    ],
+    solvency: [
+      {
+        title: "Living Cost Requirement",
+        detail: "€6,720 (~৳8.5 Lac BDT) per year held in student personal account."
+      },
+      {
+        title: "Health Insurance",
+        detail: "Private comprehensive student health insurance required."
+      }
+    ],
+    roadmap: [
+      "Step 01: Application via Studyinfo.fi portal with certified transcripts.",
+      "Step 02: University of Applied Sciences online entrance exam / interview.",
+      "Step 03: Admission offer & early-bird tuition fee discount payment.",
+      "Step 04: Online residence permit application via Enter Finland.",
+      "Step 05: Identity verification and biometrics at VFS.",
+      "Step 06: Finnish residence permit card delivered & flight to Joensuu/Helsinki."
+    ],
+    faqs: [
+      {
+        q: "Can Bangladeshi students work 30 hours per week?",
+        a: "Yes, the Finnish government updated the student visa regulations to allow up to 30 hours of work per week during study semesters."
+      },
+      {
+        q: "What is the post-study work period?",
+        a: "Graduates can apply for a 2-year post-study residence permit to seek employment or start a business."
+      }
+    ],
+    universities: [
+      {
+        id: "karelia-university-of-app",
+        name: "Karelia University of Applied Sciences",
+        badge: "Applied Learning & STEM Focus",
+        type: "Public Research University",
+        tagline: "World's happiest country",
+        intakes: "February / September Intakes",
+        deadlines: "Rolling Admissions / Deadline as per Intake",
+        tuitionUG: "€8,000 – €14,000/yr",
+        tuitionPG: "€8,000 – €14,000/yr",
+        scholarship: "Limited case-by-case fee reductions",
+        workRights: "30 hrs/week during term; full-time during summer",
+        entryUG: "60%+ marks in HSC/Bachelor; IELTS 6.0 (UG) / 6.5 (PG). Bank savings in student's own name (6 mo maturity)",
+        entryPG: "60%+ marks in HSC/Bachelor; IELTS 6.0 (UG) / 6.5 (PG). Bank savings in student's own name (6 mo maturity)",
+        whyStudy: [
+          "World's happiest country",
+          "high living standard",
+          "spouse allowed (can travel after 3 months)",
+          "2-year PSW permit",
+        ],
+        costAndBank: {
+          monthlyCost: "Cost of living covered by student fund",
+          bankFundSingle: "Living cost: €700–€900/mo",
+          bankMaturity: "3 to 6 months bank statement or Fixed Deposit (FDR)",
+          familyFund: "Dependent funds as per embassy criteria"
+        },
+        careerAndPsw: "2-year post-study work permit; strong demand in tech and nursing in Helsinki, Tampere, Karelia",
+        partTimeJobs: "30 hrs/week during term; full-time during summer",
+        applicationSteps: [
+          "Step 1: Studyinfo.fi portal",
+          "Step 2: Entrance exam / SAT",
+          "Step 3: VFS New Delhi",
+          "Step 4: Residence permit. Next intake: Jan 2027",
+        ],
+        programs: [
+          { name: "Bachelor's & Master's in Technology, Business, Nursing", level: "Bachelor / Master", fee: "€8,000 – €14,000/yr" },
+        ]
+      }
+    ]
   }
 };
-
-

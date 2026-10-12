@@ -72,7 +72,7 @@ export default function AppointmentsList({ onBookFollowup }: { onBookFollowup?: 
   });
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 mb-8">
+    <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-4 sm:p-6 mb-6 sm:mb-8">
       {/* Filter Tabs */}
       <div className="flex flex-wrap items-center justify-between gap-4 pb-5 border-b border-gray-100">
         <div>
@@ -80,7 +80,7 @@ export default function AppointmentsList({ onBookFollowup }: { onBookFollowup?: 
           <p className="text-xs text-gray-500 mt-0.5">Track your ongoing, upcoming, and past sessions</p>
         </div>
 
-        <div className="flex items-center gap-1 bg-gray-100 p-1 rounded-xl">
+        <div className="flex flex-wrap items-center gap-1 bg-gray-100 p-1 rounded-xl">
           {(['All', 'Upcoming', 'Completed', 'Cancelled'] as const).map((tab) => (
             <button
               key={tab}
@@ -158,7 +158,7 @@ export default function AppointmentsList({ onBookFollowup }: { onBookFollowup?: 
               </div>
 
               {/* Actions */}
-              <div className="flex items-center gap-2 md:self-center">
+              <div className="flex items-center gap-2 self-start md:self-center">
                 {apt.status === 'upcoming' ? (
                   <>
                     <a

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Video, Phone, MessageSquare, CheckCircle, Sparkles } from 'lucide-react';
 
 export default function BookAppointmentForm({ defaultCounselor }: { defaultCounselor?: string }) {
@@ -9,6 +9,12 @@ export default function BookAppointmentForm({ defaultCounselor }: { defaultCouns
   const [topic, setTopic] = useState('');
   const [isBooked, setIsBooked] = useState(false);
 
+  useEffect(() => {
+    if (defaultCounselor) {
+      setCounselor(defaultCounselor);
+    }
+  }, [defaultCounselor]);
+
   const times = ['10AM', '11AM', '2PM', '3PM', '4PM', '5PM'];
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -17,7 +23,7 @@ export default function BookAppointmentForm({ defaultCounselor }: { defaultCouns
   };
 
   return (
-    <div id="book-section" className="bg-[#F0FDF4] border border-accent/30 rounded-2xl p-6 sm:p-8 shadow-sm">
+    <div id="book-section" className="bg-[#F0FDF4] border border-accent/30 rounded-2xl p-4 sm:p-8 shadow-sm">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6 pb-4 border-b border-accent/20">
         <div>
           <span className="text-xs font-bold uppercase tracking-wider text-accent bg-white px-2.5 py-1 rounded-full border border-accent/20 shadow-xs">
@@ -46,14 +52,14 @@ export default function BookAppointmentForm({ defaultCounselor }: { defaultCouns
             <strong>{sessionType === 'video' ? 'Google Meet Video' : sessionType === 'phone' ? 'Phone Call' : 'WhatsApp'}</strong>.
           </p>
           <div className="text-xs font-semibold text-emerald-700 bg-emerald-50 py-2.5 px-4 rounded-lg">
-            ✅ SMS + Email confirmation sent instantly
+            ✅ Session request confirmed for current portal session
           </div>
           <button
             onClick={() => {
               setIsBooked(false);
               setTopic('');
             }}
-            className="text-xs font-bold text-accent hover:underline pt-2 inline-block"
+            className="text-xs font-bold text-accent hover:underline pt-2 inline-block cursor-pointer"
           >
             Book another session &rarr;
           </button>
@@ -71,10 +77,14 @@ export default function BookAppointmentForm({ defaultCounselor }: { defaultCouns
                 onChange={(e) => setCounselor(e.target.value)}
                 className="w-full bg-white border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 font-medium focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
               >
-                <option value="M. Imran Hossain Rony (Germany Lead)">M. Imran Hossain Rony (Germany Lead)</option>
-                <option value="Dr. Sarah Rahman (China &amp; CSC Lead)">Dr. Sarah Rahman (China &amp; CSC Lead)</option>
-                <option value="Nadia Sultana (Schengen Europe)">Nadia Sultana (Schengen Europe)</option>
-                <option value="Tanvir Hasan (Malaysia Track)">Tanvir Hasan (Malaysia Track)</option>
+                <option value="Abu Musa">Abu Musa (Student Visa / PR / Spouse)</option>
+                <option value="M. Imran Hossain Rony">M. Imran Hossain Rony (Germany Lead)</option>
+                <option value="Md Abul Bashar">Md Abul Bashar (Hungary &amp; Schengen Lead)</option>
+                <option value="Md Belal Hossain">Md Belal Hossain (Malaysia Track)</option>
+                <option value="Dr. Sarah Rahman">Dr. Sarah Rahman (China &amp; CSC Lead)</option>
+                <option value="Eusha Ibne Nur Sami">Eusha Ibne Nur Sami (UK &amp; Schengen Track)</option>
+                <option value="Md Abu Sayed">Md Abu Sayed (Admissions &amp; PR Advisor)</option>
+                <option value="Md Tariq Hasan">Md Tariq Hasan (UK Russell Group)</option>
               </select>
             </div>
 
@@ -106,7 +116,7 @@ export default function BookAppointmentForm({ defaultCounselor }: { defaultCouns
                   type="button"
                   key={time}
                   onClick={() => setSelectedTime(time)}
-                  className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all ${
+                  className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs font-bold transition-all ${
                     selectedTime === time
                       ? 'bg-accent text-white shadow-sm ring-2 ring-accent/30'
                       : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200'

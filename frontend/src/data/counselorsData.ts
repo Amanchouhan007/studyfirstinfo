@@ -116,5 +116,44 @@ export const ALL_COUNSELORS: Counselor[] = [
     active: true,
     phone: '+8801899001122',
     branch: 'Banani Head Office'
+  },
+  {
+    id: 'c-abu-musa',
+    name: 'Abu Musa',
+    countryKey: 'canada',
+    tags: ['Student Visa', 'Permanent Residence (PR)', 'Dependent Visa', 'Spouse Visa'],
+    stats: { exp: '11 yrs', success: '97%', students: '650+' },
+    rating: 5,
+    bio: 'Senior counselor and legal specialist in Student Visas, Spouse Work Permits, Permanent Residence (PR), and Family Sponsorship.',
+    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=200',
+    active: true,
+    phone: '+8801806971440',
+    branch: 'Banani Head Office'
+  },
+  {
+    id: 'c-eusha',
+    name: 'Eusha Ibne Nur Sami',
+    countryKey: 'uk',
+    tags: ['Student Visa', 'Permanent Residence (PR)', 'Dependent Visa', 'Spouse Visa'],
+    stats: { exp: '6 yrs', success: '96%', students: '280+' },
+    rating: 5,
+    bio: 'Lead counselor for European dependent visa filings, university documentation attestation, and embassy interview coaching.',
+    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200',
+    active: true,
+    phone: '+8801898383120',
+    branch: 'Farmgate Branch'
+  },
+  {
+    id: 'c-abu-sayed',
+    name: 'Md Abu Sayed',
+    countryKey: 'australia',
+    tags: ['Student Visa', 'Permanent Residence (PR)', 'Dependent Visa', 'Spouse Visa'],
+    stats: { exp: '8 yrs', success: '95%', students: '340+' },
+    rating: 5,
+    bio: 'Admissions and PR pathways advisor. Focuses on post-study work rights, dependent visa filings, and high-visa-ratio programs.',
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200',
+    active: true,
+    phone: '+8801806971443',
+    branch: 'Sylhet Branch'
   }
 ];

@@ -165,7 +165,9 @@ export default function FloatingActions() {
         aria-label="Open WhatsApp Chat Channels"
       >
         {!isOpen && (
-          <div className="absolute inset-0 bg-[#25D366] rounded-full animate-ping opacity-60"></div>
+          <span className="absolute inset-0 rounded-full overflow-hidden pointer-events-none">
+            <span className="absolute inset-0 bg-[#25D366] rounded-full animate-ping opacity-60"></span>
+          </span>
         )}
         {isOpen ? (
           <X className="relative z-10 w-6 h-6 sm:w-7 sm:h-7" />

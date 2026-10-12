@@ -1,4 +1,6 @@
 import { useState, useMemo } from 'react';
+import { Link } from 'react-router-dom';
+import DashboardLayout from '../components/dashboard/DashboardLayout';
 import CounselorHero from '../components/sections/counselors/CounselorHero';
 import CounselorStats from '../components/sections/counselors/CounselorStats';
 import CounselorGrid from '../components/sections/counselors/CounselorGrid';
@@ -7,7 +9,7 @@ import HowBookingWorks from '../components/sections/counselors/HowBookingWorks';
 import CounselorCTA from '../components/sections/counselors/CounselorCTA';
 import { X, Check, Star, Calendar, Sparkles } from 'lucide-react';
 
-export default function CounselorsPage() {
+export default function CounselorsPage({ isDashboard = false }: { isDashboard?: boolean }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeFilter, setActiveFilter] = useState('All');
 
@@ -85,8 +87,8 @@ export default function CounselorsPage() {
     e.preventDefault();
     setBookingModalOpen(false);
     showToast(
-      'Session Booked Successfully!',
-      `Confirmed appointment with ${selectedCounselor?.name} for ${appointmentForm.name}. A WhatsApp reminder has been dispatched to ${appointmentForm.phone}.`
+      'Session Request Recorded (Demo)',
+      `Appointment request with ${selectedCounselor?.name} for ${appointmentForm.name} saved for this session. (Local preview mode; real backend synchronization is pending).`
     );
     setAppointmentForm({
       name: '',
@@ -115,7 +117,7 @@ export default function CounselorsPage() {
     });
   };
 
-  return (
+  const pageBody = (
     <main className="min-h-screen bg-gray-50/50">
       <CounselorHero
         searchTerm={searchTerm}
@@ -461,4 +463,38 @@ export default function CounselorsPage() {
 
     </main>
   );
+
+  if (isDashboard) {
+    return (
+      <DashboardLayout>
+        <div className="space-y-6">
+          {/* Top Header & Breadcrumbs */}
+          <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200/80 pb-5">
+            <div>
+              <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-1">Mentors & Counselors</h1>
+              <div className="text-sm font-medium text-slate-500 flex items-center gap-2">
+                <Link to="/dashboard" className="hover:text-emerald-700 transition-colors">Dashboard</Link>
+                <span>&gt;</span>
+                <span className="text-slate-800 font-semibold">Mentors</span>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <Link
+                to="/appointments"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-semibold hover:bg-emerald-100 transition-colors"
+              >
+                <Calendar size={14} /> View My Appointments
+              </Link>
+              <div className="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 bg-slate-100 px-3 py-2 rounded-xl">
+                <span>👥 {ALL_COUNSELORS.length} Available</span>
+              </div>
+            </div>
+          </div>
+          {pageBody}
+        </div>
+      </DashboardLayout>
+    );
+  }
+
+  return pageBody;
 }

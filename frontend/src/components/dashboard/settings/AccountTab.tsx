@@ -34,7 +34,7 @@ export default function AccountTab() {
   return (
     <div className="space-y-8">
       {/* Profile Photo Section */}
-      <div className="bg-white rounded-2xl border border-gray-100 p-6 sm:p-7 shadow-xs">
+      <div className="bg-white rounded-2xl border border-gray-100 p-4 sm:p-7 shadow-xs">
         <h3 className="text-base font-bold text-primary mb-4 pb-2 border-b border-gray-100">
           Profile Photo
         </h3>

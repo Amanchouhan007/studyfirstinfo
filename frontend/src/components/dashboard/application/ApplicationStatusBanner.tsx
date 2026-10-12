@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function ApplicationStatusBanner() {
   return (
-    <div className="bg-white rounded-2xl border-l-[6px] border-l-accent border border-gray-100 shadow-sm p-6 mb-8 hover:shadow-md transition-shadow">
+    <div className="bg-white rounded-2xl border-l-[6px] border-l-accent border border-gray-100 shadow-sm p-4 sm:p-6 mb-6 sm:mb-8 hover:shadow-md transition-shadow">
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
         <div className="space-y-2">
           <div className="flex flex-wrap items-center gap-3">

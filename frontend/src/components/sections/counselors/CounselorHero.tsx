@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Search, X } from 'lucide-react';
 
 interface CounselorHeroProps {
@@ -32,7 +33,7 @@ export default function CounselorHero({
     <section className="bg-light-mint pt-8 pb-8 sm:pt-10 sm:pb-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="text-xs font-semibold text-gray-500 mb-2">
-          <span className="hover:text-primary cursor-pointer transition-colors">Home</span> &gt; <span className="text-primary font-bold">Counselors</span>
+          <Link to="/" className="hover:text-primary cursor-pointer transition-colors">Home</Link> &gt; <span className="text-primary font-bold">Counselors</span>
         </div>
         
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-primary mb-2 tracking-tight">

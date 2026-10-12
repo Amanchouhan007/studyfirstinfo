@@ -23,6 +23,8 @@ import CountriesPage from './pages/CountriesPage';
 import ServicesPage from './pages/ServicesPage';
 import CareersPage from './pages/CareersPage';
 import PathwayPage from './pages/PathwayPage';
+import PublicPathwayPage from './pages/PublicPathwayPage';
+import MessagesPage from './pages/MessagesPage';
 import ScrollToTop from './components/layout/ScrollToTop';
 
 function App() {
@@ -30,15 +32,18 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <div className="min-h-screen bg-white flex flex-col">
-        {/* Suppress Navbar on Dashboard, Admin, and Auth routes */}
+        {/* Suppress Navbar on Dashboard, Admin, Auth, and Student Portal routes */}
         <Routes>
           <Route path="/dashboard" element={null} />
+          <Route path="/dashboard/*" element={null} />
           <Route path="/profile" element={null} />
           <Route path="/application" element={null} />
           <Route path="/appointments" element={null} />
           <Route path="/documents" element={null} />
           <Route path="/notifications" element={null} />
           <Route path="/settings" element={null} />
+          <Route path="/messages" element={null} />
+          <Route path="/pathways" element={null} />
           <Route path="/admin" element={null} />
           <Route path="/auth" element={null} />
           <Route path="/forgot-password" element={null} />
@@ -49,11 +54,13 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/countries" element={<CountriesPage />} />
+            <Route path="/dashboard/universities" element={<CountriesPage isDashboard={true} />} />
             <Route path="/pathways" element={<PathwayPage />} />
-            <Route path="/pathways/:id" element={<PathwayPage />} />
-            <Route path="/pathway/:id" element={<PathwayPage />} />
+            <Route path="/pathways/:id" element={<PublicPathwayPage />} />
+            <Route path="/pathway/:id" element={<PublicPathwayPage />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/counselors" element={<CounselorsPage />} />
+            <Route path="/dashboard/mentors" element={<CounselorsPage isDashboard={true} />} />
             <Route path="/auth" element={<AuthPage />} />
             <Route path="/forgot-password" element={<ForgotPasswordPage />} />
             <Route path="/dashboard" element={<DashboardPage />} />
@@ -64,23 +71,28 @@ function App() {
             <Route path="/scholarships" element={<ScholarshipsPage />} />
             <Route path="/notifications" element={<NotificationsPage />} />
             <Route path="/settings" element={<SettingsPage />} />
+            <Route path="/messages" element={<MessagesPage />} />
             <Route path="/admin" element={<AdminPage />} />
             <Route path="/events" element={<EventsPage />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/careers" element={<CareersPage />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="*" element={<HomePage />} />
           </Routes>
         </div>
 
-        {/* Suppress Footer on Dashboard, Admin, and Auth routes */}
+        {/* Suppress Footer on Dashboard, Admin, Auth, and Student Portal routes */}
         <Routes>
           <Route path="/dashboard" element={null} />
+          <Route path="/dashboard/*" element={null} />
           <Route path="/profile" element={null} />
           <Route path="/application" element={null} />
           <Route path="/appointments" element={null} />
           <Route path="/documents" element={null} />
           <Route path="/notifications" element={null} />
           <Route path="/settings" element={null} />
+          <Route path="/messages" element={null} />
+          <Route path="/pathways" element={null} />
           <Route path="/admin" element={null} />
           <Route path="/auth" element={null} />
           <Route path="/forgot-password" element={null} />
@@ -88,12 +100,15 @@ function App() {
         </Routes>
         <Routes>
           <Route path="/dashboard" element={null} />
+          <Route path="/dashboard/*" element={null} />
           <Route path="/profile" element={null} />
           <Route path="/application" element={null} />
           <Route path="/appointments" element={null} />
           <Route path="/documents" element={null} />
           <Route path="/notifications" element={null} />
           <Route path="/settings" element={null} />
+          <Route path="/messages" element={null} />
+          <Route path="/pathways" element={null} />
           <Route path="/admin" element={null} />
           <Route path="/auth" element={null} />
           <Route path="/forgot-password" element={null} />

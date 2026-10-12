@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, Link } from 'react-router-dom';
+import DashboardLayout from '../components/dashboard/DashboardLayout';
 import { 
   Check, 
   Sparkles, 
@@ -10,13 +11,18 @@ import {
   ChevronDown,
   ChevronUp,
   ArrowRight,
-  ArrowDown
+  ArrowDown,
+  Globe,
+  GraduationCap,
+  Search,
+  X,
+  RotateCcw
 } from 'lucide-react';
 
 import { COUNTRIES_DB as LOCAL_DB, FLAG_MAP } from '../data/countriesData';
-import type { CountryRecord } from '../data/countriesData';
+import type { CountryRecord, UniversityItem } from '../data/countriesData';
 import { fetchCountries } from '../services/api/catalog';
-export default function CountriesPage() {
+export default function CountriesPage({ isDashboard = false }: { isDashboard?: boolean }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const [catalog, setCatalog] = useState<Record<string, CountryRecord>>(LOCAL_DB);
   const [, setIsLoadingCatalog] = useState(true);
@@ -31,6 +37,141 @@ export default function CountriesPage() {
   // Region Filter in Level 1
   const [activeRegion, setActiveRegion] = useState<'all' | 'europe' | 'uk' | 'oceania' | 'asia'>('all');
   const [searchQuery, setSearchQuery] = useState('');
+
+  // Catalog View Mode: 'countries' | 'universities'
+  const tabParam = searchParams.get('tab');
+  const [catalogTab, setCatalogTab] = useState<'countries' | 'universities'>(
+    tabParam === 'universities' ? 'universities' : 'countries'
+  );
+
+  // University-specific filters
+  const [uniSearchQuery, setUniSearchQuery] = useState('');
+  const [uniCountryFilter, setUniCountryFilter] = useState('all');
+  const [uniLevelFilter, setUniLevelFilter] = useState<'all' | 'undergraduate' | 'postgraduate'>('all');
+  const [uniTypeFilter, setUniTypeFilter] = useState('all');
+  const [uniSortBy, setUniSortBy] = useState<'name-asc' | 'name-desc' | 'country'>('name-asc');
+
+  const handleTabChange = (tab: 'countries' | 'universities') => {
+    setCatalogTab(tab);
+    if (tab === 'universities') {
+      setSearchParams({ tab: 'universities' });
+    } else {
+      setSearchParams({});
+    }
+  };
+
+  // Flattened university catalog with parent country metadata
+  const allUniversities = React.useMemo(() => {
+    const list: Array<UniversityItem & { countryId: string; countryName: string; countryFlag: string }> = [];
+    Object.values(catalog).forEach((country) => {
+      country.universities.forEach((uni) => {
+        list.push({
+          ...uni,
+          countryId: country.id,
+          countryName: country.name,
+          countryFlag: country.flag,
+        });
+      });
+    });
+    return list;
+  }, [catalog]);
+
+  // Countries that have at least one verified university
+  const availableCountries = React.useMemo(() => {
+    const map = new Map<string, { id: string; name: string; flag: string; count: number }>();
+    allUniversities.forEach((u) => {
+      const existing = map.get(u.countryId);
+      if (existing) {
+        existing.count += 1;
+      } else {
+        map.set(u.countryId, { id: u.countryId, name: u.countryName, flag: u.countryFlag, count: 1 });
+      }
+    });
+    return Array.from(map.values()).sort((a, b) => a.name.localeCompare(b.name));
+  }, [allUniversities]);
+
+  // Distinct institution types
+  const availableTypes = React.useMemo(() => {
+    const set = new Set<string>();
+    allUniversities.forEach((u) => {
+      if (u.type) set.add(u.type);
+    });
+    return Array.from(set).sort();
+  }, [allUniversities]);
+
+  // Filtered and sorted universities (AND logic)
+  const filteredUniversities = React.useMemo(() => {
+    const q = uniSearchQuery.toLowerCase().trim();
+
+    return allUniversities.filter((uni) => {
+      // 1. Text Search (University name, tagline, programs offered, country name)
+      if (q) {
+        const matchesName = uni.name.toLowerCase().includes(q);
+        const matchesTagline = uni.tagline.toLowerCase().includes(q);
+        const matchesCountry = uni.countryName.toLowerCase().includes(q);
+        const matchesProgram = uni.programs?.some((p) => p.name.toLowerCase().includes(q));
+        if (!matchesName && !matchesTagline && !matchesCountry && !matchesProgram) {
+          return false;
+        }
+      }
+
+      // 2. Country Filter
+      if (uniCountryFilter !== 'all') {
+        if (uni.countryId !== uniCountryFilter) return false;
+      }
+
+      // 3. Study Level Filter
+      if (uniLevelFilter === 'undergraduate') {
+        const hasUGProgram = uni.programs?.some((p) => {
+          const l = p.level.toLowerCase();
+          return l.includes('bachelor') || l.includes('undergraduate') || l.includes('diploma');
+        });
+        const hasUGTuition = Boolean(uni.tuitionUG && uni.tuitionUG !== '—' && !uni.tuitionUG.toLowerCase().includes('pending'));
+        if (!hasUGProgram && !hasUGTuition) return false;
+      } else if (uniLevelFilter === 'postgraduate') {
+        const hasPGProgram = uni.programs?.some((p) => {
+          const l = p.level.toLowerCase();
+          return l.includes('master') || l.includes('postgraduate');
+        });
+        const hasPGTuition = Boolean(uni.tuitionPG && uni.tuitionPG !== '—' && !uni.tuitionPG.toLowerCase().includes('pending'));
+        if (!hasPGProgram && !hasPGTuition) return false;
+      }
+
+      // 4. Institution Type Filter
+      if (uniTypeFilter !== 'all') {
+        if (uni.type !== uniTypeFilter) return false;
+      }
+
+      return true;
+    }).sort((a, b) => {
+      if (uniSortBy === 'name-asc') {
+        return a.name.localeCompare(b.name);
+      }
+      if (uniSortBy === 'name-desc') {
+        return b.name.localeCompare(a.name);
+      }
+      if (uniSortBy === 'country') {
+        const cmp = a.countryName.localeCompare(b.countryName);
+        return cmp !== 0 ? cmp : a.name.localeCompare(b.name);
+      }
+      return 0;
+    });
+  }, [allUniversities, uniSearchQuery, uniCountryFilter, uniLevelFilter, uniTypeFilter, uniSortBy]);
+
+  const resetUniFilters = () => {
+    setUniSearchQuery('');
+    setUniCountryFilter('all');
+    setUniLevelFilter('all');
+    setUniTypeFilter('all');
+    setUniSortBy('name-asc');
+  };
+
+  const isAnyUniFilterActive = Boolean(
+    uniSearchQuery.trim() !== '' ||
+    uniCountryFilter !== 'all' ||
+    uniLevelFilter !== 'all' ||
+    uniTypeFilter !== 'all'
+  );
 
   // FAQ accordion state
   const [expandedFaqIndex, setExpandedFaqIndex] = useState<number | null>(null);
@@ -149,10 +290,9 @@ export default function CountriesPage() {
     return matchesRegion && matchesSearch;
   });
 
-  return (
-    <div className="bg-[#f8faf9] text-slate-900 antialiased selection:bg-emerald-200 selection:text-emerald-950 min-h-screen">
-
-      <main className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-10">
+  const pageBody = (
+    <div className={`bg-[#f8faf9] text-slate-900 antialiased selection:bg-emerald-200 selection:text-emerald-950 ${isDashboard ? 'rounded-2xl' : 'min-h-screen'}`}>
+      <main className={`max-w-7xl mx-auto ${isDashboard ? 'py-2' : 'px-3 sm:px-6 lg:px-8 py-6 sm:py-10'}`}>
         
         {/* ============================================================ */}
         {/* LEVEL 1: ALL COUNTRIES GRID VIEW                            */}
@@ -234,7 +374,7 @@ export default function CountriesPage() {
                 <div className="lg:col-span-5 relative flex flex-col items-center justify-center">
                   
                   {/* Planetary Radar Circle Wrapper */}
-                  <div className="relative w-72 h-72 sm:w-84 sm:h-84 flex items-center justify-center">
+                  <div className="relative w-60 h-60 sm:w-84 sm:h-84 max-w-full flex items-center justify-center">
                     {/* Outer Orbit Ring */}
                     <div className="absolute inset-0 rounded-full border border-dashed border-slate-700/60 animate-spin" style={{ animationDuration: '40s' }} />
                     
@@ -332,151 +472,456 @@ export default function CountriesPage() {
               </div>
             </section>
 
-            {/* Top Title & Filter Bar */}
-            <div className="text-center max-w-4xl mx-auto space-y-4 pt-4">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-extrabold uppercase tracking-wider border border-emerald-200 shadow-sm">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#006837] animate-ping" />
-                Study First Info Verified Global Network
-              </div>
-              <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
-                Select Your Study Destination
-              </h2>
-              <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto">
-                Explore curated study abroad pathways where Bangladeshi students secure 100% scholarships, tuition waivers, and high visa approval rates.
-              </p>
-
-              {/* Country Search Bar */}
-              <div className="max-w-md mx-auto pt-4 pb-2">
-                <input 
-                  type="search"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search countries, universities, or keywords..."
-                  className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white text-sm shadow-sm"
-                />
-              </div>
-
-              {/* Quick Region Filter Buttons */}
-              <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
-                <button 
-                  onClick={() => setActiveRegion('all')} 
-                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${activeRegion === 'all' ? 'bg-[#006837] text-white shadow-sm' : 'bg-white text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 border border-slate-200'}`}
+            {/* View Mode Toggle: Browse by Destination vs Browse All Universities */}
+            <div id="catalog-content-anchor" className="flex justify-center pt-2">
+              <div className="inline-flex p-1.5 bg-slate-200/80 rounded-2xl border border-slate-300/80 shadow-xs">
+                <button
+                  type="button"
+                  onClick={() => handleTabChange('countries')}
+                  className={`py-2.5 px-4 sm:px-6 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 cursor-pointer ${
+                    catalogTab === 'countries'
+                      ? 'bg-white text-slate-900 shadow-sm'
+                      : 'text-slate-600 hover:text-slate-900'
+                  }`}
                 >
-                  All Countries ({countryKeys.length})
+                  <Globe size={16} className={catalogTab === 'countries' ? 'text-[#006837]' : ''} />
+                  <span>Browse by Destination ({countryKeys.length})</span>
                 </button>
-                <button 
-                  onClick={() => setActiveRegion('europe')} 
-                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${activeRegion === 'europe' ? 'bg-[#006837] text-white shadow-sm' : 'bg-white text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 border border-slate-200'}`}
+                <button
+                  type="button"
+                  onClick={() => handleTabChange('universities')}
+                  className={`py-2.5 px-4 sm:px-6 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-2 cursor-pointer ${
+                    catalogTab === 'universities'
+                      ? 'bg-white text-slate-900 shadow-sm'
+                      : 'text-slate-600 hover:text-slate-900'
+                  }`}
                 >
-                  🇪🇺 Schengen Europe
-                </button>
-                <button 
-                  onClick={() => setActiveRegion('uk')} 
-                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${activeRegion === 'uk' ? 'bg-[#006837] text-white shadow-sm' : 'bg-white text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 border border-slate-200'}`}
-                >
-                  🇬🇧 United Kingdom
-                </button>
-                <button 
-                  onClick={() => setActiveRegion('oceania')} 
-                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${activeRegion === 'oceania' ? 'bg-[#006837] text-white shadow-sm' : 'bg-white text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 border border-slate-200'}`}
-                >
-                  🇳🇿 New Zealand
-                </button>
-                <button 
-                  onClick={() => setActiveRegion('asia')} 
-                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${activeRegion === 'asia' ? 'bg-[#006837] text-white shadow-sm' : 'bg-white text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 border border-slate-200'}`}
-                >
-                  🇲🇾 Malaysia &amp; Asia
+                  <GraduationCap size={16} className={catalogTab === 'universities' ? 'text-[#006837]' : ''} />
+                  <span>Browse All Universities ({allUniversities.length})</span>
                 </button>
               </div>
             </div>
 
-            {/* Country Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8" id="country-cards-container">
-              {filteredCountryKeys.map((key) => {
-                const country = catalog[key];
-                return (
-                  <div 
-                    key={country.id}
-                    className="country-item-card bg-white rounded-3xl border border-slate-200 p-6 sm:p-7 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between hover:-translate-y-1.5 text-left group"
-                  >
-                    <div>
-                      {/* Top Header: Official National Flag Badge & Region Pill Badge */}
-                      <div className="flex items-center justify-between gap-2 mb-4">
-                        <div className="flex items-center gap-3">
-                          <div className="w-14 h-10 rounded-xl bg-white border border-slate-200/90 shadow-xs overflow-hidden flex items-center justify-center shrink-0 group-hover:scale-105 group-hover:border-emerald-500 transition-all p-0.5">
-                            <img
-                              src={FLAG_MAP[country.id] || `https://flagcdn.com/w80/${country.code.toLowerCase()}.png`}
-                              alt={`${country.name} National Flag`}
-                              className="w-full h-full object-cover rounded-lg"
-                              loading="lazy"
-                            />
+            {/* TAB 1: BROWSE BY DESTINATION (100% PRESERVED) */}
+            {catalogTab === 'countries' && (
+              <>
+                {/* Top Title & Filter Bar */}
+                <div className="text-center max-w-4xl mx-auto space-y-4 pt-4">
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-extrabold uppercase tracking-wider border border-emerald-200 shadow-sm">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#006837] animate-ping" />
+                    Study First Info Verified Global Network
+                  </div>
+                  <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">
+                    Select Your Study Destination
+                  </h2>
+                  <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto">
+                    Explore curated study abroad pathways where Bangladeshi students secure 100% scholarships, tuition waivers, and high visa approval rates.
+                  </p>
+
+                  {/* Country Search Bar */}
+                  <div className="max-w-md mx-auto pt-4 pb-2">
+                    <input 
+                      type="search"
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      placeholder="Search countries, universities, or keywords..."
+                      className="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 bg-white text-sm shadow-sm"
+                    />
+                  </div>
+
+                  {/* Quick Region Filter Buttons */}
+                  <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
+                    <button 
+                      onClick={() => setActiveRegion('all')} 
+                      className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${activeRegion === 'all' ? 'bg-[#006837] text-white shadow-sm' : 'bg-white text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 border border-slate-200'}`}
+                    >
+                      All Countries ({countryKeys.length})
+                    </button>
+                    <button 
+                      onClick={() => setActiveRegion('europe')} 
+                      className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${activeRegion === 'europe' ? 'bg-[#006837] text-white shadow-sm' : 'bg-white text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 border border-slate-200'}`}
+                    >
+                      🇪🇺 Schengen Europe
+                    </button>
+                    <button 
+                      onClick={() => setActiveRegion('uk')} 
+                      className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${activeRegion === 'uk' ? 'bg-[#006837] text-white shadow-sm' : 'bg-white text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 border border-slate-200'}`}
+                    >
+                      🇬🇧 United Kingdom
+                    </button>
+                    <button 
+                      onClick={() => setActiveRegion('oceania')} 
+                      className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${activeRegion === 'oceania' ? 'bg-[#006837] text-white shadow-sm' : 'bg-white text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 border border-slate-200'}`}
+                    >
+                      🇳🇿 New Zealand
+                    </button>
+                    <button 
+                      onClick={() => setActiveRegion('asia')} 
+                      className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${activeRegion === 'asia' ? 'bg-[#006837] text-white shadow-sm' : 'bg-white text-slate-700 hover:bg-emerald-50 hover:text-emerald-800 border border-slate-200'}`}
+                    >
+                      🇲🇾 Malaysia &amp; Asia
+                    </button>
+                  </div>
+                </div>
+
+                {/* Country Cards Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8" id="country-cards-container">
+                  {filteredCountryKeys.map((key) => {
+                    const country = catalog[key];
+                    return (
+                      <div 
+                        key={country.id}
+                        className="country-item-card bg-white rounded-3xl border border-slate-200 p-4 sm:p-7 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between hover:-translate-y-1.5 text-left group"
+                      >
+                        <div>
+                          {/* Top Header: Official National Flag Badge & Region Pill Badge */}
+                          <div className="flex flex-wrap sm:flex-nowrap items-start sm:items-center justify-between gap-2 mb-4">
+                            <div className="flex items-center gap-3">
+                              <div className="w-14 h-10 rounded-xl bg-white border border-slate-200/90 shadow-xs overflow-hidden flex items-center justify-center shrink-0 group-hover:scale-105 group-hover:border-emerald-500 transition-all p-0.5">
+                                <img
+                                  src={FLAG_MAP[country.id] || `https://flagcdn.com/w80/${country.code.toLowerCase()}.png`}
+                                  alt={`${country.name} National Flag`}
+                                  className="w-full h-full object-cover rounded-lg"
+                                  loading="lazy"
+                                />
+                              </div>
+                              <div>
+                                <span className="text-[10px] font-black text-slate-400 block uppercase tracking-wider">{country.code}</span>
+                                <h3 
+                                  onClick={() => openCountryLanding(country.id)}
+                                  className="text-xl sm:text-2xl font-black text-slate-900 hover:text-[#006837] transition-colors cursor-pointer leading-tight font-heading"
+                                >
+                                  {country.name}
+                                </h3>
+                              </div>
+                            </div>
+                            <span className="px-2.5 py-1 rounded-full text-[10px] font-extrabold tracking-wider uppercase bg-emerald-50 text-emerald-800 border border-emerald-200 shrink-0 self-start sm:self-auto">
+                              {country.regionBadge}
+                            </span>
                           </div>
-                          <div>
-                            <span className="text-[10px] font-black text-slate-400 block uppercase tracking-wider">{country.code}</span>
-                            <h3 
-                              onClick={() => openCountryLanding(country.id)}
-                              className="text-xl sm:text-2xl font-black text-slate-900 hover:text-[#006837] transition-colors cursor-pointer leading-tight font-heading"
-                            >
-                              {country.name}
-                            </h3>
+
+                          {/* Tagline */}
+                          <p className="text-xs text-slate-500 font-medium mb-4">
+                            {country.tagline}
+                          </p>
+
+                          {/* Star Highlight Banner */}
+                          <div className="p-3.5 rounded-2xl bg-[#fffbeb] border border-amber-200/80 mb-5 flex items-start gap-2.5">
+                            <Star className="w-4 h-4 text-amber-500 shrink-0 mt-0.5 fill-amber-400" />
+                            <p className="text-xs font-bold text-amber-950 leading-snug">
+                              {country.usp}
+                            </p>
                           </div>
+
+                          {/* Checklist */}
+                          <ul className="space-y-2.5 mb-6">
+                            {country.highlights.map((h, idx) => (
+                              <li key={idx} className="flex items-start gap-2.5 text-xs text-slate-600 font-medium">
+                                <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                                <span>{h}</span>
+                              </li>
+                            ))}
+                          </ul>
                         </div>
-                        <span className="px-2.5 py-1 rounded-full text-[10px] font-extrabold tracking-wider uppercase bg-emerald-50 text-emerald-800 border border-emerald-200 shrink-0">
-                          {country.regionBadge}
-                        </span>
+
+                        {/* Bottom Metadata & Button */}
+                        <div className="pt-4 border-t border-slate-100 space-y-4">
+                          <div className="flex items-center justify-between text-xs">
+                            <div>
+                              <span className="text-[10px] font-bold uppercase text-slate-400 block">Living Cost:</span>
+                              <span className="font-bold text-slate-800">{country.livingCost}</span>
+                            </div>
+                            <div className="text-right">
+                              <span className="text-[10px] font-bold uppercase text-slate-400 block">Institutions:</span>
+                              <span className="font-bold text-emerald-700">{country.institutionsCount}</span>
+                            </div>
+                          </div>
+
+                          <button 
+                            onClick={() => openCountryLanding(country.id)}
+                            className="w-full py-3.5 px-4 rounded-xl bg-slate-900 hover:bg-[#006837] text-white text-xs sm:text-sm font-bold flex items-center justify-center gap-2 group-hover:bg-[#006837] transition-all shadow-md cursor-pointer"
+                          >
+                            <span>Explore {country.name} Pathways</span>
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                          </button>
+                        </div>
                       </div>
+                    );
+                  })}
+                </div>
+              </>
+            )}
 
-                      {/* Tagline */}
-                      <p className="text-xs text-slate-500 font-medium mb-4">
-                        {country.tagline}
-                      </p>
+            {/* TAB 2: BROWSE ALL UNIVERSITIES (FILTERED EXPERIENCE) */}
+            {catalogTab === 'universities' && (
+              <div className="space-y-6 pt-2">
+                {/* University Catalog Header */}
+                <div className="text-center max-w-3xl mx-auto space-y-2">
+                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100 text-emerald-800 text-xs font-extrabold uppercase tracking-wider border border-emerald-200 shadow-sm">
+                    <GraduationCap size={14} className="text-[#006837]" />
+                    <span>Global Institution Directory</span>
+                  </div>
+                  <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                    Explore Verified Universities
+                  </h2>
+                  <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto">
+                    Search and filter across {allUniversities.length} partner universities by destination, study level, and institution type.
+                  </p>
+                </div>
 
-                      {/* Star Highlight Banner */}
-                      <div className="p-3.5 rounded-2xl bg-[#fffbeb] border border-amber-200/80 mb-5 flex items-start gap-2.5">
-                        <Star className="w-4 h-4 text-amber-500 shrink-0 mt-0.5 fill-amber-400" />
-                        <p className="text-xs font-bold text-amber-950 leading-snug">
-                          {country.usp}
-                        </p>
+                {/* University Filter Toolbar */}
+                <div className="bg-white rounded-3xl border border-slate-200 p-4 sm:p-5 shadow-xs space-y-4 text-left">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+                    
+                    {/* 1. Search by Name or Subject */}
+                    <div className="lg:col-span-2 relative">
+                      <label className="block text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-1">
+                        Search University or Subject
+                      </label>
+                      <div className="relative">
+                        <input
+                          type="text"
+                          value={uniSearchQuery}
+                          onChange={(e) => setUniSearchQuery(e.target.value)}
+                          placeholder="e.g. Auckland, Debrecen, Computer Science..."
+                          className="w-full px-3.5 py-2.5 pl-9 pr-8 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-xs sm:text-sm bg-slate-50/50"
+                        />
+                        <Search size={15} className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+                        {uniSearchQuery && (
+                          <button
+                            type="button"
+                            onClick={() => setUniSearchQuery('')}
+                            className="absolute right-2.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 p-0.5 cursor-pointer"
+                            title="Clear search"
+                          >
+                            <X size={14} />
+                          </button>
+                        )}
                       </div>
-
-                      {/* Checklist */}
-                      <ul className="space-y-2.5 mb-6">
-                        {country.highlights.map((h, idx) => (
-                          <li key={idx} className="flex items-start gap-2.5 text-xs text-slate-600 font-medium">
-                            <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                            <span>{h}</span>
-                          </li>
-                        ))}
-                      </ul>
                     </div>
 
-                    {/* Bottom Metadata & Button */}
-                    <div className="pt-4 border-t border-slate-100 space-y-4">
-                      <div className="flex items-center justify-between text-xs">
-                        <div>
-                          <span className="text-[10px] font-bold uppercase text-slate-400 block">Living Cost:</span>
-                          <span className="font-bold text-slate-800">{country.livingCost}</span>
-                        </div>
-                        <div className="text-right">
-                          <span className="text-[10px] font-bold uppercase text-slate-400 block">Institutions:</span>
-                          <span className="font-bold text-emerald-700">{country.institutionsCount}</span>
-                        </div>
+                    {/* 2. Destination Filter */}
+                    <div>
+                      <label className="block text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-1">
+                        Destination
+                      </label>
+                      <select
+                        value={uniCountryFilter}
+                        onChange={(e) => setUniCountryFilter(e.target.value)}
+                        className="w-full px-3 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-xs sm:text-sm bg-slate-50/50 cursor-pointer"
+                      >
+                        <option value="all">All Destinations ({allUniversities.length})</option>
+                        {availableCountries.map((c) => (
+                          <option key={c.id} value={c.id}>
+                            {c.flag} {c.name} ({c.count})
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+
+                    {/* 3. Study Level Filter */}
+                    <div>
+                      <label className="block text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-1">
+                        Study Level
+                      </label>
+                      <select
+                        value={uniLevelFilter}
+                        onChange={(e) => setUniLevelFilter(e.target.value as any)}
+                        className="w-full px-3 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-xs sm:text-sm bg-slate-50/50 cursor-pointer"
+                      >
+                        <option value="all">All Levels</option>
+                        <option value="undergraduate">Undergraduate / Bachelor</option>
+                        <option value="postgraduate">Postgraduate / Master</option>
+                      </select>
+                    </div>
+
+                    {/* 4. Institution Type */}
+                    <div>
+                      <label className="block text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-1">
+                        Institution Type
+                      </label>
+                      <select
+                        value={uniTypeFilter}
+                        onChange={(e) => setUniTypeFilter(e.target.value)}
+                        className="w-full px-3 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-xs sm:text-sm bg-slate-50/50 cursor-pointer"
+                      >
+                        <option value="all">All Types ({availableTypes.length})</option>
+                        {availableTypes.map((t) => (
+                          <option key={t} value={t}>
+                            {t}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+
+                  </div>
+
+                  {/* Filter Status Bar: Active Count & Reset Button */}
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pt-3 border-t border-slate-100 text-xs">
+                    <div className="text-slate-600 font-semibold flex items-center gap-2">
+                      <span>
+                        Showing <strong className="text-slate-900">{filteredUniversities.length}</strong> of{' '}
+                        <strong className="text-slate-900">{allUniversities.length}</strong> verified institutions
+                      </span>
+                      {isAnyUniFilterActive && (
+                        <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
+                          Active Filters
+                        </span>
+                      )}
+                    </div>
+
+                    <div className="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-end">
+                      {/* Sort By */}
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-slate-400 font-bold text-[11px]">Sort:</span>
+                        <select
+                          value={uniSortBy}
+                          onChange={(e) => setUniSortBy(e.target.value as any)}
+                          className="text-xs font-semibold px-2 py-1 rounded-lg border border-slate-200 bg-white focus:outline-none text-slate-700"
+                        >
+                          <option value="name-asc">Name (A–Z)</option>
+                          <option value="name-desc">Name (Z–A)</option>
+                          <option value="country">By Country</option>
+                        </select>
                       </div>
 
-                      <button 
-                        onClick={() => openCountryLanding(country.id)}
-                        className="w-full py-3.5 px-4 rounded-xl bg-slate-900 hover:bg-[#006837] text-white text-xs sm:text-sm font-bold flex items-center justify-center gap-2 group-hover:bg-[#006837] transition-all shadow-md cursor-pointer"
-                      >
-                        <span>Explore {country.name} Pathways</span>
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                      </button>
+                      {isAnyUniFilterActive && (
+                        <button
+                          type="button"
+                          onClick={resetUniFilters}
+                          className="text-xs font-bold text-rose-600 hover:text-rose-800 hover:bg-rose-50 px-2.5 py-1 rounded-lg transition-colors flex items-center gap-1 cursor-pointer"
+                        >
+                          <RotateCcw size={12} /> Reset
+                        </button>
+                      )}
                     </div>
                   </div>
-                );
-              })}
-            </div>
+                </div>
 
+                {/* Empty State */}
+                {filteredUniversities.length === 0 ? (
+                  <div className="bg-white rounded-3xl p-10 sm:p-14 text-center border border-slate-200 shadow-sm max-w-lg mx-auto my-6 space-y-4">
+                    <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-700 mx-auto flex items-center justify-center text-3xl font-bold">
+                      🔍
+                    </div>
+                    <h3 className="text-xl font-bold text-slate-900">No institutions match your search</h3>
+                    <p className="text-xs sm:text-sm text-slate-600 max-w-sm mx-auto">
+                      We couldn&apos;t find any verified universities matching your current filters. Try adjusting your search query or reset your filters.
+                    </p>
+                    <button
+                      type="button"
+                      onClick={resetUniFilters}
+                      className="px-5 py-2.5 rounded-xl bg-[#006837] hover:bg-emerald-800 text-white text-xs font-bold transition-colors inline-flex items-center gap-2 cursor-pointer shadow-sm"
+                    >
+                      <RotateCcw size={14} /> Reset All Filters
+                    </button>
+                  </div>
+                ) : (
+                  /* University Cards Grid */
+                  <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-7 text-left">
+                    {filteredUniversities.map((uni) => (
+                      <div 
+                        key={`${uni.countryId}-${uni.id}`}
+                        className="bg-white rounded-3xl p-6 border border-slate-200/90 hover:border-emerald-500 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between hover:-translate-y-1"
+                      >
+                        <div>
+                          {/* Header: Flag, Country & Badge */}
+                          <div className="flex items-center justify-between gap-2 mb-3">
+                            <button
+                              type="button"
+                              onClick={() => openCountryLanding(uni.countryId)}
+                              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold text-slate-700 bg-slate-100 hover:bg-emerald-50 hover:text-emerald-800 transition-colors cursor-pointer"
+                              title={`Explore ${uni.countryName} destination`}
+                            >
+                              <span>{uni.countryFlag}</span>
+                              <span>{uni.countryName}</span>
+                            </button>
+
+                            <span className="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-800 truncate max-w-[180px]">
+                              {uni.badge}
+                            </span>
+                          </div>
+
+                          {/* Title & Type */}
+                          <h3 
+                            onClick={() => openUniversityProgram(uni.countryId, uni.id)}
+                            className="text-lg sm:text-xl font-extrabold text-slate-900 hover:text-[#006837] transition-colors cursor-pointer leading-snug mb-1 font-heading"
+                          >
+                            {uni.name}
+                          </h3>
+                          <span className="inline-block text-[11px] font-bold text-emerald-700 uppercase tracking-wide mb-2">
+                            {uni.type}
+                          </span>
+                          <p className="text-xs text-slate-500 leading-relaxed mb-4 line-clamp-2">
+                            {uni.tagline}
+                          </p>
+
+                          {/* Tuition & Scholarship Preview */}
+                          <div className="bg-slate-50 rounded-2xl p-3 mb-4 space-y-1.5 border border-slate-100 text-xs">
+                            {uni.tuitionUG && uni.tuitionUG !== '—' && (
+                              <div className="flex justify-between items-center">
+                                <span className="text-slate-500 font-semibold text-[11px]">Undergraduate:</span>
+                                <span className="font-bold text-slate-800">{uni.tuitionUG}</span>
+                              </div>
+                            )}
+                            {uni.tuitionPG && uni.tuitionPG !== '—' && (
+                              <div className="flex justify-between items-center">
+                                <span className="text-slate-500 font-semibold text-[11px]">Postgraduate:</span>
+                                <span className="font-bold text-slate-800">{uni.tuitionPG}</span>
+                              </div>
+                            )}
+                            {uni.scholarship && uni.scholarship !== '—' && (
+                              <div className="pt-1.5 border-t border-slate-200/60 flex items-start gap-1.5 text-[11px] text-emerald-800 font-semibold">
+                                <Award size={13} className="shrink-0 text-emerald-600 mt-0.5" />
+                                <span className="line-clamp-1">{uni.scholarship}</span>
+                              </div>
+                            )}
+                          </div>
+
+                          {/* Featured Programs Chips */}
+                          {uni.programs && uni.programs.length > 0 && (
+                            <div className="mb-4">
+                              <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider block mb-1.5">
+                                Featured Programs:
+                              </span>
+                              <div className="flex flex-wrap gap-1.5">
+                                {uni.programs.slice(0, 2).map((prog, pidx) => (
+                                  <span
+                                    key={pidx}
+                                    onClick={() => openUniversityProgram(uni.countryId, uni.id, prog.name)}
+                                    className="text-[11px] px-2 py-0.5 rounded-lg bg-white border border-slate-200 text-slate-700 font-medium hover:border-emerald-500 hover:text-emerald-800 transition-colors cursor-pointer truncate max-w-[200px]"
+                                  >
+                                    {prog.name}
+                                  </span>
+                                ))}
+                                {uni.programs.length > 2 && (
+                                  <span 
+                                    onClick={() => openUniversityProgram(uni.countryId, uni.id)}
+                                    className="text-[11px] px-2 py-0.5 rounded-lg bg-emerald-50 text-emerald-800 font-bold hover:underline cursor-pointer"
+                                  >
+                                    +{uni.programs.length - 2} more
+                                  </span>
+                                )}
+                              </div>
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Card Action */}
+                        <button
+                          type="button"
+                          onClick={() => openUniversityProgram(uni.countryId, uni.id)}
+                          className="w-full mt-2 py-2.5 px-4 rounded-xl bg-[#006837] hover:bg-emerald-800 text-white font-bold text-xs shadow-sm transition-all flex items-center justify-center gap-1.5 cursor-pointer hover:shadow"
+                        >
+                          <span>View 9-Module Guide</span>
+                          <ArrowRight size={14} />
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         )}
 
@@ -557,7 +1002,7 @@ export default function CountriesPage() {
                       alt="" 
                       className="w-4 h-3 object-cover rounded-xs" 
                     />
-                    <span>{activeCountry.pillBadge.replace(/[\uD83C-\uDBFF\uDC00-\uDFFF]+/g, '').trim()}</span>
+                    <span>{activeCountry.pillBadge.replace(/[\uD83C-\uDBFF\uDC00-\uDFFF]+/gu, '').trim()}</span>
                   </span>
                   <span className="px-3 py-1 rounded-full bg-white/15 backdrop-blur-md text-emerald-200 text-xs font-semibold border border-white/20">
                     {activeCountry.subBadge}
@@ -1313,7 +1758,27 @@ export default function CountriesPage() {
         </div>
       )}
 
-    </div>
+      </div>
   );
+
+  if (isDashboard) {
+    return (
+      <DashboardLayout>
+        <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <h1 className="text-2xl sm:text-3xl font-bold text-primary mb-1">Explore Universities</h1>
+            <div className="text-sm font-medium text-slate-500 flex items-center gap-2">
+              <Link to="/dashboard" className="hover:text-emerald-700 transition-colors">Dashboard</Link>
+              <span>&gt;</span>
+              <span className="text-primary font-semibold">Study Destinations &amp; University Catalog</span>
+            </div>
+          </div>
+        </div>
+        {pageBody}
+      </DashboardLayout>
+    );
+  }
+
+  return pageBody;
 }
 
