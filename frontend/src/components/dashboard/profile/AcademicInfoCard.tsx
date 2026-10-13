@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Pencil, Check, X } from 'lucide-react';
 
-interface AcademicBackground {
+export interface AcademicBackground {
   undergraduate: {
     degree: string;
     cgpa: string;
@@ -39,7 +39,13 @@ const DEFAULT_ACADEMIC_DATA: AcademicBackground = {
   }
 };
 
-export default function AcademicInfoCard({ profile }: { profile?: any }) {
+export default function AcademicInfoCard({
+  profile,
+  onAcademicChange
+}: {
+  profile?: any;
+  onAcademicChange?: (data: AcademicBackground) => void;
+}) {
   const [data, setData] = useState<AcademicBackground>(() => ({
     ...DEFAULT_ACADEMIC_DATA,
     undergraduate: {
@@ -50,6 +56,18 @@ export default function AcademicInfoCard({ profile }: { profile?: any }) {
   const [formData, setFormData] = useState<AcademicBackground>(data);
   const [isEditing, setIsEditing] = useState(false);
   const [savedNotice, setSavedNotice] = useState(false);
+
+  useEffect(() => {
+    if (profile?.academicScore) {
+      setData((prev) => ({
+        ...prev,
+        undergraduate: {
+          ...prev.undergraduate,
+          cgpa: String(profile.academicScore)
+        }
+      }));
+    }
+  }, [profile?.academicScore]);
 
   const handleStartEdit = () => {
     setFormData(data);
@@ -67,6 +85,7 @@ export default function AcademicInfoCard({ profile }: { profile?: any }) {
     setData(formData);
     setIsEditing(false);
     setSavedNotice(true);
+    if (onAcademicChange) onAcademicChange(formData);
     setTimeout(() => setSavedNotice(false), 3000);
   };
 

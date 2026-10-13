@@ -52,7 +52,7 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
   const navItems: NavItem[] = [
     { name: 'Dashboard', icon: Home, path: '/dashboard' },
     { name: 'Explore Universities', icon: GraduationCap, path: '/dashboard/universities' },
-    { name: 'Search Programs', icon: Search, path: '/pathways' },
+    { name: 'Search Programs', icon: Search, path: '/dashboard/programs' },
     { name: 'Mentors', icon: Users, path: '/dashboard/mentors' },
     { name: 'Appointments', icon: Calendar, path: '/appointments' },
     { name: 'Messages', icon: MessageSquare, path: '/messages' },
@@ -87,8 +87,8 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
     if (itemPath === '/dashboard/universities') {
       return location.pathname === '/dashboard/universities';
     }
-    if (itemPath === '/pathways') {
-      return location.pathname === '/pathways';
+    if (itemPath === '/dashboard/programs') {
+      return location.pathname === '/dashboard/programs';
     }
     if (itemPath === '/messages') {
       return location.pathname === '/messages';

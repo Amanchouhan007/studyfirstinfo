@@ -43,7 +43,6 @@ function App() {
           <Route path="/notifications" element={null} />
           <Route path="/settings" element={null} />
           <Route path="/messages" element={null} />
-          <Route path="/pathways" element={null} />
           <Route path="/admin" element={null} />
           <Route path="/auth" element={null} />
           <Route path="/forgot-password" element={null} />
@@ -55,9 +54,10 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/countries" element={<CountriesPage />} />
             <Route path="/dashboard/universities" element={<CountriesPage isDashboard={true} />} />
-            <Route path="/pathways" element={<PathwayPage />} />
+            <Route path="/pathways" element={<PublicPathwayPage />} />
             <Route path="/pathways/:id" element={<PublicPathwayPage />} />
             <Route path="/pathway/:id" element={<PublicPathwayPage />} />
+            <Route path="/dashboard/programs" element={<PathwayPage />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/counselors" element={<CounselorsPage />} />
             <Route path="/dashboard/mentors" element={<CounselorsPage isDashboard={true} />} />
@@ -92,7 +92,6 @@ function App() {
           <Route path="/notifications" element={null} />
           <Route path="/settings" element={null} />
           <Route path="/messages" element={null} />
-          <Route path="/pathways" element={null} />
           <Route path="/admin" element={null} />
           <Route path="/auth" element={null} />
           <Route path="/forgot-password" element={null} />
@@ -108,7 +107,6 @@ function App() {
           <Route path="/notifications" element={null} />
           <Route path="/settings" element={null} />
           <Route path="/messages" element={null} />
-          <Route path="/pathways" element={null} />
           <Route path="/admin" element={null} />
           <Route path="/auth" element={null} />
           <Route path="/forgot-password" element={null} />

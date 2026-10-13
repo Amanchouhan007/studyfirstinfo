@@ -14,34 +14,48 @@ interface ChecklistItem {
 }
 
 export default function ProfileCompletionCard({ profile }: ProfileCompletionCardProps) {
-  // Transparent, deterministic checklist derived from available profile data
+  // Transparent, deterministic checklist derived from actual profile data
   const items: ChecklistItem[] = useMemo(() => {
-    // 1. Personal Info
-    const hasPersonal = true; // Rahul Ahmed / loaded profile has essential identity fields
+    // 1. Personal Info (Full name, email, and phone)
+    const hasPersonal = Boolean(
+      (profile?.fullName || profile?.name) &&
+      profile?.email &&
+      profile?.phone
+    );
 
-    // 2. Academic Records
-    const hasAcademic = Boolean(profile?.academicScore !== undefined || true);
+    // 2. Academic Records (Academic score or CGPA provided and valid)
+    const hasAcademic = Boolean(
+      (profile?.academicScore !== undefined && String(profile.academicScore).trim() !== '' && Number(profile.academicScore) > 0) ||
+      (profile?.cgpa && String(profile.cgpa).trim() !== '' && Number(profile.cgpa) > 0) ||
+      (profile?.undergraduate?.cgpa && String(profile.undergraduate.cgpa).trim() !== '' && Number(profile.undergraduate.cgpa) > 0)
+    );
 
-    // 3. English Score
+    // 3. English Score (Test type and score or MOI waiver provided)
     const hasEnglish = Boolean(
       (profile?.englishScore && String(profile.englishScore).trim() !== '') ||
-      (profile?.englishTestType && String(profile.englishTestType).trim() !== '') ||
-      true // Default IELTS 6.5 exists in session state
+      (profile?.overallScore && String(profile.overallScore).trim() !== '') ||
+      (profile?.englishTestType && String(profile.englishTestType).toLowerCase().includes('moi')) ||
+      (profile?.testType && String(profile.testType).toLowerCase().includes('moi'))
     );
 
-    // 4. Study Preferences
+    // 4. Study Preferences (Preferred destination country and degree level)
     const hasPreferences = Boolean(
-      profile?.preferredCountry || profile?.studyLevel || true
+      (profile?.preferredCountry || profile?.targetCountry) &&
+      (profile?.studyLevel || profile?.targetDegree)
     );
 
-    // 5. Passport & Identification
-    const hasPassport = true; // Default BX0000000 exists in PersonalInfoCard
+    // 5. Passport & Identification (Valid passport number provided)
+    const hasPassport = Boolean(
+      profile?.passportNumber &&
+      String(profile.passportNumber).trim() !== '' &&
+      !String(profile.passportNumber).includes('XXXX')
+    );
 
     // 6. Medical Certificate (Visa submission requirement)
-    const hasMedical = false;
+    const hasMedical = Boolean(profile?.medicalCertificate);
 
     // 7. Police Clearance Certificate (Visa submission requirement)
-    const hasPolice = false;
+    const hasPolice = Boolean(profile?.policeClearance);
 
     return [
       {

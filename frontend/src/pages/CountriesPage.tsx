@@ -41,8 +41,16 @@ export default function CountriesPage({ isDashboard = false }: { isDashboard?: b
   // Catalog View Mode: 'countries' | 'universities'
   const tabParam = searchParams.get('tab');
   const [catalogTab, setCatalogTab] = useState<'countries' | 'universities'>(
-    tabParam === 'universities' ? 'universities' : 'countries'
+    tabParam ? (tabParam === 'universities' ? 'universities' : 'countries') : (isDashboard ? 'universities' : 'countries')
   );
+
+  React.useEffect(() => {
+    if (tabParam === 'universities') {
+      setCatalogTab('universities');
+    } else if (tabParam === 'countries') {
+      setCatalogTab('countries');
+    }
+  }, [tabParam]);
 
   // University-specific filters
   const [uniSearchQuery, setUniSearchQuery] = useState('');
@@ -300,177 +308,179 @@ export default function CountriesPage({ isDashboard = false }: { isDashboard?: b
         {currentView === 'home' && (
           <div className="space-y-8 sm:space-y-12 transition-all duration-300">
             
-            {/* TOP HERO BANNER SECTION */}
-            <section className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#070e1b] via-[#091426] to-[#040b16] text-white p-6 sm:p-10 lg:p-14 border border-slate-800 shadow-2xl">
-              {/* Subtle Tech Grid Overlay & Ambient Glowing Orbs */}
-              <div 
-                className="absolute inset-0 opacity-35 pointer-events-none"
-                style={{
-                  backgroundImage: 'linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px)',
-                  backgroundSize: '36px 36px'
-                }}
-              />
-              <div className="absolute -left-20 -top-20 w-80 h-80 bg-rose-500/15 rounded-full blur-3xl pointer-events-none" />
-              <div className="absolute -right-20 -bottom-20 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
+            {/* TOP HERO BANNER SECTION (PUBLIC ONLY) */}
+            {!isDashboard && (
+              <section className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-[#070e1b] via-[#091426] to-[#040b16] text-white p-6 sm:p-10 lg:p-14 border border-slate-800 shadow-2xl">
+                {/* Subtle Tech Grid Overlay & Ambient Glowing Orbs */}
+                <div
+                  className="absolute inset-0 opacity-35 pointer-events-none"
+                  style={{
+                    backgroundImage: 'linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px)',
+                    backgroundSize: '36px 36px'
+                  }}
+                />
+                <div className="absolute -left-20 -top-20 w-80 h-80 bg-rose-500/15 rounded-full blur-3xl pointer-events-none" />
+                <div className="absolute -right-20 -bottom-20 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
 
-              <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
-                
-                {/* Left Column (7 cols): Main Headline, Paragraph, Actions & Metrics */}
-                <div className="lg:col-span-7 space-y-6 text-left">
-                  
-                  {/* Top Tag Pill */}
-                  <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-slate-200 text-[11px] sm:text-xs font-bold tracking-wider uppercase border border-white/15 backdrop-blur-md">
-                    <span className="w-2 h-2 rounded-full bg-[#ff5e57] animate-ping" />
-                    INTERNATIONAL STUDY DESTINATIONS
+                <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+
+                  {/* Left Column (7 cols): Main Headline, Paragraph, Actions & Metrics */}
+                  <div className="lg:col-span-7 space-y-6 text-left">
+
+                    {/* Top Tag Pill */}
+                    <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 text-slate-200 text-[11px] sm:text-xs font-bold tracking-wider uppercase border border-white/15 backdrop-blur-md">
+                      <span className="w-2 h-2 rounded-full bg-[#ff5e57] animate-ping" />
+                      INTERNATIONAL STUDY DESTINATIONS
+                    </div>
+
+                    {/* Main Heading with Red-Coral Highlight */}
+                    <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15]">
+                      Find the Right Country for Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff5e57] via-[#ff7675] to-[#f39c12] underline decoration-[#ff5e57] decoration-2 underline-offset-8">Study Abroad</span> Journey
+                    </h1>
+
+                    {/* Subtitle Description */}
+                    <p className="text-sm sm:text-base text-slate-300/90 leading-relaxed font-normal max-w-2xl">
+                      Explore international study destinations for Bangladeshi students and compare admission requirements, tuition fees, scholarships, student visa information, and future career opportunities before making your decision.
+                    </p>
+
+                    {/* Dual CTA Action Buttons */}
+                    <div className="flex flex-wrap items-center gap-3.5 pt-2">
+                      <a
+                        href="#country-cards-container"
+                        className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#ff5e57] to-[#e84118] hover:from-[#e84118] hover:to-[#c23616] text-white font-extrabold text-xs sm:text-sm tracking-wide shadow-lg shadow-rose-900/30 transition-all flex items-center gap-2 transform hover:-translate-y-0.5 cursor-pointer"
+                      >
+                        <span>Explore Countries</span>
+                        <ArrowDown className="w-4 h-4" />
+                      </a>
+                      <button
+                        onClick={scrollToHeroLeadForm}
+                        className="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 text-white font-bold text-xs sm:text-sm tracking-wide backdrop-blur-md transition-all flex items-center gap-2 cursor-pointer"
+                      >
+                        <span>Free Consultation</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </button>
+                    </div>
+
+                    {/* Fast Metrics Bar at Bottom of Hero */}
+                    <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/10 text-left">
+                      <div>
+                        <span className="text-2xl sm:text-3xl font-extrabold text-white block">24+</span>
+                        <span className="text-[11px] sm:text-xs text-slate-400 font-medium block mt-0.5">Study Destinations</span>
+                      </div>
+                      <div>
+                        <span className="text-sm sm:text-base font-bold text-emerald-400 block">Admission</span>
+                        <span className="text-[11px] sm:text-xs text-slate-400 font-medium block mt-0.5">Entry &amp; Document Guidance</span>
+                      </div>
+                      <div>
+                        <span className="text-sm sm:text-base font-bold text-amber-400 block">Visa</span>
+                        <span className="text-[11px] sm:text-xs text-slate-400 font-medium block mt-0.5">Country-Specific Information</span>
+                      </div>
+                    </div>
+
                   </div>
 
-                  {/* Main Heading with Red-Coral Highlight */}
-                  <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.15]">
-                    Find the Right Country for Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ff5e57] via-[#ff7675] to-[#f39c12] underline decoration-[#ff5e57] decoration-2 underline-offset-8">Study Abroad</span> Journey
-                  </h1>
+                  {/* Right Column (5 cols): Visual Radar with Interactive Country Badges */}
+                  <div className="lg:col-span-5 relative flex flex-col items-center justify-center">
 
-                  {/* Subtitle Description */}
-                  <p className="text-sm sm:text-base text-slate-300/90 leading-relaxed font-normal max-w-2xl">
-                    Explore international study destinations for Bangladeshi students and compare admission requirements, tuition fees, scholarships, student visa information, and future career opportunities before making your decision.
-                  </p>
+                    {/* Planetary Radar Circle Wrapper */}
+                    <div className="relative w-60 h-60 sm:w-84 sm:h-84 max-w-full flex items-center justify-center">
+                      {/* Outer Orbit Ring */}
+                      <div className="absolute inset-0 rounded-full border border-dashed border-slate-700/60 animate-spin" style={{ animationDuration: '40s' }} />
 
-                  {/* Dual CTA Action Buttons */}
-                  <div className="flex flex-wrap items-center gap-3.5 pt-2">
-                    <a 
-                      href="#country-cards-container" 
-                      className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#ff5e57] to-[#e84118] hover:from-[#e84118] hover:to-[#c23616] text-white font-extrabold text-xs sm:text-sm tracking-wide shadow-lg shadow-rose-900/30 transition-all flex items-center gap-2 transform hover:-translate-y-0.5 cursor-pointer"
-                    >
-                      <span>Explore Countries</span>
-                      <ArrowDown className="w-4 h-4" />
-                    </a>
-                    <button 
-                      onClick={scrollToHeroLeadForm} 
-                      className="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 border border-white/20 text-white font-bold text-xs sm:text-sm tracking-wide backdrop-blur-md transition-all flex items-center gap-2 cursor-pointer"
-                    >
-                      <span>Free Consultation</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </button>
-                  </div>
+                      {/* Middle Orbit Ring */}
+                      <div className="absolute inset-6 rounded-full border border-slate-700/40" />
 
-                  {/* Fast Metrics Bar at Bottom of Hero */}
-                  <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/10 text-left">
-                    <div>
-                      <span className="text-2xl sm:text-3xl font-extrabold text-white block">24+</span>
-                      <span className="text-[11px] sm:text-xs text-slate-400 font-medium block mt-0.5">Study Destinations</span>
+                      {/* Center Glowing Red/Coral Core */}
+                      <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-gradient-to-tr from-[#ff3838] to-[#ff6b6b] flex flex-col items-center justify-center text-center shadow-[0_0_50px_rgba(255,56,56,0.5)] z-10 animate-pulse">
+                        <span className="text-xs font-black uppercase tracking-widest text-white/90">SFI</span>
+                        <span className="text-[11px] font-extrabold text-white leading-tight uppercase px-2">Study Abroad</span>
+                      </div>
+
+                      {/* Floating Orbital Badge 1: Compare Destinations */}
+                      <div className="absolute -top-2 left-2 bg-[#121c2d]/90 border border-slate-700/80 rounded-xl px-3 py-1.5 shadow-xl backdrop-blur-md flex items-center gap-2 text-xs">
+                        <span className="w-4 h-4 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-[10px] font-bold">✓</span>
+                        <span className="font-bold text-slate-200">Compare Destinations</span>
+                      </div>
+
+                      {/* Floating Orbital Badge 2: Plan Your Journey */}
+                      <div className="absolute -bottom-2 right-2 bg-[#121c2d]/90 border border-slate-700/80 rounded-xl px-3 py-1.5 shadow-xl backdrop-blur-md flex items-center gap-2 text-xs">
+                        <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                        <span className="font-bold text-slate-200">Plan Your Journey</span>
+                      </div>
+
+                      {/* Floating Orbital Badge 3: 100% Scholarships */}
+                      <div className="absolute top-1/2 -left-8 -translate-y-1/2 bg-[#121c2d]/90 border border-slate-700/80 rounded-xl px-2.5 py-1 shadow-xl backdrop-blur-md items-center gap-1.5 text-[11px] hidden sm:flex">
+                        <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
+                        <span className="font-bold text-amber-300">100% Scholarships</span>
+                      </div>
                     </div>
-                    <div>
-                      <span className="text-sm sm:text-base font-bold text-emerald-400 block">Admission</span>
-                      <span className="text-[11px] sm:text-xs text-slate-400 font-medium block mt-0.5">Entry &amp; Document Guidance</span>
+
+                    {/* All Destination Countries Clickable Tags Cloud */}
+                    <div className="mt-5 w-full bg-white/5 border border-white/10 rounded-2xl p-3.5 backdrop-blur-md">
+                      <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider block mb-2 text-center">
+                        Click Any Country to Explore Pathways Directly:
+                      </span>
+                      <div className="flex flex-wrap items-center justify-center gap-1.5">
+                        <button type="button" onClick={() => openCountryLanding('hungary')} className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10 cursor-pointer flex items-center gap-1.5">
+                          <img src={FLAG_MAP['hungary']} alt="" className="w-4 h-3 object-cover rounded-xs" />
+                          <span>Hungary</span>
+                        </button>
+                        <button type="button" onClick={() => openCountryLanding('united-kingdom')} className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10 cursor-pointer flex items-center gap-1.5">
+                          <img src={FLAG_MAP['united-kingdom']} alt="" className="w-4 h-3 object-cover rounded-xs" />
+                          <span>United Kingdom</span>
+                        </button>
+                        <button type="button" onClick={() => openCountryLanding('new-zealand')} className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10 cursor-pointer flex items-center gap-1.5">
+                          <img src={FLAG_MAP['new-zealand']} alt="" className="w-4 h-3 object-cover rounded-xs" />
+                          <span>New Zealand</span>
+                        </button>
+                        <button type="button" onClick={() => openCountryLanding('malaysia')} className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10 cursor-pointer flex items-center gap-1.5">
+                          <img src={FLAG_MAP['malaysia']} alt="" className="w-4 h-3 object-cover rounded-xs" />
+                          <span>Malaysia</span>
+                        </button>
+                        <button type="button" onClick={() => openCountryLanding('germany')} className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10 cursor-pointer flex items-center gap-1.5">
+                          <img src={FLAG_MAP['germany']} alt="" className="w-4 h-3 object-cover rounded-xs" />
+                          <span>Germany</span>
+                        </button>
+                        <button type="button" onClick={() => openCountryLanding('cyprus')} className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10 cursor-pointer flex items-center gap-1.5">
+                          <img src={FLAG_MAP['cyprus']} alt="" className="w-4 h-3 object-cover rounded-xs" />
+                          <span>Cyprus</span>
+                        </button>
+                        <button type="button" onClick={() => openCountryLanding('greece')} className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10 cursor-pointer flex items-center gap-1.5">
+                          <img src={FLAG_MAP['greece']} alt="" className="w-4 h-3 object-cover rounded-xs" />
+                          <span>Greece</span>
+                        </button>
+                        <button type="button" onClick={() => openCountryLanding('lithuania')} className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10 cursor-pointer flex items-center gap-1.5">
+                          <img src={FLAG_MAP['lithuania']} alt="" className="w-4 h-3 object-cover rounded-xs" />
+                          <span>Lithuania</span>
+                        </button>
+                        <button type="button" onClick={() => openCountryLanding('china')} className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10 cursor-pointer flex items-center gap-1.5">
+                          <img src={FLAG_MAP['china']} alt="" className="w-4 h-3 object-cover rounded-xs" />
+                          <span>China</span>
+                        </button>
+                        <button type="button" onClick={() => openCountryLanding('russia')} className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10 cursor-pointer flex items-center gap-1.5">
+                          <img src={FLAG_MAP['russia']} alt="" className="w-4 h-3 object-cover rounded-xs" />
+                          <span>Russia</span>
+                        </button>
+                        <button type="button" onClick={() => openCountryLanding('south-korea')} className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10 cursor-pointer flex items-center gap-1.5">
+                          <img src={FLAG_MAP['south-korea']} alt="" className="w-4 h-3 object-cover rounded-xs" />
+                          <span>South Korea</span>
+                        </button>
+                        <button type="button" onClick={() => openCountryLanding('ireland')} className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10 cursor-pointer flex items-center gap-1.5">
+                          <img src={FLAG_MAP['ireland']} alt="" className="w-4 h-3 object-cover rounded-xs" />
+                          <span>Ireland</span>
+                        </button>
+                        <button type="button" onClick={() => openCountryLanding('thailand')} className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10 cursor-pointer flex items-center gap-1.5">
+                          <img src={FLAG_MAP['thailand']} alt="" className="w-4 h-3 object-cover rounded-xs" />
+                          <span>Thailand</span>
+                        </button>
+                      </div>
                     </div>
-                    <div>
-                      <span className="text-sm sm:text-base font-bold text-amber-400 block">Visa</span>
-                      <span className="text-[11px] sm:text-xs text-slate-400 font-medium block mt-0.5">Country-Specific Information</span>
-                    </div>
+
                   </div>
 
                 </div>
-
-                {/* Right Column (5 cols): Visual Radar with Interactive Country Badges */}
-                <div className="lg:col-span-5 relative flex flex-col items-center justify-center">
-                  
-                  {/* Planetary Radar Circle Wrapper */}
-                  <div className="relative w-60 h-60 sm:w-84 sm:h-84 max-w-full flex items-center justify-center">
-                    {/* Outer Orbit Ring */}
-                    <div className="absolute inset-0 rounded-full border border-dashed border-slate-700/60 animate-spin" style={{ animationDuration: '40s' }} />
-                    
-                    {/* Middle Orbit Ring */}
-                    <div className="absolute inset-6 rounded-full border border-slate-700/40" />
-                    
-                    {/* Center Glowing Red/Coral Core */}
-                    <div className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-gradient-to-tr from-[#ff3838] to-[#ff6b6b] flex flex-col items-center justify-center text-center shadow-[0_0_50px_rgba(255,56,56,0.5)] z-10 animate-pulse">
-                      <span className="text-xs font-black uppercase tracking-widest text-white/90">SFI</span>
-                      <span className="text-[11px] font-extrabold text-white leading-tight uppercase px-2">Study Abroad</span>
-                    </div>
-
-                    {/* Floating Orbital Badge 1: Compare Destinations */}
-                    <div className="absolute -top-2 left-2 bg-[#121c2d]/90 border border-slate-700/80 rounded-xl px-3 py-1.5 shadow-xl backdrop-blur-md flex items-center gap-2 text-xs">
-                      <span className="w-4 h-4 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-[10px] font-bold">✓</span>
-                      <span className="font-bold text-slate-200">Compare Destinations</span>
-                    </div>
-
-                    {/* Floating Orbital Badge 2: Plan Your Journey */}
-                    <div className="absolute -bottom-2 right-2 bg-[#121c2d]/90 border border-slate-700/80 rounded-xl px-3 py-1.5 shadow-xl backdrop-blur-md flex items-center gap-2 text-xs">
-                      <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-                      <span className="font-bold text-slate-200">Plan Your Journey</span>
-                    </div>
-
-                    {/* Floating Orbital Badge 3: 100% Scholarships */}
-                    <div className="absolute top-1/2 -left-8 -translate-y-1/2 bg-[#121c2d]/90 border border-slate-700/80 rounded-xl px-2.5 py-1 shadow-xl backdrop-blur-md items-center gap-1.5 text-[11px] hidden sm:flex">
-                      <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
-                      <span className="font-bold text-amber-300">100% Scholarships</span>
-                    </div>
-                  </div>
-
-                  {/* All Destination Countries Clickable Tags Cloud */}
-                  <div className="mt-5 w-full bg-white/5 border border-white/10 rounded-2xl p-3.5 backdrop-blur-md">
-                    <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider block mb-2 text-center">
-                      Click Any Country to Explore Pathways Directly:
-                    </span>
-                    <div className="flex flex-wrap items-center justify-center gap-1.5">
-                      <button type="button" onClick={() => openCountryLanding('hungary')} className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10 cursor-pointer flex items-center gap-1.5">
-                        <img src={FLAG_MAP['hungary']} alt="" className="w-4 h-3 object-cover rounded-xs" />
-                        <span>Hungary</span>
-                      </button>
-                      <button type="button" onClick={() => openCountryLanding('united-kingdom')} className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10 cursor-pointer flex items-center gap-1.5">
-                        <img src={FLAG_MAP['united-kingdom']} alt="" className="w-4 h-3 object-cover rounded-xs" />
-                        <span>United Kingdom</span>
-                      </button>
-                      <button type="button" onClick={() => openCountryLanding('new-zealand')} className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10 cursor-pointer flex items-center gap-1.5">
-                        <img src={FLAG_MAP['new-zealand']} alt="" className="w-4 h-3 object-cover rounded-xs" />
-                        <span>New Zealand</span>
-                      </button>
-                      <button type="button" onClick={() => openCountryLanding('malaysia')} className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10 cursor-pointer flex items-center gap-1.5">
-                        <img src={FLAG_MAP['malaysia']} alt="" className="w-4 h-3 object-cover rounded-xs" />
-                        <span>Malaysia</span>
-                      </button>
-                      <button type="button" onClick={() => openCountryLanding('germany')} className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10 cursor-pointer flex items-center gap-1.5">
-                        <img src={FLAG_MAP['germany']} alt="" className="w-4 h-3 object-cover rounded-xs" />
-                        <span>Germany</span>
-                      </button>
-                      <button type="button" onClick={() => openCountryLanding('cyprus')} className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10 cursor-pointer flex items-center gap-1.5">
-                        <img src={FLAG_MAP['cyprus']} alt="" className="w-4 h-3 object-cover rounded-xs" />
-                        <span>Cyprus</span>
-                      </button>
-                      <button type="button" onClick={() => openCountryLanding('greece')} className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10 cursor-pointer flex items-center gap-1.5">
-                        <img src={FLAG_MAP['greece']} alt="" className="w-4 h-3 object-cover rounded-xs" />
-                        <span>Greece</span>
-                      </button>
-                      <button type="button" onClick={() => openCountryLanding('lithuania')} className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10 cursor-pointer flex items-center gap-1.5">
-                        <img src={FLAG_MAP['lithuania']} alt="" className="w-4 h-3 object-cover rounded-xs" />
-                        <span>Lithuania</span>
-                      </button>
-                      <button type="button" onClick={() => openCountryLanding('china')} className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10 cursor-pointer flex items-center gap-1.5">
-                        <img src={FLAG_MAP['china']} alt="" className="w-4 h-3 object-cover rounded-xs" />
-                        <span>China</span>
-                      </button>
-                      <button type="button" onClick={() => openCountryLanding('russia')} className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10 cursor-pointer flex items-center gap-1.5">
-                        <img src={FLAG_MAP['russia']} alt="" className="w-4 h-3 object-cover rounded-xs" />
-                        <span>Russia</span>
-                      </button>
-                      <button type="button" onClick={() => openCountryLanding('south-korea')} className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10 cursor-pointer flex items-center gap-1.5">
-                        <img src={FLAG_MAP['south-korea']} alt="" className="w-4 h-3 object-cover rounded-xs" />
-                        <span>South Korea</span>
-                      </button>
-                      <button type="button" onClick={() => openCountryLanding('ireland')} className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10 cursor-pointer flex items-center gap-1.5">
-                        <img src={FLAG_MAP['ireland']} alt="" className="w-4 h-3 object-cover rounded-xs" />
-                        <span>Ireland</span>
-                      </button>
-                      <button type="button" onClick={() => openCountryLanding('thailand')} className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-[#006837] text-white text-[11px] font-bold transition-all border border-white/10 cursor-pointer flex items-center gap-1.5">
-                        <img src={FLAG_MAP['thailand']} alt="" className="w-4 h-3 object-cover rounded-xs" />
-                        <span>Thailand</span>
-                      </button>
-                    </div>
-                  </div>
-
-                </div>
-
-              </div>
-            </section>
+              </section>
+            )}
 
             {/* View Mode Toggle: Browse by Destination vs Browse All Universities */}
             <div id="catalog-content-anchor" className="flex justify-center pt-2">

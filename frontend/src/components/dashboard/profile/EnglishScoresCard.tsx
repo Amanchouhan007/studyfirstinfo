@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { CheckCircle2, Pencil, Check, X, UploadCloud, AlertCircle } from 'lucide-react';
 
 export interface EnglishScoresData {
@@ -42,6 +42,24 @@ export default function EnglishScoresCard({
   const [isEditing, setIsEditing] = useState(false);
   const [savedNotice, setSavedNotice] = useState(false);
   const [validationError, setValidationError] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (profile && !isEditing) {
+      setData((prev) => ({
+        ...prev,
+        testType: profile.englishTestType || profile.testType || prev.testType || DEFAULT_ENGLISH_DATA.testType,
+        overallScore: profile.englishScore !== undefined && profile.englishScore !== null && String(profile.englishScore).trim() !== ''
+          ? String(profile.englishScore)
+          : (profile.overallScore !== undefined && profile.overallScore !== null && String(profile.overallScore).trim() !== '' ? String(profile.overallScore) : prev.overallScore),
+        reading: profile.reading !== undefined && profile.reading !== null && String(profile.reading).trim() !== '' ? String(profile.reading) : prev.reading,
+        writing: profile.writing !== undefined && profile.writing !== null && String(profile.writing).trim() !== '' ? String(profile.writing) : prev.writing,
+        listening: profile.listening !== undefined && profile.listening !== null && String(profile.listening).trim() !== '' ? String(profile.listening) : prev.listening,
+        speaking: profile.speaking !== undefined && profile.speaking !== null && String(profile.speaking).trim() !== '' ? String(profile.speaking) : prev.speaking,
+        testDate: profile.testDate || prev.testDate,
+        certificateName: profile.certificateName || prev.certificateName,
+      }));
+    }
+  }, [profile, isEditing]);
 
   const handleStartEdit = () => {
     setFormData(data);

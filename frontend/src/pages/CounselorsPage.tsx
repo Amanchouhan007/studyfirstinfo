@@ -7,7 +7,20 @@ import CounselorGrid from '../components/sections/counselors/CounselorGrid';
 import { ALL_COUNSELORS, type Counselor } from '../data/counselorsData';
 import HowBookingWorks from '../components/sections/counselors/HowBookingWorks';
 import CounselorCTA from '../components/sections/counselors/CounselorCTA';
-import { X, Check, Star, Calendar, Sparkles } from 'lucide-react';
+import { X, Check, Star, Calendar, Sparkles, Search } from 'lucide-react';
+
+const COUNTRY_FILTERS = [
+  'All',
+  '🇩🇪 Germany',
+  '🇭🇺 Hungary',
+  '🇬🇧 UK',
+  '🇳🇿 New Zealand',
+  '🇲🇾 Malaysia',
+  '🇨🇳 China',
+  '🇸🇪 Sweden',
+  '🇷🇺 Russia',
+  'Others'
+];
 
 export default function CounselorsPage({ isDashboard = false }: { isDashboard?: boolean }) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -117,32 +130,8 @@ export default function CounselorsPage({ isDashboard = false }: { isDashboard?: 
     });
   };
 
-  const pageBody = (
-    <main className="min-h-screen bg-gray-50/50">
-      <CounselorHero
-        searchTerm={searchTerm}
-        setSearchTerm={setSearchTerm}
-        activeFilter={activeFilter}
-        setActiveFilter={setActiveFilter}
-        totalFound={totalFound}
-      />
-      
-      <CounselorStats />
-      
-      <CounselorGrid
-        searchTerm={searchTerm}
-        setSearchTerm={setSearchTerm}
-        activeFilter={activeFilter}
-        setActiveFilter={setActiveFilter}
-        onOpenBooking={handleOpenBooking}
-        onOpenFeedback={handleOpenFeedback}
-      />
-      
-      <HowBookingWorks />
-      
-      <CounselorCTA 
-        onOpenAutoMatch={() => setAutoMatchModalOpen(true)}
-      />
+  const modalsAndToast = (
+    <>
 
       {/* Floating Toast Notification */}
       {toast && (
@@ -461,7 +450,7 @@ export default function CounselorsPage({ isDashboard = false }: { isDashboard?: 
         </div>
       )}
 
-    </main>
+    </>
   );
 
   if (isDashboard) {
@@ -490,11 +479,113 @@ export default function CounselorsPage({ isDashboard = false }: { isDashboard?: 
               </div>
             </div>
           </div>
-          {pageBody}
+
+          {/* Dashboard Search & Filter Bar */}
+          <div className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200/80 shadow-xs space-y-3.5">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+              <div className="relative flex-1">
+                <Search size={16} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400" />
+                <input
+                  type="text"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  placeholder="Search mentors by name, country (e.g. Germany, Hungary), or specialization..."
+                  className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-9 py-2.5 text-xs sm:text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:bg-white transition-all"
+                />
+                {searchTerm && (
+                  <button
+                    type="button"
+                    onClick={() => setSearchTerm('')}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 p-0.5 rounded-full"
+                    title="Clear search"
+                  >
+                    <X size={14} />
+                  </button>
+                )}
+              </div>
+              <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 shrink-0">
+                <span>{totalFound} mentor{totalFound !== 1 ? 's' : ''} available</span>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 pt-1 border-t border-slate-100">
+              <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider mr-1">Destination:</span>
+              {COUNTRY_FILTERS.map((filter) => {
+                const isActive = activeFilter === filter;
+                return (
+                  <button
+                    key={filter}
+                    type="button"
+                    onClick={() => setActiveFilter(filter)}
+                    className={`px-3 py-1 rounded-lg text-xs font-semibold transition-all border cursor-pointer ${
+                      isActive
+                        ? 'bg-emerald-700 text-white border-emerald-700 shadow-xs'
+                        : 'bg-white text-slate-600 border-slate-200 hover:border-emerald-600 hover:text-emerald-700'
+                    }`}
+                  >
+                    {filter}
+                  </button>
+                );
+              })}
+              {(searchTerm || activeFilter !== 'All') && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSearchTerm('');
+                    setActiveFilter('All');
+                  }}
+                  className="text-rose-600 hover:text-rose-800 text-xs font-medium underline ml-2 cursor-pointer"
+                >
+                  Reset filters
+                </button>
+              )}
+            </div>
+          </div>
+
+          {/* Mentor Listing */}
+          <CounselorGrid
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+            activeFilter={activeFilter}
+            setActiveFilter={setActiveFilter}
+            onOpenBooking={handleOpenBooking}
+            onOpenFeedback={handleOpenFeedback}
+          />
+
+          {modalsAndToast}
         </div>
       </DashboardLayout>
     );
   }
 
-  return pageBody;
+  return (
+    <main className="min-h-screen bg-gray-50/50">
+      <CounselorHero
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        activeFilter={activeFilter}
+        setActiveFilter={setActiveFilter}
+        totalFound={totalFound}
+      />
+
+      <CounselorStats />
+
+      <CounselorGrid
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        activeFilter={activeFilter}
+        setActiveFilter={setActiveFilter}
+        onOpenBooking={handleOpenBooking}
+        onOpenFeedback={handleOpenFeedback}
+      />
+
+      <HowBookingWorks />
+
+      <CounselorCTA
+        onOpenAutoMatch={() => setAutoMatchModalOpen(true)}
+      />
+
+      {modalsAndToast}
+    </main>
+  );
 }

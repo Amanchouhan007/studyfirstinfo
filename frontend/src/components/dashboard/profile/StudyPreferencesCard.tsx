@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Pencil, Check, X } from 'lucide-react';
 
 export interface StudyPreferencesData {
@@ -87,6 +87,20 @@ export default function StudyPreferencesCard({
   const [formData, setFormData] = useState<StudyPreferencesData>(data);
   const [isEditing, setIsEditing] = useState(false);
   const [savedNotice, setSavedNotice] = useState(false);
+
+  useEffect(() => {
+    if (profile && !isEditing) {
+      setData((prev) => ({
+        ...prev,
+        targetCountry: (profile.preferredCountry || profile.targetCountry)?.replace(/^[^\w\s]+/, '').trim() || prev.targetCountry || DEFAULT_PREFERENCES.targetCountry,
+        targetDegree: profile.studyLevel || profile.targetDegree || prev.targetDegree || DEFAULT_PREFERENCES.targetDegree,
+        targetField: profile.targetField || prev.targetField || DEFAULT_PREFERENCES.targetField,
+        intake: profile.intake || prev.intake || DEFAULT_PREFERENCES.intake,
+        budget: profile.budget || prev.budget || DEFAULT_PREFERENCES.budget,
+        track: profile.track || prev.track || DEFAULT_PREFERENCES.track,
+      }));
+    }
+  }, [profile, isEditing]);
 
   const handleStartEdit = () => {
     setFormData(data);

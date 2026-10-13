@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Pencil, Check, X } from 'lucide-react';
 
 interface PersonalData {
@@ -27,11 +27,37 @@ const INITIAL_PERSONAL_DATA: PersonalData = {
   address: 'Dhaka, Bangladesh',
 };
 
-export default function PersonalInfoCard() {
-  const [data, setData] = useState<PersonalData>(INITIAL_PERSONAL_DATA);
-  const [formData, setFormData] = useState<PersonalData>(INITIAL_PERSONAL_DATA);
+export default function PersonalInfoCard({
+  profile,
+  onPersonalChange
+}: {
+  profile?: any;
+  onPersonalChange?: (data: PersonalData) => void;
+}) {
+  const [data, setData] = useState<PersonalData>(() => ({
+    ...INITIAL_PERSONAL_DATA,
+    fullName: profile?.fullName || profile?.name || INITIAL_PERSONAL_DATA.fullName,
+    email: profile?.email || INITIAL_PERSONAL_DATA.email,
+    phone: profile?.phone || INITIAL_PERSONAL_DATA.phone,
+    nationality: profile?.nationality || INITIAL_PERSONAL_DATA.nationality,
+    passportNumber: profile?.passportNumber || INITIAL_PERSONAL_DATA.passportNumber,
+  }));
+  const [formData, setFormData] = useState<PersonalData>(data);
   const [isEditing, setIsEditing] = useState(false);
   const [savedNotice, setSavedNotice] = useState(false);
+
+  useEffect(() => {
+    if (profile) {
+      setData((prev) => ({
+        ...prev,
+        fullName: profile.fullName || profile.name || prev.fullName,
+        email: profile.email || prev.email,
+        phone: profile.phone || prev.phone,
+        nationality: profile.nationality || prev.nationality,
+        passportNumber: profile.passportNumber || prev.passportNumber,
+      }));
+    }
+  }, [profile]);
 
   const handleStartEdit = () => {
     setFormData(data);
@@ -49,11 +75,16 @@ export default function PersonalInfoCard() {
     setData(formData);
     setIsEditing(false);
     setSavedNotice(true);
+    if (onPersonalChange) onPersonalChange(formData);
     setTimeout(() => setSavedNotice(false), 3000);
   };
 
   const handleChange = (field: keyof PersonalData, value: string) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
+    setFormData((prev) => {
+      const next = { ...prev, [field]: value };
+      if (onPersonalChange) onPersonalChange(next);
+      return next;
+    });
   };
 
   const fieldsConfig: { label: string; key: keyof PersonalData; fullWidth?: boolean; type?: string; options?: string[] }[] = [

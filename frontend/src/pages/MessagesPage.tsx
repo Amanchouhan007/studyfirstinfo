@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { 
   Send, 
   Search, 
@@ -218,9 +218,11 @@ const QUICK_PROMPTS = [
 const generateMessageId = (prefix: string) => `${prefix}_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`;
 
 export default function MessagesPage() {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [conversations, setConversations] = useState<Conversation[]>(INITIAL_CONVERSATIONS);
+  const counselorParam = searchParams.get('counselor');
+
   const [activeConvId, setActiveConvId] = useState<string>(() => {
-    const counselorParam = new URLSearchParams(window.location.search).get('counselor');
     if (counselorParam) {
       const match = INITIAL_CONVERSATIONS.find(
         c => c.counselorName.toLowerCase().includes(counselorParam.toLowerCase()) ||
@@ -233,7 +235,30 @@ export default function MessagesPage() {
   const [inputText, setInputText] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
   const [isTyping, setIsTyping] = useState(false);
-  const [mobileChatOpen, setMobileChatOpen] = useState<boolean>(() => Boolean(new URLSearchParams(window.location.search).get('counselor')));
+  const [mobileChatOpen, setMobileChatOpen] = useState<boolean>(() => Boolean(counselorParam));
+
+  // Sync active conversation when searchParams change (e.g. back/forward, direct link)
+  useEffect(() => {
+    if (counselorParam) {
+      const match = conversations.find(
+        c => c.counselorName.toLowerCase().includes(counselorParam.toLowerCase()) ||
+             c.id.toLowerCase() === counselorParam.toLowerCase()
+      );
+      if (match && match.id !== activeConvId) {
+        setActiveConvId(match.id);
+        setMobileChatOpen(true);
+      }
+    }
+  }, [counselorParam, conversations, activeConvId]);
+
+  const selectConversation = (id: string) => {
+    setActiveConvId(id);
+    setMobileChatOpen(true);
+    const conv = conversations.find(c => c.id === id);
+    if (conv) {
+      setSearchParams({ counselor: conv.counselorName });
+    }
+  };
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
@@ -363,10 +388,7 @@ export default function MessagesPage() {
                 return (
                   <button
                     key={conv.id}
-                    onClick={() => {
-                      setActiveConvId(conv.id);
-                      setMobileChatOpen(true);
-                    }}
+                    onClick={() => selectConversation(conv.id)}
                     className={`w-full p-3.5 text-left transition-all flex items-start gap-3 hover:bg-slate-50 cursor-pointer ${
                       isSelected ? 'bg-emerald-50/60 border-l-4 border-l-emerald-600' : ''
                     }`}

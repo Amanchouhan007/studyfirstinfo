@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useParams, useNavigate, useSearchParams, Link } from 'react-router-dom';
 import DashboardLayout from '../components/dashboard/DashboardLayout';
 import { 
@@ -118,9 +118,25 @@ export default function PathwayPage() {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
 
-  // Mode switcher: 'matching' | 'pathways'
-  const initialMode = searchParams.get('view') === 'pathway' ? 'pathways' : 'matching';
+  // Mode switcher: 'matching' | 'pathways' synchronized with URL query parameter
+  const viewParam = searchParams.get('view');
+  const initialMode = viewParam === 'pathway' ? 'pathways' : 'matching';
   const [activeTab, setActiveTab] = useState<'matching' | 'pathways'>(initialMode);
+
+  useEffect(() => {
+    if (viewParam === 'pathway') {
+      setActiveTab('pathways');
+    } else if (viewParam === 'matching') {
+      setActiveTab('matching');
+    }
+  }, [viewParam]);
+
+  const handleTabChange = (tab: 'matching' | 'pathways') => {
+    setActiveTab(tab);
+    const nextParams = new URLSearchParams(searchParams);
+    nextParams.set('view', tab === 'pathways' ? 'pathway' : 'matching');
+    navigate(`/dashboard/programs?${nextParams.toString()}`);
+  };
 
   // Pathways route data
   const pathwayId = id || searchParams.get('id') || searchParams.get('route') || 'schengen';
@@ -411,7 +427,7 @@ export default function PathwayPage() {
           <div className="flex items-center gap-2 text-xs sm:text-sm text-slate-500 font-medium">
             <Link to="/dashboard" className="hover:text-emerald-700 transition-colors">Dashboard</Link>
             <ChevronRight size={14} className="text-slate-400" />
-            <span className="text-slate-400">Search Programs</span>
+            <Link to="/dashboard/programs" className="hover:text-emerald-700 transition-colors">Search Programs</Link>
             <ChevronRight size={14} className="text-slate-400" />
             <span className="text-emerald-800 font-semibold">
               {activeTab === 'matching' ? 'Program Matching' : currentPathway.title}
@@ -422,7 +438,7 @@ export default function PathwayPage() {
           <div className="inline-flex max-w-full overflow-x-auto p-1 bg-slate-100 rounded-2xl border border-slate-200">
             <button
               type="button"
-              onClick={() => setActiveTab('matching')}
+              onClick={() => handleTabChange('matching')}
               className={`px-3 sm:px-4 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer shrink-0 ${
                 activeTab === 'matching'
                   ? 'bg-white text-emerald-800 shadow-xs'
@@ -435,7 +451,7 @@ export default function PathwayPage() {
             </button>
             <button
               type="button"
-              onClick={() => setActiveTab('pathways')}
+              onClick={() => handleTabChange('pathways')}
               className={`px-3 sm:px-4 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer shrink-0 ${
                 activeTab === 'pathways'
                   ? 'bg-white text-emerald-800 shadow-xs'
@@ -937,7 +953,7 @@ export default function PathwayPage() {
                     <button
                       key={p.id}
                       type="button"
-                      onClick={() => navigate(`/pathways?route=${p.id}&view=pathway`)}
+                      onClick={() => navigate(`/dashboard/programs?route=${p.id}&view=pathway`)}
                       className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
                         isActive
                           ? 'bg-emerald-800 text-white shadow-xs'
