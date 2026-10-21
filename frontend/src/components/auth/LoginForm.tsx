@@ -57,38 +57,40 @@ export default function LoginForm({ onSwitchToRegister }: { onSwitchToRegister: 
         <p className="text-xs sm:text-sm text-gray-500 mt-1">Sign in to track your admissions &amp; visa files</p>
       </div>
 
-      {/* ⚡ 1-Click Demo Login Box */}
-      <div className="bg-[#F0FDF4] border border-accent/30 rounded-2xl p-4 shadow-xs">
-        <div className="flex items-center justify-between gap-2 mb-2.5">
-          <div className="text-[11px] font-bold uppercase tracking-wider text-emerald-800 flex items-center gap-1.5">
-            <Sparkles size={14} className="text-accent" />
-            1-Click Demo Access
+      {/* ⚡ 1-Click Demo Login Box (Development only) */}
+      {import.meta.env.DEV && (
+        <div className="bg-[#F0FDF4] border border-accent/30 rounded-2xl p-4 shadow-xs">
+          <div className="flex items-center justify-between gap-2 mb-2.5">
+            <div className="text-[11px] font-bold uppercase tracking-wider text-emerald-800 flex items-center gap-1.5">
+              <Sparkles size={14} className="text-accent" />
+              1-Click Demo Access
+            </div>
+            <span className="text-[10px] bg-white text-accent font-extrabold px-2 py-0.5 rounded-full border border-accent/20">
+              Instant
+            </span>
           </div>
-          <span className="text-[10px] bg-white text-accent font-extrabold px-2 py-0.5 rounded-full border border-accent/20">
-            Instant
-          </span>
-        </div>
 
-        <div className="grid grid-cols-2 gap-2.5">
-          <button
-            type="button"
-            onClick={handleStudentDemo}
-            className="flex items-center justify-center gap-1.5 bg-white hover:bg-emerald-50 text-primary border border-accent/30 hover:border-accent font-bold py-2.5 px-3 rounded-xl text-xs shadow-xs transition-all active:scale-95"
-          >
-            <UserCheck size={14} className="text-accent" />
-            Demo Student
-          </button>
+          <div className="grid grid-cols-2 gap-2.5">
+            <button
+              type="button"
+              onClick={handleStudentDemo}
+              className="flex items-center justify-center gap-1.5 bg-white hover:bg-emerald-50 text-primary border border-accent/30 hover:border-accent font-bold py-2.5 px-3 rounded-xl text-xs shadow-xs transition-all active:scale-95"
+            >
+              <UserCheck size={14} className="text-accent" />
+              Demo Student
+            </button>
 
-          <button
-            type="button"
-            onClick={handleAdminDemo}
-            className="flex items-center justify-center gap-1.5 bg-primary hover:bg-emerald-950 text-white font-bold py-2.5 px-3 rounded-xl text-xs shadow-xs transition-all active:scale-95"
-          >
-            <ShieldCheck size={14} className="text-emerald-400" />
-            Demo Admin
-          </button>
+            <button
+              type="button"
+              onClick={handleAdminDemo}
+              className="flex items-center justify-center gap-1.5 bg-primary hover:bg-emerald-950 text-white font-bold py-2.5 px-3 rounded-xl text-xs shadow-xs transition-all active:scale-95"
+            >
+              <ShieldCheck size={14} className="text-emerald-400" />
+              Demo Admin
+            </button>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Google Login Button */}
       <button

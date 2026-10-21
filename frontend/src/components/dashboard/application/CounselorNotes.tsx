@@ -1,24 +1,36 @@
 import { FileText, Send, CheckCheck } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { authService } from '../../../services/api/auth';
 
 export default function CounselorNotes() {
+  const [studentName, setStudentName] = useState('Student');
   const [messages, setMessages] = useState<Array<{ sender: string; role: string; text: string; time: string; isStudent?: boolean }>>([
     {
-      sender: 'M. Imran Hossain Rony',
-      role: 'Senior Counselor',
-      text: "Rahul's profile is strong. Dual A+ grades qualify for merit waiver. IELTS score sufficient for all target universities. Will proceed with applications after blocked account confirmation.",
-      time: 'Sep 8, 2026 — 3:45 PM',
+      sender: 'Senior Admissions Counselor',
+      role: 'Advisor',
+      text: "Welcome to Study First! Once your academic documents and university preferences are logged, our counselor team will provide direct evaluation notes here.",
+      time: 'Official Note',
       isStudent: false,
     },
   ]);
   const [replyText, setReplyText] = useState('');
+
+  useEffect(() => {
+    authService.me()
+      .then((res) => {
+        if (res?.user?.name) {
+          setStudentName(res.user.name);
+        }
+      })
+      .catch(() => {});
+  }, []);
 
   const handleSend = (e: React.FormEvent) => {
     e.preventDefault();
     if (!replyText.trim()) return;
 
     const newMessage = {
-      sender: 'Rahul Ahmed',
+      sender: studentName,
       role: 'Student',
       text: replyText.trim(),
       time: 'Just now',
@@ -78,7 +90,7 @@ export default function CounselorNotes() {
             type="text"
             value={replyText}
             onChange={(e) => setReplyText(e.target.value)}
-            placeholder="Reply to counselor Imran Rony..."
+            placeholder="Reply to your counselor..."
             className="w-full text-xs sm:text-sm bg-gray-50 border border-gray-200 rounded-xl pl-4 pr-12 py-3 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent"
           />
           <button

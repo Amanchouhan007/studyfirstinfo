@@ -1,5 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import { COUNTRIES_DB } from '../../frontend/src/data/countriesData';
+import { ALL_COUNSELORS } from '../../frontend/src/data/counselorsData';
 
 const prisma = new PrismaClient();
 
@@ -8,7 +9,8 @@ async function main() {
   let countryCount = 0;
   let universityCount = 0;
   let courseCount = 0;
-  let duplicates = { countries: 0, universities: 0, courses: 0 };
+  let counselorCount = 0;
+  let duplicates = { countries: 0, universities: 0, courses: 0, counselors: 0 };
 
   for (const key of Object.keys(COUNTRIES_DB)) {
     const c = COUNTRIES_DB[key];
@@ -72,10 +74,39 @@ async function main() {
     }
   }
 
+  // Seed Counselors from counselorsData.ts (upsert by name)
+  for (const c of ALL_COUNSELORS) {
+    const existingCounselor = await prisma.counselor.findFirst({
+      where: { name: c.name }
+    });
+
+    if (!existingCounselor) {
+      await prisma.counselor.create({
+        data: {
+          name: c.name,
+          specializations: c.tags || [],
+          status: c.active ? 'ACTIVE' : 'INACTIVE'
+        }
+      });
+      console.log(`Created counselor: ${c.name}`);
+    } else {
+      await prisma.counselor.update({
+        where: { id: existingCounselor.id },
+        data: {
+          specializations: c.tags || [],
+          status: c.active ? 'ACTIVE' : 'INACTIVE'
+        }
+      });
+      duplicates.counselors++;
+    }
+    counselorCount++;
+  }
+
   console.log(`\nSeed Dry-Run / Validation Summary:`);
   console.log(`Countries to sync: ${countryCount} (Duplicates skipped: ${duplicates.countries})`);
   console.log(`Universities to sync: ${universityCount} (Duplicates skipped: ${duplicates.universities})`);
   console.log(`Courses to sync: ${courseCount} (Duplicates skipped: ${duplicates.courses})`);
+  console.log(`Counselors to sync: ${counselorCount} (Updated/Duplicates: ${duplicates.counselors})`);
 }
 
 main()

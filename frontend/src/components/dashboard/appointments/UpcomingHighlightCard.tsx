@@ -1,19 +1,38 @@
 import { Calendar, Video, Clock, User, ArrowRight, X, RotateCcw } from 'lucide-react';
 import { useState } from 'react';
+import type { Appointment } from '../../../services/api/appointments';
 
-export default function UpcomingHighlightCard() {
+export default function UpcomingHighlightCard({ 
+  appointment,
+  onReschedule
+}: { 
+  appointment?: Appointment | null;
+  onReschedule?: () => void;
+}) {
   const [isCancelled, setIsCancelled] = useState(false);
   const [showReschedule, setShowReschedule] = useState(false);
+
+  if (!appointment) {
+    return null;
+  }
+
+  const aptDate = new Date(appointment.date);
+  const formattedDate = isNaN(aptDate.getTime()) 
+    ? 'Scheduled Date' 
+    : aptDate.toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric', year: 'numeric' });
+  const formattedTime = isNaN(aptDate.getTime())
+    ? 'Scheduled Time'
+    : aptDate.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' }) + ' BST';
 
   if (isCancelled) {
     return (
       <div className="bg-amber-50 border border-amber-200 rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8 text-amber-800 text-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-        <span>The upcoming appointment on September 15 has been cancelled.</span>
+        <span>The upcoming appointment on {formattedDate} has been hidden.</span>
         <button
           onClick={() => setIsCancelled(false)}
           className="text-xs font-bold text-primary underline ml-0 sm:ml-4 self-start sm:self-auto cursor-pointer"
         >
-          Undo Cancellation
+          Undo
         </button>
       </div>
     );
@@ -32,24 +51,27 @@ export default function UpcomingHighlightCard() {
               📅 UPCOMING
             </span>
             <span className="text-xs font-semibold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-md border border-emerald-200">
-              5 days remaining
+              {appointment.type === 'PAID' ? 'Paid In-Depth (45-60 min)' : 'Free Discovery (15 min)'}
             </span>
           </div>
 
           <div className="flex items-center gap-2">
             <button
-              onClick={() => setShowReschedule(true)}
-              className="text-xs font-semibold text-gray-600 hover:text-primary bg-gray-100 hover:bg-gray-200 px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1"
+              onClick={() => {
+                setShowReschedule(true);
+                if (onReschedule) onReschedule();
+              }}
+              className="text-xs font-semibold text-gray-600 hover:text-primary bg-gray-100 hover:bg-gray-200 px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1 cursor-pointer"
             >
               <RotateCcw size={13} />
               Reschedule
             </button>
             <button
               onClick={() => setIsCancelled(true)}
-              className="text-xs font-semibold text-red-600 hover:text-red-700 bg-red-50 hover:bg-red-100 px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1"
+              className="text-xs font-semibold text-red-600 hover:text-red-700 bg-red-50 hover:bg-red-100 px-3 py-1.5 rounded-lg transition-colors flex items-center gap-1 cursor-pointer"
             >
               <X size={13} />
-              Cancel
+              Dismiss
             </button>
           </div>
         </div>
@@ -60,11 +82,11 @@ export default function UpcomingHighlightCard() {
             <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Date &amp; Time</div>
             <div className="text-base font-bold text-primary flex items-center gap-1.5">
               <Calendar size={16} className="text-accent" />
-              Monday, Sep 15, 2026
+              {formattedDate}
             </div>
             <div className="text-xs font-medium text-gray-600 flex items-center gap-1">
               <Clock size={13} className="text-gray-400" />
-              3:00 PM BST (Bangladesh Standard Time)
+              {formattedTime}
             </div>
           </div>
 
@@ -73,19 +95,23 @@ export default function UpcomingHighlightCard() {
             <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Counselor</div>
             <div className="text-base font-bold text-primary flex items-center gap-1.5">
               <User size={16} className="text-accent" />
-              M. Imran Hossain Rony
+              {appointment.counselor?.name || 'Assigned Lead Counselor'}
             </div>
-            <div className="text-xs text-gray-500 font-medium">Head of Germany Applications</div>
+            <div className="text-xs text-gray-500 font-medium">
+              {appointment.counselor?.specializations?.join(', ') || 'Higher Education Specialist'}
+            </div>
           </div>
 
-          {/* Session Type & Topic */}
+          {/* Session Details */}
           <div className="space-y-1">
             <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Session Details</div>
             <div className="text-sm font-bold text-emerald-800 flex items-center gap-1.5">
               <Video size={16} className="text-emerald-600" />
               Video Call &mdash; Google Meet
             </div>
-            <div className="text-xs text-gray-600 font-medium">Topic: Germany University Application Review</div>
+            <div className="text-xs text-gray-600 font-medium">
+              {appointment.type === 'PAID' ? `Paid Counseling (${appointment.fee} BDT - ${appointment.paymentStatus})` : 'Free Discovery Session (15m)'}
+            </div>
           </div>
 
           {/* CTA Link */}
@@ -106,7 +132,7 @@ export default function UpcomingHighlightCard() {
             <span>To reschedule, pick an alternate slot in the <strong>Book a New Consultation</strong> section below.</span>
             <button
               onClick={() => setShowReschedule(false)}
-              className="font-bold underline text-emerald-800"
+              className="font-bold underline text-emerald-800 cursor-pointer"
             >
               Dismiss
             </button>

@@ -1,16 +1,33 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Camera, CheckCircle2, ShieldAlert } from 'lucide-react';
+import { authService } from '../../../services/api/auth';
 
 export default function AccountTab() {
-  const [fullName, setFullName] = useState('Rahul Ahmed');
-  const [email] = useState('rahul@gmail.com');
-  const [whatsapp, setWhatsapp] = useState('+880 1712345678');
-  const [dob, setDob] = useState('2002-01-15');
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [whatsapp, setWhatsapp] = useState('');
+  const [dob, setDob] = useState('');
   const [nationality, setNationality] = useState('Bangladeshi');
 
   const [isDiyTrack, setIsDiyTrack] = useState(false);
   const [showDiyWarning, setShowDiyWarning] = useState(false);
   const [savedSuccess, setSavedSuccess] = useState(false);
+
+  useEffect(() => {
+    authService.me()
+      .then((res) => {
+        if (res.user) {
+          setFullName(res.user.name || '');
+          setEmail(res.user.email || '');
+          if ((res.user as any)?.phone) setWhatsapp((res.user as any).phone);
+        }
+      })
+      .catch(() => {});
+  }, []);
+
+  const initials = fullName
+    ? fullName.split(' ').filter(Boolean).map((n) => n[0]).join('').slice(0, 2).toUpperCase()
+    : 'ST';
 
   const handleTrackToggle = () => {
     if (!isDiyTrack) {
@@ -41,7 +58,7 @@ export default function AccountTab() {
         <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
           <div className="relative">
             <div className="w-24 h-24 rounded-full bg-accent text-white flex items-center justify-center font-bold text-3xl shadow-md border-4 border-emerald-50">
-              RA
+              {initials}
             </div>
             <label className="absolute bottom-0 right-0 p-1.5 bg-primary text-white rounded-full hover:bg-emerald-900 cursor-pointer shadow-md transition-transform hover:scale-105">
               <Camera size={14} />
@@ -174,7 +191,7 @@ export default function AccountTab() {
             <div className="text-xs text-gray-500 mt-0.5">
               {isDiyTrack
                 ? 'Applying independently using portal tools & checklists.'
-                : 'Dedicated Senior Counselor (M. Imran Hossain Rony) handling applications.'}
+                : 'No counselor assigned yet.'}
             </div>
           </div>
 
@@ -199,7 +216,7 @@ export default function AccountTab() {
             <div className="flex items-start gap-2 text-xs font-semibold text-amber-900">
               <ShieldAlert size={18} className="text-amber-600 shrink-0 mt-0.5" />
               <span>
-                Warning: Switching track will unassign your current counselor (M. Imran Hossain Rony). You will need to manage university portal filings independently. Confirm?
+                Warning: Switching track will update your application mode. You will need to manage university portal filings independently. Confirm?
               </span>
             </div>
             <div className="flex items-center gap-3 pt-1">

@@ -10,6 +10,7 @@ import AdminWaiversDesk from '../components/admin/AdminWaiversDesk';
 import AdminAnalyticsDesk from '../components/admin/AdminAnalyticsDesk';
 import AdminSettingsDesk from '../components/admin/AdminSettingsDesk';
 import AdminSeoDesk from '../components/admin/AdminSeoDesk';
+import AdminPaymentsDesk from '../components/admin/AdminPaymentsDesk';
 
 export default function AdminPage() {
   const [currentTab, setCurrentTab] = useState<AdminTab>('overview');
@@ -19,6 +20,8 @@ export default function AdminPage() {
     switch (currentTab) {
       case 'overview':
         return { title: 'Pipeline & Leads Oversight', subtitle: 'Global active student files, counselor assignments, and visa progression' };
+      case 'payments':
+        return { title: 'Payment Verification & Live Pipeline', subtitle: 'Verify student bKash/Nagad TrxIDs, review uploaded documents, and track applications' };
       case 'counselors':
         return { title: 'Counselor Desks & Team Workload', subtitle: 'Real-time caseload, country allocation, and student conversion benchmarks' };
       case 'waivers':
@@ -104,6 +107,8 @@ export default function AdminPage() {
               <AdminCounselorGrid />
             </>
           )}
+
+          {currentTab === 'payments' && <AdminPaymentsDesk />}
 
           {currentTab === 'counselors' && <AdminCounselorGrid />}
 

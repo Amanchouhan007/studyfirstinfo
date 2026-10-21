@@ -98,6 +98,46 @@ This repository includes built-in Netlify SPA configuration:
 
 ---
 
+## 🛠️ Phase A Backend Endpoints & Security Specifications
+
+### New & Hardened API Endpoints
+
+| Method | Endpoint | Access Level | Description & Rate Limit |
+| :--- | :--- | :--- | :--- |
+| `GET` | `/api/health` | Public | System and database ping health check (200 OK / 503 Service Unavailable). |
+| `POST` | `/api/auth/register` | Public | Registers user; rate-limited to 10 requests per 15 min per IP. |
+| `POST` | `/api/auth/login` | Public | Logs in user; rate-limited to 10 requests per 15 min per IP. |
+| `GET` | `/api/profile` | Authenticated | Fetches authenticated student's full profile (NID/Passport decrypted). |
+| `PUT` | `/api/profile` | Authenticated | Persists complete student profile (personal, academic, English scores, preferences); NID/Passport encrypted at rest. |
+| `POST` | `/api/leads/download-guide` | Public / Auth | Captures lead and streams `scholarship-guide.pdf` or returns graceful notification; rate-limited to 20/hr per IP. |
+| `POST` | `/api/documents` | Authenticated | Uploads student document (PDF/JPG/PNG &le; 5MB); stores file privately in storage driver. |
+| `GET` | `/api/documents` | Authenticated | Retrieves current student's uploaded document records. |
+| `GET` | `/api/documents/:id/file` | Owner / Staff | Securely streams private document binary (restricted to owner, counselor, or admin). |
+| `DELETE` | `/api/documents/:id` | Owner | Deletes document and storage file (blocked if document is `VERIFIED`). |
+| `GET` | `/api/admin/documents` | Admin / Counselor | Lists all student documents across the system with pagination. |
+| `PATCH` | `/api/documents/:id/status` | Admin / Counselor | Updates review status (`UPLOADED`, `UNDER_REVIEW`, `VERIFIED`, `REJECTED`); `REJECTED` requires `reviewFeedback`. |
+| `GET` | `/api/admin/appointments` | Admin Only | Lists appointments with optional `paymentStatus` and `type` filters and pagination. |
+| `GET` | `/api/admin/applications` | Admin Only | Lists student applications from PostgreSQL with pagination. |
+| `PATCH` | `/api/appointments/:id/verify-payment` | Admin Only | Verifies manual bKash/Nagad TrxID (`PAID` or `REJECTED`). |
+| `GET` | `/api/courses` | Public | Course search with query filters (`search`, `country`, `degreeLevel`, `budgetMax`, `page`, `pageSize`). |
+
+### Environment Variables (`backend/.env`)
+
+| Variable | Required? | Purpose |
+| :--- | :--- | :--- |
+| `DATABASE_URL` | **Yes** | PostgreSQL connection string with Prisma connection pool settings. |
+| `JWT_SECRET` | **Yes** | 64+ char secret key for signing auth cookies. Server refuses startup if missing. |
+| `CLIENT_URL` | **Yes (Prod)** | Frontend origin allowed by CORS (`credentials: true`). Defaults to `http://localhost:5173` in development. |
+| `PORT` | Optional | Backend port (defaults to `5000`). |
+| `PROFILE_ENC_KEY` | **Yes (Prod)** | 64-hex char (32-byte) key for AES-256-GCM encryption at rest of NID/Passport numbers. |
+| `S3_ENDPOINT` | Optional | S3/Cloudflare R2 endpoint. When set with credentials, switches storage driver from local disk to S3. |
+| `S3_BUCKET` | Optional | S3/Cloudflare R2 bucket name for private document storage. |
+| `S3_REGION` | Optional | S3 region (default: `auto`). |
+| `S3_ACCESS_KEY_ID` | Optional | S3 access key ID. |
+| `S3_SECRET_ACCESS_KEY` | Optional | S3 secret access key. |
+
+---
+
 ## 📄 License & Attribution
 
 Copyright © 2026 Study First Info Ltd. All rights reserved.

@@ -12,6 +12,11 @@ import {
   Filter
 } from 'lucide-react';
 import { pathways, getPathwayById, type RouteCard } from '../data/pathwaysData';
+import { fetchCourses } from '../services/api/catalog';
+
+// Approximate exchange rates to be updated
+const EUR_TO_BDT_RATE = 130; // 1 EUR = 130 BDT (approximate rate to be updated)
+const USD_TO_EUR_RATE = 0.92; // 1 USD = 0.92 EUR (approximate rate to be updated)
 
 interface MatchCheck {
   s: 'ok' | 'no' | 'nv' | 'info';
@@ -168,6 +173,40 @@ export default function PathwayPage() {
     }
   });
 
+  // Programs list: tries database courses first, falls back to SAMPLE_PROGRAMS safely
+  const [programs, setPrograms] = useState<ProgramItem[]>(SAMPLE_PROGRAMS);
+
+  useEffect(() => {
+    let isMounted = true;
+    fetchCourses()
+      .then((data: any) => {
+        if (!isMounted) return;
+        const list = Array.isArray(data) ? data : data?.courses;
+        if (Array.isArray(list) && list.length > 0) {
+          const coursesWithTuition = list.filter((c: any) => c.tuitionFee && c.tuitionFee > 0);
+          if (coursesWithTuition.length > 0) {
+            const mapped: ProgramItem[] = coursesWithTuition.map((c: any, idx: number) => ({
+              id: idx + 100,
+              uni: c.university?.name || 'Partner University',
+              name: c.name,
+              level: (c.degreeLevel && c.degreeLevel.toLowerCase().includes('master')) ? 'Master' : 'Bachelor',
+              dur: c.degreeLevel?.toLowerCase().includes('master') ? '2 yrs' : '3.5 yrs',
+              fee: Number(c.tuitionFee),
+              biz: (c.name.toLowerCase().includes('business') || c.name.toLowerCase().includes('commerce')) ? 'yes' : 'unclear',
+              country: c.university?.country?.name || 'Germany',
+              city: c.university?.country?.name === 'Hungary' ? 'Budapest' : 'Berlin'
+            }));
+            setPrograms(mapped);
+          }
+        }
+      })
+      .catch(() => {
+        // Fallback silently to SAMPLE_PROGRAMS
+      });
+
+    return () => { isMounted = false; };
+  }, []);
+
   const toggleSaveProgram = (programId: number) => {
     setSavedProgramIds((prev) => {
       const next = prev.includes(programId) ? prev.filter((i) => i !== programId) : [...prev, programId];
@@ -307,12 +346,35 @@ export default function PathwayPage() {
 
     // Budget Comparison
     if (profile.budget && profile.cur) {
-      if (profile.cur !== 'EUR') {
+      const rawBudget = parseFloat(profile.budget);
+      let budgetInEur: number | null = null;
+
+      if (profile.cur === 'EUR') {
+        budgetInEur = rawBudget;
+      } else if (profile.cur === 'BDT') {
+        budgetInEur = rawBudget / EUR_TO_BDT_RATE;
+      } else if (profile.cur === 'USD') {
+        budgetInEur = rawBudget * USD_TO_EUR_RATE;
+      }
+
+      if (budgetInEur === null || isNaN(budgetInEur)) {
         checks.push({ s: 'nv', src: 'input', t: `Your budget is in ${profile.cur}. Tuition is in € and no currency conversion is used.` });
-      } else if (parseFloat(profile.budget) >= p.fee) {
-        checks.push({ s: 'info', src: 'input', t: `Tuition €${p.fee.toLocaleString()}/yr is within your stated € budget.` });
+      } else if (budgetInEur >= p.fee) {
+        checks.push({
+          s: 'info',
+          src: 'input',
+          t: profile.cur === 'EUR'
+            ? `Tuition €${p.fee.toLocaleString()}/yr is within your stated € budget.`
+            : `Tuition €${p.fee.toLocaleString()}/yr is within your stated ${profile.cur} budget (approx. €${Math.round(budgetInEur).toLocaleString()}).`
+        });
       } else {
-        checks.push({ s: 'info', src: 'input', t: `Tuition €${p.fee.toLocaleString()}/yr is above your stated € budget. Shown as a note only.` });
+        checks.push({
+          s: 'info',
+          src: 'input',
+          t: profile.cur === 'EUR'
+            ? `Tuition €${p.fee.toLocaleString()}/yr is above your stated € budget. Shown as a note only.`
+            : `Tuition €${p.fee.toLocaleString()}/yr is above your stated ${profile.cur} budget (approx. €${Math.round(budgetInEur).toLocaleString()}). Shown as a note only.`
+        });
       }
     }
 
@@ -338,7 +400,7 @@ export default function PathwayPage() {
   // Filtered and sorted programs
   const evaluatedPrograms = useMemo(() => {
     const q = filterQuery.toLowerCase().trim();
-    return SAMPLE_PROGRAMS.filter((p) => {
+    return programs.filter((p) => {
       if (q && !(p.name + ' ' + p.uni + ' ' + p.country).toLowerCase().includes(q)) return false;
       if (filterCountry && p.country.toLowerCase() !== filterCountry.toLowerCase()) return false;
       if (filterTuition && p.fee > parseFloat(filterTuition)) return false;
@@ -704,7 +766,7 @@ export default function PathwayPage() {
                   </div>
                 </div>
                 <p className="text-[10px] text-slate-400">
-                  Budget is compared only if it is in EUR, the programs&apos; tuition currency.
+                  Budgets in BDT and USD are automatically converted to EUR for tuition comparison.
                 </p>
 
                 {/* Preferred Intake (Disabled) */}
@@ -815,7 +877,7 @@ export default function PathwayPage() {
                   {/* Results Count & Reset */}
                   <div className="flex items-center justify-between text-xs text-slate-500 mt-3 pt-3 border-t border-slate-100">
                     <span>
-                      <strong>{evaluatedPrograms.length}</strong> of {SAMPLE_PROGRAMS.length} programs shown (demo)
+                      <strong>{evaluatedPrograms.length}</strong> of {programs.length} programs available
                     </span>
                     <button
                       type="button"
@@ -1089,7 +1151,7 @@ export default function PathwayPage() {
                   <thead>
                     <tr className="bg-slate-50 border-b border-slate-200">
                       <th className="p-3 font-bold text-slate-700 w-36">Criteria</th>
-                      {SAMPLE_PROGRAMS.filter((p) => savedProgramIds.includes(p.id)).map((p) => (
+                      {programs.filter((p) => savedProgramIds.includes(p.id)).map((p) => (
                         <th key={p.id} className="p-3 font-bold text-slate-900 min-w-[200px]">
                           {p.name}
                         </th>
@@ -1099,37 +1161,37 @@ export default function PathwayPage() {
                   <tbody className="divide-y divide-slate-100">
                     <tr>
                       <td className="p-3 font-bold text-slate-500 bg-slate-50/50">University</td>
-                      {SAMPLE_PROGRAMS.filter((p) => savedProgramIds.includes(p.id)).map((p) => (
+                      {programs.filter((p) => savedProgramIds.includes(p.id)).map((p) => (
                         <td key={p.id} className="p-3 text-slate-800">{p.uni}</td>
                       ))}
                     </tr>
                     <tr>
                       <td className="p-3 font-bold text-slate-500 bg-slate-50/50">Location</td>
-                      {SAMPLE_PROGRAMS.filter((p) => savedProgramIds.includes(p.id)).map((p) => (
+                      {programs.filter((p) => savedProgramIds.includes(p.id)).map((p) => (
                         <td key={p.id} className="p-3 text-slate-800">{p.city}, {p.country}</td>
                       ))}
                     </tr>
                     <tr>
                       <td className="p-3 font-bold text-slate-500 bg-slate-50/50">Level</td>
-                      {SAMPLE_PROGRAMS.filter((p) => savedProgramIds.includes(p.id)).map((p) => (
+                      {programs.filter((p) => savedProgramIds.includes(p.id)).map((p) => (
                         <td key={p.id} className="p-3 text-slate-800">{p.level}</td>
                       ))}
                     </tr>
                     <tr>
                       <td className="p-3 font-bold text-slate-500 bg-slate-50/50">Duration</td>
-                      {SAMPLE_PROGRAMS.filter((p) => savedProgramIds.includes(p.id)).map((p) => (
+                      {programs.filter((p) => savedProgramIds.includes(p.id)).map((p) => (
                         <td key={p.id} className="p-3 text-slate-800">{p.dur}</td>
                       ))}
                     </tr>
                     <tr>
                       <td className="p-3 font-bold text-slate-500 bg-slate-50/50">Tuition</td>
-                      {SAMPLE_PROGRAMS.filter((p) => savedProgramIds.includes(p.id)).map((p) => (
+                      {programs.filter((p) => savedProgramIds.includes(p.id)).map((p) => (
                         <td key={p.id} className="p-3 text-slate-800 font-bold text-emerald-800">€{p.fee.toLocaleString()}/yr</td>
                       ))}
                     </tr>
                     <tr>
                       <td className="p-3 font-bold text-slate-500 bg-slate-50/50">Your Result</td>
-                      {SAMPLE_PROGRAMS.filter((p) => savedProgramIds.includes(p.id)).map((p) => {
+                      {programs.filter((p) => savedProgramIds.includes(p.id)).map((p) => {
                         const r = evaluateProgram(p);
                         return (
                           <td key={p.id} className="p-3">

@@ -7,12 +7,13 @@ import {
   LogOut, 
   X,
   ShieldCheck,
-  Globe
+  Globe,
+  CreditCard
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import logoImg from '../../assets/image.png';
 
-export type AdminTab = 'overview' | 'counselors' | 'waivers' | 'analytics' | 'seo' | 'settings';
+export type AdminTab = 'overview' | 'payments' | 'counselors' | 'waivers' | 'analytics' | 'seo' | 'settings';
 
 interface AdminSidebarProps {
   currentTab: AdminTab;
@@ -34,6 +35,13 @@ export default function AdminSidebar({
       icon: LayoutDashboard,
       badge: '142',
       badgeColor: 'bg-emerald-500/20 text-emerald-300',
+    },
+    {
+      id: 'payments' as AdminTab,
+      label: 'Payments',
+      icon: CreditCard,
+      badge: 'Action Needed',
+      badgeColor: 'bg-amber-500/20 text-amber-300',
     },
     {
       id: 'counselors' as AdminTab,

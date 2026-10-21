@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { 
   Plus, 
@@ -14,11 +14,30 @@ import UpcomingHighlightCard from '../components/dashboard/appointments/Upcoming
 import AppointmentsList from '../components/dashboard/appointments/AppointmentsList';
 import BookAppointmentForm from '../components/dashboard/appointments/BookAppointmentForm';
 import { ALL_COUNSELORS, type Counselor } from '../data/counselorsData';
+import { appointmentService, type Appointment } from '../services/api/appointments';
 
 export default function AppointmentsPage() {
   const navigate = useNavigate();
   const [targetCounselor, setTargetCounselor] = useState<string | undefined>(undefined);
   const [counselorSearch, setCounselorSearch] = useState('');
+  const [refreshKey, setRefreshKey] = useState(0);
+  const [upcomingAppointment, setUpcomingAppointment] = useState<Appointment | null>(null);
+
+  useEffect(() => {
+    appointmentService.getMyAppointments()
+      .then((data) => {
+        if (Array.isArray(data)) {
+          const upcoming = data.find((a) => {
+            const time = new Date(a.date).getTime();
+            return time >= Date.now() - 3600000 && a.status !== 'CANCELLED' && a.status !== 'PAYMENT_REJECTED';
+          });
+          setUpcomingAppointment(upcoming || null);
+        }
+      })
+      .catch(() => {
+        setUpcomingAppointment(null);
+      });
+  }, [refreshKey]);
   
   // Modals state
   const [selectedProfile, setSelectedProfile] = useState<Counselor | null>(null);
@@ -84,10 +103,16 @@ export default function AppointmentsPage() {
       </div>
 
       {/* Upcoming Highlight Card */}
-      <UpcomingHighlightCard />
+      <UpcomingHighlightCard 
+        appointment={upcomingAppointment} 
+        onReschedule={() => scrollToBooking()} 
+      />
 
       {/* Appointments List with Tabs */}
-      <AppointmentsList onBookFollowup={(c) => scrollToBooking(c)} />
+      <AppointmentsList 
+        onBookFollowup={(c) => scrollToBooking(c)} 
+        refreshTrigger={refreshKey}
+      />
 
       {/* ============================================================ */}
       {/* COUNSELOR DISCOVERY & BOOKING SECTION (SCREENSHOT 2)         */}
@@ -219,7 +244,10 @@ export default function AppointmentsPage() {
       </div>
 
       {/* Book New Consultation Section */}
-      <BookAppointmentForm defaultCounselor={targetCounselor} />
+      <BookAppointmentForm 
+        defaultCounselor={targetCounselor} 
+        onBookingSuccess={() => setRefreshKey((prev) => prev + 1)}
+      />
 
       {/* ============================================================ */}
       {/* COUNSELOR PROFILE MODAL                                      */}

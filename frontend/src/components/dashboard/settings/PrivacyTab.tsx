@@ -1,11 +1,21 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Eye, Download, Trash2, AlertTriangle } from 'lucide-react';
+import { authService } from '../../../services/api/auth';
 
 export default function PrivacyTab() {
   const [allowCounselors, setAllowCounselors] = useState(true);
   const [showInAlumni, setShowInAlumni] = useState(false);
   const [shareStory, setShareStory] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [userName, setUserName] = useState('Student');
+
+  useEffect(() => {
+    authService.me()
+      .then((res) => {
+        if (res.user?.name) setUserName(res.user.name);
+      })
+      .catch(() => {});
+  }, []);
 
   return (
     <div className="space-y-8">
@@ -95,7 +105,7 @@ export default function PrivacyTab() {
               <div className="text-xs text-gray-500">Download a complete ZIP archive containing your documents, notes, and application history.</div>
             </div>
             <button
-              onClick={() => alert('Preparing complete student data archive for Rahul Ahmed...')}
+              onClick={() => alert(`Preparing complete student data archive for ${userName}...`)}
               className="inline-flex items-center gap-1.5 text-xs font-bold text-accent hover:underline shrink-0"
             >
               <Download size={14} /> Download my data

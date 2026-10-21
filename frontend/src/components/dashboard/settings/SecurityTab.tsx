@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Lock, Smartphone, Laptop, CheckCircle2 } from 'lucide-react';
+import { authService } from '../../../services/api/auth';
 
 export default function SecurityTab() {
   const [currentPassword, setCurrentPassword] = useState('');
@@ -7,7 +8,16 @@ export default function SecurityTab() {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [twoFactorEnabled, setTwoFactorEnabled] = useState(false);
   const [googleConnected, setGoogleConnected] = useState(true);
+  const [userEmail, setUserEmail] = useState('');
   const [passUpdated, setPassUpdated] = useState(false);
+
+  useEffect(() => {
+    authService.me()
+      .then((res) => {
+        if (res.user?.email) setUserEmail(res.user.email);
+      })
+      .catch(() => {});
+  }, []);
 
   // Simple password strength calculation
   const getPasswordStrength = () => {
@@ -169,7 +179,7 @@ export default function SecurityTab() {
             <div>
               <div className="text-sm font-bold text-primary">Google Account</div>
               <div className="text-xs text-emerald-700 font-semibold flex items-center gap-1">
-                <CheckCircle2 size={13} /> {googleConnected ? 'rahul@gmail.com connected' : 'Disconnected'}
+                <CheckCircle2 size={13} /> {googleConnected ? (userEmail ? `${userEmail} connected` : 'Account connected') : 'Disconnected'}
               </div>
             </div>
           </div>

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import DashboardLayout from '../components/dashboard/DashboardLayout';
 import { 
   GraduationCap, 
   FileText, 
@@ -255,7 +257,7 @@ const SCHOLARSHIPS_DATA: ScholarshipItem[] = [
   }
 ];
 
-export default function ScholarshipsPage() {
+export default function ScholarshipsPage({ isDashboard = false }: { isDashboard?: boolean }) {
   const [activeFilter, setActiveFilter] = useState<string>('all');
   
   // Modal state
@@ -354,11 +356,11 @@ export default function ScholarshipsPage() {
     return sch.categories.includes(activeFilter);
   });
 
-  return (
-    <div className="bg-[#f8faf9] text-slate-900 antialiased selection:bg-emerald-200 selection:text-emerald-950 min-h-screen">
+  const pageContent = (
+    <div className={isDashboard ? "text-slate-900 antialiased" : "bg-[#f8faf9] text-slate-900 antialiased selection:bg-emerald-200 selection:text-emerald-950 min-h-screen"}>
       
       {/* MAIN CONTAINER */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-16 sm:space-y-20">
+      <main className={isDashboard ? "space-y-12 sm:space-y-16 py-2" : "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-16 sm:space-y-20"}>
 
         {/* HEADER SECTION */}
         <header className="text-center max-w-4xl mx-auto">
@@ -1003,4 +1005,24 @@ export default function ScholarshipsPage() {
 
     </div>
   );
+
+  if (isDashboard) {
+    return (
+      <DashboardLayout>
+        <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <h1 className="text-2xl sm:text-3xl font-bold text-primary mb-1">Scholarships &amp; Grants</h1>
+            <div className="text-sm font-medium text-slate-500 flex items-center gap-2">
+              <Link to="/dashboard" className="hover:text-emerald-700 transition-colors">Dashboard</Link>
+              <span>&gt;</span>
+              <span className="text-primary font-semibold">100% Tuition Waivers &amp; Government Schemes</span>
+            </div>
+          </div>
+        </div>
+        {pageContent}
+      </DashboardLayout>
+    );
+  }
+
+  return pageContent;
 }

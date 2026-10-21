@@ -15,16 +15,16 @@ interface PersonalData {
 }
 
 const INITIAL_PERSONAL_DATA: PersonalData = {
-  fullName: 'Rahul Ahmed',
-  dob: 'January 15, 2002',
-  gender: 'Male',
+  fullName: '',
+  dob: '',
+  gender: '',
   nationality: 'Bangladeshi',
-  nationalId: 'XXXX-XXXX-XXXX',
-  passportNumber: 'BX0000000',
-  passportExpiry: 'Dec 2028',
-  phone: '+880 1XXXXXXXXX',
-  email: 'rahul@gmail.com',
-  address: 'Dhaka, Bangladesh',
+  nationalId: '',
+  passportNumber: '',
+  passportExpiry: '',
+  phone: '',
+  email: '',
+  address: '',
 };
 
 export default function PersonalInfoCard({

@@ -27,6 +27,8 @@ model User {
   studentProfile StudentProfile?
   eventRegistrations EventRegistration[]
   appointments     Appointment[]
+  applications     Application[]
+  documents        StudentDocument[]
 }
 
 model StudentProfile {
@@ -39,6 +41,23 @@ model StudentProfile {
   englishScore     String?
   budget           String?
   preferredCountry String?
+  phone            String?
+  dateOfBirth      String?
+  gender           String?
+  nidOrPassport    String?
+  sscBoard         String?
+  sscGpa           String?
+  sscYear          String?
+  hscBoard         String?
+  hscGpa           String?
+  hscYear          String?
+  undergradUni     String?
+  undergradCgpa    String?
+  undergradYear    String?
+  ieltsListening   String?
+  ieltsReading     String?
+  ieltsWriting     String?
+  ieltsSpeaking    String?
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt
 
@@ -63,14 +82,43 @@ model University {
   status    String   @default("ACTIVE")
 
   courses Course[]
+
+  @@index([countryId])
 }
 
 model Course {
-  id           String     @id @default(uuid())
-  universityId String
-  university   University @relation(fields: [universityId], references: [id])
-  name         String
-  status       String     @default("ACTIVE")
+  id                  String     @id @default(uuid())
+  universityId        String
+  university          University @relation(fields: [universityId], references: [id])
+  name                String
+  tuitionFee          Float?
+  currency            String?
+  degreeLevel         String?
+  minIelts            Float?
+  minGpa              Float?
+  intakeMonths        String[]
+  applicationDeadline DateTime?
+  status              String     @default("ACTIVE")
+
+  @@index([universityId])
+}
+
+model StudentDocument {
+  id             String   @id @default(uuid())
+  userId         String
+  user           User     @relation(fields: [userId], references: [id])
+  type           String
+  fileName       String
+  fileKey        String
+  mimeType       String
+  fileSize       Int
+  status         String   @default("UPLOADED")
+  reviewFeedback String?
+  reviewedById   String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@index([userId])
 }
 
 model Event {
@@ -114,13 +162,38 @@ model Counselor {
 }
 
 model Appointment {
-  id          String    @id @default(uuid())
-  userId      String
-  user        User      @relation(fields: [userId], references: [id])
-  counselorId String
-  counselor   Counselor @relation(fields: [counselorId], references: [id])
-  date        DateTime
-  status      String    @default("SCHEDULED")
+  id              String    @id @default(uuid())
+  userId          String
+  user            User      @relation(fields: [userId], references: [id])
+  counselorId     String
+  counselor       Counselor @relation(fields: [counselorId], references: [id])
+  date            DateTime
+  type            String    @default("FREE")
+  durationMinutes Int       @default(15)
+  fee             Float     @default(0)
+  paymentStatus   String    @default("NOT_REQUIRED")
+  trxId           String?
+  status          String    @default("SCHEDULED")
+
+  @@index([userId])
+  @@index([counselorId])
+}
+
+model Application {
+  id         String   @id @default(uuid())
+  trackingId String   @unique
+  userId     String
+  user       User     @relation(fields: [userId], references: [id])
+  country    String
+  university String
+  program    String
+  track      String   @default("SELF_APPLY")
+  fee        Float    @default(0)
+  status     String   @default("SUBMITTED")
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([userId])
 }
 
 model Lead {

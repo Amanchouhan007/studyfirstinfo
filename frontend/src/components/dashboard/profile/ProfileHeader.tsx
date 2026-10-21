@@ -1,6 +1,27 @@
+import { useState, useEffect } from 'react';
 import { Pencil, Camera } from 'lucide-react';
+import { authService, type User } from '../../../services/api/auth';
 
 export default function ProfileHeader() {
+  const [user, setUser] = useState<User | null>(null);
+
+  useEffect(() => {
+    authService.me()
+      .then((res) => {
+        if (res.user) setUser(res.user);
+      })
+      .catch(() => {});
+  }, []);
+
+  const name = user?.name || 'Student';
+  const initials = name
+    .split(' ')
+    .filter(Boolean)
+    .map((n) => n[0])
+    .join('')
+    .slice(0, 2)
+    .toUpperCase() || 'ST';
+
   return (
     <section className="bg-gradient-to-r from-primary to-[#114d3c] rounded-2xl p-6 md:p-8 shadow-sm flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 relative overflow-hidden mb-8">
       {/* Decorative Blob */}
@@ -8,7 +29,7 @@ export default function ProfileHeader() {
 
       <div className="relative group shrink-0">
         <div className="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-white/20 overflow-hidden bg-accent flex items-center justify-center text-white text-4xl font-bold shadow-lg">
-          RA
+          {initials}
         </div>
         <button className="absolute bottom-0 right-0 md:bottom-2 md:right-2 w-8 h-8 md:w-10 md:h-10 bg-white text-primary rounded-full flex items-center justify-center shadow-md hover:scale-110 transition-transform">
           <Camera size={16} className="md:w-5 md:h-5" />
@@ -16,12 +37,12 @@ export default function ProfileHeader() {
       </div>
 
       <div className="flex-1 text-center md:text-left relative z-10 flex flex-col justify-center h-full pt-2">
-        <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">Rahul Ahmed</h1>
+        <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">{name}</h1>
         <p className="text-green-100 font-medium text-sm md:text-base mb-1">
-          Bangladeshi Student | 🇩🇪 Germany Track
+          Bangladeshi Student | Study Abroad Portal
         </p>
         <p className="text-green-200/80 text-xs md:text-sm font-medium">
-          Member since: Sep 1, 2026
+          Active Student Account
         </p>
       </div>
 

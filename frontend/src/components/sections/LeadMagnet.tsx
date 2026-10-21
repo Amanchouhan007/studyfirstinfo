@@ -8,6 +8,9 @@ export default function LeadMagnet() {
   const [isDownloaded, setIsDownloaded] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const [serverMessage, setServerMessage] = useState<string>('');
+  const [errorMessage, setErrorMessage] = useState<string>('');
+
   const checklist = [
     'Official Blocked Account (€11,208) Setup Guide',
     'German Embassy approved health insurance list',
@@ -20,18 +23,32 @@ export default function LeadMagnet() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMessage('');
+
     try {
-      await studentService.evaluateEligibility({
+      const res = await studentService.downloadScholarshipGuide({
         name,
-        email,
-        source: 'LEAD_MAGNET_DOWNLOAD',
-        preferredCountry: 'Germany'
+        emailOrPhone: email,
+        preferredCountry: 'Germany',
+        studyLevel: 'Masters'
       });
+
+      if (res.type === 'pdf' && res.blob) {
+        const url = window.URL.createObjectURL(res.blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'StudyFirstInfo-Scholarship-University-Guide.pdf';
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+        document.body.removeChild(a);
+        setServerMessage('Official 25-page German Blocked Account dossier has been downloaded to your device!');
+      } else {
+        setServerMessage(res.data?.message || 'Thank you! Your guide request has been received.');
+      }
       setIsDownloaded(true);
-    } catch (err) {
-      console.error(err);
-      // Fallback if backend offline
-      setIsDownloaded(true);
+    } catch (err: any) {
+      setErrorMessage(err.message || 'Failed to request guide. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -98,9 +115,9 @@ export default function LeadMagnet() {
                   <div className="w-12 h-12 sm:w-14 sm:h-14 bg-accent text-white rounded-full flex items-center justify-center mx-auto animate-bounce">
                     <Check size={26} />
                   </div>
-                  <h4 className="text-base sm:text-lg font-bold text-white">Your Guide is Ready!</h4>
+                  <h4 className="text-base sm:text-lg font-bold text-white">Your Request Has Been Received!</h4>
                   <p className="text-xs text-gray-300">
-                    We've dispatched the 25-page German Blocked Account dossier to <strong>{email}</strong>.
+                    {serverMessage || `We've queued the 25-page German Blocked Account dossier for ${email}.`}
                   </p>
                   <a
                     href={`https://wa.me/8801713000000?text=${encodeURIComponent(
@@ -115,6 +132,11 @@ export default function LeadMagnet() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-3.5 sm:space-y-4">
+                  {errorMessage && (
+                    <div className="p-3 rounded-xl bg-rose-500/20 border border-rose-500/40 text-xs font-semibold text-rose-200">
+                      {errorMessage}
+                    </div>
+                  )}
                   <div>
                     <label className="block text-xs font-bold text-gray-200 mb-1">Your Full Name</label>
                     <input 

@@ -1,7 +1,24 @@
 import { RefreshCw, MessageSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import type { Application } from '../../../services/api/applications';
 
-export default function ApplicationStatusBanner() {
+export default function ApplicationStatusBanner({ 
+  application,
+  isExample
+}: { 
+  application?: Application | null;
+  isExample?: boolean;
+}) {
+  const trackingId = application ? `#${application.trackingId}` : isExample ? '#SF-EXAMPLE-01' : null;
+  const statusText = application ? application.status : isExample ? 'Example Workflow' : 'No Application Found';
+  const submittedDate = application 
+    ? new Date(application.createdAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+    : 'Sep 5, 2026';
+
+  if (!application && !isExample) {
+    return null;
+  }
+
   return (
     <div className="bg-white rounded-2xl border-l-[6px] border-l-accent border border-gray-100 shadow-sm p-4 sm:p-6 mb-6 sm:mb-8 hover:shadow-md transition-shadow">
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
@@ -11,37 +28,50 @@ export default function ApplicationStatusBanner() {
               Application ID
             </span>
             <span className="font-mono font-bold text-primary text-lg">
-              #SF-2026-001247
+              {trackingId}
             </span>
             <span className="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 border border-emerald-200 px-3 py-1 rounded-full text-xs font-semibold">
-              <RefreshCw size={13} className="animate-spin text-emerald-600" />
-              Under Counselor Review
+              <RefreshCw size={13} className="text-emerald-600" />
+              {statusText}
             </span>
+            {isExample && (
+              <span className="text-[10px] font-bold text-amber-800 bg-amber-100 px-2 py-0.5 rounded-full border border-amber-300">
+                Example Preview Only
+              </span>
+            )}
           </div>
 
           <p className="text-sm text-gray-600">
-            Assigned Senior Counselor: <strong className="text-primary font-semibold">M. Imran Hossain Rony</strong> (Germany Destination Lead)
+            {application ? (
+              <span>
+                Target: <strong className="text-primary font-semibold">{application.university}</strong> &bull; {application.country} ({application.program})
+              </span>
+            ) : (
+              <span>
+                Agency Lead Counselor: <strong className="text-primary font-semibold">Senior Admissions Team</strong> (Study First Desk)
+              </span>
+            )}
           </p>
         </div>
 
         <div className="flex flex-wrap items-center gap-4 lg:gap-8 border-t lg:border-t-0 pt-4 lg:pt-0 border-gray-100">
           <div>
             <div className="text-xs text-gray-400">Submitted</div>
-            <div className="text-sm font-semibold text-gray-700">Sep 5, 2026</div>
+            <div className="text-sm font-semibold text-gray-700">{submittedDate}</div>
           </div>
 
           <div className="hidden sm:block w-px h-8 bg-gray-200"></div>
 
           <div>
-            <div className="text-xs text-gray-400">Last Updated</div>
-            <div className="text-sm font-semibold text-gray-700 flex items-center gap-1">
-              Sep 8, 2026 <span className="text-xs text-accent font-medium">(2 days ago)</span>
+            <div className="text-xs text-gray-400">Track</div>
+            <div className="text-sm font-semibold text-emerald-700 flex items-center gap-1">
+              {application?.track === 'SELF_APPLY' ? 'Self-Apply (Free)' : 'Agency-Assisted'}
             </div>
           </div>
 
           <Link
             to="/appointments"
-            className="inline-flex items-center gap-2 bg-primary/5 hover:bg-primary/10 text-primary px-4 py-2.5 rounded-xl font-semibold text-sm transition-colors border border-primary/10"
+            className="inline-flex items-center gap-2 bg-primary/5 hover:bg-primary/10 text-primary px-4 py-2.5 rounded-xl font-semibold text-sm transition-colors border border-primary/10 cursor-pointer"
           >
             <MessageSquare size={16} className="text-accent" />
             Contact Counselor &rarr;

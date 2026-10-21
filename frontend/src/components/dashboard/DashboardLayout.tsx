@@ -1,4 +1,4 @@
-import { 
+  import { 
   Home,
   User,
   GraduationCap, 
@@ -10,7 +10,8 @@ import {
   Bell, 
   LogOut, 
   Menu, 
-  X 
+  X,
+  Award
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -53,6 +54,7 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
     { name: 'Dashboard', icon: Home, path: '/dashboard' },
     { name: 'Explore Universities', icon: GraduationCap, path: '/dashboard/universities' },
     { name: 'Search Programs', icon: Search, path: '/dashboard/programs' },
+    { name: 'Scholarships', icon: Award, path: '/dashboard/scholarships' },
     { name: 'Mentors', icon: Users, path: '/dashboard/mentors' },
     { name: 'Appointments', icon: Calendar, path: '/appointments' },
     { name: 'Messages', icon: MessageSquare, path: '/messages' },
@@ -65,6 +67,9 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
   const isItemActive = (itemPath: string) => {
     if (itemPath === '/dashboard') {
       return location.pathname === '/dashboard';
+    }
+    if (itemPath === '/dashboard/scholarships') {
+      return location.pathname === '/dashboard/scholarships';
     }
     if (itemPath === '/documents') {
       return location.pathname === '/documents';
@@ -136,14 +141,14 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
         <div className="p-4 sm:p-5 border-b border-slate-100 shrink-0">
           <Link to="/profile" className="flex items-center gap-3 group">
             <div className="w-10 h-10 rounded-full bg-accent text-white flex items-center justify-center font-bold text-sm border-2 border-emerald-100 shadow-xs shrink-0 group-hover:ring-2 group-hover:ring-emerald-400 transition-all">
-              {user ? user.name.substring(0, 2).toUpperCase() : 'RA'}
+              {user ? user.name.substring(0, 2).toUpperCase() : 'ST'}
             </div>
             <div className="min-w-0 flex-1">
               <div className="font-bold text-sm text-slate-900 truncate group-hover:text-primary transition-colors">
-                {user ? user.name : 'Rahul Ahmed'}
+                {user ? user.name : 'Student'}
               </div>
               <div className="text-xs text-slate-400 truncate">
-                {user ? user.email : 'rahul@email.com'}
+                {user ? user.email : ''}
               </div>
               <div className="mt-1 inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-full text-[10px] font-bold border border-emerald-100">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>

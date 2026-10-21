@@ -31,5 +31,26 @@ export const studentService = {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
     });
+  },
+
+  async downloadScholarshipGuide(data: { name: string; emailOrPhone: string; studyLevel?: string; preferredCountry?: string }) {
+    const res = await fetch(`${API_URL}/leads/download-guide`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+      credentials: 'include'
+    });
+
+    const contentType = res.headers.get('content-type');
+    if (contentType && contentType.includes('application/pdf')) {
+      const blob = await res.blob();
+      return { type: 'pdf', blob };
+    }
+
+    const json = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      throw new Error(json.error || 'Failed to download guide');
+    }
+    return { type: 'json', data: json };
   }
 };

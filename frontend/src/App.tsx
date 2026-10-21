@@ -25,6 +25,7 @@ import CareersPage from './pages/CareersPage';
 import PathwayPage from './pages/PathwayPage';
 import PublicPathwayPage from './pages/PublicPathwayPage';
 import MessagesPage from './pages/MessagesPage';
+import AdminRoute from './components/auth/AdminRoute';
 import ScrollToTop from './components/layout/ScrollToTop';
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
           <Route path="/messages" element={null} />
           <Route path="/admin" element={null} />
           <Route path="/auth" element={null} />
+          <Route path="/login" element={null} />
           <Route path="/forgot-password" element={null} />
           <Route path="*" element={<Navbar />} />
         </Routes>
@@ -62,6 +64,7 @@ function App() {
             <Route path="/counselors" element={<CounselorsPage />} />
             <Route path="/dashboard/mentors" element={<CounselorsPage isDashboard={true} />} />
             <Route path="/auth" element={<AuthPage />} />
+            <Route path="/login" element={<AuthPage />} />
             <Route path="/forgot-password" element={<ForgotPasswordPage />} />
             <Route path="/dashboard" element={<DashboardPage />} />
             <Route path="/profile" element={<ProfilePage />} />
@@ -69,10 +72,11 @@ function App() {
             <Route path="/appointments" element={<AppointmentsPage />} />
             <Route path="/documents" element={<DocumentsPage />} />
             <Route path="/scholarships" element={<ScholarshipsPage />} />
+            <Route path="/dashboard/scholarships" element={<ScholarshipsPage isDashboard={true} />} />
             <Route path="/notifications" element={<NotificationsPage />} />
             <Route path="/settings" element={<SettingsPage />} />
             <Route path="/messages" element={<MessagesPage />} />
-            <Route path="/admin" element={<AdminPage />} />
+            <Route path="/admin" element={<AdminRoute><AdminPage /></AdminRoute>} />
             <Route path="/events" element={<EventsPage />} />
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/careers" element={<CareersPage />} />
@@ -94,6 +98,7 @@ function App() {
           <Route path="/messages" element={null} />
           <Route path="/admin" element={null} />
           <Route path="/auth" element={null} />
+          <Route path="/login" element={null} />
           <Route path="/forgot-password" element={null} />
           <Route path="*" element={<Footer />} />
         </Routes>
@@ -109,6 +114,7 @@ function App() {
           <Route path="/messages" element={null} />
           <Route path="/admin" element={null} />
           <Route path="/auth" element={null} />
+          <Route path="/login" element={null} />
           <Route path="/forgot-password" element={null} />
           <Route path="*" element={<PromoPopup />} />
         </Routes>
